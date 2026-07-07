@@ -385,6 +385,22 @@ window.EVENTS = {
       "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi"
     },
     {
+      "venue": "corban",
+      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Wed 8 Jul 2026",
+      "date": "2026-07-08",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
+      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Wed 8 Jul 2026"
+    },
+    {
+      "venue": "corban",
+      "title": "Make Your Mark: Fabric Painting Tote Bag With Cristina Giraldo Wed 8 Jul 2026 10:00AM - 2:30PM Children: 6 - 1",
+      "date": "2026-07-08",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/make-your-mark-fabric-painting-tote-bag",
+      "desc": "Make Your Mark: Fabric Painting Tote Bag With Cristina Giraldo Wed 8 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED In this immersive school holiday workshop with Cristina Gi"
+    },
+    {
       "venue": "gowlangsford",
       "title": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traver",
       "date": "2026-07-08",
@@ -401,6 +417,30 @@ window.EVENTS = {
       "end": "2026-08-08",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki: Matariki Shorts Thu 9 Jul 2026",
+      "date": "2026-07-09",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/matariki-shorts",
+      "desc": "Matariki: Matariki Shorts Thu 9 Jul 2026"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki Shorts With Day One Hāpai te Haeata Thu 9 Jul 2026 6:30PM - 8:30PM In celebration of Matariki, Day On",
+      "date": "2026-07-09",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/events/matariki/matariki-shorts",
+      "desc": "Matariki Shorts With Day One Hāpai te Haeata Thu 9 Jul 2026 6:30PM - 8:30PM In celebration of Matariki, Day One Hāpai te Haeata Films with Corban Estate Arts Centre presents Matari"
+    },
+    {
+      "venue": "corban",
+      "title": "Bug Life With Leela Bhai Thu 9 Jul 2026 10:00AM - 2:30PM Children: 5 - 9 From observation to imagination, kids",
+      "date": "2026-07-09",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/workshops/art-workshop/bug-life",
+      "desc": "Bug Life With Leela Bhai Thu 9 Jul 2026 10:00AM - 2:30PM Children: 5 - 9 From observation to imagination, kids will explore the tiny world of ladybugs, Huhu beetles, centipedes, Wē"
     },
     {
       "venue": "corban",
@@ -525,6 +565,14 @@ window.EVENTS = {
       "desc": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
     },
     {
+      "venue": "corban",
+      "title": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create ",
+      "date": "2026-07-14",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/workshops/art-workshop/flora-gel-prints",
+      "desc": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create exciting layered prints using gel printing plates with artist Sarah Co"
+    },
+    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -536,11 +584,27 @@ window.EVENTS = {
       "url": "https://www.facebook.com/poetrylive/"
     },
     {
+      "venue": "corban",
+      "title": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school h",
+      "date": "2026-07-15",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/the-beginning-of-cinema",
+      "desc": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school holiday workshop children will enter the magical world of cinema! Worki"
+    },
+    {
       "venue": "whammy",
       "title": "Overthrown - Welcome To Purgatory -",
       "date": "2026-07-15",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "corban",
+      "title": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST ",
+      "date": "2026-07-16",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/painted-and-stitched-in-flight",
+      "desc": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST FULLY BOOKED Join visual artist Alexandra Murphy for a fun, painting a"
     },
     {
       "venue": "unity",
@@ -556,6 +620,22 @@ window.EVENTS = {
       "date": "2026-07-16",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki Evening Market With Corban Estate Arts Centre and Five Star Eats Fri 17 Jul 2026 4:30PM - 8:30PM Brin",
+      "date": "2026-07-17",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/events/matariki/matariki-evening-market",
+      "desc": "Matariki Evening Market With Corban Estate Arts Centre and Five Star Eats Fri 17 Jul 2026 4:30PM - 8:30PM Bring your whānau and friends along and join us for a magical evening hono"
+    },
+    {
+      "venue": "corban",
+      "title": "Watercolour Zines: Imaginary Worlds With Marina Grey Fri 17 Jul 2026 10:00AM - 2:30PM Children: 8 - 13 Join vi",
+      "date": "2026-07-17",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/watercolour-zines-imaginary-worlds",
+      "desc": "Watercolour Zines: Imaginary Worlds With Marina Grey Fri 17 Jul 2026 10:00AM - 2:30PM Children: 8 - 13 Join visual artist Marina Grey these school holidays in our hands-on watercol"
     },
     {
       "venue": "corban",
@@ -617,6 +697,14 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "corban",
+      "title": "Wishes to Hiwa-i-te-Rangi With Penny Howard Daily, 10:00AM - 4:00PM From 4 - 18 Jul Join us for the interactiv",
+      "date": "2026-07-18",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
+      "desc": "Wishes to Hiwa-i-te-Rangi With Penny Howard Daily, 10:00AM - 4:00PM From 4 - 18 Jul Join us for the interactive pop-up installation of Hiwa-i-te-Rangi: The Wishing Star by Penny Ho"
     },
     {
       "venue": "lacigale",
@@ -728,6 +816,14 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://unitybooks.co.nz/news-and-events/sunday-sessions-happy-moments-by-len-lye-ed-roger-horrocks",
       "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
+    },
+    {
+      "venue": "corban",
+      "title": "Dawn Wishes to Hiwa-i-te-Rangi With Penny Howard Tue 21 Jul 2026 6:30AM - 8:30AM Dawn Wishes to Hiwa-i-te-Rang",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3",
+      "desc": "Dawn Wishes to Hiwa-i-te-Rangi With Penny Howard Tue 21 Jul 2026 6:30AM - 8:30AM Dawn Wishes to Hiwa-i-te-Rangi is a special dawn ceremony marking the close of the Matariki Festiva"
     },
     {
       "venue": "corban",
@@ -999,12 +1095,28 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "corban",
+      "title": "Introduction to Glass Casting With Sofia Athineou Daily, 9:00AM - 5:00PM From 1 - 2 Aug Adults: 18+ * NEW DATE",
+      "date": "2026-08-02",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/introduction-to-glass-casting",
+      "desc": "Introduction to Glass Casting With Sofia Athineou Daily, 9:00AM - 5:00PM From 1 - 2 Aug Adults: 18+ * NEW DATES * Join artist Sofia Athineou for an exciting and intensive two-and-a"
+    },
+    {
       "venue": "lacigale",
       "title": "La Cigale French Market (Sun)",
       "zh": "La Cigale 法式集市（周日）",
       "date": "2026-08-02",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "corban",
+      "title": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ A",
+      "date": "2026-08-04",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/screen-printing-on-fabric",
+      "desc": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ ALMOST FULLY BOOKED Join visual artist Romina Ortega in a 6-week screen"
     },
     {
       "venue": "poetrylive",
