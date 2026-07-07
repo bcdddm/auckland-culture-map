@@ -45,6 +45,10 @@
     font-size:11px; cursor:pointer; display:inline-flex; align-items:center; gap:6px}
   .chip .sw{width:9px; height:9px; border-radius:50%; display:inline-block}
   .chip.on{border-color:var(--ink); background:var(--yellow)}
+  /* 筛选菜单：桌面直接平铺（display:contents），手机折叠成点开的菜单 */
+  #filterbtn{display:none}
+  #filterbox{display:contents}
+  #filterbtn b{font-weight:600; color:var(--dblue)}
   .langwrap{margin-left:auto; display:flex; align-items:center; gap:6px; font-size:11px; color:var(--dblue)}
   .lsw{width:38px; height:20px; border-radius:999px; border:1.5px solid var(--dblue); position:relative; cursor:pointer; background:#fff}
   .lsw i{position:absolute; top:1.5px; left:2px; width:14px; height:14px; border-radius:50%; background:var(--dblue); transition:left .18s}
@@ -80,11 +84,18 @@
   .stk .ribbon{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9.5px; font-weight:700;
     fill:var(--ink); text-anchor:middle}
   .stk.live:hover{transform:scale(1.14) rotate(-2deg)}
-  .stk.off{filter:grayscale(1) opacity(.68) drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
+  /* 类别色细环：贴纸四周一圈薄线，颜色同筛选器圆点；灰度只作用于 .front，环保持彩色 */
+  .stk .ring{position:absolute; inset:3.5%; border:2px solid; border-radius:14%;
+    transform:rotate(var(--rot,0deg)); pointer-events:none; opacity:.9}
+  .stk.tear .ring{opacity:0; transition:opacity .25s}
+  .stk.off{filter:drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
+  .stk.off .front{filter:grayscale(1) opacity(.68)}
+  .stk.off .ring{opacity:.45; border-width:1.5px}
   .stk.off:hover{transform:scale(1.07)}
   /* 完全没有最新内容（无活动且无在展）的贴纸：再暗一档 */
-  .stk.off.faint{filter:grayscale(1) opacity(.42) drop-shadow(1.5px 2px 1.5px rgba(20,20,20,.3))}
-  .stk.off.faint:hover{filter:grayscale(1) opacity(.75) drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
+  .stk.off.faint .front{filter:grayscale(1) opacity(.42)}
+  .stk.off.faint .ring{opacity:.25}
+  .stk.off.faint:hover .front{filter:grayscale(1) opacity(.75)}
   .stk.dim{opacity:.12; pointer-events:none}
   /* 待机动画：右下角轻轻翘起（dog-ear），不浮动 */
   .stk .curl{transform-box:fill-box; transform-origin:100% 100%;
@@ -221,11 +232,15 @@
     .sub{display:none}                       /* 小屏隐藏说明行，交互靠点击自明 */
     footer{display:none}                     /* 版权署名保留在地图角标 */
     .gdate{margin-left:auto; border-left-width:2px; font-size:9.5px; align-self:center}
-    .controls{gap:6px; margin:4px 0 8px}
-    .chips{flex-wrap:nowrap; overflow-x:auto; max-width:100%;
-      -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:2px}
-    .chips::-webkit-scrollbar{display:none}
-    .chip{flex:0 0 auto; padding:6px 12px}
+    .controls{gap:6px; margin:4px 0 8px; position:relative}
+    /* 周月+类别筛选折叠为点开菜单 */
+    #filterbtn{display:inline-flex; align-items:center; gap:6px; border-color:var(--ink); padding:7px 12px}
+    #filterbox{display:none; position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:1500;
+      background:var(--paper); border:1.5px solid var(--ink); border-radius:8px;
+      box-shadow:4px 4px 0 var(--yellow); padding:12px; flex-direction:column; gap:10px}
+    #filterbox.open{display:flex}
+    .chips{flex-wrap:wrap; overflow:visible; max-width:100%}
+    .chip{flex:0 0 auto; padding:7px 13px}
     .seg button{padding:7px 12px}
     #fsbtn .en,#fsbtn .zh{display:none !important}   /* 全屏按钮只留图标 */
     .langwrap{margin-left:0}
@@ -240,7 +255,7 @@
       padding:0; background:#fff; border:1.5px solid var(--ink); border-radius:50%;
       box-shadow:0 2px 6px rgba(0,0,0,.25); line-height:1; z-index:5}
     .leaflet-control-attribution{font-size:6px; max-width:60vw}
-    .cardstk{width:70px; height:68px; margin:-6px -2px 4px 8px}
+    .cardstk{width:66px; height:64px; margin:34px 2px 4px 8px}   /* 下移避开关闭按钮 */
     #panel h2{font-size:17px}
     .navbtn{width:42px; height:42px; min-width:42px}
   }
@@ -257,11 +272,14 @@
   </p>
 
   <div class="controls">
-    <div class="seg" id="winseg">
-      <button data-win="week" class="on"><span class="en">This week</span><span class="zh">本周</span></button>
-      <button data-win="month"><span class="en">This month</span><span class="zh">本月</span></button>
+    <button class="chip" id="filterbtn" aria-label="filters">▾ <b id="fsum"></b></button>
+    <div id="filterbox">
+      <div class="seg" id="winseg">
+        <button data-win="week" class="on"><span class="en">This week</span><span class="zh">本周</span></button>
+        <button data-win="month"><span class="en">This month</span><span class="zh">本月</span></button>
+      </div>
+      <div class="chips" id="chips"></div>
     </div>
-    <div class="chips" id="chips"></div>
     <button class="chip" id="fsbtn" aria-label="fullscreen">⛶ <span class="en">Fullscreen</span><span class="zh">全屏</span></button>
     <div class="langwrap">
       <span>EN</span><div class="lsw" id="lsw" role="switch" aria-label="language"><i></i></div><span>中</span>
@@ -978,6 +996,7 @@ function stickerHTML(v){
   var ph = showRibbon ? 108 : 94;               /* paper 高度 */
   var vb = showRibbon ? "-52 -50 104 116" : "-52 -50 104 100";
   return '<div class="'+cls+'" style="--rot:'+v.r+'deg" data-id="'+v.id+'">'+
+    '<i class="ring" style="border-color:'+CATS[v.cat].hex+'"></i>'+
     '<div class="front">'+
     '<svg viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg">'+
     '<defs>'+
@@ -1243,7 +1262,11 @@ function renderChips(){
   });
   el.innerHTML = h;
   Array.prototype.forEach.call(el.querySelectorAll(".chip"), function(b){
-    b.addEventListener("click", function(){ S.cat = b.getAttribute("data-cat"); refresh(); });
+    b.addEventListener("click", function(){
+      S.cat = b.getAttribute("data-cat");
+      document.getElementById("filterbox").classList.remove("open");  /* 选完类别收起菜单 */
+      refresh();
+    });
   });
 }
 document.getElementById("winseg").addEventListener("click", function(e){
@@ -1291,8 +1314,23 @@ function refresh(){
   var g = (window.EVENTS && window.EVENTS.generated) || "—";
   document.getElementById("gendate").textContent =
     (S.lang==="zh" ? "数据更新于 " : "Data updated ") + g;
+  /* 手机筛选按钮上的当前选择摘要 */
+  var segL = S.win==="week" ? (S.lang==="zh"?"本周":"This week") : (S.lang==="zh"?"本月":"This month");
+  var catL = S.cat==="all" ? (S.lang==="zh"?"全部":"All") : (S.lang==="zh"?CATS[S.cat].zh:CATS[S.cat].en);
+  document.getElementById("fsum").textContent = segL + " · " + catL;
   if(S.open) openPanel(S.open);
 }
+
+/* 手机筛选菜单开合 */
+(function(){
+  var fb = document.getElementById("filterbox"), fbtn = document.getElementById("filterbtn");
+  fbtn.addEventListener("click", function(e){ e.stopPropagation(); fb.classList.toggle("open"); });
+  document.addEventListener("click", function(e){
+    if(fb.classList.contains("open") && !fb.contains(e.target) && !fbtn.contains(e.target)){
+      fb.classList.remove("open");
+    }
+  });
+})();
 
 /* 页面加载即打开一张卡片：最近即将发生的第一个活动的场馆 */
 function soonestVenue(){
