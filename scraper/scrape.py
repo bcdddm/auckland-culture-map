@@ -20,7 +20,9 @@ from dateutil import parser as dparse
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT = ROOT.parent / "events.js"
 MANUAL = ROOT / "manual_events.json"
-UA = {"User-Agent": "Mozilla/5.0 (compatible; CultureMapBot/1.0; personal blog project)"}
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-NZ,en;q=0.9"}
 TODAY = datetime.date.today()
 HORIZON = TODAY + datetime.timedelta(days=31)
 
@@ -37,7 +39,7 @@ SOURCES = {
   "michaellett": [{"type":"html", "url":"https://lett-thomas.com/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：已改名 Lett Thomas，静态HTML
   "objectspace": [{"type":"html", "url":"https://www.objectspace.org.nz/exhibitions/", "selector":"a[href*='/exhibitions/'], h2, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 不存在，正确列表页静态可抓
   "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/'], article"}],  # ✅ 2026-07-07 校准：静态HTML，事件在 /products/ 链接里
-  "corban":      [{"type":"html", "url":"https://cebarts.org.nz/whats-on/", "selector":"article, .event, .card"}],
+  "corban":      [{"type":"html", "url":"https://www.corbanestate.org.nz/whats-on/", "selector":"article, .event, .card"}],  # 域名修正（cebarts.org.nz DNS 失效）
   "library":     [{"type":"html", "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "url":"https://unitybooksauckland.co.nz/events", "selector":"article, .event, .card"}],
   "timeout":     [{"type":"html", "url":"https://www.timeout.co.nz/events", "selector":"article, .event, .card"}],
@@ -64,7 +66,7 @@ SOURCES = {
   "otaramarket": [],   # 固定周六 → 规则生成
   "ostend":      [],   # 固定周六 → 规则生成
   # ---- 北岸 & Hibiscus Coast ----
-  "northart":    [{"type":"html", "url":"https://www.northart.co.nz/", "selector":"article, .card, .event"}],  # ✅ 2026-07-07 校准：静态HTML，展讯直接在首页正文
+  "northart":    [{"type":"html", "url":"https://northart.co.nz/", "selector":"article, .card, .event"}],  # ✅ 静态HTML；⚠️ 证书只对无 www 域名有效
   # ✅ gowlangsford 用 Artlogic CMS，静态HTML，展览卡片是 a[href*='/exhibitions/']（下方已配置）
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
   "lakehouse":   [{"type":"html", "url":"https://www.lakehousearts.org.nz/whats-on", "selector":"article, .card, .event"}],
@@ -132,6 +134,9 @@ def scrape_html(venue, src):
         if len(text) < 12: continue
         d = parse_date(text)
         if not d or not (TODAY <= d <= HORIZON): continue
+        # 年份合法性：文本里写明的年份全部早于今年 → 是旧展归档，跳过（防止 2024 展被误标为今年）
+        yrs = [int(y) for y in re.findall(r"\b(20[0-3]\d)\b", text)]
+        if yrs and max(yrs) < TODAY.year: continue
         title = text[:110]
         link = node.get("href") or (node.find("a")["href"] if node.find("a") and node.find("a").get("href") else src["url"])
         if link and link.startswith("/"):
@@ -156,7 +161,9 @@ def scrape_ical(venue, src):
         d = datetime.datetime.strptime(mD.group(1), "%Y%m%d").date()
         if TODAY <= d <= HORIZON:
             t = mS.group(1).strip()
-            out.append({"venue": venue, "title": t, "date": str(d), "kind": classify(t), "url": src["url"]})
+            k = classify(t)
+            if k == "opening": k = "gig"   # iCal 源（undertheradar）都是演出
+            out.append({"venue": venue, "title": t, "date": str(d), "kind": k, "url": src["url"]})
     return out
 
 def weekly_rule_events():
@@ -217,9 +224,12 @@ def main():
     items += [e for e in hist if (e["venue"], e["title"][:40], e["date"]) not in seen_keys]
     print(f"[ok]   history: kept {len(hist)} past items")
     if MANUAL.exists():
+        # 策展母本：全量并入（含双语、展览、历史），页面自行按日期归类显示；按 (venue,title前40,date) 去重
         manual = json.loads(MANUAL.read_text(encoding="utf-8"))
-        items += [e for e in manual if TODAY <= datetime.date.fromisoformat(e["date"]) <= HORIZON]
-        print(f"[ok]   manual: merged")
+        keys = {(e["venue"], e["title"][:40], e["date"]) for e in items}
+        added = [e for e in manual if (e["venue"], e["title"][:40], e["date"]) not in keys]
+        items += added
+        print(f"[ok]   manual/curated: merged {len(added)}")
     items.sort(key=lambda e: (e["date"], e["venue"]))
     payload = {"generated": str(TODAY), "sample": False, "items": items}
     OUT.write_text(
