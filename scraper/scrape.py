@@ -33,18 +33,20 @@ HORIZON = TODAY + datetime.timedelta(days=31)
 # 修某个场馆时只改这一条即可。url 失效就换成该场馆最新的 events 页。
 # ---------------------------------------------------------------
 SOURCES = {
-  "aag":         [{"type":"html", "url":"https://www.aucklandartgallery.com/whats-on", "selector":"a[href*='whats-on'], article, .card"}],
+  # render:True → 用 Playwright 无头浏览器渲染（JS 站 / 反爬站），Actions 已装 chromium
+  "aag":         [{"type":"html", "render":True, "url":"https://www.aucklandartgallery.com/whats-on/events", "selector":"a[href*='whats-on'], article, .card"},
+                  {"type":"html", "render":True, "url":"https://www.aucklandartgallery.com/visit/exhibitions", "selector":"a[href*='exhibition'], article, .card"}],
   "gusfisher":   [{"type":"html", "url":"https://gusfishergallery.auckland.ac.nz/exhibitions/", "selector":"article, .et_pb_text, h1, h3"}],  # ✅ 2026-07-07 校准：/exhibitions/ 是静态HTML（WordPress/Divi），日期在 h3
   "artspace":    [{"type":"html", "url":"https://artspace-aotearoa.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准：列表页静态HTML，日期直接在链接文本里
   "michaellett": [{"type":"html", "url":"https://lett-thomas.com/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：已改名 Lett Thomas，静态HTML
   "objectspace": [{"type":"html", "url":"https://www.objectspace.org.nz/exhibitions/", "selector":"a[href*='/exhibitions/'], h2, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 不存在，正确列表页静态可抓
   "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/'], article"}],  # ✅ 2026-07-07 校准：静态HTML，事件在 /products/ 链接里
   "corban":      [{"type":"html", "url":"https://www.corbanestate.org.nz/whats-on/", "selector":"article, .event, .card"}],  # 域名修正（cebarts.org.nz DNS 失效）
-  "library":     [{"type":"html", "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
-  "unity":       [{"type":"html", "url":"https://unitybooksauckland.co.nz/events", "selector":"article, .event, .card"}],
-  "timeout":     [{"type":"html", "url":"https://www.timeout.co.nz/events", "selector":"article, .event, .card"}],
+  "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
+  "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
+  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/", "selector":"a[href*='event'], article, .card"}],
   "poetrylive":  [{"type":"html", "url":"https://www.facebook.com/poetrylive/", "selector":"article"}],   # 常年周二；抓不到就走 manual
-  "townhall":    [{"type":"html", "url":"https://www.aucklandlive.co.nz/whats-on?venue=auckland-town-hall", "selector":"article, .card, .event-tile"}],
+  "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
   # 2026-07-07 已确认：Whammy=316，Powerstation=105（venue 119 是 Safari Lounge，勿用）
   "whammy":      [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"}],   # ✅ 2026-07-07 确认：UTR vid 316 = Whammy Bar（另有 3991 Backroom / 6373 Double Whammy）
@@ -60,8 +62,8 @@ SOURCES = {
   "nathan":      [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/nathan-homestead.html", "selector":"article, .card, li"}],
   "pah":         [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/pah-homestead.html", "selector":"article, .card, li"}],
   "teoro":       [{"type":"html", "url":"https://www.teoro.org.nz/whats-on", "selector":"article, .card, .event"}],
-  "uxbridge":    [{"type":"html", "url":"https://uxbridge.org.nz/whats-on/", "selector":"article, .card, .event"}],
-  "waihekegallery": [{"type":"html", "url":"https://www.waihekeartgallery.org.nz/whats-on/", "selector":"article, .card, .event"}],
+  "uxbridge":    [{"type":"html", "render":True, "url":"https://uxbridge.org.nz/whats-on/", "selector":"article, .card, .event"}],
+  "waihekegallery": [{"type":"html", "render":True, "url":"https://www.waihekeartgallery.org.nz/", "selector":"article, .card, .event, a[href*='exhibition']"}],
   "depot":       [{"type":"html", "url":"https://depotartspace.co.nz/whats-on/", "selector":"article, .card, .event"}],
   "otaramarket": [],   # 固定周六 → 规则生成
   "ostend":      [],   # 固定周六 → 规则生成
@@ -69,7 +71,7 @@ SOURCES = {
   "northart":    [{"type":"html", "url":"https://northart.co.nz/", "selector":"article, .card, .event"}],  # ✅ 静态HTML；⚠️ 证书只对无 www 域名有效
   # ✅ gowlangsford 用 Artlogic CMS，静态HTML，展览卡片是 a[href*='/exhibitions/']（下方已配置）
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
-  "lakehouse":   [{"type":"html", "url":"https://www.lakehousearts.org.nz/whats-on", "selector":"article, .card, .event"}],
+  "lakehouse":   [{"type":"html", "render":True, "url":"https://www.lakehousearts.org.nz/", "selector":"article, .card, .event, a[href*='event']"}],
   "mairangi":    [{"type":"html", "url":"https://mairangiarts.co.nz/exhibitions/", "selector":"article, .card, .event"}],
   "estuary":     [{"type":"html", "url":"https://www.estuaryarts.org/", "selector":"article, .card, .event"}],
   "pumphouse":   [{"type":"html", "url":"https://pumphouse.co.nz/whats-on/", "selector":"article, .card, .event"}],
@@ -105,6 +107,66 @@ DATE_RE = re.compile(
   r"|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s*\d{0,4}"
   r"|\d{4}-\d{2}-\d{2})", re.I)
 
+def fetch_html(src):
+    """render:True 的源用 Playwright 无头浏览器渲染（JS 站）；否则普通请求。"""
+    if src.get("render"):
+        try:
+            from playwright.sync_api import sync_playwright
+            with sync_playwright() as pw:
+                b = pw.chromium.launch()
+                pg = b.new_page(user_agent=UA["User-Agent"])
+                pg.goto(src["url"], wait_until="networkidle", timeout=45000)
+                html = pg.content()
+                b.close()
+                return html
+        except ImportError:
+            print("[warn] playwright 未安装，降级为普通请求", file=sys.stderr)
+        except Exception as e:
+            print(f"[warn] playwright 渲染失败({e})，降级为普通请求", file=sys.stderr)
+    r = requests.get(src["url"], headers=UA, timeout=30)
+    r.raise_for_status()
+    return r.text
+
+def extract_jsonld_events(venue, soup, base):
+    """优先读 schema.org Event 结构化数据——标题/日期/价格/链接机器可读，远比正则可靠。"""
+    out = []
+    for tag in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(tag.string or "")
+        except Exception:
+            continue
+        flat = []
+        for d in (data if isinstance(data, list) else [data]):
+            if isinstance(d, dict) and "@graph" in d:
+                flat += [x for x in d["@graph"] if isinstance(x, dict)]
+            elif isinstance(d, dict):
+                flat.append(d)
+        for d in flat:
+            types = d.get("@type", "")
+            types = types if isinstance(types, list) else [types]
+            if not any("Event" in str(x) for x in types):
+                continue
+            try:
+                sd = datetime.date.fromisoformat(str(d.get("startDate", ""))[:10])
+            except Exception:
+                continue
+            if not (TODAY <= sd <= HORIZON):
+                continue
+            name = (d.get("name") or "").strip()
+            if not name:
+                continue
+            item = {"venue": venue, "title": name[:110], "date": str(sd),
+                    "kind": classify(name), "url": d.get("url") or base,
+                    "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]}
+            offers = d.get("offers")
+            o = (offers[0] if isinstance(offers, list) and offers else offers) or {}
+            if isinstance(o, dict):
+                p = str(o.get("price", ""))
+                if p in ("0", "0.0", "0.00"): item["price"] = "free"
+                elif p: item["price"] = "paid"
+            out.append(item)
+    return out
+
 def classify(text):
     t = text.lower()
     for kind, pat in KIND_WORDS:
@@ -125,9 +187,11 @@ def parse_date(text):
 
 def scrape_html(venue, src):
     out = []
-    r = requests.get(src["url"], headers=UA, timeout=30)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    soup = BeautifulSoup(fetch_html(src), "html.parser")
+    # 第一优先级：JSON-LD 结构化数据，命中即返回
+    ld = extract_jsonld_events(venue, soup, src["url"])
+    if ld:
+        return ld
     seen = set()
     for node in soup.select(src["selector"])[:60]:
         text = " ".join(node.get_text(" ", strip=True).split())
