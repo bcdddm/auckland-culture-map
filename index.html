@@ -229,9 +229,9 @@
     .seg button{padding:7px 12px}
     #fsbtn .en,#fsbtn .zh{display:none !important}   /* 全屏按钮只留图标 */
     .langwrap{margin-left:0}
-    /* 地图吃掉剩余高度 */
-    .mapwrap{flex:1 1 auto; min-height:240px; max-width:none}
-    #map{height:100%; min-height:0}
+    /* 地图吃掉剩余高度；width/margin 必须显式覆盖桌面的 margin:auto，否则弹性布局下会缩成一条线 */
+    .mapwrap{flex:1 1 auto; min-height:240px; max-width:none; width:100%; margin:0}
+    #map{height:100%; width:100%; min-height:0}
     /* 卡片变底部抽屉：胶带即把手，滑动切换附近场馆 */
     #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; max-height:62%;
       padding:22px 14px 12px}
