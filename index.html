@@ -207,25 +207,29 @@
     font-family:-apple-system,"PingFang SC",sans-serif; line-height:1.8}
 
   @media(max-width:700px){
-    body{padding:8px}
-    .frame{inset:4px; border-width:4px}
-    header{padding:12px 4px 4px}
-    h1{margin:10px 0 2px}
-    .sub{margin-bottom:8px}
-    .gdate{display:block; margin:4px 0 0; border-left-width:2px}
-    /* 筛选 chips 单行横滑，不再折行挤压地图 */
-    .controls{gap:6px; margin:6px 0 10px}
+    /* 弹性纵向布局：头部定高，地图占满 iframe 剩余全部高度（适配 Wix 任意嵌入高度） */
+    html,body{height:100%}
+    body{padding:6px; display:flex; flex-direction:column; min-height:0}
+    .frame{inset:3px; border-width:3px}
+    header{flex:0 0 auto; padding:6px 4px 0; max-width:none}
+    h1{font-size:19px; margin:2px 0 4px}
+    .sub{display:none}                       /* 小屏隐藏说明行，交互靠点击自明 */
+    footer{display:none}                     /* 版权署名保留在地图角标 */
+    .gdate{margin-left:auto; border-left-width:2px; font-size:9.5px; align-self:center}
+    .controls{gap:6px; margin:4px 0 8px}
     .chips{flex-wrap:nowrap; overflow-x:auto; max-width:100%;
       -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:2px}
     .chips::-webkit-scrollbar{display:none}
-    .chip{flex:0 0 auto; padding:7px 13px}
-    .seg button{padding:8px 14px}
-    .langwrap{margin-left:auto}
-    /* 地图高度用 svh，避免 iOS 地址栏收起时跳动 */
-    #map{height:58vh; height:58svh; min-height:360px}
+    .chip{flex:0 0 auto; padding:6px 12px}
+    .seg button{padding:7px 12px}
+    #fsbtn .en,#fsbtn .zh{display:none !important}   /* 全屏按钮只留图标 */
+    .langwrap{margin-left:0}
+    /* 地图吃掉剩余高度 */
+    .mapwrap{flex:1 1 auto; min-height:240px; max-width:none}
+    #map{height:100%; min-height:0}
     /* 卡片变底部抽屉：胶带即把手，滑动切换附近场馆 */
-    #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; max-height:52vh;
-      max-height:52svh; padding:22px 14px 12px}
+    #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; max-height:62%;
+      padding:22px 14px 12px}
     #panel .close{font-size:24px; top:6px; right:8px; padding:8px; min-width:40px; min-height:40px}
     .cardstk{width:70px; height:68px; margin:-6px -2px 4px 8px}
     #panel h2{font-size:17px}
@@ -241,7 +245,6 @@
   <p class="sub">
     <span class="en"><b>Colour</b> stickers have events in the selected window; <b>grey</b> ones are quiet. Click a sticker to peel it off.</span>
     <span class="zh"><b>彩色</b>贴纸 = 所选时段内有活动；<b>灰色</b> = 暂无。点击贴纸，把它撕下来看看。</span>
-    <span id="gendate" class="gdate"></span>
   </p>
 
   <div class="controls">
@@ -254,6 +257,7 @@
     <div class="langwrap">
       <span>EN</span><div class="lsw" id="lsw" role="switch" aria-label="language"><i></i></div><span>中</span>
     </div>
+    <span id="gendate" class="gdate"></span>
   </div>
 </header>
 
