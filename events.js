@@ -270,6 +270,18 @@ window.EVENTS = {
       "url": "https://lett-thomas.com/exhibition/peter-stichbury-4/"
     },
     {
+      "venue": "corban",
+      "title": "Whetūrangitia — Pou Kapua Creations / Waitākere College / Florence Ulutunu",
+      "zh": "《Whetūrangitia》马塔里基青年艺术家群展（三展同期）",
+      "date": "2026-06-20",
+      "end": "2026-08-08",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Three linked Matariki exhibitions: Pou Kapua carving, four Māori wāhine artists from Waitākere College, and siapo (bark cloth) made with Sāmoan artist Florence Ulutunu.",
+      "descZh": "三个联动的马塔里基展览：Pou Kapua 木雕、Waitākere College 四位毛利女性艺术家，以及与萨摩亚艺术家 Florence Ulutunu 共制的树皮布。",
+      "url": "https://ceac.org.nz/activities"
+    },
+    {
       "venue": "starkwhite",
       "title": "Martin Basher: Vermillion Sands",
       "zh": "Martin Basher《Vermillion Sands》",
@@ -290,6 +302,66 @@ window.EVENTS = {
       "url": "https://teuru.org.nz/products/te-uru-x-whitecliffe-mahitahi"
     },
     {
+      "venue": "studioone",
+      "title": "He Taonga Ānō te Hau: Treasures That Still Breathe — Siniva Mokaraka",
+      "zh": "《仍在呼吸的珍宝》Siniva Mokaraka 个展",
+      "date": "2026-06-25",
+      "end": "2026-07-23",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Still-life fine art prints honouring taonga as living carriers of mauri, memory and spirit; Gallery 1, created for Matariki.",
+      "descZh": "以静物摄影版画礼赞 taonga（珍宝）承载的生命力与记忆，1 号展厅，为马塔里基而作。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
+    },
+    {
+      "venue": "studioone",
+      "title": "He Taniwha, He Tipua — Redman / Ngatai / Marler",
+      "zh": "《Taniwha 与 Tipua》三位毛利艺术家群展",
+      "date": "2026-06-25",
+      "end": "2026-07-23",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Three Toi Māori practitioners explore taniwha narratives through paint, print, raranga and sculpture; Gallery 2.",
+      "descZh": "三位毛利艺术家以绘画、版画、编织与雕塑演绎 taniwha（水怪守护神）叙事，2 号展厅。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
+    },
+    {
+      "venue": "studioone",
+      "title": "Haerenga — noa hāmana",
+      "zh": "《Haerenga·迁徙》noa hāmana 个展",
+      "date": "2026-06-25",
+      "end": "2026-07-23",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Māori migration and its 21st-century continuation, curated by Giulia Pianelli; Gallery 3.",
+      "descZh": "探讨毛利迁徙及其在 21 世纪的延续，Giulia Pianelli 策展，3 号展厅。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
+    },
+    {
+      "venue": "studioone",
+      "title": "Ngā Takune: The Intentions — Ngā Rangatahi Toa",
+      "zh": "《意向》毛利青年主导马塔里基群展",
+      "date": "2026-06-25",
+      "end": "2026-07-23",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Rangatahi-led Matariki mā Puanga exhibition on intention, whānau and whakapapa; Gallery 4.",
+      "descZh": "青年主导的马塔里基展览，关于意向、家族与谱系，4 号展厅。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
+    },
+    {
+      "venue": "studioone",
+      "title": "Terms of Endearment — Olivia Asher",
+      "zh": "《爱称》Olivia Asher 陶土文字装置",
+      "date": "2026-06-25",
+      "end": "2026-07-23",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Clay and text on intimacy, emotional residue and repetition; Sidewalk Gallery.",
+      "descZh": "以陶土与文字探讨亲密关系与情感残留，临街橱窗展厅。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
+    },
+    {
       "venue": "gowlangsford",
       "title": "Claudia Kogachi: Another Day (Onehunga)",
       "zh": "Claudia Kogachi《Another Day》",
@@ -298,6 +370,19 @@ window.EVENTS = {
       "end": "2026-07-25",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/525-another-day-claudia-kogachi/"
+    },
+    {
+      "venue": "corban",
+      "title": "Wishes to Hiwa-i-te-Rangi — Penny Howard (pop-up installation)",
+      "zh": "《向许愿星 Hiwa-i-te-Rangi 许愿》互动装置",
+      "date": "2026-07-04",
+      "end": "2026-07-18",
+      "kind": "exhibition",
+      "price": "free",
+      "time": "10:00AM-4:00PM",
+      "desc": "Interactive Matariki wishing-star installation by Penny Howard in the Homestead reception.",
+      "descZh": "Penny Howard 的马塔里基许愿星互动装置，位于 Homestead 前厅。",
+      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi"
     },
     {
       "venue": "gowlangsford",
@@ -316,6 +401,18 @@ window.EVENTS = {
       "end": "2026-08-08",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki Shorts — rangatahi Māori short films",
+      "zh": "马塔里基短片之夜（毛利青年电影人）",
+      "date": "2026-07-09",
+      "kind": "film",
+      "price": "free",
+      "time": "6:30PM-8:30PM",
+      "desc": "Short films by rangatahi Māori filmmakers, with Day One Hāpai te Haeata.",
+      "descZh": "毛利青年电影人短片放映，与 Day One Hāpai te Haeata 合办。",
+      "url": "https://ceac.org.nz/events/matariki/matariki-shorts"
     },
     {
       "venue": "waihekegallery",
@@ -459,6 +556,18 @@ window.EVENTS = {
       "date": "2026-07-16",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki Evening Market — makers market, kai & live music",
+      "zh": "马塔里基夜市（手作市集＋美食＋现场音乐）",
+      "date": "2026-07-17",
+      "kind": "market",
+      "price": "free",
+      "time": "4:30PM-8:30PM",
+      "desc": "Makers market, Five Star Eats kai collective and live music from Crescendo.",
+      "descZh": "手作市集、Five Star Eats 美食团体与 Crescendo 现场音乐。",
+      "url": "https://ceac.org.nz/events/matariki/matariki-evening-market"
     },
     {
       "venue": "northart",
@@ -621,6 +730,18 @@ window.EVENTS = {
       "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
     },
     {
+      "venue": "corban",
+      "title": "Dawn Wishes to Hiwa-i-te-Rangi — Matariki dawn ceremony",
+      "zh": "马塔里基黎明仪式",
+      "date": "2026-07-21",
+      "kind": "talk",
+      "price": "free",
+      "time": "6:30AM-8:30AM",
+      "desc": "Dawn ceremony closing the Matariki Festival at CEAC, led by Penny Howard.",
+      "descZh": "由 Penny Howard 主持的马塔里基节闭幕黎明仪式。",
+      "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3"
+    },
+    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -764,6 +885,18 @@ window.EVENTS = {
       "date": "2026-07-29",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "studioone",
+      "title": "Five new shows open: d3sir33 / Wake Up / Twilight of the Machines / Love and Peace / Lichening",
+      "zh": "五个新展同开（7月30日–8月27日档期）",
+      "date": "2026-07-30",
+      "end": "2026-08-27",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Next cycle across all galleries: Bailey McNally, Holly Rock & Bridget McKendry, Mike Crawshaw, Kay Shibuya, Tate Agnew. Opening Wed 29 Jul, 5pm.",
+      "descZh": "下一档期五展同开：McNally、Rock & McKendry、Crawshaw、Shibuya、Agnew。7月29日（周三）17:00 开幕。",
+      "url": "https://www.studioone.org.nz/exhibitions/"
     },
     {
       "venue": "teuru",

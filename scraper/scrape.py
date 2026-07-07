@@ -41,7 +41,7 @@ SOURCES = {
   "michaellett": [{"type":"html", "url":"https://lett-thomas.com/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：已改名 Lett Thomas，静态HTML
   "objectspace": [{"type":"html", "url":"https://www.objectspace.org.nz/exhibitions/", "selector":"a[href*='/exhibitions/'], h2, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 不存在，正确列表页静态可抓
   "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/'], article"}],  # ✅ 2026-07-07 校准：静态HTML，事件在 /products/ 链接里
-  "corban":      [{"type":"html", "url":"https://www.corbanestate.org.nz/whats-on/", "selector":"article, .event, .card"}],  # 域名修正（cebarts.org.nz DNS 失效）
+  "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
   "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/", "selector":"a[href*='event'], article, .card"}],
@@ -51,24 +51,24 @@ SOURCES = {
   # 2026-07-07 已确认：Whammy=316，Powerstation=105（venue 119 是 Safari Lounge，勿用）
   "whammy":      [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"}],   # ✅ 2026-07-07 确认：UTR vid 316 = Whammy Bar（另有 3991 Backroom / 6373 Double Whammy）
   "powerstation":[{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=105"}],   # ✅ 2026-07-07 确认：UTR vid 105 = The Powerstation
-  "studioone":   [{"type":"html", "url":"https://studioone.org.nz/whats-on/", "selector":"article, .event, .card"}],
+  "studioone":   [{"type":"html", "url":"https://www.studioone.org.nz/exhibitions/", "selector":"article, .event, .card, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 404，展讯在 /exhibitions/（静态WP）
   "britomart":   [],   # 固定每周六 → 规则生成
   "lacigale":    [],   # 固定周六/周日 → 规则生成
   "avondale":    [],   # 固定周日 → 规则生成
   # ---- 中南 / 东南 / 东区 / 激流岛 / 北岸 ----
   "tetuhi":      [{"type":"html", "url":"https://tetuhi.art/current-exhibitions/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：静态HTML，展讯是 /exhibition/ 链接，日期在链接文本
-  "mangere":     [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/mangere-arts-centre.html", "selector":"article, .card, li"}],
-  "freshgallery":[{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/fresh-gallery-otara.html", "selector":"article, .card, li"}],
-  "nathan":      [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/nathan-homestead.html", "selector":"article, .card, li"}],
-  "pah":         [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/pah-homestead.html", "selector":"article, .card, li"}],
-  "teoro":       [{"type":"html", "url":"https://www.teoro.org.nz/whats-on", "selector":"article, .card, .event"}],
+  "mangere":     [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/mangere-arts-centre.html", "selector":"article, .card, li"}],
+  "freshgallery":[{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/fresh-gallery-otara.html", "selector":"article, .card, li"}],
+  "nathan":      [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/nathan-homestead.html", "selector":"article, .card, li"}],
+  "pah":         [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/pah-homestead.html", "selector":"article, .card, li"}],
+  "teoro":       [{"type":"html", "url":"https://www.eventfinda.co.nz/venue/te-oro-auckland", "selector":"article, .card, a[href*='/whatson/']"}],  # ✅ 2026-07-07 校准：teoro.org.nz DNS 失效，改用 Eventfinda 场馆页（服务端渲染，带 JSON-LD）
   "uxbridge":    [{"type":"html", "render":True, "url":"https://uxbridge.org.nz/whats-on/", "selector":"article, .card, .event"}],
   "waihekegallery": [{"type":"html", "render":True, "url":"https://www.waihekeartgallery.org.nz/", "selector":"article, .card, .event, a[href*='exhibition']"}],
   "depot":       [{"type":"html", "url":"https://depotartspace.co.nz/whats-on/", "selector":"article, .card, .event"}],
   "otaramarket": [],   # 固定周六 → 规则生成
   "ostend":      [],   # 固定周六 → 规则生成
   # ---- 北岸 & Hibiscus Coast ----
-  "northart":    [{"type":"html", "url":"https://northart.co.nz/", "selector":"article, .card, .event"}],  # ✅ 静态HTML；⚠️ 证书只对无 www 域名有效
+  "northart":    [{"type":"html", "url":"https://www.northartgallery.net/current-exhibitions", "selector":"article, .card, .event, a[href*='exhibition']"}],  # ✅ 2026-07-07 校准：官网迁至 northartgallery.net（Squarespace）；旧域名证书失效
   # ✅ gowlangsford 用 Artlogic CMS，静态HTML，展览卡片是 a[href*='/exhibitions/']（下方已配置）
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
   "lakehouse":   [{"type":"html", "render":True, "url":"https://www.lakehousearts.org.nz/", "selector":"article, .card, .event, a[href*='event']"}],
@@ -78,10 +78,10 @@ SOURCES = {
   # ---- 西区 / Rodney / 南区 社区艺术中心 ----
   "upstairs":    [{"type":"html", "url":"https://www.lopdell.org.nz/upstairs-gallery", "selector":"article, .card, .event"}],
   "mccahon":     [{"type":"html", "url":"https://www.mccahonhouse.org.nz/", "selector":"article, .card, .event"}],
-  "tetoiuku":    [{"type":"html", "url":"https://www.portageceramicstrust.org.nz/", "selector":"article, .card, li"}],
+  "tetoiuku":    [{"type":"html", "url":"https://www.tetoiuku.org.nz/", "selector":"a[href*='whats-on'], article, .card"}],  # ✅ 2026-07-07 校准：现域名 tetoiuku.org.nz（portageceramicstrust.org.nz DNS 失效）
   "helensville": [{"type":"html", "url":"https://www.artcentrehelensville.org.nz/", "selector":"article, .card, .event"}],
-  "papakura":    [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/papakura-art-gallery.html", "selector":"article, .card, li"}],
-  "franklin":    [{"type":"html", "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html", "selector":"article, .card, li"}],
+  "papakura":    [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/papakura-art-gallery.html", "selector":"article, .card, li"}],
+  "franklin":    [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html", "selector":"article, .card, li"}],
   # ---- Dealer 画廊（官网结构各异，开幕信息统一走 ArtNow 兜底更省事）----
   "gowlangsford": [{"type":"html", "url":"https://gowlangsfordgallery.co.nz/exhibitions/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准
   "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：静态HTML
