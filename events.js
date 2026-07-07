@@ -318,6 +318,22 @@ window.EVENTS = {
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
     },
     {
+      "venue": "waihekegallery",
+      "title": "Manawatia a Matariki - He reka te ngahau 9 July - 30 August 2026",
+      "date": "2026-07-09",
+      "kind": "opening",
+      "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/matariki-2026/",
+      "desc": "Manawatia a Matariki - He reka te ngahau 9 July - 30 August 2026"
+    },
+    {
+      "venue": "lakehouse",
+      "title": "Becroft , workshop Kona Weaving Workshop – Hei Āpōpō Workshop Date: Saturday 4th July 10am-2pm . Learn More",
+      "date": "2026-07-10",
+      "kind": "workshop",
+      "url": "https://lakehousearts.org.nz/tag/becroft/",
+      "desc": "Becroft , workshop Kona Weaving Workshop – Hei Āpōpō Workshop Date: Saturday 4th July 10am-2pm . Learn More"
+    },
+    {
       "venue": "pumphouse",
       "title": "The PumpHouse Theatre Presents Waiatatia Mo Matariki A magical Matariki singalong under the stars in our Outdo",
       "date": "2026-07-10",
@@ -388,12 +404,28 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "lakehouse",
+      "title": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More",
+      "date": "2026-07-12",
+      "kind": "opening",
+      "url": "https://lakehousearts.org.nz/tag/becroft/",
+      "desc": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More"
+    },
+    {
       "venue": "pumphouse",
       "title": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way",
       "date": "2026-07-12",
       "kind": "opening",
       "url": "https://pumphouse.co.nz/whats-on/show/old-macdonalds-farm/",
       "desc": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way! 7-12 July 2026 Get tickets Details"
+    },
+    {
+      "venue": "unity",
+      "title": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:1",
+      "date": "2026-07-13",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/iiml-writers-on-mondays-haro-lee-helen-rickerby-airini-beautrais-chris-tse",
+      "desc": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
     },
     {
       "venue": "poetrylive",
@@ -414,6 +446,14 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "unity",
+      "title": "16 Jul - Wellington Offsite BWB Talk: Asher Emanuel & Morgan Godfery Thursday 16th July, doors open 5:30pm, Th",
+      "date": "2026-07-16",
+      "kind": "opening",
+      "url": "https://unitybooks.co.nz/news-and-events/offsite-bwb-talk-asher-emanuel-and-morgan-godfery",
+      "desc": "16 Jul - Wellington Offsite BWB Talk: Asher Emanuel & Morgan Godfery Thursday 16th July, doors open 5:30pm, The National Library, 70 Molesworth Street, Thorndon. EVENT DETAILS"
+    },
+    {
       "venue": "whammy",
       "title": "Sweet Treats Punk Night #60 -",
       "date": "2026-07-16",
@@ -429,6 +469,22 @@ window.EVENTS = {
       "end": "2026-08-26",
       "price": "free",
       "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "waihekegallery",
+      "title": "Geoff Steven - Postcards Home 17 July - 30 August 2026",
+      "date": "2026-07-17",
+      "kind": "opening",
+      "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/geoff-steven-postcards-home/",
+      "desc": "Geoff Steven - Postcards Home 17 July - 30 August 2026"
+    },
+    {
+      "venue": "waihekegallery",
+      "title": "Futatsu no Sekai / Two Worlds - Robin White and Taeko Ogawa. 17 July - 30 August 2026",
+      "date": "2026-07-17",
+      "kind": "opening",
+      "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/two-worlds-robin-white-and/",
+      "desc": "Futatsu no Sekai / Two Worlds - Robin White and Taeko Ogawa. 17 July - 30 August 2026"
     },
     {
       "venue": "whammy",
@@ -526,6 +582,14 @@ window.EVENTS = {
       "url": "https://teuru.org.nz/products/film-screening-from-the-breach-1"
     },
     {
+      "venue": "unity",
+      "title": "18 Jul - OFFSITE Book Launch: Out of the Box by Trish Harris 2pm, Saturday 18th July, Te Matapihi, Central Lib",
+      "date": "2026-07-18",
+      "kind": "opening",
+      "url": "https://unitybooks.co.nz/news-and-events/offsite-book-launch-out-of-the-box-by-trish-harris",
+      "desc": "18 Jul - OFFSITE Book Launch: Out of the Box by Trish Harris 2pm, Saturday 18th July, Te Matapihi, Central Library EVENT DETAILS"
+    },
+    {
       "venue": "whammy",
       "title": "King Parrot - Auckland -",
       "date": "2026-07-18",
@@ -549,6 +613,14 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "unity",
+      "title": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unit",
+      "date": "2026-07-19",
+      "kind": "opening",
+      "url": "https://unitybooks.co.nz/news-and-events/sunday-sessions-happy-moments-by-len-lye-ed-roger-horrocks",
+      "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
+    },
+    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -556,6 +628,30 @@ window.EVENTS = {
       "kind": "reading",
       "price": "koha",
       "url": "https://www.facebook.com/poetrylive/"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Imogen Taylor 22 July — 22 August 2026",
+      "date": "2026-07-22",
+      "kind": "opening",
+      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
+      "desc": "Imogen Taylor 22 July — 22 August 2026"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026",
+      "date": "2026-07-22",
+      "kind": "opening",
+      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
+      "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
+    },
+    {
+      "venue": "unity",
+      "title": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books We",
+      "date": "2026-07-22",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/lunchtime-author-talk-gareth-shute",
+      "desc": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books Wellington, 57 Willis St. All welcome, chairs available. EVENT DETAILS"
     },
     {
       "venue": "sanderson",
