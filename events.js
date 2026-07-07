@@ -4,12 +4,318 @@ window.EVENTS = {
   "sample": false,
   "items": [
     {
+      "venue": "objectspace",
+      "title": "Warwick Freeman: Hook Hand Heart Star",
+      "zh": "Warwick Freeman 首饰回顾展",
+      "kind": "exhibition",
+      "date": "2025-11-01",
+      "end": "2026-03-08",
+      "url": "https://objectspace.org.nz/"
+    },
+    {
+      "venue": "artis",
+      "title": "J. S. Parker: Plain Song — Station of the Soul",
+      "zh": "J. S. Parker《素歌》",
+      "kind": "exhibition",
+      "date": "2025-11-08",
+      "end": "2025-12-15",
+      "url": "#"
+    },
+    {
+      "venue": "artspace",
+      "title": "Echo — Erica Holm, Ngaroma Riley, Tarika Sabherwal",
+      "zh": "《Echo》三人展",
+      "kind": "exhibition",
+      "date": "2025-11-08",
+      "end": "2025-12-20",
+      "url": "https://artspace-aotearoa.nz/"
+    },
+    {
+      "venue": "tworooms",
+      "title": "Robin White: Finding my way in Aomori",
+      "zh": "Robin White《青森寻路》",
+      "kind": "exhibition",
+      "date": "2025-11-08",
+      "end": "2025-12-20",
+      "url": "https://tworooms.co.nz/"
+    },
+    {
+      "venue": "bergman",
+      "title": "New Collectors — Leleisi'uao, Fong, Good & more",
+      "zh": "《新藏家》群展",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2025-12-20",
+      "url": "#"
+    },
+    {
+      "venue": "gusfisher",
+      "title": "Eva During: Under the Bridge",
+      "zh": "Eva During《Under the Bridge》",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2026-01-18",
+      "url": "https://gusfishergallery.auckland.ac.nz/"
+    },
+    {
+      "venue": "ivananthony",
+      "title": "Brendon Wilkinson: east, west, east direction is the yellow sky",
+      "zh": "Brendon Wilkinson 个展",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2025-12-20",
+      "url": "#"
+    },
+    {
+      "venue": "jonathangrant",
+      "title": "Zarahn Tūwharetoa Southon: HĪTORI",
+      "zh": "Southon《HĪTORI》",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2025-12-15",
+      "url": "#"
+    },
+    {
+      "venue": "melanieroger",
+      "title": "Peter Robinson",
+      "zh": "Peter Robinson 个展",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2025-12-20",
+      "url": "#"
+    },
+    {
+      "venue": "papakura",
+      "title": "ALESANA — Vaai & Lealiifano-Faletoese",
+      "zh": "《ALESANA》双人展",
+      "kind": "exhibition",
+      "date": "2025-11-15",
+      "end": "2026-01-31",
+      "url": "#"
+    },
+    {
+      "venue": "coastalsigns",
+      "title": "Body Language — Miller, Ffrench, Turei",
+      "zh": "《身体语言》三人展",
+      "kind": "exhibition",
+      "date": "2025-11-22",
+      "end": "2026-01-31",
+      "url": "#"
+    },
+    {
+      "venue": "foenander",
+      "title": "Haka — Bailey, Birch, Forde, Jahnke, Reihana, Waetford",
+      "zh": "《Haka》群展",
+      "kind": "exhibition",
+      "date": "2025-11-22",
+      "end": "2025-12-24",
+      "url": "#"
+    },
+    {
+      "venue": "freshgallery",
+      "title": "Jim To'o Filiva'a Stretton: Echoes of the Pacific",
+      "zh": "《太平洋回声》",
+      "kind": "exhibition",
+      "date": "2025-11-22",
+      "end": "2026-01-10",
+      "url": "#"
+    },
+    {
+      "venue": "uxbridge",
+      "title": "Pat Basse: Visual Diary of An Astral Traveller",
+      "zh": "Pat Basse 星旅视觉日记",
+      "kind": "exhibition",
+      "date": "2025-11-22",
+      "end": "2026-01-17",
+      "url": "https://uxbridge.org.nz/"
+    },
+    {
+      "venue": "sanderson",
+      "title": "Summer Exhibition 25-26 — gallery artists",
+      "zh": "画廊艺术家夏季群展",
+      "kind": "exhibition",
+      "date": "2025-12-01",
+      "end": "2026-02-01",
+      "url": "https://www.sanderson.co.nz/"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Members Summer Show",
+      "zh": "会员夏季展",
+      "kind": "exhibition",
+      "date": "2025-12-01",
+      "end": "2026-01-18",
+      "url": "https://www.lopdell.org.nz/"
+    },
+    {
+      "venue": "corban",
+      "title": "Molly Timmins: Nurturing Soil / Sur-Collective: Apapacho",
+      "zh": "双展：滋养土壤 / Apapacho",
+      "kind": "exhibition",
+      "date": "2025-12-06",
+      "end": "2026-02-07",
+      "url": "https://www.corbanestate.org.nz/"
+    },
+    {
+      "venue": "franklin",
+      "title": "Mike Tupaea: Te Oho The Awakening",
+      "zh": "Mike Tupaea《觉醒》",
+      "kind": "exhibition",
+      "date": "2025-12-06",
+      "end": "2026-02-07",
+      "url": "#"
+    },
+    {
+      "venue": "studioone",
+      "title": "Group show — Norman, Keen, Cowie, Nagels, Tubb, Nicholls",
+      "zh": "六人群展",
+      "kind": "exhibition",
+      "date": "2025-12-06",
+      "end": "2026-01-22",
+      "url": "https://studioone.org.nz/"
+    },
+    {
+      "venue": "mangere",
+      "title": "8 Contemporary Cook Islands Artists",
+      "zh": "八位库克群岛当代艺术家",
+      "kind": "exhibition",
+      "date": "2025-12-13",
+      "end": "2026-02-14",
+      "url": "#"
+    },
+    {
+      "venue": "pah",
+      "title": "Yvonne Todd: Diary of a Carrot",
+      "zh": "Yvonne Todd《胡萝卜日记》",
+      "kind": "exhibition",
+      "date": "2025-12-13",
+      "end": "2026-03-22",
+      "url": "#"
+    },
+    {
+      "venue": "aag",
+      "title": "Taimoana | Coastlines: Art in Aotearoa (collection)",
+      "zh": "馆藏陈列《Taimoana | 海岸线》",
+      "kind": "exhibition",
+      "date": "2026-02-01",
+      "end": "2026-12-31",
+      "price": "free",
+      "desc": "Collection shows through 2026: also Giacometti Without End; Ngā Taonga Tūturu; Threads of Time.",
+      "descZh": "贯穿 2026 的馆藏陈列，同期《贾科梅蒂》《玛欧里肖像珍藏》《时间之线》。",
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions"
+    },
+    {
+      "venue": "teuru",
+      "title": "Herehere — Faletau / Hawkins / Sagapolutele",
+      "zh": "Herehere 三人展",
+      "kind": "exhibition",
+      "date": "2026-05-16",
+      "end": "2026-07-26",
+      "price": "free",
+      "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele"
+    },
+    {
+      "venue": "aag",
+      "title": "In Trust for Tomorrow: The Greg J Moyle Foundation Bequest",
+      "zh": "《为明天而藏》：Moyle 基金会捐赠展",
+      "kind": "exhibition",
+      "date": "2026-05-23",
+      "end": "2026-09-30",
+      "price": "free",
+      "desc": "20 major New Zealand works promised to the Gallery. Free entry.",
+      "descZh": "收藏家 Greg Moyle 允诺捐赠的 20 件新西兰重要作品。免费。",
+      "url": "https://www.aucklandartgallery.com/"
+    },
+    {
+      "venue": "teuru",
+      "title": "COSMOLOGIES — Nikau Hindin & Naminapu Maymuru-White",
+      "zh": "COSMOLOGIES 双人展",
+      "kind": "exhibition",
+      "date": "2026-05-31",
+      "end": "2026-08-09",
+      "price": "free",
+      "descZh": "树皮布星图与 Yolŋu 星河绘画的跨太平洋对话。",
+      "url": "https://teuru.org.nz/products/nikau-hindin-and-naminapu-maymuru-white-cosmologies"
+    },
+    {
+      "venue": "teuru",
+      "title": "all the forest stands with you",
+      "zh": "all the forest stands with you 群展",
+      "kind": "exhibition",
+      "date": "2026-05-31",
+      "end": "2026-08-09",
+      "price": "free",
+      "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you"
+    },
+    {
+      "venue": "aag",
+      "title": "Forever Tomorrow: Chinese Art Now",
+      "zh": "《永远的明天：中国当代艺术》",
+      "kind": "exhibition",
+      "date": "2026-06-01",
+      "end": "2026-09-30",
+      "price": "paid",
+      "desc": "Major ticketed survey of Chinese contemporary art. Adults $22. End date TBC.",
+      "descZh": "中国当代艺术大展：雕塑、摄影、数字作品。成人 $22。展期以官网为准。",
+      "url": "https://www.aucklandartgallery.com/"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Peter Stichbury: Grand Guignol",
+      "zh": "Peter Stichbury《Grand Guignol》",
+      "kind": "exhibition",
+      "date": "2026-06-11",
+      "end": "2026-07-11",
+      "price": "free",
+      "url": "https://lett-thomas.com/exhibition/peter-stichbury-4/"
+    },
+    {
+      "venue": "starkwhite",
+      "title": "Martin Basher: Vermillion Sands",
+      "zh": "Martin Basher《Vermillion Sands》",
+      "kind": "exhibition",
+      "date": "2026-06-20",
+      "end": "2026-07-25",
+      "price": "free",
+      "url": "https://starkwhite.co.nz/exhibition/martin-basher-vermillion-sands/"
+    },
+    {
+      "venue": "teuru",
+      "title": "Te Uru x Whitecliffe: Mahitahi",
+      "zh": "Mahitahi 研究生展",
+      "kind": "exhibition",
+      "date": "2026-06-20",
+      "end": "2026-08-23",
+      "price": "free",
+      "url": "https://teuru.org.nz/products/te-uru-x-whitecliffe-mahitahi"
+    },
+    {
+      "venue": "gowlangsford",
+      "title": "Claudia Kogachi: Another Day (Onehunga)",
+      "zh": "Claudia Kogachi《Another Day》",
+      "kind": "exhibition",
+      "date": "2026-06-27",
+      "end": "2026-07-25",
+      "price": "free",
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/525-another-day-claudia-kogachi/"
+    },
+    {
       "venue": "gowlangsford",
       "title": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traver",
       "date": "2026-07-08",
       "kind": "opening",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/",
       "desc": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traverses Aotearoa with a focus on the shifting seasons, from summer in The "
+    },
+    {
+      "venue": "gowlangsford",
+      "title": "Michael Hight: The Seasons (City)",
+      "zh": "Michael Hight《The Seasons》",
+      "kind": "exhibition",
+      "date": "2026-07-08",
+      "end": "2026-08-08",
+      "price": "free",
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
     },
     {
       "venue": "pumphouse",
@@ -23,7 +329,7 @@ window.EVENTS = {
       "venue": "whammy",
       "title": "Oscar Dowling Album Release Show -",
       "date": "2026-07-10",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -62,7 +368,7 @@ window.EVENTS = {
       "venue": "whammy",
       "title": "In Heat -",
       "date": "2026-07-11",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -95,27 +401,40 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-14",
       "kind": "reading",
+      "price": "koha",
+      "desc": "Aotearoa's longest-running live poetry night, Tuesdays at the Thirsty Dog.",
+      "descZh": "新西兰持续最久的现场诗歌之夜，每周二在 Thirsty Dog。",
       "url": "https://www.facebook.com/poetrylive/"
     },
     {
       "venue": "whammy",
       "title": "Overthrown - Welcome To Purgatory -",
       "date": "2026-07-15",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "whammy",
       "title": "Sweet Treats Punk Night #60 -",
       "date": "2026-07-16",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "northart",
+      "title": "The Windows — drawing show selections",
+      "zh": "The Windows 橱窗绘画展",
+      "kind": "exhibition",
+      "date": "2026-07-17",
+      "end": "2026-08-26",
+      "price": "free",
+      "url": "https://northart.co.nz/"
     },
     {
       "venue": "whammy",
       "title": "Vampire Disko At Whammy Bar: Goth, Wave, Cult Hits + Vampire Attire -",
       "date": "2026-07-17",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -143,6 +462,35 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "northart",
+      "title": "Arrested Practice + SELECT — three shows open",
+      "zh": "Arrested Practice 等三展同日开幕",
+      "date": "2026-07-18",
+      "kind": "opening",
+      "price": "free",
+      "descZh": "十位艺术家重访“未完成”之作 + Dornwell 工作室群展。免费，每日 10am–4pm。",
+      "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "northart",
+      "title": "Drisana Tonga: Heliaki | In Between Worlds — opens",
+      "zh": "Drisana Tonga《Heliaki》开幕",
+      "date": "2026-07-18",
+      "kind": "opening",
+      "price": "free",
+      "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "northart",
+      "title": "Arrested Practice",
+      "zh": "Arrested Practice 群展",
+      "kind": "exhibition",
+      "date": "2026-07-18",
+      "end": "2026-08-03",
+      "price": "free",
+      "url": "https://northart.co.nz/"
+    },
+    {
       "venue": "objectspace",
       "title": "18 Jul–6 Sep 2026",
       "date": "2026-07-18",
@@ -167,10 +515,21 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "teuru",
+      "title": "Film Screening: From the Breach",
+      "zh": "放映：From the Breach",
+      "date": "2026-07-18",
+      "kind": "film",
+      "time": "7pm",
+      "desc": "Evening film screening at Te Uru.",
+      "descZh": "Te Uru 晚间放映，票务详见活动页。",
+      "url": "https://teuru.org.nz/products/film-screening-from-the-breach-1"
+    },
+    {
       "venue": "whammy",
       "title": "King Parrot - Auckland -",
       "date": "2026-07-18",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -190,44 +549,13 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "tworooms",
-      "title": "Nichola Shanley The Agnes Dei Collection 19 July - 17 August 2024",
-      "date": "2026-07-19",
-      "kind": "opening",
-      "url": "https://tworooms.co.nz/exhibitions/the-agnes-dei-collection/",
-      "desc": "Nichola Shanley The Agnes Dei Collection 19 July - 17 August 2024"
-    },
-    {
-      "venue": "tworooms",
-      "title": "Marie Le Lievre Loot isms 19 July - 17 August 2024",
-      "date": "2026-07-19",
-      "kind": "opening",
-      "url": "https://tworooms.co.nz/exhibitions/loot-isms/",
-      "desc": "Marie Le Lievre Loot isms 19 July - 17 August 2024"
-    },
-    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-21",
       "kind": "reading",
+      "price": "koha",
       "url": "https://www.facebook.com/poetrylive/"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Imogen Taylor 22 July — 22 August 2026"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
     },
     {
       "venue": "sanderson",
@@ -241,14 +569,14 @@ window.EVENTS = {
       "venue": "whammy",
       "title": "Mortal Sin NZ Tour -",
       "date": "2026-07-23",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "whammy",
       "title": "The Lineup -",
       "date": "2026-07-24",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -292,10 +620,21 @@ window.EVENTS = {
       "desc": "Shoreside Theatre Presents The Stranger A mid-winter psychological thriller by Agatha Christie 25 July-9 August 2026 Get tickets Details"
     },
     {
+      "venue": "teuru",
+      "title": "Herehere: a Panel Discussion",
+      "zh": "Herehere 座谈会",
+      "date": "2026-07-25",
+      "kind": "talk",
+      "time": "11am",
+      "price": "free",
+      "descZh": "配合展览 Herehere 的座谈。",
+      "url": "https://teuru.org.nz/products/herehere-a-panel-discussion"
+    },
+    {
       "venue": "whammy",
       "title": "Tir (AUS) w/ Necropolis, Crook and Terrow -",
       "date": "2026-07-25",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -320,21 +659,42 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-28",
       "kind": "reading",
+      "price": "koha",
       "url": "https://www.facebook.com/poetrylive/"
     },
     {
       "venue": "whammy",
       "title": "Under The Arcade Presents - Rodney Fisher With Fables -",
       "date": "2026-07-29",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "teuru",
+      "title": "Talk & Draw — Gold Card Holders",
+      "zh": "Talk & Draw（长者场）",
+      "date": "2026-07-30",
+      "kind": "workshop",
+      "time": "10–11.30am",
+      "price": "free",
+      "url": "https://teuru.org.nz/products/talk-draw-gold-card-holders"
     },
     {
       "venue": "whammy",
       "title": "Paradox Princess, Takatapunani, Grecco Romank And Kate Butch -",
       "date": "2026-07-30",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "northart",
+      "title": "Meet the Artists (Arrested Practice)",
+      "zh": "艺术家见面会",
+      "date": "2026-07-31",
+      "kind": "talk",
+      "time": "2pm",
+      "price": "free",
+      "url": "https://northart.co.nz/"
     },
     {
       "venue": "whammy",
@@ -384,10 +744,21 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "teuru",
+      "title": "Nikau Hindin: Manu Aute Workshop",
+      "zh": "Nikau Hindin 玛欧里风筝工作坊",
+      "date": "2026-08-01",
+      "kind": "workshop",
+      "time": "10am",
+      "price": "paid",
+      "descZh": "跟随艺术家学做玛欧里传统风筝，需报名。",
+      "url": "https://teuru.org.nz/products/nikau-hindin-manu-aute-workshop"
+    },
+    {
       "venue": "whammy",
       "title": "Beth Torrance: Your Favourite EP Release Show -",
       "date": "2026-08-01",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
@@ -412,13 +783,14 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-04",
       "kind": "reading",
+      "price": "koha",
       "url": "https://www.facebook.com/poetrylive/"
     },
     {
       "venue": "whammy",
       "title": "Menzies Album Release - w/ CCTV - Holding My Cold Hand, Even Though.. -",
       "date": "2026-08-07",
-      "kind": "opening",
+      "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     }
   ]
