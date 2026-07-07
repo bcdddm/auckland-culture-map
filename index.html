@@ -1014,13 +1014,13 @@ function stickerHTML(v){
         '<g clip-path="url(#cp-'+v.id+')"><rect x="-48" y="44" width="96" height="18" fill="#FFD400"/></g>'+
         '<text class="ribbon" y="56">'+ribbonText(evs)+'</text>'
         : '')+
-      /* 右下角翘起的卷角：任何缩放级别下有活动的贴纸都有，坐标随贴纸高度自适应 */
+      /* 右下角翘起的卷角：外层按贴纸圆角轮廓裁剪（直角尖不再溢出），内层做呼吸动画 */
       (live ? (function(){
         var b = -46 + ph;   /* 贴纸底边 y */
-        return '<g class="curl">'+
+        return '<g clip-path="url(#cp-'+v.id+')"><g class="curl">'+
           '<path d="M30 '+b+' Q44 '+(b-2)+' 48 '+(b-18)+' L48 '+b+' z" fill="#23211C" opacity=".16"/>'+
           '<path d="M33 '+b+' Q45 '+(b-4)+' 48 '+(b-15)+' L48 '+b+' z" fill="#F6F1E3" stroke="#DDD6C4" stroke-width="1"/>'+
-        '</g>';
+        '</g></g>';
       })() : '')+
       '<g clip-path="url(#cp-'+v.id+')">'+
         '<rect x="-72" y="-72" width="28" height="170" fill="#fff" opacity=".12" transform="rotate(24)"/>'+
