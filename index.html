@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auckland Culture Sticker Map · 奥克兰文化贴纸地图</title>
+<meta name="description" content="A sticker map of Tāmaki Makaurau's galleries, bookshops, live venues, workshops and markets — colour stickers have events this week. 奥克兰文化贴纸地图：本周有活动的场馆是彩色的。">
+<meta property="og:title" content="Auckland Culture Sticker Map · 奥克兰文化贴纸地图">
+<meta property="og:description" content="Peel a sticker to see what's on — galleries, poetry nights, gigs, workshops and markets across Greater Auckland. Updated weekly.">
+<meta property="og:type" content="website">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" rx="14" fill="white" stroke="%23e2ddd0" stroke-width="3"/><rect x="20" y="38" width="60" height="34" fill="%232A6FB0"/><polygon points="16,38 50,18 84,38" fill="%23FFD400"/><rect x="42" y="52" width="16" height="20" fill="%23FFD400"/></svg>'>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root{
+    --paper:#FBF8F1; --ink:#23211C; --yellow:#FFD400;
+    --lblue:#D8E6F1; --dblue:#1C3D5A;
+    --c-gallery:#2A6FB0; --c-literary:#C0402B; --c-music:#7A4FB0;
+    --c-workshop:#2E8B57; --c-market:#E8A200;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{width:100%; min-height:100%; overflow-x:hidden; background:var(--paper); color:var(--ink);
+    font-family:"Noto Serif SC","Songti SC",Georgia,serif;}
+  body{position:relative; padding:14px}
+  .frame{position:absolute; inset:8px; border:6px solid var(--yellow); pointer-events:none; z-index:1200}
+
+  /* ---------- header ---------- */
+  header{max-width:1120px; margin:0 auto; padding:22px 10px 8px}
+  .mast{display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+    font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--dblue); border-bottom:1px solid var(--dblue); padding-bottom:6px}
+  h1{font-size:clamp(22px,4.6vw,40px); font-weight:700; margin:14px 0 4px; line-height:1.15}
+  .sub{font-size:12px; color:#6b675e; margin-bottom:14px}
+  .sub b{color:var(--dblue)}
+  .gdate{display:inline-block; margin-left:10px; font-family:-apple-system,"PingFang SC",sans-serif;
+    font-size:10.5px; color:#8d887a; border-left:2px solid var(--yellow); padding-left:8px}
+
+  /* ---------- controls ---------- */
+  .controls{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0 16px;
+    font-family:-apple-system,"PingFang SC",sans-serif}
+  .seg{display:inline-flex; border:1.5px solid var(--ink); border-radius:999px; overflow:hidden; background:#fff}
+  .seg button{border:0; background:transparent; padding:6px 14px; font-size:12px; cursor:pointer; color:var(--ink)}
+  .seg button.on{background:var(--ink); color:var(--paper)}
+  .chips{display:flex; flex-wrap:wrap; gap:6px}
+  .chip{border:1.5px solid #b9b4a8; background:#fff; border-radius:999px; padding:5px 12px;
+    font-size:11px; cursor:pointer; display:inline-flex; align-items:center; gap:6px}
+  .chip .sw{width:9px; height:9px; border-radius:50%; display:inline-block}
+  .chip.on{border-color:var(--ink); background:var(--yellow)}
+  .langwrap{margin-left:auto; display:flex; align-items:center; gap:6px; font-size:11px; color:var(--dblue)}
+  .lsw{width:38px; height:20px; border-radius:999px; border:1.5px solid var(--dblue); position:relative; cursor:pointer; background:#fff}
+  .lsw i{position:absolute; top:1.5px; left:2px; width:14px; height:14px; border-radius:50%; background:var(--dblue); transition:left .18s}
+  .lsw.zh i{left:19px}
+
+  /* ---------- map ---------- */
+  .mapwrap{max-width:1120px; margin:0 auto; border:1.5px solid var(--ink); border-radius:4px; overflow:hidden; position:relative}
+  #map{width:100%; height:72vh; min-height:420px; background:#222}
+  .leaflet-tile{filter:grayscale(1) contrast(1.06) brightness(1.04)}
+  .leaflet-container{font-family:-apple-system,"PingFang SC",sans-serif}
+  .leaflet-control-attribution{font-size:9px; background:rgba(251,248,241,.85)}
+
+  /* ---------- stickers ---------- */
+  .stkwrap{background:none; border:none}
+  .stk{width:100%; height:100%; position:relative; transform-origin:50% 50%;
+    transition:transform .18s ease, filter .35s, opacity .35s;
+    filter:drop-shadow(2.5px 3.5px 2.5px rgba(20,20,20,.55))}
+  .stk svg{display:block; width:100%; height:100%; overflow:visible}
+  .stk .paper{fill:#fff; stroke:#e2ddd0; stroke-width:1}
+  .stk .slabel{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; font-weight:600;
+    fill:var(--ink); text-anchor:middle}
+  .stk .dot circle{fill:var(--yellow); stroke:var(--ink); stroke-width:1.4}
+  .stk .dot text{font-family:-apple-system,sans-serif; font-size:10px; font-weight:700; fill:var(--ink); text-anchor:middle}
+  .stk .ribbon{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9.5px; font-weight:700;
+    fill:var(--ink); text-anchor:middle}
+  .stk.live:hover{transform:scale(1.14) rotate(-2deg)}
+  .stk.off{filter:grayscale(1) opacity(.68) drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
+  .stk.off:hover{transform:scale(1.07)}
+  /* 完全没有最新内容（无活动且无在展）的贴纸：再暗一档 */
+  .stk.off.faint{filter:grayscale(1) opacity(.42) drop-shadow(1.5px 2px 1.5px rgba(20,20,20,.3))}
+  .stk.off.faint:hover{filter:grayscale(1) opacity(.75) drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
+  .stk.dim{opacity:.12; pointer-events:none}
+  /* 待机动画：右下角轻轻翘起（dog-ear），不浮动 */
+  .stk .curl{transform-box:fill-box; transform-origin:100% 100%;
+    animation:curlpulse 3.4s ease-in-out infinite}
+  @keyframes curlpulse{0%,100%{transform:scale(.85)}50%{transform:scale(1.25)}}
+  .dot circle{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{stroke-width:1.4}50%{stroke-width:3}}
+
+  /* ---- 点击序列 ① 高光扫过（光滑反光） ---- */
+  .stk .sweep{opacity:0; pointer-events:none}
+  .stk.shine-run .sweep{opacity:1; animation:sweepmove .5s ease-in-out forwards}
+  @keyframes sweepmove{from{transform:translateX(-120px)}to{transform:translateX(120px)}}
+  /* ---- ② 撕下来：从右下角卷起（借鉴 Peel.js 的双层裁剪技法）----
+     .front 是贴纸正面，clip-path 沿对角线逐渐裁掉（= 还粘在地图上的部分）
+     .roll  是卷起的背面圆筒，带圆柱光影，沿对角线从右下角滚向左上角，最后甩出 */
+  .stk .front{width:100%; height:100%}
+  .stk .roll{position:absolute; left:50%; top:50%; width:118%; height:17%;
+    margin-left:-59%; margin-top:-8.5%;
+    border-radius:999px; opacity:0; pointer-events:none;
+    background:linear-gradient(to bottom,
+      rgba(255,255,255,0) 0%, #FFFFFF 30%, #F0EADA 58%, #C9C2B0 80%, rgba(35,33,28,.25) 100%);
+    box-shadow:0 3px 6px rgba(20,20,20,.35);
+    transform:rotate(-45deg) translateY(320%) scaleX(.3) scaleY(.55)}
+  .stk.tear .front{animation:peelclip .9s cubic-bezier(.55,.06,.8,.35) forwards}
+  .stk.tear .roll{animation:rollmove .9s cubic-bezier(.55,.06,.8,.35) forwards}
+  @keyframes peelclip{
+    0%  {clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 0% 100%)}
+    18% {clip-path:polygon(0% 0%, 100% 0%, 100% 78%, 78% 100%, 0% 100%)}
+    45% {clip-path:polygon(0% 0%, 100% 0%, 100% 30%, 30% 100%, 0% 100%)}
+    72% {clip-path:polygon(0% 0%, 82% 0%, 82% 0%, 0% 82%, 0% 82%)}
+    100%{clip-path:polygon(0% 0%, 2% 0%, 2% 0%, 0% 2%, 0% 2%)}
+  }
+  /* 卷筒长度跟随撕开线：角上短 → 对角线中段最长 → 卷完变短甩出 */
+  @keyframes rollmove{
+    0%  {opacity:0; transform:rotate(-45deg) translateY(320%) scaleX(.3) scaleY(.55)}
+    12% {opacity:1; transform:rotate(-45deg) translateY(230%) scaleX(.5) scaleY(.8)}
+    45% {transform:rotate(-45deg) translateY(60%) scaleX(1) scaleY(1)}
+    72% {opacity:1; transform:rotate(-45deg) translateY(-190%) scaleX(.7) scaleY(1)}
+    100%{opacity:0; transform:rotate(-49deg) translateY(-430%) scaleX(.4) scaleY(.6)}
+  }
+  .stk.gone{opacity:0 !important; pointer-events:none; animation:none}
+  /* 撕走后留在地图上的"残胶"痕迹 */
+  .ghost{position:absolute; inset:8%; border:2px dashed rgba(35,33,28,.45); border-radius:14%;
+    background:rgba(255,255,255,.28); pointer-events:none; animation:ghostfade 1.3s ease-out forwards}
+  @keyframes ghostfade{0%{opacity:1}100%{opacity:0}}
+  /* ---- ④ 关闭卡片后贴纸贴回来：按压 + 回弹定牢 ---- */
+  .stk.back{animation:backin .6s cubic-bezier(.3,1.2,.4,1)}
+  @keyframes backin{
+    0%  {opacity:0; transform:scale(.5) rotate(calc(var(--rot,0deg) + 30deg)) translateY(-22px)}
+    58% {opacity:1; transform:scale(1.12) rotate(var(--rot,0deg))}
+    76% {transform:scale(.94) rotate(var(--rot,0deg))}
+    100%{transform:scale(1) rotate(var(--rot,0deg))}
+  }
+  /* hover 时卷角放大——"想撕我吗"的暗示 */
+  .stk.live:hover .curl{animation:none; transform:scale(1.55)}
+
+  /* ---- ③ 纸质卡片：纸色、微旋转、胶带、落下贴上 ---- */
+  #panel{position:absolute; right:14px; top:14px; width:320px; max-height:calc(72vh - 28px); overflow-y:auto;
+    background:
+      linear-gradient(rgba(255,212,0,.55), rgba(255,212,0,.35)) no-repeat calc(50% - 8px) -6px / 96px 24px,
+      repeating-linear-gradient(0deg, rgba(35,33,28,.022) 0 2px, transparent 2px 4px),
+      var(--paper);
+    border:1.5px solid var(--ink); border-radius:3px; z-index:1000;
+    box-shadow:0 10px 22px rgba(0,0,0,.35), 6px 6px 0 rgba(28,61,90,.18);
+    padding:24px 18px 18px; display:none; transform:rotate(-.6deg)}
+  #panel.open{display:block; animation:cardin .7s cubic-bezier(.22,1.1,.32,1.08)}
+  @keyframes cardin{
+    0%  {opacity:0; transform:translateY(-64px) rotate(-11deg) scale(.86)}
+    55% {opacity:1; transform:translateY(8px) rotate(1.6deg) scale(1.04)}
+    78% {transform:translateY(-3px) rotate(-1.2deg) scale(.99)}
+    100%{opacity:1; transform:translateY(0) rotate(-.6deg) scale(1)}
+  }
+  /* 撕下来的贴纸贴在卡片上 */
+  .cardstk{float:right; width:88px; height:86px; margin:-8px -4px 6px 10px;
+    transform:rotate(5deg); animation:slap .4s .15s cubic-bezier(.3,1.6,.5,1) both;
+    filter:drop-shadow(2px 3px 3px rgba(20,20,20,.35))}
+  .cardstk svg{display:block; width:100%; height:100%; overflow:visible}
+  .cardstk .paper{fill:#fff; stroke:#e2ddd0; stroke-width:1}
+  .cardstk .slabel{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; font-weight:600;
+    fill:var(--ink); text-anchor:middle}
+  @keyframes slap{0%{opacity:0; transform:scale(1.85) rotate(17deg) translateY(-14px)}
+                  52%{opacity:1; transform:scale(.88) rotate(3.5deg)}
+                  72%{transform:scale(1.07) rotate(5.5deg)}
+                  100%{opacity:1; transform:scale(1) rotate(5deg)}}
+  #panel .cat{font-family:-apple-system,sans-serif; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#fff;
+    display:inline-block; padding:3px 9px; border-radius:3px; margin-bottom:8px}
+  #panel h2{font-size:19px; margin-bottom:2px}
+  #panel .addr{font-size:11px; color:#6b675e; margin-bottom:12px; font-family:-apple-system,"PingFang SC",sans-serif}
+  #panel .addr .weblink{color:var(--c-gallery); text-decoration:none; font-weight:600}
+  #panel .close{position:absolute; top:10px; right:12px; border:0; background:none; font-size:18px; cursor:pointer; color:var(--ink)}
+  .ev{border-top:1px dashed #b9b4a8; padding:10px 0}
+  .ev .d{font-family:-apple-system,"PingFang SC",sans-serif; font-size:11px; color:var(--dblue); font-weight:600}
+  .ev .t{font-size:13.5px; line-height:1.45; margin-top:2px; font-weight:600}
+  .ev .desc{font-size:12px; line-height:1.6; color:#4a463d; margin-top:4px}
+  .ev .meta{margin-top:5px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+    font-family:-apple-system,"PingFang SC",sans-serif}
+  .ev .price{font-size:10px; padding:2px 8px; border-radius:999px; border:1px solid}
+  .ev .price.free{color:#2E8B57; border-color:#2E8B57; background:#eef7f0}
+  .ev .price.paid{color:#8E2F2A; border-color:#8E2F2A; background:#faf0ef}
+  .ev .price.koha{color:#8a6b00; border-color:#c9a900; background:#fdf8e2}
+  .ev a{color:var(--c-gallery); font-size:11px; font-family:-apple-system,sans-serif; text-decoration:none; font-weight:600}
+  .noev{font-size:12.5px; color:#6b675e; border-top:1px dashed #b9b4a8; padding-top:12px; line-height:1.7}
+  .ovh{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--dblue); background:var(--lblue); display:inline-block;
+    padding:3px 9px; border-radius:3px; margin:12px 0 2px}
+  .pasth{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.2em;
+    text-transform:uppercase; color:#8d887a; background:#ece8dd; display:inline-block;
+    padding:3px 9px; border-radius:3px; margin:12px 0 2px}
+  .ev.past{opacity:.72}
+  .ev.past .d{color:#8d887a}
+  .samplebadge{display:inline-block; background:var(--lblue); color:var(--dblue); font-family:-apple-system,"PingFang SC",sans-serif;
+    font-size:10px; padding:2px 8px; border-radius:3px; margin-top:12px}
+  /* 卡片底部：附近场馆导航 */
+  .navrow{display:flex; align-items:center; gap:8px; border-top:1.5px solid var(--ink);
+    margin-top:14px; padding-top:10px}
+  .navbtn{width:38px; height:38px; min-width:38px; border-radius:50%; border:1.5px solid var(--ink);
+    background:#fff; font-size:18px; line-height:1; cursor:pointer; color:var(--ink)}
+  .navbtn:disabled{opacity:.25; cursor:default}
+  .navbtn:not(:disabled):active{transform:scale(.9)}
+  .navlab{flex:1; text-align:center; font-family:-apple-system,"PingFang SC",sans-serif;
+    font-size:11px; color:#6b675e; line-height:1.4; overflow:hidden}
+  .navlab b{color:var(--ink); font-weight:600}
+
+  footer{max-width:1120px; margin:14px auto 30px; font-size:11px; color:#8d887a; padding:0 10px;
+    font-family:-apple-system,"PingFang SC",sans-serif; line-height:1.8}
+
+  @media(max-width:700px){
+    body{padding:8px}
+    .frame{inset:4px; border-width:4px}
+    header{padding:12px 4px 4px}
+    h1{margin:10px 0 2px}
+    .sub{margin-bottom:8px}
+    .gdate{display:block; margin:4px 0 0; border-left-width:2px}
+    /* 筛选 chips 单行横滑，不再折行挤压地图 */
+    .controls{gap:6px; margin:6px 0 10px}
+    .chips{flex-wrap:nowrap; overflow-x:auto; max-width:100%;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:2px}
+    .chips::-webkit-scrollbar{display:none}
+    .chip{flex:0 0 auto; padding:7px 13px}
+    .seg button{padding:8px 14px}
+    .langwrap{margin-left:auto}
+    /* 地图高度用 svh，避免 iOS 地址栏收起时跳动 */
+    #map{height:58vh; height:58svh; min-height:360px}
+    /* 卡片变底部抽屉：胶带即把手，滑动切换附近场馆 */
+    #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; max-height:52vh;
+      max-height:52svh; padding:22px 14px 12px}
+    #panel .close{font-size:24px; top:6px; right:8px; padding:8px; min-width:40px; min-height:40px}
+    .cardstk{width:70px; height:68px; margin:-6px -2px 4px 8px}
+    #panel h2{font-size:17px}
+    .navbtn{width:42px; height:42px; min-width:42px}
+  }
+</style>
+</head>
+<body>
+<div class="frame"></div>
+
+<header>
+  <div class="mast">
+    <span>The Province Review · 外省人觀察</span>
+    <span><span class="en">Sticker Map No.1</span><span class="zh">贴纸地图 · 第一期</span></span>
+  </div>
+  <h1><span class="en">Auckland Culture Sticker Map</span><span class="zh">奥克兰文化贴纸地图</span></h1>
+  <p class="sub">
+    <span class="en"><b>Colour</b> stickers have events in the selected window; <b>grey</b> ones are quiet. Click a sticker to peel it off.</span>
+    <span class="zh"><b>彩色</b>贴纸 = 所选时段内有活动；<b>灰色</b> = 暂无。点击贴纸，把它撕下来看看。</span>
+    <span id="gendate" class="gdate"></span>
+  </p>
+
+  <div class="controls">
+    <div class="seg" id="winseg">
+      <button data-win="week" class="on"><span class="en">This week</span><span class="zh">本周</span></button>
+      <button data-win="month"><span class="en">This month</span><span class="zh">本月</span></button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="langwrap">
+      <span>EN</span><div class="lsw" id="lsw" role="switch" aria-label="language"><i></i></div><span>中</span>
+    </div>
+  </div>
+</header>
+
+<div class="mapwrap">
+  <div id="map"></div>
+  <aside id="panel"></aside>
+</div>
+
+<footer>
+  <span class="en">Data updates weekly via GitHub Actions. Basemap sources switchable bottom-left (Esri satellite / open-source EOX Sentinel-2 / OpenStreetMap) — attribution on map. Sticker art: original illustrations after each building's real facade.</span>
+  <span class="zh">数据每周由 GitHub Actions 自动更新。底图可在左下角切换（Esri 卫星 / 开源 EOX Sentinel-2 / OpenStreetMap），版权见地图角标。贴纸为按各建筑真实立面绘制的原创插画。 —— 外省人觀察</span>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="events.js"></script>
+<script>
+/* ================= 分类 ================= */
+var CATS = {
+  gallery:  {hex:"#2A6FB0", en:"Galleries",  zh:"美术/画廊"},
+  literary: {hex:"#C0402B", en:"Literary",   zh:"文学诗歌"},
+  music:    {hex:"#7A4FB0", en:"Music",      zh:"音乐现场"},
+  workshop: {hex:"#2E8B57", en:"Workshops",  zh:"手工作坊"},
+  market:   {hex:"#E8A200", en:"Markets",    zh:"集市"}
+};
+
+/* ================= 场馆（真实经纬度，approx） ================= */
+var VENUES = [
+ {id:"aag",         en:"Auckland Art Gallery",  zh:"奥克兰美术馆",         label:"Art Gallery",   cat:"gallery",  lat:-36.85148, lng:174.76580, r:-3, addr:"Wellesley St East, CBD"},
+ {id:"gusfisher",   en:"Gus Fisher Gallery",    zh:"Gus Fisher 画廊",      label:"Gus Fisher",    cat:"gallery",  lat:-36.84690, lng:174.76850, r:2,  addr:"74 Shortland St, CBD"},
+ {id:"artspace",    en:"Artspace Aotearoa",     zh:"Artspace Aotearoa",    label:"Artspace",      cat:"gallery",  lat:-36.85760, lng:174.75950, r:4,  addr:"292 Karangahape Rd, cnr East St"},
+ {id:"michaellett", en:"Lett Thomas (formerly Michael Lett)", zh:"Lett Thomas 画廊（原 Michael Lett）", label:"Lett Thomas", cat:"gallery", lat:-36.85805, lng:174.76135, r:-4, addr:"312 Karangahape Rd, cnr East St"},
+ {id:"objectspace", en:"Objectspace",           zh:"Objectspace 工艺馆",   label:"Objectspace",   cat:"gallery",  lat:-36.85590, lng:174.74210, r:3,  addr:"13 Rose Rd, Ponsonby"},
+ {id:"teuru",       en:"Te Uru Waitākere",      zh:"Te Uru 当代美术馆",    label:"Te Uru",        cat:"gallery",  lat:-36.93770, lng:174.65510, r:-2, addr:"420 Titirangi Rd"},
+ {id:"corban",      en:"Corban Estate Arts Centre", zh:"Corban 庄园艺术中心", label:"Corban Estate", cat:"workshop", lat:-36.87880, lng:174.62790, r:3, addr:"2 Mt Lebanon Ln, Henderson"},
+ {id:"library",     en:"Central City Library · Tāmaki Pātaka Kōrero", zh:"奥克兰中央图书馆", label:"Central Library", cat:"literary", lat:-36.85080, lng:174.76440, r:2, addr:"44-46 Lorne St, CBD"},
+ {id:"unity",       en:"Unity Books",           zh:"Unity 书店",           label:"Unity Books",   cat:"literary", lat:-36.84780, lng:174.76620, r:-3, addr:"19 High St, CBD"},
+ {id:"timeout",     en:"Time Out Bookstore",    zh:"Time Out 书店",        label:"Time Out",      cat:"literary", lat:-36.87970, lng:174.76430, r:3,  addr:"432 Mt Eden Rd"},
+ {id:"poetrylive",  en:"Poetry Live @ Thirsty Dog", zh:"Poetry Live 诗歌之夜", label:"Poetry Live", cat:"literary", lat:-36.85830, lng:174.75550, r:-4, addr:"469 Karangahape Rd"},
+ {id:"townhall",    en:"Auckland Town Hall",    zh:"奥克兰市政厅",         label:"Town Hall",     cat:"music",    lat:-36.85240, lng:174.76330, r:2,  addr:"301-317 Queen St"},
+ {id:"whammy",      en:"Whammy Bar",            zh:"Whammy 酒吧",          label:"Whammy",        cat:"music",    lat:-36.85770, lng:174.76010, r:-3, addr:"St Kevins Arcade, 183 Karangahape Rd"},
+ {id:"powerstation",en:"The Powerstation",      zh:"Powerstation 音乐现场", label:"Powerstation",  cat:"music",    lat:-36.86370, lng:174.76160, r:4,  addr:"33 Mt Eden Rd"},
+ {id:"studioone",   en:"Studio One Toi Tū",     zh:"Studio One 工作坊",    label:"Studio One",    cat:"workshop", lat:-36.85700, lng:174.75260, r:-2, addr:"1 Ponsonby Rd"},
+ {id:"britomart",   en:"Britomart Saturday Markets", zh:"Britomart 周六集市", label:"Britomart Mkt", cat:"market", lat:-36.84420, lng:174.76770, r:-2, addr:"Te Komititanga, Britomart"},
+ {id:"lacigale",    en:"La Cigale French Market", zh:"La Cigale 法式集市",  label:"La Cigale",     cat:"market",   lat:-36.85130, lng:174.78090, r:3,  addr:"69 St Georges Bay Rd, Parnell"},
+ {id:"avondale",    en:"Avondale Sunday Markets", zh:"Avondale 周日集市",   label:"Avondale Mkt",  cat:"market",   lat:-36.89260, lng:174.69720, r:-3, addr:"Avondale Racecourse"},
+ /* ---- 中南 / 东南 / 东区 / 激流岛 / 北岸 ---- */
+ {id:"tetuhi",      en:"Te Tuhi",               zh:"Te Tuhi 当代艺术中心",  label:"Te Tuhi",       cat:"gallery",  lat:-36.89300, lng:174.87850, r:2,  addr:"21 William Roberts Rd, Pakuranga"},
+ {id:"mangere",     en:"Māngere Arts Centre — Ngā Tohu o Uenuku", zh:"Māngere 艺术中心", label:"Māngere Arts", cat:"gallery", lat:-36.96790, lng:174.79730, r:-3, addr:"Cnr Bader Dr & Orly Ave, Māngere"},
+ {id:"freshgallery",en:"Fresh Gallery Ōtara",   zh:"Fresh Gallery Ōtara",  label:"Fresh Gallery", cat:"gallery",  lat:-36.96330, lng:174.86150, r:3,  addr:"46 Fair Mall, Ōtara Town Centre"},
+ {id:"nathan",      en:"Nathan Homestead",      zh:"Nathan Homestead 艺术中心", label:"Nathan Hstd", cat:"workshop", lat:-37.02300, lng:174.90600, r:-2, addr:"70 Hill Rd, Manurewa"},
+ {id:"pah",         en:"Pah Homestead",         zh:"Pah Homestead 美术馆",  label:"Pah Homestead", cat:"gallery",  lat:-36.91860, lng:174.75660, r:2,  addr:"72 Hillsborough Rd, Hillsborough"},
+ {id:"teoro",       en:"Te Oro Music & Arts Centre", zh:"Te Oro 音乐艺术中心", label:"Te Oro",     cat:"music",    lat:-36.87850, lng:174.85680, r:-3, addr:"98 Line Rd, Glen Innes"},
+ {id:"uxbridge",    en:"Uxbridge Arts & Culture · Malcolm Smith Gallery", zh:"Uxbridge 艺术中心", label:"Uxbridge", cat:"workshop", lat:-36.89400, lng:174.92700, r:3, addr:"35 Uxbridge Rd, Howick"},
+ {id:"otaramarket", en:"Ōtara Flea Market",     zh:"Ōtara 周六集市",        label:"Ōtara Market",  cat:"market",   lat:-36.96220, lng:174.86000, r:-2, addr:"Newbury St, Ōtara (Sat)"},
+ {id:"waihekegallery", en:"Waiheke Community Art Gallery", zh:"激流岛社区美术馆", label:"Waiheke Gallery", cat:"gallery", lat:-36.78380, lng:175.00600, r:2, addr:"2 Korora Rd, Oneroa, Waiheke"},
+ {id:"ostend",      en:"Ostend Market (Waiheke)", zh:"Ostend 集市（激流岛）", label:"Ostend Market", cat:"market",   lat:-36.80200, lng:175.04000, r:-3, addr:"Ostend Hall, Waiheke (Sat)"},
+ {id:"depot",       en:"Depot Artspace",        zh:"Depot 艺术空间",        label:"Depot",         cat:"gallery",  lat:-36.82900, lng:174.79600, r:3,  addr:"28 Clarence St, Devonport"},
+ /* ---- 北岸 & Hibiscus Coast ---- */
+ {id:"northart",    en:"Northart",              zh:"Northart 画廊",         label:"Northart",      cat:"gallery",  lat:-36.80220, lng:174.74800, r:-2, addr:"1 Ernie Mays St, Northcote"},
+ {id:"lakehouse",   en:"Lake House Arts Centre", zh:"Lake House 艺术中心",  label:"Lake House",    cat:"workshop", lat:-36.79350, lng:174.76550, r:3,  addr:"37 Fred Thomas Dr, Takapuna"},
+ {id:"mairangi",    en:"Mairangi Arts Centre",  zh:"Mairangi 艺术中心",     label:"Mairangi Arts", cat:"workshop", lat:-36.73350, lng:174.74550, r:-3, addr:"20 Hastings Rd, Mairangi Bay"},
+ {id:"estuary",     en:"Estuary Arts Centre",   zh:"Estuary 艺术中心",      label:"Estuary Arts",  cat:"gallery",  lat:-36.58850, lng:174.69350, r:2,  addr:"214B Hibiscus Coast Hwy, Ōrewa"},
+ {id:"flagstaff",   en:"Flagstaff Gallery",     zh:"Flagstaff 画廊",        label:"Flagstaff",     cat:"gallery",  lat:-36.83250, lng:174.79950, r:-3, addr:"30 Victoria Rd, Devonport"},
+ {id:"artbysea",    en:"Art by the Sea",        zh:"Art by the Sea 画廊",   label:"Art by the Sea", cat:"gallery", lat:-36.83380, lng:174.79450, r:2,  addr:"King Edward Pde, Devonport"},
+ {id:"pumphouse",   en:"The PumpHouse Theatre", zh:"PumpHouse 剧场",        label:"PumpHouse",     cat:"music",    lat:-36.79100, lng:174.77250, r:-2, addr:"Killarney Park, Takapuna"},
+ /* ---- 西区 & Rodney ---- */
+ {id:"upstairs",    en:"UPSTAIRS Gallery (Lopdell House)", zh:"UPSTAIRS 画廊", label:"UPSTAIRS",   cat:"gallery",  lat:-36.93720, lng:174.65480, r:3,  addr:"Lopdell House, Titirangi"},
+ {id:"mccahon",     en:"McCahon House",         zh:"McCahon 故居美术馆",    label:"McCahon House", cat:"gallery",  lat:-36.95550, lng:174.64400, r:-2, addr:"67 Otitori Bay Rd, French Bay"},
+ {id:"tetoiuku",    en:"Te Toi Uku — Crown Lynn Museum", zh:"Te Toi Uku 陶瓷博物馆", label:"Te Toi Uku", cat:"gallery", lat:-36.90950, lng:174.68450, r:2, addr:"8 Ambrico Pl, New Lynn"},
+ {id:"helensville", en:"Helensville Art Centre", zh:"Helensville 艺术中心",  label:"Helensville Art", cat:"workshop", lat:-36.67750, lng:174.45050, r:-3, addr:"4 Commercial Rd, Helensville"},
+ {id:"vivian",      en:"The Vivian",            zh:"The Vivian 画廊",       label:"The Vivian",    cat:"gallery",  lat:-36.35650, lng:174.71300, r:2,  addr:"39 Omaha Valley Rd, Matakana"},
+ /* ---- 市区 dealer / 公共画廊群 ---- */
+ {id:"gowlangsford",en:"Gow Langsford (Onehunga)", zh:"Gow Langsford 画廊", label:"Gow Langsford", cat:"gallery",  lat:-36.92300, lng:174.78550, r:-3, addr:"Onehunga flagship"},
+ {id:"starkwhite",  en:"Starkwhite",            zh:"Starkwhite 画廊",       label:"Starkwhite",    cat:"gallery",  lat:-36.85880, lng:174.75220, r:2,  addr:"510 Karangahape Rd"},
+ {id:"tworooms",    en:"Two Rooms",             zh:"Two Rooms 画廊",        label:"Two Rooms",     cat:"gallery",  lat:-36.86180, lng:174.73520, r:-2, addr:"16 Putiki St, Grey Lynn"},
+ {id:"sanderson",   en:"Sanderson Contemporary", zh:"Sanderson 当代画廊",   label:"Sanderson",     cat:"gallery",  lat:-36.86720, lng:174.77680, r:3,  addr:"Osborne Ln, Newmarket"},
+ {id:"foenander",   en:"Föenander Galleries",   zh:"Föenander 画廊",        label:"Föenander",     cat:"gallery",  lat:-36.87000, lng:174.76050, r:-3, addr:"Mt Eden"},
+ {id:"melanieroger",en:"Melanie Roger Gallery", zh:"Melanie Roger 画廊",    label:"Melanie Roger", cat:"gallery",  lat:-36.85780, lng:174.75650, r:2,  addr:"444 Karangahape Rd"},
+ {id:"ivananthony", en:"Ivan Anthony Gallery",  zh:"Ivan Anthony 画廊",     label:"Ivan Anthony",  cat:"gallery",  lat:-36.85830, lng:174.76120, r:-2, addr:"312 Karangahape Rd"},
+ {id:"rmgallery",   en:"RM Gallery (Samoa House)", zh:"RM 艺术家自营空间",  label:"RM Gallery",    cat:"gallery",  lat:-36.85740, lng:174.75850, r:3,  addr:"Samoa House Ln, Karangahape Rd"},
+ {id:"tautai",      en:"Tautai Pacific Arts Trust", zh:"Tautai 太平洋艺术", label:"Tautai",        cat:"gallery",  lat:-36.85800, lng:174.75910, r:-3, addr:"300 Karangahape Rd"},
+ {id:"stpaulst",    en:"ST PAUL St Gallery (AUT)", zh:"ST PAUL St 画廊",    label:"ST PAUL St",    cat:"gallery",  lat:-36.85320, lng:174.76620, r:2,  addr:"27 St Paul St, AUT"},
+ {id:"window",      en:"Window Gallery (UoA)",  zh:"Window 画廊",           label:"Window",        cat:"gallery",  lat:-36.85080, lng:174.76920, r:-2, addr:"UoA General Library, 5 Alfred St"},
+ {id:"coastalsigns",en:"Coastal Signs",         zh:"Coastal Signs 画廊",    label:"Coastal Signs", cat:"gallery",  lat:-36.84680, lng:174.77030, r:3,  addr:"90 Anzac Ave, CBD"},
+ {id:"bergman",     en:"Bergman Gallery",       zh:"Bergman 画廊",          label:"Bergman",       cat:"gallery",  lat:-36.84930, lng:174.76580, r:-3, addr:"Kitchener St, CBD"},
+ {id:"whitespace",  en:"Whitespace Contemporary", zh:"Whitespace 当代画廊", label:"Whitespace",    cat:"gallery",  lat:-36.85980, lng:174.74420, r:2,  addr:"12 Crummer Rd, Grey Lynn"},
+ {id:"allpress",    en:"Allpress Studio",       zh:"Allpress 艺术空间",     label:"Allpress",      cat:"gallery",  lat:-36.84550, lng:174.75320, r:-2, addr:"8 Drake St, Freemans Bay"},
+ /* ---- Parnell 画廊街 ---- */
+ {id:"artis",       en:"Artis Gallery",         zh:"Artis 画廊",            label:"Artis",         cat:"gallery",  lat:-36.85580, lng:174.77910, r:2,  addr:"280 Parnell Rd"},
+ {id:"intlart",     en:"International Art Centre", zh:"国际艺术中心",       label:"Intl Art Centre", cat:"gallery", lat:-36.85520, lng:174.77860, r:-3, addr:"272 Parnell Rd"},
+ {id:"parnellgallery", en:"Parnell Gallery",    zh:"Parnell 画廊",          label:"Parnell Gallery", cat:"gallery", lat:-36.85480, lng:174.77830, r:2, addr:"263 Parnell Rd"},
+ {id:"jonathangrant", en:"Jonathan Grant Galleries", zh:"Jonathan Grant 画廊", label:"Jonathan Grant", cat:"gallery", lat:-36.85620, lng:174.77940, r:-2, addr:"280 Parnell Rd"},
+ {id:"blackdoor",   en:"Black Door Gallery",    zh:"Black Door 画廊",       label:"Black Door",    cat:"gallery",  lat:-36.85430, lng:174.77810, r:3,  addr:"251 Parnell Rd"},
+ /* ---- 南区 ---- */
+ {id:"papakura",    en:"Papakura Art Gallery",  zh:"Papakura 美术馆",       label:"Papakura Art",  cat:"gallery",  lat:-37.06480, lng:174.94430, r:-2, addr:"339 Great South Rd, Papakura"},
+ {id:"franklin",    en:"Franklin Arts Centre",  zh:"Franklin 艺术中心",     label:"Franklin Arts", cat:"workshop", lat:-37.20280, lng:174.90100, r:3,  addr:"12 Massey Ave, Pukekohe"}
+];
+
+/* ================= 场馆官网（卡片地址行显示"官网 →"；不确定的暂缺） ================= */
+var SITES = {
+  aag:"https://www.aucklandartgallery.com/", gusfisher:"https://gusfishergallery.auckland.ac.nz/",
+  artspace:"https://artspace-aotearoa.nz/", michaellett:"https://lett-thomas.com/",
+  objectspace:"https://objectspace.org.nz/", teuru:"https://teuru.org.nz/",
+  corban:"https://cebarts.org.nz/", library:"https://www.aucklandlibraries.govt.nz/",
+  unity:"https://www.unitybooks.co.nz/", timeout:"https://www.timeout.co.nz/",
+  poetrylive:"https://www.facebook.com/poetrylive/",
+  townhall:"https://www.aucklandlive.co.nz/venues/auckland-town-hall",
+  whammy:"https://www.facebook.com/whammybar/", powerstation:"https://thepowerstation.net.nz/",
+  studioone:"https://studioone.org.nz/", britomart:"https://britomart.org/",
+  lacigale:"https://lacigale.co.nz/", avondale:"https://avondalesundaymarkets.co.nz/",
+  tetuhi:"https://tetuhi.art/",
+  mangere:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/mangere-arts-centre.html",
+  freshgallery:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/fresh-gallery-otara.html",
+  nathan:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/nathan-homestead.html",
+  pah:"https://artshousetrust.org.nz/", teoro:"https://www.teoro.org.nz/",
+  uxbridge:"https://uxbridge.org.nz/", otaramarket:"https://www.otarafleamarket.co.nz/",
+  waihekegallery:"https://www.waihekeartgallery.org.nz/", depot:"https://depotartspace.co.nz/",
+  northart:"https://www.northart.co.nz/", lakehouse:"https://www.lakehousearts.org.nz/",
+  mairangi:"https://mairangiarts.co.nz/", estuary:"https://www.estuaryarts.org/",
+  flagstaff:"https://www.flagstaff.nz/", artbysea:"https://www.artbythesea.co.nz/",
+  pumphouse:"https://pumphouse.co.nz/", upstairs:"https://www.lopdell.org.nz/",
+  mccahon:"https://www.mccahonhouse.org.nz/", tetoiuku:"https://www.tetoiuku.org.nz/",
+  helensville:"https://www.artcentrehelensville.org.nz/", vivian:"https://thevivian.co.nz/",
+  gowlangsford:"https://gowlangsfordgallery.co.nz/", starkwhite:"https://starkwhite.co.nz/",
+  tworooms:"https://tworooms.co.nz/", sanderson:"https://www.sanderson.co.nz/",
+  foenander:"https://foenandergalleries.co.nz/", melanieroger:"https://melanierogergallery.com/",
+  ivananthony:"https://ivananthony.com/", tautai:"https://tautai.org/",
+  stpaulst:"https://stpaulst.aut.ac.nz/", coastalsigns:"https://coastalsigns.nz/",
+  bergman:"https://bergmangallery.co.nz/", whitespace:"https://www.whitespace.co.nz/",
+  allpress:"https://www.allpressstudio.com/", artis:"https://www.artisgallery.co.nz/",
+  intlart:"https://www.internationalartcentre.co.nz/", parnellgallery:"https://www.parnellgallery.co.nz/",
+  jonathangrant:"https://jonathangrantgalleries.com/", blackdoor:"https://www.blackdoorgallery.co.nz/",
+  papakura:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/papakura-art-gallery.html",
+  franklin:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html"
+  /* rmgallery / window / ostend：官网待确认，暂不放链接 */
+};
+
+/* ============================================================
+   贴纸插画：每个场馆按真实建筑立面单独绘制（76×60 画布）
+   aag: 2011 扩建的 kauri 木波浪天棚 + 细柱 + 玻璃幕墙
+   gusfisher: Kenneth Myers Centre，西班牙教会式奶油色立面 + 拱门
+   artspace: K Rd 老骑楼二层，三联拱窗
+   michaellett: East St 白色现代主义方盒
+   objectspace: 深灰盒子 + 竖向木格栅
+   teuru: 蒂蒂朗伊，竖向木鳍片 + 斜屋面，丛林环绕
+   corban: 白色木板 homestead，红屋顶 + 前廊
+   library: 1971 现代主义混凝土 + 横向带窗
+   unity/timeout: 街铺书店，橱窗里一排彩色书脊（Time Out 有店猫）
+   poetrylive: Thirsty Dog 酒吧，酒红立面 + 黑色狗招牌
+   townhall: 1911 爱德华巴洛克，钟楼 + 铜绿穹顶
+   whammy: St Kevins Arcade 奶油色拱窗 + 下行阶梯 + 粉色霓虹
+   powerstation: 红砖变电站，三扇高拱窗
+   studioone: 红砖 heritage 建筑 + 白框窗 + 蓝拱门
+   britomart: 老中央邮局砂岩立面 + 门前市集帐篷
+   lacigale: 山墙仓库 + 法国三色雨棚 + 面包摊
+   avondale: 赛马场看台 + 一排彩色条纹帐篷
+   ============================================================ */
+var FACADES = {
+ aag: '<circle cx="9" cy="46" r="7" fill="#5E8C4A"/>'+
+      '<rect x="4" y="28" width="68" height="30" fill="#E8E2D4"/>'+
+      '<rect x="10" y="32" width="56" height="26" fill="#BFD9E8"/>'+
+      '<rect x="18" y="28" width="4" height="30" fill="#B5793A"/><rect x="36" y="28" width="4" height="30" fill="#B5793A"/><rect x="54" y="28" width="4" height="30" fill="#B5793A"/>'+
+      '<path d="M2 28 Q12 14 22 22 Q32 12 40 20 Q50 10 58 19 Q68 13 74 25 L74 30 L2 30 Z" fill="#D9A24B"/>'+
+      '<path d="M2 28 Q12 14 22 22 Q32 12 40 20 Q50 10 58 19 Q68 13 74 25" fill="none" stroke="#B5793A" stroke-width="1.5"/>'+
+      '<rect x="44" y="44" width="10" height="14" fill="#37556E"/>',
+ gusfisher: '<rect x="6" y="14" width="64" height="44" fill="#F2DBB8"/>'+
+      '<path d="M6 14 v-3 a5 5 0 0 1 5 -5 h54 a5 5 0 0 1 5 5 v3 z" fill="#C96F4A"/>'+
+      '<line x1="62" y1="0" x2="62" y2="6" stroke="#8A8A8A" stroke-width="2"/>'+
+      '<rect x="6" y="24" width="64" height="2.5" fill="#C96F4A"/>'+
+      '<path d="M28 58 v-14 a10 10 0 0 1 20 0 v14 z" fill="#3E6B6B"/>'+
+      '<path d="M12 44 v-7 a5 5 0 0 1 10 0 v7 z" fill="#7FA8C9"/>'+
+      '<path d="M54 44 v-7 a5 5 0 0 1 10 0 v7 z" fill="#7FA8C9"/>',
+ artspace: '<rect x="6" y="12" width="64" height="46" fill="#F5F1E8"/>'+
+      '<rect x="4" y="7" width="68" height="6" fill="#2F4858"/>'+
+      '<path d="M11 40 v-12 a7 7 0 0 1 14 0 v12 z" fill="#31435C"/>'+
+      '<path d="M31 40 v-12 a7 7 0 0 1 14 0 v12 z" fill="#31435C"/>'+
+      '<path d="M51 40 v-12 a7 7 0 0 1 14 0 v12 z" fill="#31435C"/>'+
+      '<rect x="6" y="45" width="64" height="8" fill="#E4572E"/>'+
+      '<rect x="11" y="47.5" width="26" height="3" fill="#fff"/>'+
+      '<rect x="56" y="53" width="10" height="5" fill="#8C9BA5"/>',
+ michaellett: '<rect x="8" y="10" width="60" height="48" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="14" y="16" width="20" height="13" fill="#20242A"/><rect x="42" y="16" width="20" height="13" fill="#20242A"/>'+
+      '<line x1="24" y1="16" x2="24" y2="29" stroke="#fff" stroke-width="1.2"/><line x1="52" y1="16" x2="52" y2="29" stroke="#fff" stroke-width="1.2"/>'+
+      '<rect x="14" y="33" width="22" height="2.5" fill="#20242A"/>'+
+      '<rect x="14" y="40" width="32" height="18" fill="#9FB8C9"/>'+
+      '<rect x="52" y="40" width="10" height="18" fill="#20242A"/>',
+ objectspace: '<rect x="6" y="14" width="64" height="44" fill="#33383D"/>'+
+      '<g stroke="#B5793A" stroke-width="2"><line x1="12" y1="14" x2="12" y2="58"/><line x1="19" y1="14" x2="19" y2="58"/><line x1="26" y1="14" x2="26" y2="58"/><line x1="33" y1="14" x2="33" y2="58"/><line x1="40" y1="14" x2="40" y2="58"/><line x1="47" y1="14" x2="47" y2="58"/><line x1="54" y1="14" x2="54" y2="58"/><line x1="61" y1="14" x2="61" y2="58"/></g>'+
+      '<rect x="30" y="36" width="20" height="22" fill="#D8E6F1"/>'+
+      '<circle cx="14.5" cy="21" r="4" fill="#fff"/>',
+ teuru: '<circle cx="7" cy="14" r="6" fill="#4C7A45"/><circle cx="14" cy="10" r="4.5" fill="#5E8C4A"/><circle cx="72" cy="10" r="5" fill="#4C7A45"/>'+
+      '<polygon points="6,22 70,12 70,58 6,58" fill="#EFE9DC"/>'+
+      '<rect x="8" y="21" width="5" height="37" fill="#C9A86A"/><rect x="16" y="20" width="5" height="38" fill="#8A6B45"/><rect x="24" y="19" width="5" height="39" fill="#C9A86A"/><rect x="32" y="17" width="5" height="41" fill="#8A6B45"/><rect x="40" y="16" width="5" height="42" fill="#C9A86A"/><rect x="48" y="15" width="5" height="43" fill="#8A6B45"/><rect x="56" y="14" width="5" height="44" fill="#C9A86A"/><rect x="64" y="13" width="5" height="45" fill="#8A6B45"/>'+
+      '<rect x="6" y="44" width="64" height="14" fill="#A9C6D4" opacity=".75"/>'+
+      '<rect x="34" y="46" width="12" height="12" fill="#2F4858"/>',
+ corban: '<polygon points="4,26 38,8 72,26" fill="#B33A2F"/>'+
+      '<rect x="10" y="26" width="56" height="32" fill="#FDFBF4"/>'+
+      '<line x1="10" y1="32" x2="66" y2="32" stroke="#E4DCC8" stroke-width="1.2"/><line x1="10" y1="38" x2="66" y2="38" stroke="#E4DCC8" stroke-width="1.2"/>'+
+      '<rect x="19" y="30" width="11" height="11" fill="#BFD9E8" stroke="#5E7A4A" stroke-width="2"/><rect x="46" y="30" width="11" height="11" fill="#BFD9E8" stroke="#5E7A4A" stroke-width="2"/>'+
+      '<rect x="10" y="42" width="56" height="3" fill="#B33A2F"/>'+
+      '<rect x="13" y="45" width="3" height="13" fill="#7A8B5E"/><rect x="60" y="45" width="3" height="13" fill="#7A8B5E"/>'+
+      '<rect x="34" y="42" width="9" height="16" fill="#5E7A4A"/>',
+ library: '<rect x="6" y="12" width="64" height="46" fill="#C9C2B2"/>'+
+      '<rect x="6" y="12" width="64" height="4" fill="#8D887A"/>'+
+      '<rect x="10" y="20" width="56" height="7" fill="#5B7E9E"/><rect x="10" y="31" width="56" height="7" fill="#5B7E9E"/><rect x="10" y="42" width="56" height="7" fill="#5B7E9E"/>'+
+      '<g stroke="#EFE9DC" stroke-width="1.2"><line x1="20" y1="20" x2="20" y2="49"/><line x1="30" y1="20" x2="30" y2="49"/><line x1="40" y1="20" x2="40" y2="49"/><line x1="50" y1="20" x2="50" y2="49"/><line x1="60" y1="20" x2="60" y2="49"/></g>'+
+      '<rect x="30" y="51" width="16" height="7" fill="#E8A200"/>',
+ unity: '<rect x="10" y="10" width="56" height="48" fill="#1E6E64"/>'+
+      '<rect x="14" y="14" width="48" height="9" fill="#F2C94C"/>'+
+      '<rect x="18" y="17" width="26" height="3" fill="#1E4E48"/>'+
+      '<rect x="14" y="27" width="36" height="27" fill="#FDF8EC"/>'+
+      '<rect x="17" y="38" width="3" height="14" fill="#E4572E"/><rect x="21" y="36" width="3" height="16" fill="#2A6FB0"/><rect x="25" y="39" width="3" height="13" fill="#7A4FB0"/><rect x="29" y="35" width="3" height="17" fill="#2E8B57"/><rect x="33" y="38" width="3" height="14" fill="#E8A200"/><rect x="37" y="36" width="3" height="16" fill="#C0402B"/><rect x="41" y="39" width="3" height="13" fill="#37556E"/><rect x="45" y="37" width="3" height="15" fill="#D9A24B"/>'+
+      '<rect x="54" y="27" width="8" height="31" fill="#174E46"/><rect x="55.5" y="31" width="5" height="16" fill="#BFD9E8"/>',
+ timeout: '<rect x="10" y="10" width="56" height="48" fill="#233D4D"/>'+
+      '<rect x="14" y="13" width="48" height="9" fill="#E0B84C"/><rect x="18" y="16" width="30" height="3" fill="#233D4D"/>'+
+      '<path d="M12 24 h52 l4 8 h-60 z" fill="#C0402B"/>'+
+      '<path d="M20 24 l1.5 8 h6 l-1.5 -8 z M36 24 l1.5 8 h6 l-1.5 -8 z M52 24 l1.5 8 h6 l-1.5 -8 z" fill="#F5EFE2"/>'+
+      '<rect x="14" y="36" width="34" height="22" fill="#FBF3E4"/>'+
+      '<rect x="17" y="44" width="3" height="12" fill="#2A6FB0"/><rect x="21" y="42" width="3" height="14" fill="#E4572E"/><rect x="25" y="45" width="3" height="11" fill="#2E8B57"/><rect x="29" y="43" width="3" height="13" fill="#7A4FB0"/><rect x="33" y="44" width="3" height="12" fill="#E8A200"/>'+
+      '<path d="M40.6 47.5 l-1 -2.4 1.8 .6 z M44.4 47.5 l1 -2.4 -1.8 .6 z" fill="#23211C"/>'+
+      '<circle cx="42.5" cy="49" r="2.6" fill="#23211C"/><ellipse cx="42.5" cy="54" rx="3.6" ry="3.4" fill="#23211C"/>'+
+      '<rect x="52" y="36" width="10" height="22" fill="#14232E"/>',
+ poetrylive: '<rect x="8" y="10" width="60" height="10" fill="#F0E6D2"/>'+
+      '<g fill="#8E9BA5"><rect x="12" y="12" width="8" height="6"/><rect x="26" y="12" width="8" height="6"/><rect x="40" y="12" width="8" height="6"/><rect x="54" y="12" width="8" height="6"/></g>'+
+      '<rect x="8" y="20" width="60" height="38" fill="#8E2F2A"/>'+
+      '<rect x="22" y="24" width="32" height="11" rx="2" fill="#23211C"/>'+
+      '<circle cx="31" cy="29.5" r="2.6" fill="#fff"/><rect x="33.5" y="27.8" width="8" height="4.4" rx="2.2" fill="#fff"/><line x1="41.5" y1="28.5" x2="44" y2="26.5" stroke="#fff" stroke-width="1.5"/>'+
+      '<rect x="28" y="38" width="20" height="3" fill="#FFD400"/>'+
+      '<rect x="12" y="44" width="13" height="14" fill="#D9A24B"/>'+
+      '<rect x="52" y="42" width="11" height="16" fill="#3A2A28"/>',
+ townhall: '<path d="M11 6 q8 -8 16 0 z" fill="#4C8C7A"/>'+
+      '<rect x="12" y="6" width="14" height="26" fill="#EFE9DC"/>'+
+      '<circle cx="19" cy="14" r="4.2" fill="#fff" stroke="#8D887A" stroke-width="1.2"/><line x1="19" y1="14" x2="19" y2="11.2" stroke="#37556E" stroke-width="1.2"/><line x1="19" y1="14" x2="21.4" y2="14" stroke="#37556E" stroke-width="1.2"/>'+
+      '<rect x="8" y="32" width="60" height="26" fill="#EFE9DC"/>'+
+      '<rect x="8" y="32" width="60" height="3" fill="#C9C2B2"/>'+
+      '<g fill="#5B7E9E"><path d="M30 50 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/><path d="M43 50 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/><path d="M56 50 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/></g>'+
+      '<rect x="14" y="44" width="10" height="14" fill="#6B4A2F"/>',
+ whammy: '<rect x="6" y="10" width="64" height="48" fill="#EFE3C8"/>'+
+      '<path d="M18 34 v-9 a20 11 0 0 1 40 0 v9 z" fill="#8FB3C9"/>'+
+      '<g stroke="#EFE3C8" stroke-width="1.4"><line x1="38" y1="14" x2="38" y2="34"/><line x1="28" y1="17" x2="30" y2="34"/><line x1="48" y1="17" x2="46" y2="34"/></g>'+
+      '<rect x="6" y="36" width="64" height="5" fill="#2F4858"/><rect x="24" y="37.5" width="28" height="2" fill="#EFE3C8"/>'+
+      '<rect x="28" y="44" width="20" height="14" fill="#1A1A1E"/>'+
+      '<g fill="#3A3A42"><rect x="30" y="52" width="16" height="2"/><rect x="32" y="55" width="12" height="2"/></g>'+
+      '<rect x="24" y="43" width="28" height="8" rx="4" fill="#FF5FA2" opacity=".25"/><rect x="27" y="45" width="22" height="4" rx="2" fill="#FF5FA2"/>',
+ powerstation: '<rect x="28" y="4" width="20" height="8" fill="#A6432F"/>'+
+      '<rect x="8" y="10" width="60" height="48" fill="#A6432F"/>'+
+      '<g stroke="#8E3626" stroke-width="1"><line x1="8" y1="20" x2="68" y2="20"/><line x1="8" y1="30" x2="68" y2="30"/><line x1="8" y1="40" x2="68" y2="40"/><line x1="8" y1="50" x2="68" y2="50"/></g>'+
+      '<g fill="#F2DBB8"><path d="M13 50 v-20 a6 6 0 0 1 12 0 v20 z"/><path d="M32 50 v-20 a6 6 0 0 1 12 0 v20 z"/><path d="M51 50 v-20 a6 6 0 0 1 12 0 v20 z"/></g>'+
+      '<g stroke="#A6432F" stroke-width="1.2"><line x1="19" y1="30" x2="19" y2="50"/><line x1="38" y1="30" x2="38" y2="50"/><line x1="57" y1="30" x2="57" y2="50"/></g>'+
+      '<rect x="26" y="52" width="24" height="6" fill="#23211C"/><rect x="30" y="54" width="16" height="2" fill="#FF5FA2"/>',
+ studioone: '<rect x="8" y="14" width="60" height="44" fill="#9E5A3C"/>'+
+      '<rect x="8" y="14" width="60" height="4" fill="#F5F1E8"/>'+
+      '<g stroke="#84492F" stroke-width="1"><line x1="8" y1="26" x2="68" y2="26"/><line x1="8" y1="36" x2="68" y2="36"/><line x1="8" y1="46" x2="68" y2="46"/></g>'+
+      '<g fill="#BFD9E8" stroke="#F5F1E8" stroke-width="2"><rect x="14" y="22" width="12" height="13"/><rect x="50" y="22" width="12" height="13"/><rect x="14" y="41" width="12" height="13"/><rect x="50" y="41" width="12" height="13"/></g>'+
+      '<path d="M33 58 v-13 a5.5 5.5 0 0 1 11 0 v13 z" fill="#2A6FB0"/>'+
+      '<rect x="30" y="20" width="17" height="4" fill="#F5F1E8"/>',
+ britomart: '<rect x="6" y="12" width="64" height="32" fill="#D9C9A3"/>'+
+      '<rect x="6" y="12" width="64" height="4" fill="#C4B58E"/>'+
+      '<circle cx="38" cy="20" r="3.6" fill="#fff" stroke="#8D887A" stroke-width="1"/>'+
+      '<g fill="#F0E6D2"><rect x="11" y="24" width="5" height="20"/><rect x="23" y="24" width="5" height="20"/><rect x="48" y="24" width="5" height="20"/><rect x="60" y="24" width="5" height="20"/></g>'+
+      '<path d="M31 44 v-10 a7 7 0 0 1 14 0 v10 z" fill="#37556E"/>'+
+      '<path d="M10 48 Q24 34 38 48 z" fill="#E4572E"/>'+
+      '<path d="M15 44.5 l3 -3.5 3 3.5 z M27 44.5 l3 -3.5 3 3.5 z" fill="#fff"/>'+
+      '<line x1="13" y1="48" x2="13" y2="56" stroke="#8E3626" stroke-width="2.5"/><line x1="35" y1="48" x2="35" y2="56" stroke="#8E3626" stroke-width="2.5"/>'+
+      '<rect x="15" y="55" width="18" height="3" fill="#B5793A"/>'+
+      '<circle cx="19" cy="53" r="2.4" fill="#E8A200"/><circle cx="24" cy="53" r="2.4" fill="#7A9E4C"/><circle cx="29" cy="53" r="2.4" fill="#C0402B"/>',
+ lacigale: '<polygon points="8,22 38,8 68,22" fill="#D8CDB8"/>'+
+      '<rect x="8" y="22" width="60" height="36" fill="#EFE9DC"/>'+
+      '<rect x="26" y="24" width="24" height="5" fill="#C0402B"/>'+
+      '<path d="M10 31 h56 l4 9 h-64 z" fill="#F5F1E8"/>'+
+      '<path d="M10 31 h18.7 l1.3 9 h-21.3 z" fill="#2A4C9B"/><path d="M47.3 31 h18.7 l4 9 h-21.4 z" fill="#C0402B"/>'+
+      '<rect x="14" y="48" width="13" height="10" fill="#C9A86A"/><rect x="31" y="50" width="13" height="8" fill="#7A9E4C"/><rect x="48" y="48" width="13" height="10" fill="#E4572E"/>'+
+      '<g stroke="#A87C3F" stroke-width="2" stroke-linecap="round"><line x1="16" y1="47" x2="24" y2="44"/><line x1="18" y1="48" x2="26" y2="45"/></g>',
+ avondale: '<rect x="6" y="12" width="64" height="9" fill="#4C7A45"/>'+
+      '<rect x="10" y="21" width="56" height="7" fill="#EFE9DC"/>'+
+      '<g fill="#8E9BA5"><rect x="14" y="23" width="6" height="4"/><rect x="26" y="23" width="6" height="4"/><rect x="38" y="23" width="6" height="4"/><rect x="50" y="23" width="6" height="4"/></g>'+
+      '<path d="M6 46 Q17 32 28 46 z" fill="#E8A200"/><path d="M25 48 Q36 34 47 48 z" fill="#2A6FB0"/><path d="M44 46 Q55 32 66 46 z" fill="#C0402B"/>'+
+      '<path d="M14 41 l3 -3.5 3 3.5 z" fill="#fff"/><path d="M33 43 l3 -3.5 3 3.5 z" fill="#fff"/><path d="M52 41 l3 -3.5 3 3.5 z" fill="#fff"/>'+
+      '<g stroke="#6B4A2F" stroke-width="2"><line x1="9" y1="46" x2="9" y2="56"/><line x1="25" y1="46" x2="25" y2="56"/><line x1="44" y1="46" x2="44" y2="56"/><line x1="63" y1="46" x2="63" y2="56"/></g>'+
+      '<circle cx="15" cy="52" r="2.2" fill="#C0402B"/><circle cx="20" cy="52" r="2.2" fill="#7A9E4C"/><circle cx="35" cy="54" r="2.2" fill="#E8A200"/><circle cx="55" cy="52" r="2.2" fill="#7A4FB0"/>',
+ /* Te Tuhi：白盒 + 标志性户外大幅委托壁画墙 */
+ tetuhi: '<rect x="6" y="14" width="64" height="44" fill="#F4F2EC" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="10" y="18" width="34" height="26" fill="#2A6FB0"/>'+
+      '<circle cx="20" cy="28" r="6" fill="#E8A200"/><path d="M30 44 L44 24 L44 44 z" fill="#C0402B"/><circle cx="36" cy="24" r="3.4" fill="#F4F2EC"/>'+
+      '<rect x="48" y="18" width="18" height="26" fill="#D8E6F1"/>'+
+      '<rect x="48" y="46" width="18" height="12" fill="#37556E"/>'+
+      '<rect x="10" y="48" width="24" height="2.5" fill="#20242A"/>',
+ /* Māngere Arts Centre：深红立面 + tukutuku 三角纹样带 + 弧形屋面 */
+ mangere: '<path d="M6 20 Q38 6 70 20 L70 24 L6 24 z" fill="#5A5F66"/>'+
+      '<rect x="6" y="24" width="64" height="34" fill="#8E2F2A"/>'+
+      '<g fill="#E8A200"><path d="M10 36 l5 -8 5 8 z"/><path d="M22 36 l5 -8 5 8 z"/><path d="M34 36 l5 -8 5 8 z"/><path d="M46 36 l5 -8 5 8 z"/><path d="M58 36 l5 -8 5 8 z"/></g>'+
+      '<g fill="#F0E6D2"><path d="M16 44 l4 -6 4 6 z"/><path d="M28 44 l4 -6 4 6 z"/><path d="M40 44 l4 -6 4 6 z"/><path d="M52 44 l4 -6 4 6 z"/></g>'+
+      '<rect x="30" y="46" width="16" height="12" fill="#23211C"/><rect x="33" y="49" width="10" height="6" fill="#D8E6F1"/>',
+ /* Fresh Gallery Ōtara：购物中心店面，Pasifika 亮色 + 鸡蛋花 */
+ freshgallery: '<rect x="8" y="12" width="60" height="46" fill="#1B8A8F"/>'+
+      '<rect x="12" y="15" width="52" height="9" fill="#F2C94C"/><rect x="16" y="18" width="30" height="3" fill="#155E62"/>'+
+      '<rect x="12" y="28" width="40" height="26" fill="#FDF8EC"/>'+
+      '<circle cx="24" cy="40" r="7" fill="#E4572E"/><circle cx="24" cy="40" r="3" fill="#F2C94C"/>'+
+      '<g fill="#E86FA4"><circle cx="38" cy="34" r="2.6"/><circle cx="43" cy="38" r="2.6"/><circle cx="38" cy="42" r="2.6"/><circle cx="33" cy="38" r="2.6"/></g><circle cx="38" cy="38" r="2" fill="#F2C94C"/>'+
+      '<rect x="56" y="28" width="8" height="30" fill="#12474A"/>',
+ /* Nathan Homestead：红砖庄园 + 白色山墙与前廊 */
+ nathan: '<polygon points="6,26 28,10 50,26" fill="#8E9BA5"/>'+
+      '<rect x="6" y="26" width="44" height="32" fill="#94472E"/>'+
+      '<g stroke="#7C3A24" stroke-width="1"><line x1="6" y1="34" x2="50" y2="34"/><line x1="6" y1="42" x2="50" y2="42"/><line x1="6" y1="50" x2="50" y2="50"/></g>'+
+      '<rect x="50" y="30" width="20" height="28" fill="#FDFBF4"/>'+
+      '<rect x="50" y="30" width="20" height="3" fill="#8E9BA5"/>'+
+      '<rect x="53" y="45" width="3" height="13" fill="#8E9BA5"/><rect x="64" y="45" width="3" height="13" fill="#8E9BA5"/>'+
+      '<rect x="12" y="32" width="10" height="12" fill="#BFD9E8" stroke="#FDFBF4" stroke-width="2"/><rect x="30" y="32" width="10" height="12" fill="#BFD9E8" stroke="#FDFBF4" stroke-width="2"/>'+
+      '<rect x="21" y="44" width="10" height="14" fill="#3E5A40"/>',
+ /* Pah Homestead：意大利式白色别墅 + 方塔 + 拱窗 */
+ pah: '<rect x="46" y="6" width="16" height="24" fill="#F7F4EA"/><rect x="44" y="4" width="20" height="4" fill="#C9C2B2"/>'+
+      '<rect x="49" y="12" width="4" height="7" rx="2" fill="#5B7E9E"/><rect x="55" y="12" width="4" height="7" rx="2" fill="#5B7E9E"/>'+
+      '<rect x="6" y="30" width="64" height="28" fill="#F7F4EA"/>'+
+      '<rect x="6" y="28" width="64" height="4" fill="#C9C2B2"/>'+
+      '<g fill="#5B7E9E"><path d="M12 48 v-8 a4 4 0 0 1 8 0 v8 z"/><path d="M26 48 v-8 a4 4 0 0 1 8 0 v8 z"/><path d="M52 48 v-8 a4 4 0 0 1 8 0 v8 z"/></g>'+
+      '<rect x="40" y="42" width="9" height="16" fill="#6B4A2F"/>'+
+      '<rect x="6" y="54" width="64" height="4" fill="#7A8B5E"/>',
+ /* Te Oro：格伦因斯的多面体木亭，金色折面屋顶架在柱上 */
+ teoro: '<polygon points="6,26 24,10 40,22 58,8 70,26" fill="#D9A24B"/>'+
+      '<polygon points="6,26 24,10 30,26" fill="#B5793A"/><polygon points="40,22 58,8 64,26" fill="#B5793A"/>'+
+      '<rect x="10" y="26" width="56" height="4" fill="#8A6B45"/>'+
+      '<rect x="12" y="30" width="52" height="28" fill="#A9C6D4"/>'+
+      '<g stroke="#8A6B45" stroke-width="3"><line x1="16" y1="30" x2="16" y2="58"/><line x1="38" y1="30" x2="38" y2="58"/><line x1="60" y1="30" x2="60" y2="58"/></g>'+
+      '<circle cx="27" cy="42" r="5" fill="#7A4FB0"/><path d="M27 40 v-6 a4 4 0 0 1 4 2" fill="none" stroke="#7A4FB0" stroke-width="2"/>'+
+      '<rect x="44" y="42" width="12" height="16" fill="#2F4858"/>',
+ /* Uxbridge：白色老会堂 + 橙色现代扩建体块 */
+ uxbridge: '<polygon points="4,24 24,10 44,24" fill="#8E9BA5"/>'+
+      '<rect x="8" y="24" width="32" height="34" fill="#FDFBF4"/>'+
+      '<rect x="14" y="30" width="8" height="12" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/><rect x="26" y="30" width="8" height="12" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/>'+
+      '<rect x="19" y="46" width="10" height="12" fill="#37556E"/>'+
+      '<rect x="44" y="20" width="28" height="38" fill="#E4572E"/>'+
+      '<rect x="48" y="26" width="20" height="14" fill="#FDF8EC"/>'+
+      '<rect x="48" y="46" width="20" height="3" fill="#FDF8EC"/>',
+ /* Ōtara 集市：亮色帐篷 + 遮阳伞 + 农产品 */
+ otaramarket: '<path d="M6 40 Q20 24 34 40 z" fill="#1B8A8F"/><path d="M14 35 l4 -4.5 4 4.5 z" fill="#F2C94C"/>'+
+      '<path d="M36 42 Q50 26 64 42 z" fill="#E4572E"/><path d="M44 37 l4 -4.5 4 4.5 z" fill="#fff"/>'+
+      '<circle cx="62" cy="18" r="1.6" fill="#E86FA4"/><path d="M52 24 a10 10 0 0 1 20 0 z" fill="#7A4FB0"/><line x1="62" y1="24" x2="62" y2="34" stroke="#4A3A6B" stroke-width="2"/>'+
+      '<g stroke="#6B4A2F" stroke-width="2"><line x1="8" y1="40" x2="8" y2="56"/><line x1="32" y1="40" x2="32" y2="56"/><line x1="38" y1="42" x2="38" y2="56"/><line x1="62" y1="42" x2="62" y2="56"/></g>'+
+      '<rect x="12" y="48" width="16" height="8" fill="#B5793A"/><rect x="42" y="48" width="16" height="8" fill="#B5793A"/>'+
+      '<circle cx="16" cy="46" r="2.4" fill="#7A9E4C"/><circle cx="21" cy="46" r="2.4" fill="#E8A200"/><circle cx="47" cy="46" r="2.4" fill="#C0402B"/><circle cx="52" cy="46" r="2.4" fill="#F2C94C"/>',
+ /* 激流岛社区美术馆：白色木板 + 海景蓝带 + 门前雕塑 */
+ waihekegallery: '<rect x="4" y="4" width="68" height="10" fill="#7FB2C9"/><path d="M4 10 Q12 7 20 10 T36 10 T52 10 T68 10" fill="none" stroke="#fff" stroke-width="1.5"/>'+
+      '<rect x="8" y="18" width="60" height="40" fill="#FDFBF4"/>'+
+      '<line x1="8" y1="26" x2="68" y2="26" stroke="#E4DCC8" stroke-width="1.2"/><line x1="8" y1="34" x2="68" y2="34" stroke="#E4DCC8" stroke-width="1.2"/>'+
+      '<rect x="14" y="24" width="16" height="18" fill="#BFD9E8" stroke="#37556E" stroke-width="2"/>'+
+      '<rect x="38" y="30" width="12" height="28" fill="#37556E"/>'+
+      '<path d="M58 46 a7 7 0 1 1 7 7" fill="none" stroke="#C0402B" stroke-width="3"/>'+
+      '<rect x="54" y="53" width="16" height="4" fill="#8D887A"/>',
+ /* Ostend 集市（激流岛）：绿色社区会堂 + 门前小帐篷 */
+ ostend: '<polygon points="8,22 38,8 68,22" fill="#4C7A45"/>'+
+      '<rect x="12" y="22" width="52" height="36" fill="#E9F0E2"/>'+
+      '<rect x="18" y="28" width="10" height="12" fill="#BFD9E8" stroke="#4C7A45" stroke-width="1.5"/><rect x="48" y="28" width="10" height="12" fill="#BFD9E8" stroke="#4C7A45" stroke-width="1.5"/>'+
+      '<rect x="33" y="30" width="10" height="18" fill="#4C7A45"/>'+
+      '<path d="M8 50 Q17 38 26 50 z" fill="#E8A200"/><path d="M50 50 Q59 38 68 50 z" fill="#C0402B"/>'+
+      '<g stroke="#6B4A2F" stroke-width="2"><line x1="10" y1="50" x2="10" y2="58"/><line x1="24" y1="50" x2="24" y2="58"/><line x1="52" y1="50" x2="52" y2="58"/><line x1="66" y1="50" x2="66" y2="58"/></g>'+
+      '<circle cx="15" cy="54" r="2.2" fill="#7A9E4C"/><circle cx="20" cy="54" r="2.2" fill="#E4572E"/><circle cx="58" cy="54" r="2.2" fill="#F2C94C"/>',
+ /* Depot Artspace：德文波特维多利亚式街铺，青绿门面 + 前廊柱 */
+ depot: '<rect x="8" y="10" width="60" height="8" fill="#F0E6D2"/><rect x="12" y="12" width="8" height="4" fill="#8E9BA5"/><rect x="56" y="12" width="8" height="4" fill="#8E9BA5"/>'+
+      '<rect x="8" y="18" width="60" height="40" fill="#2E7D74"/>'+
+      '<rect x="12" y="22" width="52" height="8" fill="#F2C94C"/><rect x="16" y="24.5" width="26" height="3" fill="#1E5650"/>'+
+      '<rect x="8" y="32" width="60" height="3" fill="#F0E6D2"/>'+
+      '<rect x="14" y="38" width="28" height="20" fill="#FDF8EC"/>'+
+      '<rect x="17" y="44" width="4" height="12" fill="#E4572E"/><rect x="23" y="42" width="4" height="14" fill="#2A6FB0"/><rect x="29" y="45" width="4" height="11" fill="#7A4FB0"/><rect x="35" y="43" width="4" height="13" fill="#E8A200"/>'+
+      '<rect x="50" y="38" width="12" height="20" fill="#1E5650"/>'+
+      '<g stroke="#F0E6D2" stroke-width="2.5"><line x1="10" y1="35" x2="10" y2="58"/><line x1="66" y1="35" x2="66" y2="58"/></g>',
+ /* Northart：Northcote 老市民会堂改造，白色山墙 + 红色入口体块 */
+ northart: '<polygon points="6,26 30,10 54,26" fill="#C9C2B2"/>'+
+      '<rect x="8" y="26" width="44" height="32" fill="#F7F4EA"/>'+
+      '<rect x="14" y="32" width="10" height="14" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/><rect x="30" y="32" width="10" height="14" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/>'+
+      '<rect x="52" y="20" width="18" height="38" fill="#C0402B"/>'+
+      '<rect x="56" y="26" width="10" height="3" fill="#fff"/>'+
+      '<rect x="56" y="40" width="10" height="18" fill="#23211C"/>',
+ /* Lake House：Takapuna 历史别墅，标志性八角塔楼 */
+ lakehouse: '<rect x="44" y="6" width="16" height="22" fill="#FDFBF4"/><polygon points="42,8 52,0 62,8" fill="#5E7A4A"/>'+
+      '<rect x="48" y="12" width="8" height="8" fill="#BFD9E8"/>'+
+      '<polygon points="4,30 26,14 48,30" fill="#5E7A4A"/>'+
+      '<rect x="6" y="30" width="58" height="28" fill="#FDFBF4"/>'+
+      '<rect x="6" y="44" width="58" height="3" fill="#5E7A4A"/>'+
+      '<rect x="10" y="47" width="3" height="11" fill="#8D887A"/><rect x="58" y="47" width="3" height="11" fill="#8D887A"/>'+
+      '<rect x="12" y="34" width="11" height="10" fill="#BFD9E8" stroke="#5E7A4A" stroke-width="1.5"/><rect x="30" y="34" width="11" height="10" fill="#BFD9E8" stroke="#5E7A4A" stroke-width="1.5"/>'+
+      '<rect x="46" y="46" width="10" height="12" fill="#37556E"/>',
+ /* Mairangi：战争纪念堂改造的海湾社区艺术中心 */
+ mairangi: '<polygon points="4,24 38,8 72,24" fill="#4C7A8C"/>'+
+      '<rect x="8" y="24" width="60" height="34" fill="#F4F2EC"/>'+
+      '<rect x="8" y="24" width="60" height="4" fill="#4C7A8C"/>'+
+      '<g fill="#BFD9E8" stroke="#4C7A8C" stroke-width="1.5"><rect x="13" y="32" width="10" height="16"/><rect x="53" y="32" width="10" height="16"/></g>'+
+      '<rect x="31" y="34" width="14" height="24" fill="#2F5866"/>'+
+      '<circle cx="38" cy="30" r="3" fill="#E8A200"/>'+
+      '<path d="M8 54 Q14 51 20 54 T32 54" fill="none" stroke="#7FB2C9" stroke-width="2"/>',
+ /* Estuary（Ōrewa）：现代波纹铁皮展馆 + 河口蓝 */
+ estuary: '<rect x="4" y="4" width="68" height="8" fill="#7FB2C9"/><path d="M4 8 Q12 5 20 8 T36 8 T52 8 T68 8" fill="none" stroke="#fff" stroke-width="1.4"/>'+
+      '<polygon points="6,24 40,12 70,24" fill="#5A5F66"/>'+
+      '<rect x="8" y="24" width="60" height="34" fill="#D8D5CC"/>'+
+      '<g stroke="#B9B4A8" stroke-width="1.4"><line x1="14" y1="24" x2="14" y2="58"/><line x1="22" y1="24" x2="22" y2="58"/><line x1="30" y1="24" x2="30" y2="58"/><line x1="46" y1="24" x2="46" y2="58"/><line x1="54" y1="24" x2="54" y2="58"/><line x1="62" y1="24" x2="62" y2="58"/></g>'+
+      '<rect x="34" y="34" width="10" height="24" fill="#E4572E"/>'+
+      '<rect x="48" y="30" width="16" height="12" fill="#BFD9E8"/>',
+ /* Flagstaff（Devonport）：白色维多利亚店面 + 旗杆 */
+ flagstaff: '<line x1="66" y1="2" x2="66" y2="20" stroke="#8D887A" stroke-width="2"/><polygon points="66,2 76,5 66,9" fill="#C0402B"/>'+
+      '<rect x="8" y="14" width="56" height="8" fill="#37556E"/>'+
+      '<rect x="8" y="22" width="56" height="36" fill="#FDFBF4"/>'+
+      '<rect x="8" y="30" width="56" height="3" fill="#37556E"/>'+
+      '<rect x="12" y="36" width="26" height="18" fill="#FDF8EC" stroke="#37556E" stroke-width="1.5"/>'+
+      '<rect x="16" y="40" width="8" height="10" fill="#2A6FB0"/><rect x="27" y="40" width="8" height="10" fill="#E8A200"/>'+
+      '<rect x="46" y="36" width="12" height="22" fill="#37556E"/>',
+ /* Art by the Sea（Devonport）：海边画廊，青绿门面 + 波浪招牌 */
+ artbysea: '<rect x="8" y="12" width="60" height="46" fill="#3C8C8C"/>'+
+      '<rect x="12" y="16" width="52" height="9" fill="#FDF8EC"/><path d="M16 20.5 Q20 17.5 24 20.5 T32 20.5 T40 20.5 T48 20.5 T56 20.5" fill="none" stroke="#2F6E6E" stroke-width="1.6"/>'+
+      '<rect x="12" y="30" width="34" height="24" fill="#FDF8EC"/>'+
+      '<rect x="16" y="34" width="10" height="12" fill="#E4572E"/><rect x="30" y="34" width="10" height="12" fill="#7FB2C9"/>'+
+      '<rect x="52" y="30" width="10" height="28" fill="#255C5C"/>',
+ /* PumpHouse（Takapuna）：红砖泵房剧场 + 高烟囱 */
+ pumphouse: '<rect x="58" y="2" width="8" height="26" fill="#A6432F"/><rect x="56" y="0" width="12" height="4" fill="#8E3626"/>'+
+      '<polygon points="6,26 30,12 54,26" fill="#8E3626"/>'+
+      '<rect x="8" y="26" width="48" height="32" fill="#A6432F"/>'+
+      '<g stroke="#8E3626" stroke-width="1"><line x1="8" y1="36" x2="56" y2="36"/><line x1="8" y1="46" x2="56" y2="46"/></g>'+
+      '<path d="M14 50 v-12 a5 5 0 0 1 10 0 v12 z" fill="#F2DBB8"/><path d="M40 50 v-12 a5 5 0 0 1 10 0 v12 z" fill="#F2DBB8"/>'+
+      '<rect x="28" y="42" width="9" height="16" fill="#23211C"/>'+
+      '<circle cx="32.5" cy="34" r="4" fill="#FFD400"/>',
+ /* UPSTAIRS（Lopdell House）：西班牙教会式白楼 + 拱廊 + 红瓦 */
+ upstairs: '<rect x="6" y="10" width="64" height="6" fill="#C96F4A"/>'+
+      '<rect x="8" y="16" width="60" height="42" fill="#F7F4EA"/>'+
+      '<g fill="#8FB3C9"><path d="M12 34 v-8 a5 5 0 0 1 10 0 v8 z"/><path d="M28 34 v-8 a5 5 0 0 1 10 0 v8 z"/><path d="M44 34 v-8 a5 5 0 0 1 10 0 v8 z"/></g>'+
+      '<rect x="8" y="38" width="60" height="2.5" fill="#C96F4A"/>'+
+      '<path d="M20 58 v-10 a6 6 0 0 1 12 0 v10 z" fill="#3E6B6B"/>'+
+      '<rect x="42" y="44" width="16" height="10" fill="#BFD9E8"/>'+
+      '<circle cx="64" cy="20" r="4" fill="#4C7A45"/>',
+ /* McCahon House（French Bay）：丛林里的深色木盒美术馆 */
+ mccahon: '<circle cx="10" cy="14" r="7" fill="#3E5A40"/><circle cx="22" cy="9" r="5" fill="#4C7A45"/><circle cx="68" cy="12" r="6" fill="#3E5A40"/>'+
+      '<rect x="8" y="20" width="60" height="38" fill="#2E2A26"/>'+
+      '<g stroke="#1F1C19" stroke-width="1.6"><line x1="16" y1="20" x2="16" y2="58"/><line x1="24" y1="20" x2="24" y2="58"/><line x1="52" y1="20" x2="52" y2="58"/><line x1="60" y1="20" x2="60" y2="58"/></g>'+
+      '<rect x="30" y="26" width="18" height="22" fill="#D9A24B"/>'+
+      '<path d="M33 44 L39 32 L45 44 z" fill="#2E2A26"/><circle cx="42" cy="31" r="2.6" fill="#FDFBF4"/>'+
+      '<rect x="30" y="52" width="18" height="6" fill="#4C7A45"/>',
+ /* Te Toi Uku（New Lynn）：Crown Lynn 陶瓷博物馆，砖窑瓶形烟囱 */
+ tetoiuku: '<path d="M52 26 v-10 q0 -8 6 -12 q6 4 6 12 v10 z" fill="#94472E"/>'+
+      '<rect x="6" y="26" width="64" height="32" fill="#B06A4A"/>'+
+      '<g stroke="#94472E" stroke-width="1"><line x1="6" y1="34" x2="70" y2="34"/><line x1="6" y1="42" x2="70" y2="42"/><line x1="6" y1="50" x2="70" y2="50"/></g>'+
+      '<rect x="12" y="32" width="16" height="16" fill="#FDF8EC"/>'+
+      '<path d="M16 44 q0 -7 4 -7 q4 0 4 7 z" fill="#2A6FB0"/>'+
+      '<circle cx="20" cy="34.5" r="2" fill="#E8A200"/>'+
+      '<rect x="34" y="38" width="12" height="20" fill="#3A2A28"/>',
+ /* Helensville：老邮局砖楼改造的艺术中心 */
+ helensville: '<rect x="6" y="14" width="64" height="44" fill="#9E5A3C"/>'+
+      '<rect x="6" y="14" width="64" height="5" fill="#F5F1E8"/>'+
+      '<circle cx="38" cy="26" r="4.5" fill="#fff" stroke="#8D887A" stroke-width="1.2"/><line x1="38" y1="26" x2="38" y2="23" stroke="#37556E" stroke-width="1.2"/>'+
+      '<g fill="#BFD9E8" stroke="#F5F1E8" stroke-width="2"><rect x="12" y="34" width="12" height="14"/><rect x="52" y="34" width="12" height="14"/></g>'+
+      '<path d="M32 58 v-14 a6 6 0 0 1 12 0 v14 z" fill="#4C7A45"/>',
+ /* The Vivian（Matakana）：黑色山墙谷仓画廊 */
+ vivian: '<polygon points="6,30 38,8 70,30" fill="#23211C"/>'+
+      '<rect x="10" y="30" width="56" height="28" fill="#2E2A26"/>'+
+      '<g stroke="#1F1C19" stroke-width="1.6"><line x1="18" y1="30" x2="18" y2="58"/><line x1="26" y1="30" x2="26" y2="58"/><line x1="50" y1="30" x2="50" y2="58"/><line x1="58" y1="30" x2="58" y2="58"/></g>'+
+      '<rect x="32" y="34" width="14" height="24" fill="#FDF8EC"/>'+
+      '<circle cx="39" cy="44" r="4.5" fill="#E4572E"/>'+
+      '<circle cx="70" cy="52" r="5" fill="#7A9E4C"/>',
+ /* Gow Langsford（Onehunga 旗舰）：大跨度白色仓库空间 */
+ gowlangsford: '<polygon points="4,22 28,10 52,22" fill="#D8D5CC"/><rect x="52" y="14" width="20" height="8" fill="#D8D5CC"/>'+
+      '<rect x="6" y="22" width="64" height="36" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="28" width="20" height="24" fill="#F2C94C"/><circle cx="22" cy="40" r="6" fill="#C0402B"/>'+
+      '<rect x="38" y="28" width="14" height="24" fill="#2A6FB0"/>'+
+      '<rect x="56" y="30" width="10" height="28" fill="#20242A"/>'+
+      '<rect x="12" y="24" width="26" height="2.5" fill="#20242A"/>',
+ /* Starkwhite（K Rd）：灰色三层老厂房 + 白色招牌带 */
+ starkwhite: '<rect x="8" y="8" width="60" height="50" fill="#8E9BA5"/>'+
+      '<rect x="8" y="8" width="60" height="7" fill="#fff"/><rect x="12" y="10" width="24" height="3" fill="#23211C"/>'+
+      '<g fill="#D8E6F1"><rect x="13" y="20" width="12" height="10"/><rect x="32" y="20" width="12" height="10"/><rect x="51" y="20" width="12" height="10"/><rect x="13" y="34" width="12" height="10"/><rect x="32" y="34" width="12" height="10"/><rect x="51" y="34" width="12" height="10"/></g>'+
+      '<rect x="30" y="48" width="16" height="10" fill="#23211C"/>',
+ /* Two Rooms（Grey Lynn）：白色工业仓库 + 锯齿天窗 */
+ tworooms: '<polygon points="6,24 16,12 26,24" fill="#C9C2B2"/><polygon points="26,24 36,12 46,24" fill="#C9C2B2"/><polygon points="46,24 56,12 66,24" fill="#C9C2B2"/>'+
+      '<polygon points="16,12 26,24 26,12" fill="#7FA8C9"/><polygon points="36,12 46,24 46,12" fill="#7FA8C9"/>'+
+      '<rect x="6" y="24" width="60" height="34" fill="#F7F4EA"/>'+
+      '<rect x="12" y="30" width="20" height="20" fill="#E4572E"/><rect x="18" y="36" width="8" height="8" fill="#F7F4EA"/>'+
+      '<rect x="40" y="30" width="14" height="28" fill="#20242A"/>'+
+      '<rect x="58" y="34" width="8" height="16" fill="#D8E6F1"/>',
+ /* Sanderson（Newmarket Osborne Ln）：巷弄砖墙 + 黑钢窗 */
+ sanderson: '<rect x="6" y="12" width="64" height="46" fill="#8E5A44"/>'+
+      '<g stroke="#7A4A36" stroke-width="1"><line x1="6" y1="22" x2="70" y2="22"/><line x1="6" y1="32" x2="70" y2="32"/><line x1="6" y1="42" x2="70" y2="42"/><line x1="6" y1="52" x2="70" y2="52"/></g>'+
+      '<rect x="12" y="18" width="24" height="30" fill="#20242A"/><g stroke="#8E9BA5" stroke-width="1.4"><line x1="20" y1="18" x2="20" y2="48"/><line x1="28" y1="18" x2="28" y2="48"/><line x1="12" y1="33" x2="36" y2="33"/></g>'+
+      '<rect x="14" y="20" width="20" height="12" fill="#D9A24B" opacity=".85"/>'+
+      '<rect x="46" y="24" width="16" height="34" fill="#20242A"/><rect x="49" y="30" width="10" height="14" fill="#D8E6F1"/>',
+ /* Föenander（Mt Eden）：红砖街铺 + 上层拱窗 */
+ foenander: '<rect x="8" y="10" width="60" height="48" fill="#94472E"/>'+
+      '<g fill="#F2DBB8"><path d="M13 28 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/><path d="M33 28 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/><path d="M53 28 v-7 a4.5 4.5 0 0 1 9 0 v7 z"/></g>'+
+      '<rect x="8" y="32" width="60" height="3" fill="#F2DBB8"/>'+
+      '<rect x="12" y="38" width="32" height="20" fill="#FDF8EC"/>'+
+      '<rect x="18" y="42" width="9" height="11" fill="#7A4FB0"/><rect x="31" y="42" width="9" height="11" fill="#2E8B57"/>'+
+      '<rect x="50" y="38" width="12" height="20" fill="#3A2A28"/>',
+ /* Melanie Roger（K Rd）：白立方店面 + 一幅大画 */
+ melanieroger: '<rect x="8" y="12" width="60" height="46" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="16" width="28" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="24" width="34" height="28" fill="#FDF8EC" stroke="#D8D5CC" stroke-width="1"/>'+
+      '<rect x="16" y="28" width="26" height="20" fill="#2A6FB0"/><path d="M16 48 Q24 34 30 44 T42 40 L42 48 z" fill="#E8A200"/>'+
+      '<rect x="52" y="24" width="10" height="34" fill="#20242A"/>',
+ /* Ivan Anthony（K Rd 转角）：奶油色装饰艺术转角楼 */
+ ivananthony: '<rect x="8" y="10" width="60" height="48" fill="#EFE3C8"/>'+
+      '<rect x="8" y="10" width="60" height="5" fill="#4C8C7A"/>'+
+      '<g fill="#4C8C7A"><rect x="14" y="20" width="10" height="14" rx="4"/><rect x="33" y="20" width="10" height="14" rx="4"/><rect x="52" y="20" width="10" height="14" rx="4"/></g>'+
+      '<rect x="8" y="38" width="60" height="3" fill="#4C8C7A"/>'+
+      '<rect x="12" y="44" width="26" height="14" fill="#D8E6F1"/>'+
+      '<rect x="48" y="42" width="12" height="16" fill="#23211C"/>',
+ /* RM Gallery：Samoa House 的法雷（fale）拱顶 */
+ rmgallery: '<path d="M8 34 Q38 4 68 34 z" fill="#8A6B45"/>'+
+      '<path d="M12 32 Q38 8 64 32" fill="none" stroke="#6B4A2F" stroke-width="2"/><path d="M16 32 Q38 13 60 32" fill="none" stroke="#6B4A2F" stroke-width="2"/>'+
+      '<rect x="10" y="34" width="56" height="24" fill="#F5EFE2"/>'+
+      '<g stroke="#8A6B45" stroke-width="3"><line x1="16" y1="34" x2="16" y2="58"/><line x1="38" y1="34" x2="38" y2="58"/><line x1="60" y1="34" x2="60" y2="58"/></g>'+
+      '<rect x="24" y="40" width="10" height="18" fill="#C0402B"/><rect x="44" y="40" width="10" height="18" fill="#37556E"/>',
+ /* Tautai（300 K Rd）：太平洋艺术，tapa 纹样门面 */
+ tautai: '<rect x="8" y="12" width="60" height="46" fill="#37556E"/>'+
+      '<g fill="#E8A200"><path d="M12 24 l4 -6 4 6 z"/><path d="M24 24 l4 -6 4 6 z"/><path d="M36 24 l4 -6 4 6 z"/><path d="M48 24 l4 -6 4 6 z"/><path d="M60 24 l3 -6 3 6 z"/></g>'+
+      '<g fill="#F5EFE2"><path d="M18 32 l4 -6 4 6 z"/><path d="M30 32 l4 -6 4 6 z"/><path d="M42 32 l4 -6 4 6 z"/><path d="M54 32 l4 -6 4 6 z"/></g>'+
+      '<rect x="12" y="38" width="30" height="20" fill="#FDF8EC"/>'+
+      '<circle cx="27" cy="48" r="6" fill="#C0402B"/><circle cx="27" cy="48" r="2.5" fill="#F2C94C"/>'+
+      '<rect x="48" y="38" width="14" height="20" fill="#23211C"/>',
+ /* ST PAUL St（AUT）：混凝土校园楼 + 黑玻璃 */
+ stpaulst: '<rect x="6" y="8" width="64" height="50" fill="#B9B4A8"/>'+
+      '<rect x="10" y="12" width="56" height="22" fill="#2E3238"/>'+
+      '<g stroke="#B9B4A8" stroke-width="1.4"><line x1="24" y1="12" x2="24" y2="34"/><line x1="38" y1="12" x2="38" y2="34"/><line x1="52" y1="12" x2="52" y2="34"/></g>'+
+      '<rect x="10" y="40" width="34" height="18" fill="#FDF8EC"/>'+
+      '<rect x="14" y="44" width="12" height="10" fill="#E4572E"/><rect x="30" y="44" width="10" height="10" fill="#7A4FB0"/>'+
+      '<rect x="50" y="38" width="16" height="20" fill="#23211C"/><rect x="53" y="42" width="10" height="3" fill="#E4572E"/>',
+ /* Window（奥大图书馆）：玻璃橱窗画廊 */
+ window: '<rect x="6" y="10" width="64" height="48" fill="#8E9BA5"/>'+
+      '<rect x="10" y="14" width="56" height="34" fill="#BFD9E8"/>'+
+      '<g stroke="#8E9BA5" stroke-width="1.6"><line x1="24" y1="14" x2="24" y2="48"/><line x1="38" y1="14" x2="38" y2="48"/><line x1="52" y1="14" x2="52" y2="48"/></g>'+
+      '<rect x="27" y="22" width="22" height="18" fill="#FDF8EC"/><circle cx="38" cy="31" r="6" fill="#7A4FB0"/><rect x="34" y="27" width="8" height="8" fill="#E8A200" opacity=".85"/>'+
+      '<rect x="10" y="50" width="56" height="8" fill="#5A5F66"/>',
+ /* Coastal Signs（Anzac Ave）：办公楼底层画廊 + 灯箱招牌 */
+ coastalsigns: '<rect x="8" y="8" width="60" height="50" fill="#5A5F66"/>'+
+      '<g fill="#8E9BA5"><rect x="13" y="13" width="10" height="8"/><rect x="28" y="13" width="10" height="8"/><rect x="43" y="13" width="10" height="8"/><rect x="13" y="25" width="10" height="8"/><rect x="28" y="25" width="10" height="8"/><rect x="43" y="25" width="10" height="8"/></g>'+
+      '<rect x="58" y="13" width="6" height="20" fill="#FFD400"/>'+
+      '<rect x="12" y="38" width="34" height="20" fill="#FDF8EC"/>'+
+      '<path d="M16 54 L24 42 L32 54 z" fill="#2A6FB0"/><circle cx="36" cy="45" r="4" fill="#E4572E"/>'+
+      '<rect x="52" y="38" width="10" height="20" fill="#23211C"/>',
+ /* Bergman（CBD）：白盒 + 太平洋花饰 */
+ bergman: '<rect x="8" y="12" width="60" height="46" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="16" width="22" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="26" width="32" height="26" fill="#37556E"/>'+
+      '<g fill="#E86FA4"><circle cx="28" cy="35" r="3"/><circle cx="33" cy="39" r="3"/><circle cx="28" cy="43" r="3"/><circle cx="23" cy="39" r="3"/></g><circle cx="28" cy="39" r="2.2" fill="#F2C94C"/>'+
+      '<rect x="50" y="26" width="12" height="32" fill="#20242A"/>',
+ /* Whitespace（Grey Lynn）：白立方 + 天窗 */
+ whitespace: '<rect x="8" y="16" width="60" height="42" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="18" y="8" width="18" height="10" fill="#D8E6F1" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="22" width="26" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="30" width="30" height="24" fill="#FDF8EC" stroke="#D8D5CC" stroke-width="1"/>'+
+      '<circle cx="22" cy="40" r="5" fill="#2E8B57"/><rect x="30" y="34" width="8" height="14" fill="#C0402B"/>'+
+      '<rect x="50" y="28" width="12" height="30" fill="#20242A"/>',
+ /* Allpress Studio（Freemans Bay）：烘焙坊仓库 + 咖啡杯 */
+ allpress: '<rect x="6" y="14" width="64" height="44" fill="#8E5A44"/>'+
+      '<g stroke="#7A4A36" stroke-width="1"><line x1="6" y1="24" x2="70" y2="24"/><line x1="6" y1="34" x2="70" y2="34"/><line x1="6" y1="44" x2="70" y2="44"/></g>'+
+      '<rect x="12" y="20" width="28" height="26" fill="#FDF8EC"/>'+
+      '<path d="M20 40 v-8 h12 v8 a6 6 0 0 1 -12 0 z" fill="#23211C"/><path d="M32 34 h4 a3 3 0 0 1 0 6 h-4" fill="none" stroke="#23211C" stroke-width="2"/>'+
+      '<path d="M23 28 q2 -3 0 -5 M29 28 q2 -3 0 -5" fill="none" stroke="#8D887A" stroke-width="1.6"/>'+
+      '<rect x="48" y="24" width="14" height="34" fill="#3A2A28"/><rect x="50" y="28" width="10" height="12" fill="#D9A24B"/>',
+ /* Artis（Parnell）：白色别墅画廊 + 庭院雕塑 */
+ artis: '<polygon points="6,26 34,10 62,26" fill="#8E9BA5"/>'+
+      '<rect x="10" y="26" width="48" height="32" fill="#FDFBF4"/>'+
+      '<rect x="16" y="32" width="11" height="12" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/><rect x="40" y="32" width="11" height="12" fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"/>'+
+      '<rect x="28" y="44" width="10" height="14" fill="#37556E"/>'+
+      '<ellipse cx="66" cy="56" rx="6" ry="2.5" fill="#C9C2B2"/><path d="M66 54 q-4 -6 0 -12 q4 6 0 12" fill="#C0402B"/>',
+ /* International Art Centre（Parnell）：奶油拍卖行 + 金框画 */
+ intlart: '<rect x="8" y="12" width="60" height="46" fill="#EFE3C8"/>'+
+      '<rect x="8" y="12" width="60" height="6" fill="#37556E"/><rect x="12" y="13.5" width="30" height="3" fill="#EFE3C8"/>'+
+      '<rect x="12" y="24" width="32" height="28" fill="#FDF8EC"/>'+
+      '<rect x="16" y="28" width="24" height="18" fill="#D9A24B"/><rect x="19" y="31" width="18" height="12" fill="#2F4858"/><path d="M19 43 L26 35 L31 40 L37 33 L37 43 z" fill="#7A9E4C"/>'+
+      '<rect x="50" y="24" width="12" height="34" fill="#3A2A28"/>',
+ /* Parnell Gallery：维多利亚街铺 + 前廊挂画 */
+ parnellgallery: '<rect x="8" y="10" width="60" height="8" fill="#5E7A4A"/>'+
+      '<rect x="8" y="18" width="60" height="40" fill="#FDFBF4"/>'+
+      '<rect x="8" y="26" width="60" height="3" fill="#5E7A4A"/>'+
+      '<g stroke="#8D887A" stroke-width="2"><line x1="12" y1="29" x2="12" y2="58"/><line x1="64" y1="29" x2="64" y2="58"/></g>'+
+      '<rect x="18" y="32" width="12" height="10" fill="#2A6FB0"/><rect x="34" y="32" width="12" height="10" fill="#E8A200"/>'+
+      '<rect x="18" y="46" width="12" height="10" fill="#C0402B"/><rect x="34" y="46" width="12" height="10" fill="#2E8B57"/>'+
+      '<rect x="52" y="32" width="9" height="24" fill="#3E5A40"/>',
+ /* Papakura Art Gallery：南区街铺美术馆 + 玛欧里纹样带 */
+ papakura: '<rect x="8" y="12" width="60" height="46" fill="#F4F2EC"/>'+
+      '<rect x="8" y="12" width="60" height="8" fill="#C0402B"/>'+
+      '<path d="M12 18 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0" fill="none" stroke="#fff" stroke-width="1.6"/>'+
+      '<rect x="12" y="26" width="36" height="26" fill="#FDF8EC" stroke="#D8D5CC" stroke-width="1"/>'+
+      '<path d="M16 48 a8 8 0 0 1 8 -8 a5 5 0 0 1 0 10 a3 3 0 0 1 -3 -5" fill="none" stroke="#23211C" stroke-width="2.4"/>'+
+      '<rect x="34" y="30" width="10" height="14" fill="#E8A200"/>'+
+      '<rect x="54" y="26" width="10" height="32" fill="#23211C"/>',
+ /* Franklin Arts Centre（Pukekohe）：小镇砖楼 + 白门廊 */
+ franklin: '<rect x="6" y="14" width="64" height="44" fill="#A6432F"/>'+
+      '<rect x="6" y="14" width="64" height="5" fill="#F5F1E8"/>'+
+      '<g fill="#BFD9E8" stroke="#F5F1E8" stroke-width="2"><rect x="12" y="24" width="12" height="14"/><rect x="52" y="24" width="12" height="14"/></g>'+
+      '<rect x="30" y="22" width="16" height="6" fill="#F5F1E8"/>'+
+      '<rect x="28" y="40" width="20" height="18" fill="#F5F1E8"/><path d="M32 58 v-10 a6 6 0 0 1 12 0 v10 z" fill="#2E8B57"/>'+
+      '<circle cx="15" cy="48" r="3" fill="#E8A200"/><circle cx="61" cy="48" r="3" fill="#7A4FB0"/>',
+ /* Jonathan Grant（Parnell）：奶油古典门面 + 深蓝雨棚 + 金框风景画 */
+ jonathangrant: '<rect x="8" y="12" width="60" height="46" fill="#F2E8D0"/>'+
+      '<rect x="8" y="12" width="60" height="5" fill="#C9C2B2"/>'+
+      '<path d="M10 24 h56 l3 7 h-62 z" fill="#1C3D5A"/><path d="M22 24 l1.2 7 h5 l-1.2 -7 z M40 24 l1.2 7 h5 l-1.2 -7 z" fill="#F2E8D0"/>'+
+      '<rect x="12" y="36" width="30" height="20" fill="#FDF8EC"/>'+
+      '<rect x="16" y="39" width="22" height="14" fill="#D9A24B"/><rect x="18.5" y="41.5" width="17" height="9" fill="#7FA8C9"/><path d="M18.5 50.5 L25 44 L29 48 L35.5 42 L35.5 50.5 z" fill="#5E8C4A"/>'+
+      '<rect x="50" y="36" width="12" height="22" fill="#1C3D5A"/>',
+ /* Black Door（Parnell）：黑色门面 + 大黑门 + 橱窗里的陶瓷与玻璃 */
+ blackdoor: '<rect x="8" y="12" width="60" height="46" fill="#23211C"/>'+
+      '<rect x="12" y="16" width="26" height="3" fill="#D9A24B"/>'+
+      '<rect x="12" y="26" width="32" height="28" fill="#FDF8EC"/>'+
+      '<path d="M18 50 q0 -8 5 -8 q5 0 5 8 z" fill="#3C8C8C"/>'+
+      '<path d="M32 50 v-9 q0 -4 4 -4 q4 0 4 4 v9 z" fill="#E8A200" opacity=".85"/>'+
+      '<circle cx="24" cy="34" r="3" fill="#E86FA4"/>'+
+      '<rect x="50" y="24" width="13" height="34" fill="#0E0D0B" stroke="#D9A24B" stroke-width="1.5"/><circle cx="60" cy="42" r="1.4" fill="#D9A24B"/>'
+};
+
+/* ================= 状态 ================= */
+var S = {win:"week", cat:"all", lang:"zh", open:null};
+var EV = (window.EVENTS && window.EVENTS.items) || [];
+
+function inWindow(dstr){
+  var today = new Date(); today.setHours(0,0,0,0);
+  var d = new Date(dstr + "T00:00:00");
+  var days = (d - today) / 86400000;
+  return days >= 0 && days < (S.win === "week" ? 7 : 31);
+}
+/* 带日期的活动（开幕/演出/工作坊…），不含长期展 */
+function venueEvents(id){
+  return EV.filter(function(e){ return e.venue === id && e.kind !== "exhibition" && inWindow(e.date); })
+           .sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+}
+/* 正在展出的项目：kind="exhibition"，date=开展日，end=撤展日 */
+function venueShows(id){
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.filter(function(e){
+    if(e.venue !== id || e.kind !== "exhibition") return false;
+    var s = new Date(e.date + "T00:00:00"), t = new Date((e.end || e.date) + "T00:00:00");
+    return s <= today && today <= t;
+  }).sort(function(a,b){ return (a.end||a.date) < (b.end||b.date) ? -1 : 1; });
+}
+/* 已结束的历史记录（最近的排前面，最多 3 条）——无新内容时展示"上次活动" */
+function venuePast(id){
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.filter(function(e){
+    if(e.venue !== id) return false;
+    var last = new Date((e.end || e.date) + "T00:00:00");
+    return last < today;
+  }).sort(function(a,b){
+    var x = a.end || a.date, y = b.end || b.date;
+    return x < y ? 1 : -1;
+  }).slice(0, 3);
+}
+function fmtDate(dstr){
+  var d = new Date(dstr + "T00:00:00");
+  var wkE = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], wkZ = ["周日","周一","周二","周三","周四","周五","周六"];
+  var mE = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return S.lang === "zh" ? (d.getMonth()+1)+"月"+d.getDate()+"日 "+wkZ[d.getDay()]
+                         : wkE[d.getDay()]+" "+d.getDate()+" "+mE[d.getMonth()];
+}
+
+/* ================= Leaflet 地图 ================= */
+var map = L.map("map", {zoomControl:true, scrollWheelZoom:true})
+           .setView([-36.895, 174.815], 12);   /* 视野覆盖 Henderson ↔ 激流岛 */
+
+/* ---- 底图：三个可切换源（全部过灰度滤镜） ---- */
+var baseEsri = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 18, minZoom: 9,
+  attribution: "Imagery © Esri, Maxar, Earthstar Geographics"
+});
+var baseEOX = L.tileLayer("https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/g/{z}/{y}/{x}.jpg", {
+  maxNativeZoom: 14, maxZoom: 18, minZoom: 9,
+  attribution: '<a href="https://s2maps.eu">Sentinel-2 cloudless</a> by <a href="https://eox.at">EOX</a> (CC BY-NC-SA 4.0)'
+});
+var baseOSM = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19, minZoom: 9,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+baseEsri.addTo(map);
+L.control.layers({
+  "卫星 Satellite (Esri)": baseEsri,
+  "卫星 Satellite (EOX Sentinel-2 · 开源)": baseEOX,
+  "街道 Streets (OSM · 开源)": baseOSM
+}, null, {position:"bottomleft"}).addTo(map);
+
+/* 贴纸随缩放变大变小 */
+function stickerSize(){
+  var z = map.getZoom();
+  return z <= 10 ? 30 : z <= 11 ? 38 : z === 12 ? 46 : z === 13 ? 58 : z === 14 ? 74 : 90;
+}
+
+/* 标签过长时用 textLength 压进贴纸内（修正文字超框） */
+function labelSVG(v, y){
+  var est = v.label.length * 6.2;   /* 10px 字号的估宽 */
+  var tl = est > 86 ? ' textLength="86" lengthAdjust="spacingAndGlyphs"' : '';
+  return '<text class="slabel" x="0" y="'+y+'"'+tl+'>'+v.label+'</text>';
+}
+
+/* 活动类型短标签（贴纸横幅用） */
+var KINDL = {
+  opening:{zh:"开幕", en:"Opening"}, reading:{zh:"文学", en:"Reading"},
+  gig:{zh:"演出", en:"Live"}, workshop:{zh:"工作坊", en:"Workshop"}, market:{zh:"集市", en:"Market"},
+  talk:{zh:"讲座", en:"Talk"}, film:{zh:"放映", en:"Film"}
+};
+function ribbonText(evs){
+  var e = evs[0];
+  var d = new Date(e.date + "T00:00:00");
+  var k = KINDL[e.kind] || KINDL.opening;
+  return (d.getMonth()+1)+"/"+d.getDate()+" · "+(S.lang==="zh" ? k.zh : k.en)
+       + (evs.length > 1 ? "  +"+(evs.length-1) : "");
+}
+
+function stickerHTML(v){
+  var evs = venueEvents(v.id);
+  var live = evs.length > 0;
+  /* 贴纸太小时（缩放 ≤12）隐藏底部横幅，只留计数点 */
+  var showRibbon = live && map.getZoom() >= 13;
+  var cls = "stk " + (live ? "live" : ("off" + (venueShows(v.id).length ? "" : " faint")))
+          + (S.cat !== "all" && v.cat !== S.cat ? " dim" : "")
+          + (S.open === v.id ? " gone" : "");
+  /* 有活动且够大时贴纸更高：底部多一条黄色活动横幅 */
+  var ph = showRibbon ? 108 : 94;               /* paper 高度 */
+  var vb = showRibbon ? "-52 -50 104 116" : "-52 -50 104 100";
+  return '<div class="'+cls+'" style="--rot:'+v.r+'deg" data-id="'+v.id+'">'+
+    '<div class="front">'+
+    '<svg viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg">'+
+    '<defs>'+
+      '<clipPath id="cp-'+v.id+'"><rect x="-48" y="-46" width="96" height="'+ph+'" rx="12"/></clipPath>'+
+      '<linearGradient id="sw-'+v.id+'" x1="0" y1="0" x2="1" y2="0">'+
+        '<stop offset="0" stop-color="#fff" stop-opacity="0"/>'+
+        '<stop offset=".5" stop-color="#fff" stop-opacity=".85"/>'+
+        '<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'+
+    '</defs>'+
+    '<g transform="rotate('+v.r+')">'+
+      '<rect class="paper" x="-48" y="-46" width="96" height="'+ph+'" rx="12"/>'+
+      '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
+      labelSVG(v, 38)+
+      (showRibbon ?
+        '<g clip-path="url(#cp-'+v.id+')"><rect x="-48" y="44" width="96" height="18" fill="#FFD400"/></g>'+
+        '<text class="ribbon" y="56">'+ribbonText(evs)+'</text>'
+        : '')+
+      /* 右下角翘起的卷角：任何缩放级别下有活动的贴纸都有，坐标随贴纸高度自适应 */
+      (live ? (function(){
+        var b = -46 + ph;   /* 贴纸底边 y */
+        return '<g class="curl">'+
+          '<path d="M30 '+b+' Q44 '+(b-2)+' 48 '+(b-18)+' L48 '+b+' z" fill="#23211C" opacity=".16"/>'+
+          '<path d="M33 '+b+' Q45 '+(b-4)+' 48 '+(b-15)+' L48 '+b+' z" fill="#F6F1E3" stroke="#DDD6C4" stroke-width="1"/>'+
+        '</g>';
+      })() : '')+
+      '<g clip-path="url(#cp-'+v.id+')">'+
+        '<rect x="-72" y="-72" width="28" height="170" fill="#fff" opacity=".12" transform="rotate(24)"/>'+
+        '<g class="sweep"><rect x="-15" y="-85" width="30" height="170" fill="url(#sw-'+v.id+')" transform="rotate(24)"/></g>'+
+      '</g>'+
+      (live ? '<g class="dot" transform="translate(40,-38)"><circle r="10"/><text y="3.4">'+evs.length+'</text></g>' : '')+
+    '</g></svg></div><div class="roll"></div></div>';
+}
+
+var markers = {};
+function buildMarkers(){
+  var sz = stickerSize();
+  VENUES.forEach(function(v){
+    var live = venueEvents(v.id).length > 0;
+    var s = live ? Math.round(sz * 1.15) : sz;    /* 有活动的贴纸大 15% */
+    var icon = L.divIcon({className:"stkwrap", html:stickerHTML(v), iconSize:[s,s], iconAnchor:[s/2,s/2]});
+    if(markers[v.id]){
+      markers[v.id].setIcon(icon);
+      markers[v.id].setZIndexOffset(live ? 1000 : 0);   /* 有活动的压在上面 */
+    }
+    else{
+      var m = L.marker([v.lat, v.lng], {icon:icon, riseOnHover:true, zIndexOffset: live ? 1000 : 0}).addTo(map);
+      m.on("click", function(){ openVenue(v.id, false); });
+      markers[v.id] = m;
+    }
+  });
+}
+map.on("zoomend", buildMarkers);
+
+/* 撕走后留下的残胶痕迹 */
+function spawnGhost(m){
+  var root = m.getElement(); if(!root) return;
+  var g = document.createElement("div");
+  g.className = "ghost";
+  root.appendChild(g);
+  setTimeout(function(){ if(g.parentNode) g.parentNode.removeChild(g); }, 1400);
+}
+
+/* 按距离排序的附近场馆（尊重当前类别筛选） */
+function nearIds(anchorId){
+  var a = VENUES.filter(function(x){ return x.id === anchorId; })[0];
+  var cos = Math.cos(a.lat * Math.PI / 180);
+  return VENUES.filter(function(x){
+      return x.id !== anchorId && (S.cat === "all" || x.cat === S.cat);
+    })
+    .map(function(x){
+      var dy = x.lat - a.lat, dx = (x.lng - a.lng) * cos;
+      return {id: x.id, d: dy*dy + dx*dx};
+    })
+    .sort(function(p,q){ return p.d - q.d; })
+    .map(function(x){ return x.id; });
+}
+
+/* 打开场馆：fromNav=true 表示从卡片"附近"导航过来（平移地图，保持导航列表） */
+function openVenue(id, fromNav){
+  if(!fromNav){
+    S.navList = [id].concat(nearIds(id));
+    S.navPos = 0;
+  }
+  if(S.open && S.open !== id) restoreSticker(S.open);
+  var v = VENUES.filter(function(x){ return x.id === id; })[0];
+  if(fromNav && v) map.panTo([v.lat, v.lng], {animate:true, duration:.4});
+  var m = markers[id];
+  var el = m && m.getElement() && m.getElement().querySelector(".stk");
+  if(el && !el.classList.contains("gone")){
+    el.classList.add("shine-run");                               /* ① 反光扫过 */
+    setTimeout(function(){ el.classList.add("tear"); spawnGhost(m); }, 380);  /* ② 从右下角卷起撕下+残胶 */
+    setTimeout(function(){                                       /* ③ 纸卡替代出现 */
+      el.classList.add("gone"); el.classList.remove("tear","shine-run");
+      openPanel(id);
+    }, 1300);
+  } else { openPanel(id); }
+}
+
+function navTo(dir){
+  if(!S.navList || !S.navList.length) return;
+  var np = S.navPos + dir;
+  if(np < 0 || np >= S.navList.length) return;
+  S.navPos = np;
+  openVenue(S.navList[np], true);
+}
+
+function restoreSticker(id){                                          /* ④ 贴回去 */
+  var m = markers[id]; if(!m) return;
+  var el = m.getElement() && m.getElement().querySelector(".stk");
+  if(el){
+    el.classList.remove("gone"); el.classList.add("back");
+    setTimeout(function(){ el.classList.remove("back"); }, 500);
+  }
+}
+
+/* ================= 纸质卡片 ================= */
+/* 撕下来的那张贴纸，贴到卡片右上角 */
+function cardStickerSVG(v){
+  return '<div class="cardstk"><svg viewBox="-52 -50 104 100" xmlns="http://www.w3.org/2000/svg">'+
+    '<rect class="paper" x="-48" y="-46" width="96" height="94" rx="12"/>'+
+    '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
+    labelSVG(v, 38)+
+    '</svg></div>';
+}
+
+function openPanel(id){
+  var v = VENUES.filter(function(x){ return x.id === id; })[0];
+  if(!v) return;
+  S.open = id;
+  var evs = venueEvents(id);
+  var cat = CATS[v.cat];
+  var h = '<button class="close" aria-label="close">&times;</button>'+
+    cardStickerSVG(v)+
+    '<span class="cat" style="background:'+cat.hex+'">'+(S.lang==="zh"?cat.zh:cat.en)+'</span>'+
+    '<h2>'+(S.lang==="zh"?v.zh:v.en)+'</h2>'+
+    '<div class="addr">'+v.addr+
+      (SITES[v.id] ? ' &nbsp;·&nbsp; <a class="weblink" href="'+SITES[v.id]+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"官网 →":"Website →")+'</a>' : '')+
+    '</div>';
+  if(evs.length){
+    evs.forEach(function(e){
+      var priceMap = {free:{zh:"免费",en:"Free"}, paid:{zh:"收费",en:"Ticketed"}, koha:{zh:"随喜 Koha",en:"Koha"}};
+      var p = priceMap[e.price];
+      h += '<div class="ev">'+
+           '<div class="d">'+fmtDate(e.date)+(e.time ? " · "+e.time : "")+'</div>'+
+           '<div class="t">'+(S.lang==="zh"&&e.zh ? e.zh : e.title)+'</div>'+
+           ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
+           '<div class="meta">'+
+             (p ? '<span class="price '+e.price+'">'+(S.lang==="zh"?p.zh:p.en)+'</span>'
+                : '<span class="price">'+(S.lang==="zh"?"费用见链接":"See link for price")+'</span>')+
+             (e.url && e.url!=="#" ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"活动页面 →":"Event page →")+'</a>' : '')+
+           '</div></div>';
+    });
+  }
+  /* 正在展出的项目（长期展），无论有没有活动都列出 */
+  var shows = venueShows(id);
+  if(shows.length){
+    h += '<div class="ovh">'+(S.lang==="zh"?"正在展出":"On view now")+'</div>';
+    shows.forEach(function(e){
+      var priceMap2 = {free:{zh:"免费",en:"Free"}, paid:{zh:"收费",en:"Ticketed"}, koha:{zh:"随喜 Koha",en:"Koha"}};
+      var p2 = priceMap2[e.price];
+      h += '<div class="ev">'+
+           '<div class="d">'+(S.lang==="zh" ? "展至 " : "Until ")+fmtDate(e.end || e.date)+'</div>'+
+           '<div class="t">'+(S.lang==="zh"&&e.zh ? e.zh : e.title)+'</div>'+
+           ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
+           '<div class="meta">'+
+             (p2 ? '<span class="price '+e.price+'">'+(S.lang==="zh"?p2.zh:p2.en)+'</span>' : '')+
+             (e.url && e.url!=="#" ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"展览页面 →":"Exhibition →")+'</a>' : '')+
+           '</div></div>';
+    });
+  }
+  if(!evs.length && !shows.length){
+    var past = venuePast(id);
+    if(past.length){
+      h += '<div class="pasth">'+(S.lang==="zh" ? "上次活动 · 暂无新排期" : "Last seen · nothing scheduled")+'</div>';
+      past.forEach(function(e){
+        h += '<div class="ev past">'+
+             '<div class="d">'+(e.kind === "exhibition"
+                ? (S.lang==="zh" ? "展至 " : "Ended ")+fmtDate(e.end || e.date)
+                : fmtDate(e.date))+'</div>'+
+             '<div class="t">'+(S.lang==="zh"&&e.zh ? e.zh : e.title)+'</div>'+
+             ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
+             (e.url && e.url!=="#" ? '<div class="meta"><a href="'+e.url+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"场馆页面 →":"Venue page →")+'</a></div>' : '')+
+             '</div>';
+      });
+    } else {
+      h += '<div class="noev">'+(S.lang==="zh"
+        ? "本时段暂无活动记录。可能是场馆确实安静，也可能活动只发在 Instagram 上——值得直接去逛逛。"
+        : "No events recorded for this window. The venue may be quiet, or only posting on Instagram — worth a visit anyway.")+'</div>';
+    }
+  }
+  /* 徽章按条目判断：只有示例条目（sample 标记或 Sample: 开头）才挂 */
+  var isSample = evs.concat(shows).some(function(e){
+    return e.sample === true || /^Sample[:：]/i.test(e.title || "") || /^示例[:：]/.test(e.zh || "");
+  });
+  if(isSample){
+    h += '<div class="samplebadge">'+(S.lang==="zh"?"示例数据 · 待抓取脚本替换":"Sample data — pending scraper")+'</div>';
+  }
+  /* 附近场馆导航行 */
+  var nextV = null, list = S.navList || [];
+  if(list.length && S.navPos + 1 < list.length){
+    nextV = VENUES.filter(function(x){ return x.id === list[S.navPos + 1]; })[0];
+  }
+  h += '<div class="navrow">'+
+    '<button class="navbtn" id="navprev" aria-label="previous venue" '+(S.navPos > 0 ? '' : 'disabled')+'>&#8249;</button>'+
+    '<span class="navlab">'+(nextV
+      ? (S.lang==="zh" ? "附近：<b>"+nextV.zh+"</b>" : "Nearby: <b>"+nextV.en+"</b>")
+      : (S.lang==="zh" ? "已是最后一个" : "End of list"))+'</span>'+
+    '<button class="navbtn" id="navnext" aria-label="next venue" '+(nextV ? '' : 'disabled')+'>&#8250;</button>'+
+  '</div>';
+
+  var p = document.getElementById("panel");
+  p.innerHTML = h;
+  p.classList.remove("open"); void p.offsetWidth;   /* 重触发落卡动画 */
+  p.classList.add("open");
+  p.querySelector(".close").addEventListener("click", closePanel);
+  var bp = p.querySelector("#navprev"), bn = p.querySelector("#navnext");
+  if(bp) bp.addEventListener("click", function(){ navTo(-1); });
+  if(bn) bn.addEventListener("click", function(){ navTo(1); });
+}
+
+function closePanel(){
+  var p = document.getElementById("panel");
+  p.classList.remove("open");
+  restoreSticker(S.open);
+  S.open = null;
+}
+
+/* 键盘：← → 切附近场馆，Esc 关闭 */
+document.addEventListener("keydown", function(e){
+  if(!S.open) return;
+  if(e.key === "ArrowRight"){ navTo(1); }
+  else if(e.key === "ArrowLeft"){ navTo(-1); }
+  else if(e.key === "Escape"){ closePanel(); }
+});
+
+/* 手机：在卡片上左右滑动切附近场馆 */
+(function(){
+  var p = document.getElementById("panel"), x0 = null, y0 = null;
+  p.addEventListener("touchstart", function(e){
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+  }, {passive:true});
+  p.addEventListener("touchend", function(e){
+    if(x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if(Math.abs(dx) > 60 && Math.abs(dy) < 45){ navTo(dx < 0 ? 1 : -1); }
+    x0 = y0 = null;
+  }, {passive:true});
+})();
+
+/* ================= 控件 ================= */
+function renderChips(){
+  var el = document.getElementById("chips");
+  var h = '<button class="chip'+(S.cat==="all"?" on":"")+'" data-cat="all">'+
+          '<span class="en">All</span><span class="zh">全部</span></button>';
+  Object.keys(CATS).forEach(function(k){
+    h += '<button class="chip'+(S.cat===k?" on":"")+'" data-cat="'+k+'">'+
+         '<span class="sw" style="background:'+CATS[k].hex+'"></span>'+
+         '<span class="en">'+CATS[k].en+'</span><span class="zh">'+CATS[k].zh+'</span></button>';
+  });
+  el.innerHTML = h;
+  Array.prototype.forEach.call(el.querySelectorAll(".chip"), function(b){
+    b.addEventListener("click", function(){ S.cat = b.getAttribute("data-cat"); refresh(); });
+  });
+}
+document.getElementById("winseg").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  S.win = b.getAttribute("data-win");
+  Array.prototype.forEach.call(this.querySelectorAll("button"), function(x){ x.classList.toggle("on", x===b); });
+  refresh();
+});
+
+/* 语言切换：JS 内联样式（沿用 Wix 教训，不用 CSS 级联） */
+function applyLang(lang){
+  S.lang = lang;
+  var en = document.getElementsByClassName("en"), zh = document.getElementsByClassName("zh"), i;
+  for(i=0;i<en.length;i++){ en[i].style.display = (lang==="zh") ? "none" : ""; }
+  for(i=0;i<zh.length;i++){ zh[i].style.display = (lang==="zh") ? "" : "none"; }
+  document.getElementById("lsw").classList.toggle("zh", lang==="zh");
+  document.documentElement.lang = lang==="zh" ? "zh" : "en";
+}
+document.getElementById("lsw").addEventListener("click", function(){
+  applyLang(S.lang==="zh" ? "en" : "zh");
+  refresh();
+});
+
+function refresh(){
+  renderChips(); buildMarkers();
+  applyLang(S.lang);
+  /* 数据更新时间：读 events.js 的 generated 字段 */
+  var g = (window.EVENTS && window.EVENTS.generated) || "—";
+  document.getElementById("gendate").textContent =
+    (S.lang==="zh" ? "数据更新于 " : "Data updated ") + g;
+  if(S.open) openPanel(S.open);
+}
+
+/* 页面加载即打开一张卡片：最近即将发生的第一个活动的场馆 */
+function soonestVenue(){
+  var today = new Date(); today.setHours(0,0,0,0);
+  var best = null;
+  EV.forEach(function(e){
+    if(e.kind === "exhibition") return;
+    var d = new Date(e.date + "T00:00:00");
+    if(d < today) return;
+    if(!best || e.date < best.date) best = e;
+  });
+  return best && best.venue;
+}
+
+applyLang("zh"); refresh();
+var _sv = soonestVenue();
+if(_sv){ setTimeout(function(){ openVenue(_sv, false); }, 700); }
+</script>
+</body>
+</html>

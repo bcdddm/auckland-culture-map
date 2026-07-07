@@ -1,0 +1,28 @@
+name: Update events weekly
+
+on:
+  schedule:
+    # 每周一 06:00 NZST（= 周日 18:00 UTC）
+    - cron: "0 18 * * 0"
+  workflow_dispatch: {}   # 也可在 GitHub 页面手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4 python-dateutil
+      - run: python scraper/scrape.py
+      - name: Commit if changed
+        run: |
+          git config user.name "events-bot"
+          git config user.email "actions@github.com"
+          git add events.js
+          git diff --cached --quiet || git commit -m "chore: weekly events update $(date -u +%F)"
+          git push
