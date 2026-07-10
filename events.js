@@ -148,15 +148,6 @@ window.EVENTS = {
       "url": "https://www.lopdell.org.nz/"
     },
     {
-      "venue": "corban",
-      "title": "Molly Timmins: Nurturing Soil / Sur-Collective: Apapacho",
-      "zh": "双展：滋养土壤 / Apapacho",
-      "kind": "exhibition",
-      "date": "2025-12-06",
-      "end": "2026-02-07",
-      "url": "https://www.corbanestate.org.nz/"
-    },
-    {
       "venue": "franklin",
       "title": "Mike Tupaea: Te Oho The Awakening",
       "zh": "Mike Tupaea《觉醒》",
@@ -477,14 +468,6 @@ window.EVENTS = {
       "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Wed 8 Jul 2026"
     },
     {
-      "venue": "corban",
-      "title": "Make Your Mark: Fabric Painting Tote Bag With Cristina Giraldo Wed 8 Jul 2026 10:00AM - 2:30PM Children: 6 - 1",
-      "date": "2026-07-08",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/workshops/art-workshop/make-your-mark-fabric-painting-tote-bag",
-      "desc": "Make Your Mark: Fabric Painting Tote Bag With Cristina Giraldo Wed 8 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED In this immersive school holiday workshop with Cristina Gi"
-    },
-    {
       "venue": "gowlangsford",
       "title": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traver",
       "date": "2026-07-08",
@@ -545,6 +528,14 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/matariki-2026/",
       "desc": "Manawatia a Matariki - He reka te ngahau 9 July - 30 August 2026"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Fri 10 Jul 2026",
+      "date": "2026-07-10",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
+      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Fri 10 Jul 2026"
     },
     {
       "venue": "lakehouse",
@@ -662,11 +653,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-14",
       "kind": "reading",
-      "price": "koha",
-      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
-      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "time": "19:00"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "corban",
@@ -708,6 +695,14 @@ window.EVENTS = {
     },
     {
       "venue": "corban",
+      "title": "Matariki: Matariki Evening Market Fri 17 Jul 2026",
+      "date": "2026-07-17",
+      "kind": "market",
+      "url": "https://ceac.org.nz/events/matariki/matariki-evening-market",
+      "desc": "Matariki: Matariki Evening Market Fri 17 Jul 2026"
+    },
+    {
+      "venue": "corban",
       "title": "Matariki Evening Market With Corban Estate Arts Centre and Five Star Eats Fri 17 Jul 2026 4:30PM - 8:30PM Brin",
       "date": "2026-07-17",
       "kind": "workshop",
@@ -743,6 +738,14 @@ window.EVENTS = {
       "end": "2026-08-26",
       "price": "free",
       "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The ",
+      "date": "2026-07-17",
+      "kind": "opening",
+      "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan",
+      "desc": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are invited to Dean"
     },
     {
       "venue": "upstairs",
@@ -915,6 +918,14 @@ window.EVENTS = {
       "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
     },
     {
+      "venue": "unity",
+      "title": "20 Jul - Wellington IIML Writers on Mondays: Elizabeth Knox & Ingrid Horrocks Monday 20th July, 12:15-1:15pm, ",
+      "date": "2026-07-20",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/iiml-writers-on-mondays-elizabeth-knox-and-ingrid-horrocks",
+      "desc": "20 Jul - Wellington IIML Writers on Mondays: Elizabeth Knox & Ingrid Horrocks Monday 20th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
+    },
+    {
       "venue": "corban",
       "title": "Dawn Wishes to Hiwa-i-te-Rangi With Penny Howard Tue 21 Jul 2026 6:30AM - 8:30AM Dawn Wishes to Hiwa-i-te-Rang",
       "date": "2026-07-21",
@@ -940,9 +951,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-21",
       "kind": "reading",
-      "price": "koha",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "time": "19:00"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "michaellett",
@@ -961,20 +970,12 @@ window.EVENTS = {
       "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
     },
     {
-      "venue": "unity",
-      "title": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books We",
-      "date": "2026-07-22",
-      "kind": "reading",
-      "url": "https://unitybooks.co.nz/news-and-events/lunchtime-author-talk-gareth-shute",
-      "desc": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books Wellington, 57 Willis St. All welcome, chairs available. EVENT DETAILS"
-    },
-    {
       "venue": "sanderson",
       "title": "MOTHERMOTHER 23 Jul - 23 Aug 2026 Sanderson, in partnership with mothermother, are delighted to present MOTHER",
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.sanderson.co.nz/exhibitions/481-mothermother/overview/",
-      "desc": "MOTHERMOTHER 23 Jul - 23 Aug 2026 Sanderson, in partnership with mothermother, are delighted to present MOTHERMOTHER – A major exhibition that investigates mother-centred framework"
+      "desc": "MOTHERMOTHER 23 Jul - 23 Aug 2026 Sanderson, in partnership with mothermother, are delighted to present MOTHERMOTHER – An exhibition that investigates mother-centred frameworks and"
     },
     {
       "venue": "whammy",
@@ -1070,9 +1071,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-28",
       "kind": "reading",
-      "price": "koha",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "time": "19:00"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "whammy",
@@ -1223,9 +1222,23 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-04",
       "kind": "reading",
-      "price": "koha",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "time": "19:00"
+      "url": "https://www.thirtynine.co.nz/event-list"
+    },
+    {
+      "venue": "corban",
+      "title": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13",
+      "date": "2026-08-05",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/workshops/art-workshop/printmaking-for-kids",
+      "desc": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13 Get creative and a little bit inky in this 6-week afterschool printma"
+    },
+    {
+      "venue": "corban",
+      "title": "Introduction to Flowering Chinoiserie Painting With Jolie Hutchings Weekly on Friday, 10:00AM - 12:30PM From 7",
+      "date": "2026-08-07",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/workshops/art-workshop/introduction-to-flowering-chinoiserie-painting",
+      "desc": "Introduction to Flowering Chinoiserie Painting With Jolie Hutchings Weekly on Friday, 10:00AM - 12:30PM From 7 Aug - 11 Sep Adults: 18+ Come and learn the centuries-old art of Flow"
     },
     {
       "venue": "whammy",
@@ -1233,6 +1246,54 @@ window.EVENTS = {
       "date": "2026-08-07",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "britomart",
+      "title": "Britomart Saturday Markets",
+      "zh": "Britomart 周六集市",
+      "date": "2026-08-08",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sat)",
+      "zh": "La Cigale 法式集市（周六）",
+      "date": "2026-08-08",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "ostend",
+      "title": "Ostend Market (Waiheke)",
+      "zh": "Ostend 集市（激流岛，周六）",
+      "date": "2026-08-08",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "otaramarket",
+      "title": "Ōtara Flea Market",
+      "zh": "Ōtara 周六集市",
+      "date": "2026-08-08",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "avondale",
+      "title": "Avondale Sunday Markets",
+      "zh": "Avondale 周日集市",
+      "date": "2026-08-09",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sun)",
+      "zh": "La Cigale 法式集市（周日）",
+      "date": "2026-08-09",
+      "kind": "market",
+      "url": "#"
     },
     {
       "venue": "upstairs",
