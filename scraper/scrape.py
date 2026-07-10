@@ -45,7 +45,7 @@ SOURCES = {
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
   "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/", "selector":"a[href*='event'], article, .card"}],
-  "poetrylive":  [{"type":"html", "url":"https://www.facebook.com/poetrylive/", "selector":"article"}],   # 常年周二；抓不到就走 manual
+  "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
   # 2026-07-07 已确认：Whammy=316，Powerstation=105（venue 119 是 Safari Lounge，勿用）
@@ -73,10 +73,10 @@ SOURCES = {
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
   "lakehouse":   [{"type":"html", "render":True, "url":"https://www.lakehousearts.org.nz/", "selector":"article, .card, .event, a[href*='event']"}],
   "mairangi":    [{"type":"html", "url":"https://mairangiarts.co.nz/exhibitions/", "selector":"article, .card, .event"}],
-  "estuary":     [{"type":"html", "url":"https://www.estuaryarts.org/", "selector":"article, .card, .event"}],
+  "estuary":     [{"type":"html", "render":True, "url":"https://www.estuaryarts.org/exhibitions", "selector":"article, .card, .event, h2"}],  # ✅ 2026-07-10 校准：Wix 站拒脚本 UA（RemoteDisconnected），改 /exhibitions + render
   "pumphouse":   [{"type":"html", "url":"https://pumphouse.co.nz/whats-on/", "selector":"article, .card, .event"}],
   # ---- 西区 / Rodney / 南区 社区艺术中心 ----
-  "upstairs":    [{"type":"html", "url":"https://www.lopdell.org.nz/upstairs-gallery", "selector":"article, .card, .event"}],
+  "upstairs":    [{"type":"html", "url":"https://www.upstairs.org.nz/events", "selector":"article, .eventlist-event, .card, .event"}],  # ✅ 2026-07-10 校准：新官网 upstairs.org.nz（Squarespace 静态，lopdell.org.nz 拒连已弃）
   "mccahon":     [{"type":"html", "url":"https://www.mccahonhouse.org.nz/", "selector":"article, .card, .event"}],
   "tetoiuku":    [{"type":"html", "url":"https://www.tetoiuku.org.nz/", "selector":"a[href*='whats-on'], article, .card"}],  # ✅ 2026-07-07 校准：现域名 tetoiuku.org.nz（portageceramicstrust.org.nz DNS 失效）
   "helensville": [{"type":"html", "url":"https://www.artcentrehelensville.org.nz/", "selector":"article, .card, .event"}],
@@ -232,20 +232,21 @@ def scrape_ical(venue, src):
 
 def weekly_rule_events():
     """固定周期的集市：直接按规则生成未来31天。"""
-    rules = [  # (venue, weekday 一=0…日=6, title, zh)
-        ("britomart",   5, "Britomart Saturday Markets", "Britomart 周六集市"),
-        ("lacigale",    5, "La Cigale French Market (Sat)", "La Cigale 法式集市（周六）"),
-        ("lacigale",    6, "La Cigale French Market (Sun)", "La Cigale 法式集市（周日）"),
-        ("avondale",    6, "Avondale Sunday Markets", "Avondale 周日集市"),
-        ("otaramarket", 5, "Ōtara Flea Market", "Ōtara 周六集市"),
-        ("ostend",      5, "Ostend Market (Waiheke)", "Ostend 集市（激流岛，周六）"),
+    rules = [  # (venue, weekday 一=0…日=6, title, zh, kind, url)
+        ("britomart",   5, "Britomart Saturday Markets", "Britomart 周六集市", "market", "#"),
+        ("lacigale",    5, "La Cigale French Market (Sat)", "La Cigale 法式集市（周六）", "market", "#"),
+        ("lacigale",    6, "La Cigale French Market (Sun)", "La Cigale 法式集市（周日）", "market", "#"),
+        ("avondale",    6, "Avondale Sunday Markets", "Avondale 周日集市", "market", "#"),
+        ("otaramarket", 5, "Ōtara Flea Market", "Ōtara 周六集市", "market", "#"),
+        ("ostend",      5, "Ostend Market (Waiheke)", "Ostend 集市（激流岛，周六）", "market", "#"),
+        ("poetrylive",  1, "Poetry Live — open mic (every Tuesday)", "Poetry Live 开放麦（每周二）", "reading", "https://www.thirtynine.co.nz/event-list"),  # 2026-07-10 确认：Thirty Nine, 39 Ponsonby Rd, 19:00
     ]
     out = []
     d = TODAY
     while d <= HORIZON:
-        for venue, wd, title, zh in rules:
+        for venue, wd, title, zh, kind, url in rules:
             if d.weekday() == wd:
-                out.append({"venue": venue, "title": title, "zh": zh, "date": str(d), "kind": "market", "url": "#"})
+                out.append({"venue": venue, "title": title, "zh": zh, "date": str(d), "kind": kind, "url": url})
         d += datetime.timedelta(days=1)
     return out
 

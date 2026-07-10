@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-07",
+  "generated": "2026-07-10",
   "sample": false,
   "items": [
     {
@@ -260,6 +260,18 @@ window.EVENTS = {
       "url": "https://www.aucklandartgallery.com/"
     },
     {
+      "venue": "upstairs",
+      "title": "Elizabeth Serjeant — 'The Visionary'",
+      "zh": "Elizabeth Serjeant 个展《The Visionary（远见者）》",
+      "date": "2026-06-05",
+      "end": "2026-07-12",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Solo exhibition, on show 5 June – 12 July 2026. Gallery open daily 10am–4pm, free entry.",
+      "descZh": "个展，展期 6 月 5 日至 7 月 12 日。画廊每日 10:00–16:00 开放，免费入场。",
+      "url": "https://www.upstairs.org.nz/events/2026/6/5/elizabeth-serjeant-the-visionary"
+    },
+    {
       "venue": "michaellett",
       "title": "Peter Stichbury: Grand Guignol",
       "zh": "Peter Stichbury《Grand Guignol》",
@@ -362,6 +374,18 @@ window.EVENTS = {
       "url": "https://www.studioone.org.nz/exhibitions/"
     },
     {
+      "venue": "upstairs",
+      "title": "'Lifetime of Looking' — Cyndie Bryon",
+      "zh": "Cyndie Bryon 个展《Lifetime of Looking（凝视一生）》",
+      "date": "2026-06-26",
+      "end": "2026-07-12",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "On show 26 June – 12 July 2026 at the Upstairs Art Gallery, Lopdell House.",
+      "descZh": "展期 6 月 26 日至 7 月 12 日，Lopdell House 二楼 Upstairs 画廊。",
+      "url": "https://www.upstairs.org.nz/events/2026/6/26/lifetime-of-looking-cyndie-bryon"
+    },
+    {
       "venue": "gowlangsford",
       "title": "Claudia Kogachi: Another Day (Onehunga)",
       "zh": "Claudia Kogachi《Another Day》",
@@ -370,6 +394,66 @@ window.EVENTS = {
       "end": "2026-07-25",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/525-another-day-claudia-kogachi/"
+    },
+    {
+      "venue": "estuary",
+      "title": "The Northland Panels — Robin Davies",
+      "zh": "Robin Davies《The Northland Panels（北地画板）》油画展",
+      "date": "2026-07-01",
+      "end": "2026-07-26",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Oils inspired by Northland's coast, forest and Māori heritage. Foyer Wall, 1–26 July 2026.",
+      "descZh": "以北地海岸、森林与毛利文化为灵感的油画系列。门厅展墙，7 月 1 日至 26 日。",
+      "url": "https://www.estuaryarts.org/exhibitions"
+    },
+    {
+      "venue": "estuary",
+      "title": "Whetū Rise — Matariki group show",
+      "zh": "《Whetū Rise》玛塔里基（毛利新年）主题群展",
+      "date": "2026-07-01",
+      "end": "2026-07-26",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Group show celebrating Matariki. Galleries Two & Three, 1–26 July 2026.",
+      "descZh": "庆祝玛塔里基的群展，二、三号展厅，7 月 1 日至 26 日。",
+      "url": "https://www.estuaryarts.org/exhibitions"
+    },
+    {
+      "venue": "estuary",
+      "title": "In Print — Hibiscus Coast Printmakers Collective",
+      "zh": "《In Print（印记）》Hibiscus Coast 版画家协会年展",
+      "date": "2026-07-01",
+      "end": "2026-07-26",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Annual group exhibition of the Hibiscus Coast Printmakers Collective. Gallery Four, 1–26 July 2026.",
+      "descZh": "Hibiscus Coast 版画家协会年度群展，四号展厅，7 月 1 日至 26 日。",
+      "url": "https://www.estuaryarts.org/exhibitions"
+    },
+    {
+      "venue": "estuary",
+      "title": "The Helensville Art Trail winter showcase",
+      "zh": "Helensville 艺术小径冬季群展",
+      "date": "2026-07-01",
+      "end": "2026-07-26",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Helensville Art Trail artists' collective winter group show. Gallery One, 1–26 July 2026.",
+      "descZh": "Helensville 艺术小径艺术家冬季联展，一号展厅，7 月 1 日至 26 日。",
+      "url": "https://www.estuaryarts.org/exhibitions"
+    },
+    {
+      "venue": "estuary",
+      "title": "July group exhibition — Members Gallery",
+      "zh": "七月会员联展",
+      "date": "2026-07-01",
+      "end": "2026-07-26",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Members' group exhibition. Gallery Five, 1–26 July 2026.",
+      "descZh": "会员作品联展，五号展厅，7 月 1 日至 26 日。",
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "corban",
@@ -579,9 +663,10 @@ window.EVENTS = {
       "date": "2026-07-14",
       "kind": "reading",
       "price": "koha",
-      "desc": "Aotearoa's longest-running live poetry night, Tuesdays at the Thirsty Dog.",
-      "descZh": "新西兰持续最久的现场诗歌之夜，每周二在 Thirsty Dog。",
-      "url": "https://www.facebook.com/poetrylive/"
+      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
+      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。",
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00"
     },
     {
       "venue": "corban",
@@ -658,6 +743,18 @@ window.EVENTS = {
       "end": "2026-08-26",
       "price": "free",
       "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Dean Buchanan — 'A Journey'",
+      "zh": "Dean Buchanan 个展《A Journey（旅程）》",
+      "date": "2026-07-17",
+      "end": "2026-08-09",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "West Auckland painter Dean Buchanan, opening Friday 17 July 6pm; on show 17 July – 9 August 2026.",
+      "descZh": "西奥克兰画家 Dean Buchanan 个展，7 月 17 日（周五）18:00 开幕，展期至 8 月 9 日。",
+      "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan"
     },
     {
       "venue": "waihekegallery",
@@ -844,7 +941,8 @@ window.EVENTS = {
       "date": "2026-07-21",
       "kind": "reading",
       "price": "koha",
-      "url": "https://www.facebook.com/poetrylive/"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00"
     },
     {
       "venue": "michaellett",
@@ -973,7 +1071,8 @@ window.EVENTS = {
       "date": "2026-07-28",
       "kind": "reading",
       "price": "koha",
-      "url": "https://www.facebook.com/poetrylive/"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00"
     },
     {
       "venue": "whammy",
@@ -1125,7 +1224,8 @@ window.EVENTS = {
       "date": "2026-08-04",
       "kind": "reading",
       "price": "koha",
-      "url": "https://www.facebook.com/poetrylive/"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00"
     },
     {
       "venue": "whammy",
@@ -1133,6 +1233,18 @@ window.EVENTS = {
       "date": "2026-08-07",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "upstairs",
+      "title": "'Galaxie Petunia' — Chloe & Sylvia Marsters",
+      "zh": "Chloe 与 Sylvia Marsters 双人展《Galaxie Petunia》",
+      "date": "2026-08-14",
+      "end": "2026-08-30",
+      "kind": "exhibition",
+      "price": "free",
+      "desc": "Opening Saturday 15 August 5–6:30pm; on show 14–30 August 2026.",
+      "descZh": "双人展，8 月 15 日（周六）17:00–18:30 开幕，展期 8 月 14 日至 30 日。",
+      "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters"
     }
   ]
 };
