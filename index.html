@@ -306,6 +306,7 @@ var CATS = {
   gallery:  {hex:"#2A6FB0", en:"Galleries",  zh:"美术/画廊"},
   literary: {hex:"#C0402B", en:"Literary",   zh:"文学诗歌"},
   music:    {hex:"#7A4FB0", en:"Music",      zh:"音乐现场"},
+  performance:{hex:"#C2427E", en:"Stage & Screen", zh:"表演/影像"},
   workshop: {hex:"#2E8B57", en:"Workshops",  zh:"手工作坊"},
   market:   {hex:"#E8A200", en:"Markets",    zh:"集市"}
 };
@@ -380,7 +381,39 @@ var VENUES = [
  {id:"blackdoor",   en:"Black Door Gallery",    zh:"Black Door 画廊",       label:"Black Door",    cat:"gallery",  lat:-36.85430, lng:174.77810, r:3,  addr:"251 Parnell Rd"},
  /* ---- 南区 ---- */
  {id:"papakura",    en:"Papakura Art Gallery",  zh:"Papakura 美术馆",       label:"Papakura Art",  cat:"gallery",  lat:-37.06480, lng:174.94430, r:-2, addr:"339 Great South Rd, Papakura"},
- {id:"franklin",    en:"Franklin Arts Centre",  zh:"Franklin 艺术中心",     label:"Franklin Arts", cat:"workshop", lat:-37.20280, lng:174.90100, r:3,  addr:"12 Massey Ave, Pukekohe"}
+ {id:"franklin",    en:"Franklin Arts Centre",  zh:"Franklin 艺术中心",     label:"Franklin Arts", cat:"workshop", lat:-37.20280, lng:174.90100, r:3,  addr:"12 Massey Ave, Pukekohe"},
+ /* ---- 批次1（2026-07-10 场所清单）：表演/影像 ---- */
+ {id:"civic",       en:"The Civic",             zh:"Civic 大剧院",          label:"The Civic",     cat:"performance", lat:-36.85200, lng:174.76380, r:-3, addr:"Cnr Queen & Wellesley St"},
+ {id:"aotea",       en:"Aotea Centre",          zh:"Aotea 表演艺术中心",    label:"Aotea Centre",  cat:"performance", lat:-36.85260, lng:174.76210, r:2,  addr:"50 Mayoral Dr, Aotea Square"},
+ {id:"qtheatre",    en:"Q Theatre",             zh:"Q 剧场",                label:"Q Theatre",     cat:"performance", lat:-36.85290, lng:174.76280, r:-2, addr:"305 Queen St"},
+ {id:"basement",    en:"Basement Theatre",      zh:"Basement 地下剧场",     label:"Basement",      cat:"performance", lat:-36.85350, lng:174.76230, r:3,  addr:"Lower Greys Ave"},
+ {id:"asbwaterfront", en:"ASB Waterfront Theatre", zh:"ASB 滨水剧院",       label:"ASB Waterfront", cat:"performance", lat:-36.84250, lng:174.75650, r:-2, addr:"138 Halsey St, Wynyard Quarter"},
+ {id:"academy",     en:"Academy Cinemas",       zh:"Academy 艺术影院",      label:"Academy",       cat:"performance", lat:-36.85110, lng:174.76455, r:2,  addr:"44 Lorne St (under Central Library)"},
+ {id:"capitol",     en:"The Capitol Cinema",    zh:"Capitol 影院",          label:"Capitol",       cat:"performance", lat:-36.88460, lng:174.74950, r:-3, addr:"610 Dominion Rd, Balmoral"},
+ {id:"vic",         en:"The Vic Devonport",     zh:"The Vic 影院",          label:"The Vic",       cat:"performance", lat:-36.83280, lng:174.79860, r:2,  addr:"48 Victoria Rd, Devonport"},
+ {id:"bridgeway",   en:"Bridgeway Cinema",      zh:"Bridgeway 影院",        label:"Bridgeway",     cat:"performance", lat:-36.81950, lng:174.74680, r:-2, addr:"122 Queen St, Northcote Point"},
+ {id:"tepou",       en:"Te Pou Theatre",        zh:"Te Pou 毛利剧场",       label:"Te Pou",        cat:"performance", lat:-36.87950, lng:174.62850, r:3,  addr:"Corban Estate, Henderson"},
+ {id:"brucemason",  en:"Bruce Mason Centre",    zh:"Bruce Mason 中心",      label:"Bruce Mason",   cat:"performance", lat:-36.78850, lng:174.77550, r:-2, addr:"Cnr Hurstmere Rd, Takapuna"},
+ /* ---- 批次1：音乐现场 ---- */
+ {id:"sparkarena",  en:"Spark Arena",           zh:"Spark 体育馆",          label:"Spark Arena",   cat:"music",    lat:-36.84780, lng:174.77780, r:2,  addr:"Mahuhu Cres, Quay Park"},
+ {id:"winecellar",  en:"The Wine Cellar",       zh:"Wine Cellar 音乐酒吧",  label:"Wine Cellar",   cat:"music",    lat:-36.85785, lng:174.75995, r:-3, addr:"St Kevins Arcade, K Rd"},
+ {id:"galatos",     en:"Galatos",               zh:"Galatos 音乐场地",      label:"Galatos",       cat:"music",    lat:-36.85800, lng:174.76250, r:2,  addr:"17 Galatos St, Newton"},
+ {id:"neckofthewoods", en:"Neck of the Woods",  zh:"Neck of the Woods",     label:"Neck o' Woods", cat:"music",    lat:-36.85745, lng:174.75850, r:-2, addr:"155B Karangahape Rd"},
+ {id:"anthology",   en:"Anthology Lounge",      zh:"Anthology 爵士酒廊",    label:"Anthology",     cat:"music",    lat:-36.85795, lng:174.75500, r:3,  addr:"375 Karangahape Rd"},
+ {id:"tuningfork",  en:"The Tuning Fork",       zh:"Tuning Fork 音乐场地",  label:"Tuning Fork",   cat:"music",    lat:-36.84800, lng:174.77700, r:-3, addr:"Mahuhu Cres (by Spark Arena)"},
+ /* ---- 批次1：博物馆与画廊（归入美术/画廊类） ---- */
+ {id:"museum",      en:"Auckland War Memorial Museum", zh:"奥克兰战争纪念博物馆", label:"Auckland Museum", cat:"gallery", lat:-36.86060, lng:174.77750, r:2, addr:"The Domain, Parnell"},
+ {id:"maritime",    en:"NZ Maritime Museum",    zh:"新西兰海事博物馆",      label:"Maritime Mus.", cat:"gallery",  lat:-36.84300, lng:174.76250, r:-2, addr:"Cnr Quay & Hobson St, Viaduct"},
+ {id:"motat",       en:"MOTAT",                 zh:"MOTAT 交通科技博物馆",  label:"MOTAT",         cat:"gallery",  lat:-36.86700, lng:174.72700, r:3,  addr:"805 Great North Rd, Western Springs"},
+ {id:"trishclark",  en:"Trish Clark Gallery",   zh:"Trish Clark 画廊",      label:"Trish Clark",   cat:"gallery",  lat:-36.84970, lng:174.76700, r:-3, addr:"1 Bowen Ave, CBD"},
+ {id:"masterworks", en:"Masterworks Gallery",   zh:"Masterworks 工艺画廊",  label:"Masterworks",   cat:"gallery",  lat:-36.85950, lng:174.76200, r:2,  addr:"71 Upper Queen St"},
+ {id:"timmelville", en:"Tim Melville Gallery",  zh:"Tim Melville 画廊",     label:"Tim Melville",  cat:"gallery",  lat:-36.85850, lng:174.74400, r:-2, addr:"4 Winchester St, Grey Lynn"},
+ {id:"webbs",       en:"Webb's Auction House",  zh:"Webb's 拍卖行",         label:"Webb's",        cat:"gallery",  lat:-36.86800, lng:174.75900, r:3,  addr:"33a Normanby Rd, Mt Eden"},
+ {id:"artobject",   en:"Art+Object",            zh:"Art+Object 拍卖行",     label:"Art+Object",    cat:"gallery",  lat:-36.85900, lng:174.75300, r:-3, addr:"3 Abbey St, Newton"},
+ /* ---- 批次1：书店 ---- */
+ {id:"womensbookshop", en:"The Women's Bookshop", zh:"女性书店",            label:"Women's Bkshp", cat:"literary", lat:-36.85550, lng:174.74600, r:2,  addr:"105 Ponsonby Rd"},
+ {id:"jasonbooks",  en:"Jason Books",           zh:"Jason 二手书店",        label:"Jason Books",   cat:"literary", lat:-36.84740, lng:174.76680, r:-2, addr:"16 O'Connell St, CBD"},
+ {id:"openbook",    en:"The Open Book",         zh:"The Open Book 二手书店", label:"The Open Book", cat:"literary", lat:-36.85320, lng:174.74720, r:3,  addr:"201 Ponsonby Rd"}
 ];
 
 /* ================= 场馆官网（卡片地址行显示"官网 →"；不确定的暂缺） ================= */
@@ -418,8 +451,25 @@ var SITES = {
   intlart:"https://www.internationalartcentre.co.nz/", parnellgallery:"https://www.parnellgallery.co.nz/",
   jonathangrant:"https://jonathangrantgalleries.com/", blackdoor:"https://www.blackdoorgallery.co.nz/",
   papakura:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/papakura-art-gallery.html",
-  franklin:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html"
-  /* rmgallery / window / ostend：官网待确认，暂不放链接 */
+  franklin:"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html",
+  rmgallery:"https://rm.org.nz/", window:"https://windowgallery.co.nz/",
+  /* ---- 批次1（来源：2026-07-10 场所清单核验 A/B 级官网） ---- */
+  civic:"https://www.aucklandlive.co.nz/venue/the-civic", aotea:"https://www.aucklandlive.co.nz/venue/aotea-centre",
+  qtheatre:"https://www.qtheatre.co.nz/", basement:"https://basementtheatre.co.nz/",
+  asbwaterfront:"https://www.asbwaterfronttheatre.co.nz/", academy:"https://www.academycinemas.co.nz/",
+  capitol:"https://www.thecapitol.co.nz/", vic:"https://www.thevic.co.nz/",
+  bridgeway:"https://www.bridgeway.co.nz/", tepou:"https://tepoutheatre.nz/",
+  brucemason:"https://www.aucklandlive.co.nz/venue/bruce-mason-centre",
+  sparkarena:"https://www.sparkarena.co.nz/", winecellar:"https://www.winecellar.co.nz/",
+  galatos:"https://galatos.co.nz/", neckofthewoods:"https://neckofthewoods.co.nz/",
+  anthology:"https://anthology.co.nz/", tuningfork:"https://www.tuningfork.co.nz/",
+  museum:"https://www.aucklandmuseum.com/", maritime:"https://www.maritimemuseum.co.nz/",
+  motat:"https://www.motat.nz/", trishclark:"https://trishclark.co.nz/",
+  masterworks:"https://masterworksgallery.co.nz/", timmelville:"https://timmelvillegallery.com/",
+  webbs:"https://www.webbs.co.nz/", artobject:"https://www.artandobject.co.nz/",
+  womensbookshop:"https://www.womensbookshop.co.nz/", jasonbooks:"https://www.jasonbooks.co.nz/",
+  openbook:"https://theopenbook.co.nz/"
+  /* ostend 官网待确认 */
 };
 
 /* ============================================================
@@ -886,7 +936,174 @@ var FACADES = {
       '<path d="M18 50 q0 -8 5 -8 q5 0 5 8 z" fill="#3C8C8C"/>'+
       '<path d="M32 50 v-9 q0 -4 4 -4 q4 0 4 4 v9 z" fill="#E8A200" opacity=".85"/>'+
       '<circle cx="24" cy="34" r="3" fill="#E86FA4"/>'+
-      '<rect x="50" y="24" width="13" height="34" fill="#0E0D0B" stroke="#D9A24B" stroke-width="1.5"/><circle cx="60" cy="42" r="1.4" fill="#D9A24B"/>'
+      '<rect x="50" y="24" width="13" height="34" fill="#0E0D0B" stroke="#D9A24B" stroke-width="1.5"/><circle cx="60" cy="42" r="1.4" fill="#D9A24B"/>',
+ /* The Civic：1929 atmospheric 剧院，奶油立面 + 转角穹顶塔 + 红色竖招牌 */
+ civic: '<rect x="8" y="18" width="60" height="40" fill="#EFE3C8"/>'+
+      '<rect x="52" y="6" width="16" height="20" fill="#EFE3C8"/><path d="M52 6 q8 -9 16 0 z" fill="#3C8C8C"/><circle cx="60" cy="2" r="2" fill="#D9A24B"/>'+
+      '<rect x="12" y="8" width="10" height="34" fill="#C0402B"/><g fill="#fff"><rect x="15" y="11" width="4" height="4"/><rect x="15" y="17" width="4" height="4"/><rect x="15" y="23" width="4" height="4"/><rect x="15" y="29" width="4" height="4"/><rect x="15" y="35" width="4" height="4"/></g>'+
+      '<rect x="26" y="26" width="24" height="8" fill="#23211C"/><rect x="29" y="28.5" width="18" height="3" fill="#FFD400"/>'+
+      '<g fill="#8E3626"><path d="M28 52 v-8 a4 4 0 0 1 8 0 v8 z"/><path d="M40 52 v-8 a4 4 0 0 1 8 0 v8 z"/></g>'+
+      '<rect x="26" y="52" width="24" height="6" fill="#B33A2F"/>',
+ /* Aotea Centre：阶梯式现代体量 + 玻璃幕墙 */
+ aotea: '<rect x="6" y="26" width="64" height="32" fill="#B9B4A8"/>'+
+      '<rect x="16" y="16" width="44" height="12" fill="#C9C2B2"/><rect x="26" y="8" width="24" height="10" fill="#D8D5CC"/>'+
+      '<rect x="10" y="32" width="56" height="20" fill="#7FA8C9"/>'+
+      '<g stroke="#B9B4A8" stroke-width="1.6"><line x1="24" y1="32" x2="24" y2="52"/><line x1="38" y1="32" x2="38" y2="52"/><line x1="52" y1="32" x2="52" y2="52"/></g>'+
+      '<rect x="32" y="52" width="12" height="6" fill="#23211C"/>',
+ /* Q Theatre：深色当代体块 + 大红 Q + 玻璃底层 */
+ qtheatre: '<rect x="8" y="10" width="60" height="48" fill="#2E3238"/>'+
+      '<circle cx="38" cy="28" r="12" fill="none" stroke="#C2427E" stroke-width="5"/><line x1="44" y1="36" x2="50" y2="42" stroke="#C2427E" stroke-width="5" stroke-linecap="round"/>'+
+      '<rect x="12" y="46" width="52" height="12" fill="#8FB3C9"/>'+
+      '<g stroke="#2E3238" stroke-width="1.6"><line x1="26" y1="46" x2="26" y2="58"/><line x1="40" y1="46" x2="40" y2="58"/><line x1="54" y1="46" x2="54" y2="58"/></g>',
+ /* Basement：地下剧场，黑门面 + 黄字条 + 下行楼梯 */
+ basement: '<rect x="8" y="20" width="60" height="38" fill="#1A1A1E"/>'+
+      '<rect x="8" y="12" width="60" height="8" fill="#3A3A42"/>'+
+      '<rect x="14" y="26" width="34" height="8" fill="#FFD400"/><rect x="17" y="28.5" width="26" height="3" fill="#1A1A1E"/>'+
+      '<rect x="28" y="42" width="20" height="16" fill="#0C0C0E"/><g fill="#3A3A42"><rect x="30" y="50" width="16" height="2.5"/><rect x="32" y="54" width="12" height="2.5"/></g>'+
+      '<circle cx="58" cy="40" r="5" fill="#C2427E" opacity=".85"/>',
+ /* ASB Waterfront Theatre：玻璃山墙 + 木鳍片 */
+ asbwaterfront: '<polygon points="6,26 38,8 70,26" fill="#8FB3C9"/><polygon points="6,26 38,8 70,26" fill="none" stroke="#5A5F66" stroke-width="2"/>'+
+      '<rect x="8" y="26" width="60" height="32" fill="#A9C6D4"/>'+
+      '<g stroke="#B5793A" stroke-width="3"><line x1="14" y1="26" x2="14" y2="58"/><line x1="24" y1="26" x2="24" y2="58"/><line x1="34" y1="26" x2="34" y2="58"/><line x1="44" y1="26" x2="44" y2="58"/><line x1="54" y1="26" x2="54" y2="58"/><line x1="64" y1="26" x2="64" y2="58"/></g>'+
+      '<rect x="30" y="44" width="16" height="14" fill="#2F4858"/>',
+ /* Academy Cinemas：图书馆地下的艺术影院，石造上层 + 雨棚 + 下行阶梯 */
+ academy: '<rect x="6" y="10" width="64" height="18" fill="#C9C2B2"/><g stroke="#EFE9DC" stroke-width="1.4"><line x1="18" y1="10" x2="18" y2="28"/><line x1="30" y1="10" x2="30" y2="28"/><line x1="42" y1="10" x2="42" y2="28"/><line x1="54" y1="10" x2="54" y2="28"/></g>'+
+      '<rect x="10" y="28" width="56" height="9" fill="#23211C"/><rect x="14" y="30.5" width="30" height="4" fill="#FFD400"/>'+
+      '<rect x="24" y="40" width="28" height="18" fill="#0C0C0E"/><g fill="#3A3A42"><rect x="26" y="48" width="24" height="2.5"/><rect x="28" y="52" width="20" height="2.5"/></g>'+
+      '<circle cx="14" cy="46" r="4" fill="#C2427E" opacity=".8"/><circle cx="62" cy="46" r="4" fill="#C2427E" opacity=".8"/>',
+ /* Capitol Cinema：1920s 西班牙教会式，白墙 + 红色竖招牌 + 拱窗 */
+ capitol: '<rect x="8" y="14" width="60" height="44" fill="#F7F4EA"/>'+
+      '<path d="M8 14 h60 v-3 a5 5 0 0 0 -5 -5 h-50 a5 5 0 0 0 -5 5 z" fill="#C96F4A"/>'+
+      '<rect x="32" y="10" width="12" height="30" fill="#C0402B"/><g fill="#fff"><rect x="35.5" y="13" width="5" height="3.4"/><rect x="35.5" y="18.5" width="5" height="3.4"/><rect x="35.5" y="24" width="5" height="3.4"/><rect x="35.5" y="29.5" width="5" height="3.4"/></g>'+
+      '<path d="M12 40 v-7 a5 5 0 0 1 10 0 v7 z" fill="#7FA8C9"/><path d="M54 40 v-7 a5 5 0 0 1 10 0 v7 z" fill="#7FA8C9"/>'+
+      '<rect x="26" y="44" width="24" height="6" fill="#23211C"/><rect x="29" y="45.5" width="18" height="3" fill="#FFD400"/>'+
+      '<rect x="30" y="50" width="16" height="8" fill="#6B4A2F"/>',
+ /* The Vic Devonport：1912 老影院，奶油山墙 + 马奎招牌 */
+ vic: '<path d="M8 22 h60 v-4 q-15 -10 -30 -10 q-15 0 -30 10 z" fill="#EFE3C8"/><rect x="30" y="12" width="16" height="6" fill="#37556E"/>'+
+      '<rect x="8" y="22" width="60" height="36" fill="#F7F4EA"/>'+
+      '<rect x="16" y="26" width="44" height="9" fill="#23211C"/><rect x="20" y="28.5" width="24" height="4" fill="#FF5FA2"/>'+
+      '<g fill="#BFD9E8" stroke="#C9C2B2" stroke-width="1.5"><rect x="12" y="40" width="12" height="12"/><rect x="52" y="40" width="12" height="12"/></g>'+
+      '<rect x="32" y="42" width="12" height="16" fill="#8E2F2A"/>',
+ /* Bridgeway：Northcote Point 装饰艺术影院 */
+ bridgeway: '<rect x="8" y="16" width="60" height="42" fill="#F0EADA"/>'+
+      '<rect x="8" y="16" width="60" height="5" fill="#3C8C8C"/><rect x="20" y="10" width="36" height="8" rx="4" fill="#3C8C8C"/><rect x="25" y="12.5" width="26" height="3" fill="#F0EADA"/>'+
+      '<g fill="#8FB3C9"><rect x="13" y="28" width="10" height="14" rx="5"/><rect x="53" y="28" width="10" height="14" rx="5"/></g>'+
+      '<rect x="28" y="26" width="20" height="8" fill="#23211C"/><rect x="31" y="28.5" width="14" height="3" fill="#FFD400"/>'+
+      '<rect x="30" y="42" width="16" height="16" fill="#255C5C"/>',
+ /* Te Pou Theatre：毛利剧场，深色木山墙 + 红色 koru */
+ tepou: '<polygon points="6,30 38,8 70,30" fill="#2E2A26" stroke="#B5793A" stroke-width="2"/>'+
+      '<rect x="10" y="30" width="56" height="28" fill="#3A342E"/>'+
+      '<path d="M38 14 l-4 8 h8 z" fill="#C0402B"/>'+
+      '<path d="M24 46 a8 8 0 0 1 8 -8 a5 5 0 0 1 0 10 a3 3 0 0 1 -3 -4" fill="none" stroke="#C0402B" stroke-width="3"/>'+
+      '<rect x="44" y="40" width="14" height="18" fill="#D9A24B"/>'+
+      '<g stroke="#23211C" stroke-width="1.4"><line x1="16" y1="30" x2="16" y2="58"/><line x1="62" y1="30" x2="62" y2="58"/></g>',
+ /* Bruce Mason Centre：Takapuna 90年代市政厅，青玻璃 + 白框 */
+ brucemason: '<rect x="6" y="14" width="64" height="44" fill="#F4F2EC"/>'+
+      '<rect x="10" y="18" width="56" height="26" fill="#4C8C8C" opacity=".8"/>'+
+      '<g stroke="#F4F2EC" stroke-width="2"><line x1="24" y1="18" x2="24" y2="44"/><line x1="38" y1="18" x2="38" y2="44"/><line x1="52" y1="18" x2="52" y2="44"/></g>'+
+      '<rect x="6" y="46" width="64" height="3" fill="#37556E"/>'+
+      '<rect x="28" y="49" width="20" height="9" fill="#23211C"/><circle cx="60" cy="53" r="3" fill="#C2427E"/>',
+ /* Spark Arena：大拱顶演出场馆 */
+ sparkarena: '<path d="M6 40 Q38 4 70 40 z" fill="#5A5F66"/><path d="M10 38 Q38 8 66 38" fill="none" stroke="#8E9BA5" stroke-width="2"/>'+
+      '<rect x="6" y="40" width="64" height="18" fill="#2E3238"/>'+
+      '<rect x="12" y="44" width="52" height="8" fill="#7FA8C9" opacity=".7"/>'+
+      '<rect x="30" y="50" width="16" height="8" fill="#0C0C0E"/>'+
+      '<circle cx="38" cy="24" r="4" fill="#7A4FB0"/>',
+ /* Wine Cellar：St Kevins Arcade 地下，酒红招牌 + 台阶 */
+ winecellar: '<rect x="6" y="10" width="64" height="48" fill="#EFE3C8"/>'+
+      '<path d="M20 30 v-8 a18 9 0 0 1 36 0 v8 z" fill="#8FB3C9"/>'+
+      '<rect x="6" y="32" width="64" height="5" fill="#2F4858"/>'+
+      '<rect x="22" y="40" width="32" height="8" rx="2" fill="#6B1F2E"/><rect x="26" y="42.5" width="24" height="3" fill="#F0E6D2"/>'+
+      '<rect x="30" y="50" width="16" height="8" fill="#1A1A1E"/><rect x="33" y="53" width="10" height="2" fill="#3A3A42"/>',
+ /* Galatos：Newton 红砖二层 + 霓虹 */
+ galatos: '<rect x="8" y="10" width="60" height="48" fill="#8E5A44"/>'+
+      '<g stroke="#7A4A36" stroke-width="1"><line x1="8" y1="20" x2="68" y2="20"/><line x1="8" y1="30" x2="68" y2="30"/><line x1="8" y1="40" x2="68" y2="40"/><line x1="8" y1="50" x2="68" y2="50"/></g>'+
+      '<g fill="#D8E6F1"><rect x="14" y="14" width="12" height="12"/><rect x="50" y="14" width="12" height="12"/></g>'+
+      '<rect x="18" y="32" width="40" height="8" rx="4" fill="#7A4FB0" opacity=".3"/><rect x="21" y="34" width="34" height="4" rx="2" fill="#7A4FB0"/>'+
+      '<rect x="30" y="44" width="16" height="14" fill="#23211C"/>',
+ /* Neck of the Woods：K Rd 地下电子场地，深门面 + 绿霓虹树 */
+ neckofthewoods: '<rect x="8" y="14" width="60" height="44" fill="#1E2420"/>'+
+      '<path d="M28 34 l5 -10 5 10 z M38 34 l5 -12 5 12 z" fill="#2E8B57"/><rect x="35" y="34" width="3" height="5" fill="#2E8B57"/><rect x="45" y="34" width="3" height="5" fill="#2E8B57"/>'+
+      '<rect x="14" y="42" width="20" height="4" rx="2" fill="#5EE08A" opacity=".8"/>'+
+      '<rect x="42" y="40" width="16" height="18" fill="#0C0C0E"/>'+
+      '<circle cx="20" cy="24" r="4" fill="#5EE08A" opacity=".5"/>',
+ /* Anthology Lounge：K Rd 爵士酒廊，装饰艺术上层 + 暖光门厅 */
+ anthology: '<rect x="8" y="10" width="60" height="48" fill="#2A2E3A"/>'+
+      '<g fill="#D9A24B"><rect x="14" y="14" width="3" height="16"/><rect x="21" y="14" width="3" height="16"/><rect x="28" y="14" width="3" height="16"/><rect x="45" y="14" width="3" height="16"/><rect x="52" y="14" width="3" height="16"/><rect x="59" y="14" width="3" height="16"/></g>'+
+      '<rect x="18" y="36" width="40" height="7" rx="3.5" fill="#D9A24B"/><rect x="23" y="38" width="30" height="3" fill="#2A2E3A"/>'+
+      '<rect x="28" y="46" width="20" height="12" fill="#B5793A"/><path d="M31 46 a7 7 0 0 1 14 0 z" fill="#FFD400" opacity=".85"/>',
+ /* Tuning Fork：工业黑盒 + 音叉标志 */
+ tuningfork: '<rect x="8" y="16" width="60" height="42" fill="#23262B"/>'+
+      '<rect x="8" y="16" width="60" height="6" fill="#5A5F66"/>'+
+      '<g stroke="#7A4FB0" stroke-width="4" stroke-linecap="round"><line x1="32" y1="26" x2="32" y2="38"/><line x1="44" y1="26" x2="44" y2="38"/><line x1="38" y1="40" x2="38" y2="50"/></g><path d="M32 38 q6 6 12 0" fill="none" stroke="#7A4FB0" stroke-width="4"/>'+
+      '<rect x="14" y="46" width="14" height="12" fill="#0C0C0E"/><rect x="50" y="46" width="12" height="8" fill="#D8E6F1" opacity=".6"/>',
+ /* 奥克兰战争纪念博物馆：山顶新古典主义列柱 */
+ museum: '<rect x="4" y="52" width="68" height="6" fill="#7A9E4C"/>'+
+      '<polygon points="8,24 38,10 68,24" fill="#D9CBA8" stroke="#fff" stroke-width="2"/>'+
+      '<rect x="8" y="24" width="60" height="6" fill="#C9BA95"/>'+
+      '<g fill="#E8DFC8"><rect x="12" y="30" width="6" height="22"/><rect x="22" y="30" width="6" height="22"/><rect x="32" y="30" width="6" height="22"/><rect x="42" y="30" width="6" height="22"/><rect x="52" y="30" width="6" height="22"/><rect x="62" y="30" width="5" height="22"/></g>'+
+      '<rect x="8" y="50" width="60" height="3" fill="#C9BA95"/>',
+ /* 海事博物馆：码头棚屋 + 蓝屋顶 + 桅杆 */
+ maritime: '<line x1="60" y1="4" x2="60" y2="26" stroke="#8D887A" stroke-width="2.5"/><path d="M60 6 l-12 16 h12 z" fill="#F4F2EC" stroke="#8D887A" stroke-width="1"/>'+
+      '<polygon points="6,26 26,14 46,26" fill="#37556E"/><rect x="8" y="26" width="36" height="32" fill="#F0EADA"/>'+
+      '<rect x="46" y="30" width="24" height="28" fill="#5B7E9E"/>'+
+      '<rect x="14" y="34" width="10" height="10" fill="#7FA8C9"/><rect x="28" y="38" width="10" height="20" fill="#2F4858"/>'+
+      '<path d="M4 58 Q12 55 20 58 T36 58 T52 58 T68 58" fill="none" stroke="#7FB2C9" stroke-width="2"/>',
+ /* MOTAT：工业棚 + 老电车头 */
+ motat: '<polygon points="6,24 22,12 38,24" fill="#8E9BA5"/><polygon points="38,24 54,12 70,24" fill="#8E9BA5"/>'+
+      '<rect x="6" y="24" width="64" height="34" fill="#C9C2B2"/>'+
+      '<rect x="14" y="34" width="26" height="20" rx="3" fill="#8E2F2A"/><rect x="17" y="37" width="8" height="7" fill="#D8E6F1"/><rect x="29" y="37" width="8" height="7" fill="#D8E6F1"/><circle cx="20" cy="54" r="2.6" fill="#23211C"/><circle cx="34" cy="54" r="2.6" fill="#23211C"/><line x1="27" y1="34" x2="27" y2="28" stroke="#23211C" stroke-width="1.6"/>'+
+      '<rect x="48" y="36" width="16" height="22" fill="#37556E"/>',
+ /* Trish Clark：Bowen Ave 白色画廊 */
+ trishclark: '<rect x="8" y="12" width="60" height="46" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="16" width="24" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="26" width="34" height="26" fill="#FDF8EC" stroke="#D8D5CC" stroke-width="1"/>'+
+      '<circle cx="22" cy="36" r="6" fill="#37556E"/><rect x="32" y="32" width="10" height="14" fill="#E8A200"/>'+
+      '<rect x="52" y="26" width="10" height="32" fill="#20242A"/>',
+ /* Masterworks：白色木板店面 + 橱窗陶器 */
+ masterworks: '<rect x="8" y="12" width="60" height="46" fill="#FDFBF4"/><line x1="8" y1="22" x2="68" y2="22" stroke="#E4DCC8" stroke-width="1.2"/><line x1="8" y1="32" x2="68" y2="32" stroke="#E4DCC8" stroke-width="1.2"/>'+
+      '<rect x="12" y="15" width="30" height="4" fill="#23211C"/>'+
+      '<rect x="12" y="28" width="34" height="26" fill="#FDF8EC" stroke="#C9C2B2" stroke-width="1.5"/>'+
+      '<path d="M17 50 q0 -9 5.5 -9 q5.5 0 5.5 9 z" fill="#3C8C8C"/><path d="M30 50 v-7 q0 -4 4 -4 q4 0 4 4 v7 z" fill="#C96F4A"/>'+
+      '<rect x="52" y="28" width="10" height="30" fill="#37556E"/>',
+ /* Tim Melville：Grey Lynn 白立方 */
+ timmelville: '<rect x="8" y="14" width="60" height="44" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="18" width="20" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="28" width="30" height="24" fill="#C0402B"/><circle cx="27" cy="40" r="7" fill="#F2C94C"/>'+
+      '<rect x="48" y="26" width="14" height="32" fill="#20242A"/><rect x="51" y="32" width="8" height="3" fill="#fff"/>',
+ /* Webb's：Mt Eden 拍卖行，黑门面 + 金字 */
+ webbs: '<rect x="8" y="12" width="60" height="46" fill="#1C1C1E"/>'+
+      '<rect x="14" y="17" width="24" height="5" fill="#D9A24B"/>'+
+      '<rect x="14" y="28" width="30" height="24" fill="#FDF8EC"/>'+
+      '<rect x="18" y="32" width="10" height="13" fill="#D9A24B"/><rect x="20" y="34" width="6" height="9" fill="#37556E"/>'+
+      '<path d="M32 45 l4 -8 3 5 3 -7 v10 z" fill="#7A9E4C"/>'+
+      '<rect x="50" y="26" width="12" height="32" fill="#0C0C0E" stroke="#D9A24B" stroke-width="1.4"/>',
+ /* Art+Object：Newton 白仓库拍卖行 + 红色标志 */
+ artobject: '<polygon points="6,22 24,12 42,22" fill="#C9C2B2"/><rect x="42" y="16" width="28" height="6" fill="#C9C2B2"/>'+
+      '<rect x="6" y="22" width="64" height="36" fill="#F4F2EC"/>'+
+      '<rect x="12" y="28" width="18" height="7" fill="#C0402B"/><rect x="33" y="30" width="6" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="40" width="30" height="18" fill="#8FB3C9"/><g stroke="#F4F2EC" stroke-width="1.5"><line x1="22" y1="40" x2="22" y2="58"/><line x1="32" y1="40" x2="32" y2="58"/></g>'+
+      '<rect x="50" y="38" width="12" height="20" fill="#20242A"/>',
+ /* Women's Bookshop：Ponsonby 紫色店面 + 书墙 */
+ womensbookshop: '<rect x="10" y="10" width="56" height="48" fill="#5E3A6E"/>'+
+      '<rect x="14" y="14" width="48" height="9" fill="#F2C94C"/><rect x="18" y="17" width="30" height="3" fill="#4A2E58"/>'+
+      '<rect x="14" y="27" width="36" height="27" fill="#FDF8EC"/>'+
+      '<g><rect x="17" y="36" width="3" height="16" fill="#C0402B"/><rect x="21" y="34" width="3" height="18" fill="#2A6FB0"/><rect x="25" y="37" width="3" height="15" fill="#2E8B57"/><rect x="29" y="35" width="3" height="17" fill="#E8A200"/><rect x="33" y="36" width="3" height="16" fill="#C2427E"/><rect x="37" y="34" width="3" height="18" fill="#7A4FB0"/><rect x="41" y="37" width="3" height="15" fill="#E4572E"/></g>'+
+      '<rect x="54" y="27" width="8" height="31" fill="#432952"/>',
+ /* Jason Books：O'Connell St 老楼里的二手书店 */
+ jasonbooks: '<rect x="8" y="8" width="60" height="50" fill="#D9CBA8"/>'+
+      '<g fill="#8E9BA5"><rect x="14" y="12" width="10" height="12" rx="4"/><rect x="33" y="12" width="10" height="12" rx="4"/><rect x="52" y="12" width="10" height="12" rx="4"/></g>'+
+      '<rect x="8" y="28" width="60" height="4" fill="#6B4A2F"/>'+
+      '<rect x="12" y="36" width="34" height="18" fill="#FDF8EC" stroke="#6B4A2F" stroke-width="1.5"/>'+
+      '<g><rect x="15" y="42" width="3" height="11" fill="#6B4A2F"/><rect x="19" y="40" width="3" height="13" fill="#8E2F2A"/><rect x="23" y="43" width="3" height="10" fill="#37556E"/><rect x="27" y="41" width="3" height="12" fill="#7A8B5E"/><rect x="31" y="42" width="3" height="11" fill="#B5793A"/><rect x="35" y="40" width="3" height="13" fill="#4A2E58"/></g>'+
+      '<rect x="50" y="34" width="12" height="20" fill="#3A2A28"/>',
+ /* The Open Book：Ponsonby 二手书店，青绿门面 + 门口书堆 */
+ openbook: '<rect x="10" y="12" width="56" height="46" fill="#2E7D74"/>'+
+      '<rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="28" height="3" fill="#1E5650"/>'+
+      '<rect x="14" y="28" width="30" height="26" fill="#FDF8EC"/>'+
+      '<path d="M18 40 h9 v-2 l-4.5 -2 -4.5 2 z" fill="#C0402B"/><path d="M29 40 h9 v-2 l-4.5 -2 -4.5 2 z" fill="#2A6FB0"/>'+
+      '<g><rect x="18" y="44" width="9" height="2.4" fill="#E8A200"/><rect x="19" y="47" width="8" height="2.4" fill="#7A4FB0"/><rect x="18.5" y="50" width="8.5" height="2.4" fill="#2E8B57"/></g>'+
+      '<rect x="48" y="28" width="14" height="26" fill="#1E5650"/><circle cx="55" cy="42" r="1.5" fill="#F2C94C"/>'
 };
 
 /* ================= 状态 ================= */

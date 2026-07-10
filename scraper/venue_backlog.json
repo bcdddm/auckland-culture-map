@@ -1,0 +1,713 @@
+[
+ {
+  "name": "Te Wai Ngutu Kākā Gallery",
+  "subcat": "大学画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD / AUT City Campus",
+  "url": "https://twng.aut.ac.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Elam Projectspace / Elam Galleries",
+  "subcat": "大学画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD / University of Auckland",
+  "url": "https://www.auckland.ac.nz/en/creative/our-faculty/elam-school-of-fine-arts/elam-galleries.html",
+  "status": "todo"
+ },
+ {
+  "name": "Kumeū Arts",
+  "subcat": "社区艺术中心",
+  "cat": "workshop",
+  "area": "West/Northwest",
+  "addr_hint": "Huapai / Kumeū",
+  "url": "https://www.kumeuarts.org/",
+  "status": "todo"
+ },
+ {
+  "name": "West Coast Gallery",
+  "subcat": "社区画廊",
+  "cat": "gallery",
+  "area": "West Coast",
+  "addr_hint": "Piha",
+  "url": "https://www.westcoastgallery.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Brick Bay Sculpture Trail",
+  "subcat": "雕塑园",
+  "cat": "gallery",
+  "area": "Outer North",
+  "addr_hint": "Snells Beach",
+  "url": "https://www.brickbaysculpture.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Sculptureum",
+  "subcat": "雕塑园/画廊",
+  "cat": "gallery",
+  "area": "Outer North",
+  "addr_hint": "Matakana",
+  "url": "https://www.sculptureum.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Auckland War Memorial Museum Tāmaki Paenga Hira",
+  "subcat": "博物馆",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Auckland Domain",
+  "url": "https://www.aucklandmuseum.com/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "New Zealand Maritime Museum Hui Te Ananui a Tangaroa",
+  "subcat": "博物馆",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Viaduct Harbour",
+  "url": "https://www.maritimemuseum.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "MOTAT",
+  "subcat": "博物馆",
+  "cat": "gallery",
+  "area": "Central/West",
+  "addr_hint": "Western Springs",
+  "url": "https://www.motat.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Trish Clark Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://trishclark.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Fox Jensen McCrory",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Newmarket",
+  "url": "https://foxjensengallery.com/",
+  "status": "todo"
+ },
+ {
+  "name": "Season",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://seasonaotearoa.com/",
+  "status": "todo"
+ },
+ {
+  "name": "Anna Miles Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://annamilesgallery.com/",
+  "status": "todo"
+ },
+ {
+  "name": "FHE Galleries",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://fhegalleries.com/",
+  "status": "todo"
+ },
+ {
+  "name": "Masterworks Gallery",
+  "subcat": "工艺画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://masterworksgallery.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Tim Melville Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Grey Lynn",
+  "url": "https://timmelvillegallery.com/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Turua Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "East",
+  "addr_hint": "St Heliers",
+  "url": "https://www.turuagallery.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Railway Street Gallery + Studios",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Newmarket",
+  "url": "https://www.railwaystreetstudios.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "S{U}ITE Gallery Auckland",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://suite.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Satellite2",
+  "subcat": "独立画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Newton / Eden Terrace",
+  "url": "https://satellite2.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "ArtSelect Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "Newmarket",
+  "url": "https://www.artselect.gallery/",
+  "status": "todo"
+ },
+ {
+  "name": "Little Unity",
+  "subcat": "儿童书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "High Street / CBD",
+  "url": "https://unitybooks.nz/little-unity/",
+  "status": "todo"
+ },
+ {
+  "name": "The Women's Bookshop",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://www.womensbookshop.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Dear Reader",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Grey Lynn",
+  "url": "https://www.dearreader.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Lamplight Books",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Parnell",
+  "url": "https://lamplightbooks.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Anec.dote",
+  "subcat": "书店/画廊/活动空间",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Mt Eden",
+  "url": "https://anecdote.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "The Open Book",
+  "subcat": "二手书店/活动空间",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://theopenbook.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Hard to Find Books Auckland",
+  "subcat": "二手书店",
+  "cat": "literary",
+  "area": "Central/South",
+  "addr_hint": "Onehunga",
+  "url": "https://www.hardtofind.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Jason Books",
+  "subcat": "二手书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://www.jasonbooks.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Blue Hills Books",
+  "subcat": "二手书店",
+  "cat": "literary",
+  "area": "West",
+  "addr_hint": "Titirangi",
+  "url": "https://www.facebook.com/bluehillsbooks/",
+  "status": "todo"
+ },
+ {
+  "name": "Books on High",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "CBD / High Street",
+  "url": "https://booksonhigh.com/",
+  "status": "todo"
+ },
+ {
+  "name": "Chapter Book and Tea Shop",
+  "subcat": "书店/茶店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Mt Eden",
+  "url": "https://chapter.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "The Dorothy Butler Children's Bookshop",
+  "subcat": "儿童书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Ponsonby",
+  "url": "https://dorothybutler.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "The Booklover",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "North",
+  "addr_hint": "Milford",
+  "url": "https://thebooklover.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Paradox Books",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "North",
+  "addr_hint": "Devonport",
+  "url": "https://paradoxbooks.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Bookmark Secondhand Books",
+  "subcat": "二手书店",
+  "cat": "literary",
+  "area": "North",
+  "addr_hint": "Devonport",
+  "url": "https://www.facebook.com/bookmarkdevonport/",
+  "status": "todo"
+ },
+ {
+  "name": "Poppies Books Howick",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "East",
+  "addr_hint": "Howick",
+  "url": "https://www.poppiesbooks.co.nz/store/howick",
+  "status": "todo"
+ },
+ {
+  "name": "Onehunga Books & Stationery",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central/South",
+  "addr_hint": "Onehunga",
+  "url": "https://www.facebook.com/onehungabooks/",
+  "status": "todo"
+ },
+ {
+  "name": "Matakana Village Books",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Outer North",
+  "addr_hint": "Matakana",
+  "url": "https://matakanavillagebooks.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "The Nook Bookshop",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Outer North",
+  "addr_hint": "Wellsford",
+  "url": "https://www.facebook.com/thenookwellsford/",
+  "status": "todo"
+ },
+ {
+  "name": "Parallel",
+  "subcat": "独立书店",
+  "cat": "literary",
+  "area": "Central",
+  "addr_hint": "Karangahape Road",
+  "url": "https://www.instagram.com/parallelbooks.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Aotea Centre",
+  "subcat": "大型表演艺术中心",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "CBD / Aotea Square",
+  "url": "https://www.aucklandlive.co.nz/venue/aotea-centre",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Civic",
+  "subcat": "历史剧院",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://www.aucklandlive.co.nz/venue/the-civic",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Q Theatre",
+  "subcat": "剧场",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "CBD / Queen Street",
+  "url": "https://www.qtheatre.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Basement Theatre",
+  "subcat": "独立剧场",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "CBD / Lower Greys Avenue",
+  "url": "https://basementtheatre.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "ASB Waterfront Theatre",
+  "subcat": "剧场",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "Wynyard Quarter",
+  "url": "https://www.asbwaterfronttheatre.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Te Pou Theatre",
+  "subcat": "毛利剧场",
+  "cat": "performance",
+  "area": "West",
+  "addr_hint": "Henderson",
+  "url": "https://tepoutheatre.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Tuning Fork",
+  "subcat": "音乐/演出场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Spark Arena precinct",
+  "url": "https://www.tuningfork.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Wine Cellar",
+  "subcat": "现场音乐场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Karangahape Road",
+  "url": "https://www.winecellar.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Titirangi Theatre",
+  "subcat": "社区剧场",
+  "cat": "performance",
+  "area": "West",
+  "addr_hint": "Titirangi",
+  "url": "https://www.titirangitheatre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Artworks Theatre",
+  "subcat": "社区剧场",
+  "cat": "performance",
+  "area": "Islands",
+  "addr_hint": "Oneroa, Waiheke Island",
+  "url": "https://www.artworkstheatre.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Howick Little Theatre",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "East",
+  "addr_hint": "Pakuranga / Howick",
+  "url": "https://hlt.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Dolphin Theatre",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "Central/South",
+  "addr_hint": "Onehunga",
+  "url": "https://dolphintheatre.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Papakura Theatre Company",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "South",
+  "addr_hint": "Papakura",
+  "url": "https://www.facebook.com/PapakuraTheatreCompany/",
+  "status": "todo"
+ },
+ {
+  "name": "Harlequin Musical Theatre",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "East",
+  "addr_hint": "Howick",
+  "url": "https://harlequintheatre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Academy Cinemas",
+  "subcat": "电影与艺术场地",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "CBD / Auckland Central Library basement",
+  "url": "https://www.academycinemas.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Capitol Cinema",
+  "subcat": "独立影院",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "Balmoral",
+  "url": "https://www.thecapitol.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Vic Devonport",
+  "subcat": "独立影院",
+  "cat": "performance",
+  "area": "North",
+  "addr_hint": "Devonport",
+  "url": "https://www.thevic.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Bridgeway Cinema",
+  "subcat": "独立影院",
+  "cat": "performance",
+  "area": "North",
+  "addr_hint": "Northcote Point",
+  "url": "https://www.bridgeway.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Michael King Writers Centre",
+  "subcat": "作家驻留与文学中心",
+  "cat": "literary",
+  "area": "North",
+  "addr_hint": "Devonport",
+  "url": "https://writerscentre.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Abacus Educational Books",
+  "subcat": "专业书店",
+  "cat": "literary",
+  "area": "North",
+  "addr_hint": "Albany",
+  "url": "https://abacusbooks.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Antoinette Godkin Gallery",
+  "subcat": "商业画廊",
+  "cat": "gallery",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://antoinettegodkin.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Connells Bay Sculpture Park",
+  "subcat": "私人雕塑公园",
+  "cat": "gallery",
+  "area": "Islands",
+  "addr_hint": "Waiheke Island",
+  "url": "https://www.connellsbay.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Galatos",
+  "subcat": "多层现场艺术场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Newton",
+  "url": "https://galatos.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Neck of the Woods",
+  "subcat": "独立音乐场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Karangahape Road",
+  "url": "https://neckofthewoods.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "The Mothership",
+  "subcat": "现场音乐与俱乐部",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "CBD / Shortland Street",
+  "url": "https://www.themothership.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "BIG FAN",
+  "subcat": "音乐创作与演出中心",
+  "cat": "music",
+  "area": "Central/West",
+  "addr_hint": "Morningside",
+  "url": "https://www.bigfan.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Anthology Lounge",
+  "subcat": "现场音乐与酒吧演出",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Karangahape Road",
+  "url": "https://anthology.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Playhouse Theatre Glen Eden",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "West",
+  "addr_hint": "Glen Eden",
+  "url": "https://www.playhousetheatre.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "The Rose Centre",
+  "subcat": "社区艺术中心/剧院",
+  "cat": "performance",
+  "area": "North",
+  "addr_hint": "Belmont / North Shore",
+  "url": "https://rosecentre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "TheatreWorks Birkenhead",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "North",
+  "addr_hint": "Birkenhead",
+  "url": "https://www.theatreworks.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Company Theatre",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "North",
+  "addr_hint": "Belmont / North Shore",
+  "url": "https://www.companytheatre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Centrestage Theatre Company",
+  "subcat": "社区剧院",
+  "cat": "performance",
+  "area": "North/Hibiscus Coast",
+  "addr_hint": "Ōrewa",
+  "url": "https://centrestagetheatre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Hawkins Theatre",
+  "subcat": "公共剧院",
+  "cat": "performance",
+  "area": "South",
+  "addr_hint": "Papakura",
+  "url": "https://www.hawkinstheatre.co.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "St Matthew-in-the-City",
+  "subcat": "教堂音乐与艺术场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "CBD",
+  "url": "https://www.stmatthews.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Holy Trinity Cathedral",
+  "subcat": "教堂音乐与艺术场地",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Parnell",
+  "url": "https://www.holy-trinity.org.nz/",
+  "status": "todo"
+ },
+ {
+  "name": "Spark Arena",
+  "subcat": "大型演出场馆",
+  "cat": "music",
+  "area": "Central",
+  "addr_hint": "Quay Park",
+  "url": "https://www.sparkarena.co.nz/",
+  "status": "done-batch1"
+ },
+ {
+  "name": "Herald Theatre",
+  "subcat": "黑盒剧场",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "Aotea Centre / CBD",
+  "url": "https://www.aucklandlive.co.nz/venue/herald-theatre",
+  "status": "todo"
+ },
+ {
+  "name": "Kiri Te Kanawa Theatre",
+  "subcat": "大型剧场",
+  "cat": "performance",
+  "area": "Central",
+  "addr_hint": "Aotea Centre / CBD",
+  "url": "https://www.aucklandlive.co.nz/venue/kiri-te-kanawa-theatre",
+  "status": "todo"
+ }
+]
