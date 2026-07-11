@@ -60,10 +60,9 @@
   .mapwrap:fullscreen #map{height:100vh}
   .mapwrap:-webkit-full-screen{max-width:none; border:0; border-radius:0}
   #fsbtn{border-color:var(--dblue); color:var(--dblue)}
-  /* 普鲁士蓝海水：容器底色为普鲁士蓝，瓦片灰度后用 lighten 混合——
-     暗部（海水）透出蓝色，亮部（陆地）保持灰度。无需海岸线数据。 */
+  /* 普鲁士蓝海面：真实海岸线色块（ocean.js，数据 © OSM），瓦片纯灰度 */
   #map{width:100%; height:72vh; min-height:420px; background:#003153}
-  .leaflet-tile{filter:grayscale(1) contrast(1.08) brightness(1.02); mix-blend-mode:lighten}
+  .leaflet-tile{filter:grayscale(1) contrast(1.06) brightness(1.03)}
   .leaflet-container{font-family:-apple-system,"PingFang SC",sans-serif}
   /* 来源/开源署名：法律要求保留，但缩到极小；点击/悬停展开可读 */
   .leaflet-control-attribution{font-size:7px; line-height:1.4; opacity:.55;
@@ -302,6 +301,7 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="ocean.js"></script>
 <script src="events.js"></script>
 <script>
 /* ================= 分类 ================= */
@@ -1531,6 +1531,14 @@ L.control.layers({
   "街道 Streets (OSM · 开源)": baseOSM
 }, null, {position:"bottomleft"}).addTo(map);
 
+/* 普鲁士蓝海面色块：真实海岸线多边形（含全部岛屿孔洞），盖在灰度瓦片上 */
+if(window.OCEAN){
+  L.geoJSON(window.OCEAN, {interactive:false, renderer:L.canvas(),
+    style:{color:"#00284A", weight:1, opacity:.5, fillColor:"#003153", fillOpacity:1}
+  }).addTo(map);
+  map.attributionControl.addAttribution('Coastline © OpenStreetMap contributors');
+}
+
 /* 贴纸随缩放变大变小 */
 function stickerSize(){
   var z = map.getZoom();
@@ -1720,7 +1728,7 @@ function openPanel(id){
            ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
            '<div class="meta">'+
              (p ? '<span class="price '+e.price+'">'+(S.lang==="zh"?p.zh:p.en)+'</span>'
-                : '<span class="price">'+(S.lang==="zh"?"费用见链接":"See link for price")+'</span>')+
+                : '<span class="price">'+(S.lang==="zh"?"详情见链接":"See link for details")+'</span>')+
              (e.url && e.url!=="#" ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"活动页面 →":"Event page →")+'</a>' : '')+
            '</div></div>';
     });
