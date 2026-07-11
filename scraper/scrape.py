@@ -159,8 +159,12 @@ SOURCES = {
   "kumeuarts":   [{"type":"html", "render":True, "url":"https://www.kumeuarts.org/", "selector":"article, .card, a[href*='event']"}],
   "mccahon":     [{"type":"html", "render":True, "url":"https://www.mccahonhouse.org.nz/", "selector":"article, .card"}],
   "tetoiuku":    [{"type":"html", "render":True, "url":"https://www.tetoiuku.org.nz/", "selector":"article, .card, li"}],
-  "teoro":       [],   # 域名失效 → 每周任务查新址
+  "teoro":       [{"type":"html", "render":True, "url":"https://www.eventfinda.co.nz/venue/te-oro-auckland", "selector":"article, .card, a[href*='/whatson/']"},
+                  {"type":"html", "render":True, "url":"https://www.teoro.org.nz/", "selector":"article, .card, a[href*='event']"}],  # ✅ 官网仍在 + Eventfinda 场馆页兜底
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
+  "jonathangrant": [{"type":"html", "render":True, "url":"https://jonathangrantgalleries.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "winecellar":  [{"type":"html", "render":True, "url":"https://www.winecellar.co.nz/", "selector":"article, .card, a[href*='gig'], a[href*='event']"}],
+  # 影院（academy/capitol/vic/bridgeway）日常排片刻意不抓；节展季由每周任务经 Eventfinda 手动补
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
 # 之后可以加一个 artnow 适配器按场馆名反查，作为各画廊官网抓取的兜底。

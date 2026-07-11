@@ -557,6 +557,72 @@ var SITES = {
   /* ostend 官网待确认 */
 };
 
+/* ================= 场馆常设说明 =================
+   卡片没有活动/展览/历史时显示，保证任何场馆的卡片都不空白。
+   内容限于真实的固有属性（常设展、运营节律、预约制等），不虚构具体活动。 */
+var CAT_NOTE = {
+  gallery:  {en:"Rotating exhibitions year-round. The sticker lights up automatically when a new show is detected (updated weekly).",
+             zh:"常年循环举办个展与群展。侦测到新展时贴纸自动点亮（每周更新）。"},
+  literary: {en:"Open year-round. Readings, launches and signings light up the sticker when announced.",
+             zh:"书店常年营业。朗读会、新书发布与签售公布后贴纸即点亮。"},
+  music:    {en:"Live venue — gigs light up the sticker as soon as they're announced (updated weekly).",
+             zh:"现场演出场地——演出公布后贴纸第一时间点亮（每周更新）。"},
+  performance:{en:"Community theatre with several productions a year; the sticker lights up when a season is announced.",
+             zh:"社区剧团/剧场，每年数档制作；剧季公布即点亮。"},
+  workshop: {en:"Runs classes and workshops in term-time blocks; lights up when new programmes are posted.",
+             zh:"以课程与工作坊为主，按学期发布；新课程上线即点亮。"},
+  market:   {en:"Regular market — dates generate automatically each week.",
+             zh:"周期性集市——日期每周自动生成。"}
+};
+var VENUE_NOTES = {
+  brickbay:  {en:"Permanent sculpture trail: ~60 large-scale NZ works along a 2 km walk through vineyards (ticketed, open daily).",
+              zh:"常设雕塑步道：约 60 件新西兰大型作品沿 2 公里葡萄园步道展出（门票制，每日开放）。"},
+  sculptureum:{en:"Private sculpture park with indoor and outdoor galleries — a permanent collection, ticketed.",
+              zh:"私人雕塑园，室内外展馆常设收藏，门票制。"},
+  connellsbay:{en:"Private sculpture park on Waiheke with site-specific NZ works — guided visits by booking only.",
+              zh:"激流岛预约制私人雕塑公园，常设新西兰在地委托作品，仅接受预约导览。"},
+  mccahon:   {en:"Colin McCahon's 1950s French Bay cottage, kept as a permanent house museum alongside an artist residency.",
+              zh:"画家 Colin McCahon 1950 年代的 French Bay 故居，常设开放，兼有艺术家驻留项目。"},
+  museum:    {en:"Permanent collections across three floors — Māori and Pacific taonga, natural history, war memorial galleries; regular late events and Matariki programming.",
+              zh:"三层常设馆藏：毛利与太平洋珍宝、自然史、战争纪念展厅；常年有夜场活动与马塔里基节目。"},
+  tetoiuku:  {en:"Permanent museum of Crown Lynn ceramics and Ambrico kiln heritage on the original pottery site.",
+              zh:"Crown Lynn 陶瓷与 Ambrico 砖窑遗址上的常设博物馆。"},
+  teoro:     {en:"Glen Innes music & arts centre for young people — year-round performances, dance and creative courses.",
+              zh:"Glen Innes 青少年音乐艺术中心——常年有演出、舞蹈与创作课程。"},
+  westcoastgallery:{en:"Co-op gallery at Piha showing 100+ West Coast artists — open daily, stock changes constantly.",
+              zh:"Piha 的合作社画廊，常设展售百余位西海岸艺术家作品，每日开放。"},
+  civic:     {en:"1929 atmospheric theatre — touring musicals, film festivals and concerts. Auckland Live listings light this up automatically.",
+              zh:"1929 年的星空剧院——巡演音乐剧、电影节与音乐会。Auckland Live 档期公布后自动点亮。"},
+  aotea:     {en:"Auckland's main performing arts centre (incl. Kiri Te Kanawa & Herald theatres). Lights up via Auckland Live listings.",
+              zh:"奥克兰主要表演艺术中心（含 Kiri Te Kanawa 与 Herald 剧场）。档期经 Auckland Live 自动点亮。"},
+  townhall:  {en:"Historic concert hall, home of the Auckland Philharmonia. Lights up via Auckland Live listings.",
+              zh:"历史音乐厅，奥克兰爱乐驻团场地。档期经 Auckland Live 自动点亮。"},
+  brucemason:{en:"Takapuna's main theatre — touring shows and concerts, via Auckland Live listings.",
+              zh:"北岸主力剧场——巡演与音乐会，档期经 Auckland Live 自动点亮。"},
+  sparkarena:{en:"Auckland's 12,000-seat arena for major touring concerts — announcements light this up.",
+              zh:"12000 座大型演唱会场馆——巡演官宣后点亮。"},
+  academy:   {en:"Independent cinema under the Central Library. Daily film times aren't mapped; special screenings and festivals light it up.",
+              zh:"中央图书馆地下的艺术影院。日常排片不上地图；特别放映与影展场次会点亮。"},
+  capitol:   {en:"1920s Spanish-mission cinema on Dominion Rd. Daily screenings aren't mapped; festivals and special events light it up.",
+              zh:"Dominion Rd 的 1920 年代西班牙教会式影院。日常排片不上地图；节展与特别场次会点亮。"},
+  vic:       {en:"Devonport's 1912 picture palace — one of the oldest cinemas in the southern hemisphere. Special events light it up.",
+              zh:"Devonport 1912 年老影院——南半球最古老的影院之一。特别场次会点亮。"},
+  bridgeway: {en:"Northcote Point's neighbourhood cinema since 1926. Special screenings light it up.",
+              zh:"Northcote Point 1926 年至今的社区影院。特别放映会点亮。"},
+  stmatthews:{en:"Neo-gothic city church with a regular programme of organ recitals, choral and classical concerts.",
+              zh:"市中心新哥特式教堂，常设管风琴、合唱与古典音乐会系列。"},
+  holytrinity:{en:"Parnell's cathedral — organ recitals, choral evensong and orchestral concerts through the year.",
+              zh:"Parnell 大教堂——常年有管风琴独奏、晚祷合唱与乐团音乐会。"},
+  elam:      {en:"University of Auckland art school; public grad shows and project spaces follow the academic calendar.",
+              zh:"奥克兰大学美术学院；毕业展与项目空间按学期开放。"},
+  papakuratheatre:{en:"Community theatre company staging several shows a year (announcements via Facebook).",
+              zh:"社区剧团，每年数档制作（档期发布于 Facebook）。"},
+  rmgallery: {en:"Artist-run space in Samoa House Lane since 1997 — experimental shows in short cycles.",
+              zh:"Samoa House 巷内 1997 年至今的艺术家自营空间，短周期实验展。"},
+  window:    {en:"Vitrine gallery in the University of Auckland library foyer — student and emerging artist projects.",
+              zh:"奥大图书馆门厅的橱窗画廊——学生与新锐艺术家项目。"}
+};
+
 /* ============================================================
    贴纸插画：每个场馆按真实建筑立面单独绘制（76×60 画布）
    aag: 2011 扩建的 kauri 木波浪天棚 + 细柱 + 玻璃幕墙
@@ -1690,9 +1756,11 @@ function openPanel(id){
              '</div>';
       });
     } else {
-      h += '<div class="noev">'+(S.lang==="zh"
-        ? "本时段暂无活动记录。可能是场馆确实安静，也可能活动只发在 Instagram 上——值得直接去逛逛。"
-        : "No events recorded for this window. The venue may be quiet, or only posting on Instagram — worth a visit anyway.")+'</div>';
+      /* 完全无记录 → 显示场馆常设说明（真实固有属性），保证卡片不空白 */
+      var note = VENUE_NOTES[id] || CAT_NOTE[v.cat];
+      h += '<div class="pasth">'+(S.lang==="zh" ? "场馆常设" : "About this venue")+'</div>'+
+           '<div class="ev past"><div class="desc" style="margin-top:0">'+
+           (S.lang==="zh" ? note.zh : note.en)+'</div></div>';
     }
   }
   /* 徽章按条目判断：只有示例条目（sample 标记或 Sample: 开头）才挂 */
