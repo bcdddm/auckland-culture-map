@@ -87,10 +87,80 @@ SOURCES = {
   "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：静态HTML
   "tworooms":    [{"type":"html", "url":"https://tworooms.co.nz/exhibitions/", "selector":"article, .exhibition, li"}],
   "sanderson":   [{"type":"html", "url":"https://www.sanderson.co.nz/exhibitions", "selector":"article, .exhibition, li"}],
-  "foenander":   [], "melanieroger": [], "ivananthony": [], "rmgallery": [], "tautai": [],
-  "stpaulst":    [], "window": [], "coastalsigns": [], "bergman": [], "whitespace": [],
-  "allpress":    [], "artis": [], "intlart": [], "parnellgallery": [],
-  "flagstaff":   [], "artbysea": [], "vivian": [],
+  "foenander":   [], "melanieroger": [], "ivananthony": [], "coastalsigns": [], "bergman": [],
+  "artis": [], "flagstaff": [], "artbysea": [], "vivian": [],
+  # ---- 2026-07-11 批量配源：表演/音乐/博物馆/画廊优先（书店暂缓）----
+  # 博物馆
+  "museum":      [{"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on", "selector":"a[href*='whats-on'], article, .card"}],
+  "maritime":    [{"type":"html", "render":True, "url":"https://www.maritimemuseum.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
+  "motat":       [{"type":"html", "render":True, "url":"https://www.motat.nz/whats-on/", "selector":"article, .card, a[href*='event']"}],
+  # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
+  "qtheatre":    [{"type":"html", "render":True, "url":"https://www.qtheatre.co.nz/whats-on", "selector":"a[href*='show'], article, .card"}],
+  "basement":    [{"type":"html", "render":True, "url":"https://basementtheatre.co.nz/whats-on/", "selector":"a[href*='show'], article, .card"}],
+  "asbwaterfront": [{"type":"html", "render":True, "url":"https://www.asbwaterfronttheatre.co.nz/whats-on", "selector":"article, .card, a[href*='show']"}],
+  "tepou":       [{"type":"html", "render":True, "url":"https://tepoutheatre.nz/whats-on/", "selector":"article, .card"}],
+  "titirangitheatre": [{"type":"html", "render":True, "url":"https://www.titirangitheatre.co.nz/", "selector":"article, .card, li"}],
+  "artworkstheatre": [{"type":"html", "render":True, "url":"https://www.artworkstheatre.org.nz/", "selector":"article, .card, a[href*='event']"}],
+  "howicklittle": [{"type":"html", "render":True, "url":"https://hlt.nz/", "selector":"article, .card, a[href*='show']"}],
+  "dolphin":     [{"type":"html", "render":True, "url":"https://dolphintheatre.org.nz/", "selector":"article, .card"}],
+  "harlequin":   [{"type":"html", "render":True, "url":"https://harlequintheatre.co.nz/", "selector":"article, .card"}],
+  "playhouse":   [{"type":"html", "render":True, "url":"https://www.playhousetheatre.org.nz/", "selector":"article, .card"}],
+  "rosecentre":  [{"type":"html", "render":True, "url":"https://rosecentre.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "theatreworks": [{"type":"html", "render":True, "url":"https://www.theatreworks.co.nz/", "selector":"article, .card"}],
+  "companytheatre": [{"type":"html", "render":True, "url":"https://www.companytheatre.co.nz/", "selector":"article, .card"}],
+  "centrestage": [{"type":"html", "render":True, "url":"https://centrestagetheatre.co.nz/", "selector":"article, .card, a[href*='show']"}],
+  "hawkins":     [{"type":"html", "render":True, "url":"https://www.hawkinstheatre.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "papakuratheatre": [],   # 只有 Facebook → 每周任务手动补
+  # 影院：只抓特别放映/节展，日常排片噪音大 → 暂不配源，待做"特殊场次"过滤后再开
+  "academy": [], "capitol": [], "vic": [], "bridgeway": [],
+  # 音乐
+  "sparkarena":  [{"type":"html", "render":True, "url":"https://www.sparkarena.co.nz/events", "selector":"article, .card, a[href*='event']"}],
+  "tuningfork":  [{"type":"html", "render":True, "url":"https://www.tuningfork.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "galatos":     [{"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "neckofthewoods": [{"type":"html", "render":True, "url":"https://neckofthewoods.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "anthology":   [{"type":"html", "render":True, "url":"https://anthology.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "mothership":  [{"type":"html", "render":True, "url":"https://www.themothership.co.nz/", "selector":"article, .card"}],
+  "bigfan":      [{"type":"html", "render":True, "url":"https://www.bigfan.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
+  "stmatthews":  [{"type":"html", "render":True, "url":"https://www.stmatthews.org.nz/whats-on/", "selector":"article, .card, li"}],
+  "holytrinity": [{"type":"html", "render":True, "url":"https://www.holy-trinity.org.nz/events", "selector":"article, .card, li"}],
+  # 画廊/大学空间/雕塑园
+  "rmgallery":   [{"type":"html", "render":True, "url":"https://rm.org.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "tautai":      [{"type":"html", "render":True, "url":"https://tautai.org/", "selector":"article, .card, a[href*='exhibition']"}],
+  "stpaulst":    [{"type":"html", "render":True, "url":"https://stpaulst.aut.ac.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "window":      [{"type":"html", "render":True, "url":"https://windowgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "whitespace":  [{"type":"html", "render":True, "url":"https://www.whitespace.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "allpress":    [{"type":"html", "render":True, "url":"https://www.allpressstudio.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "intlart":     [{"type":"html", "render":True, "url":"https://www.internationalartcentre.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "parnellgallery": [{"type":"html", "render":True, "url":"https://www.parnellgallery.co.nz/exhibitions/", "selector":"article, .card, a[href*='exhibition']"}],
+  "blackdoor":   [{"type":"html", "render":True, "url":"https://www.blackdoorgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "trishclark":  [{"type":"html", "render":True, "url":"https://trishclark.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "masterworks": [{"type":"html", "render":True, "url":"https://masterworksgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "timmelville": [{"type":"html", "render":True, "url":"https://timmelvillegallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "webbs":       [{"type":"html", "render":True, "url":"https://www.webbs.co.nz/auctions", "selector":"article, .card, a[href*='auction']"}],
+  "artobject":   [{"type":"html", "render":True, "url":"https://www.artandobject.co.nz/", "selector":"article, .card, a[href*='auction']"}],
+  "twng":        [{"type":"html", "render":True, "url":"https://twng.aut.ac.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "foxjensen":   [{"type":"html", "render":True, "url":"https://foxjensengallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "season":      [{"type":"html", "render":True, "url":"https://seasonaotearoa.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "annamiles":   [{"type":"html", "render":True, "url":"https://annamilesgallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "fhe":         [{"type":"html", "render":True, "url":"https://fhegalleries.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "turua":       [{"type":"html", "render":True, "url":"https://www.turuagallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "railwayst":   [{"type":"html", "render":True, "url":"https://www.railwaystreetstudios.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "suite":       [{"type":"html", "render":True, "url":"https://suite.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "satellite2":  [{"type":"html", "render":True, "url":"https://satellite2.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "artselect":   [{"type":"html", "render":True, "url":"https://www.artselect.gallery/", "selector":"article, .card"}],
+  "antoinettegodkin": [{"type":"html", "render":True, "url":"https://antoinettegodkin.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "westcoastgallery": [{"type":"html", "render":True, "url":"https://www.westcoastgallery.co.nz/", "selector":"article, .card"}],
+  "brickbay":    [{"type":"html", "render":True, "url":"https://www.brickbaysculpture.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "sculptureum": [{"type":"html", "render":True, "url":"https://www.sculptureum.nz/", "selector":"article, .card"}],
+  "connellsbay": [], "elam": [],   # 预约制/学期制 → 每周任务按学期手动补
+  # 工作坊
+  "nathan":      [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/nathan-homestead.html", "selector":"article, .card, li"}],
+  "helensville": [{"type":"html", "render":True, "url":"https://www.artcentrehelensville.org.nz/", "selector":"article, .card"}],
+  "kumeuarts":   [{"type":"html", "render":True, "url":"https://www.kumeuarts.org/", "selector":"article, .card, a[href*='event']"}],
+  "mccahon":     [{"type":"html", "render":True, "url":"https://www.mccahonhouse.org.nz/", "selector":"article, .card"}],
+  "tetoiuku":    [{"type":"html", "render":True, "url":"https://www.tetoiuku.org.nz/", "selector":"article, .card, li"}],
+  "teoro":       [],   # 域名失效 → 每周任务查新址
+  "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
 # 之后可以加一个 artnow 适配器按场馆名反查，作为各画廊官网抓取的兜底。
@@ -230,6 +300,56 @@ def scrape_ical(venue, src):
             out.append({"venue": venue, "title": t, "date": str(d), "kind": k, "url": src["url"]})
     return out
 
+AKL_LIVE_ROUTES = {   # Auckland Live 共享节目页 → 按 location.name 分派到场馆
+    "civic":      ["civic"],
+    "aotea":      ["aotea", "kiri te kanawa", "herald"],
+    "townhall":   ["town hall"],
+    "brucemason": ["bruce mason"],
+}
+def scrape_aucklandlive():
+    """一次渲染 aucklandlive.co.nz/whats-on，用 JSON-LD 的 location.name 路由到多个场馆。"""
+    src = {"render": True, "url": "https://www.aucklandlive.co.nz/whats-on"}
+    soup = BeautifulSoup(fetch_html(src), "html.parser")
+    out = []
+    for tag in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(tag.string or "")
+        except Exception:
+            continue
+        flat = []
+        for d in (data if isinstance(data, list) else [data]):
+            if isinstance(d, dict) and "@graph" in d:
+                flat += [x for x in d["@graph"] if isinstance(x, dict)]
+            elif isinstance(d, dict):
+                flat.append(d)
+        for d in flat:
+            types = d.get("@type", ""); types = types if isinstance(types, list) else [types]
+            if not any("Event" in str(x) for x in types):
+                continue
+            try:
+                sd = datetime.date.fromisoformat(str(d.get("startDate", ""))[:10])
+            except Exception:
+                continue
+            if not (TODAY <= sd <= HORIZON):
+                continue
+            loc = d.get("location")
+            loc = (loc[0] if isinstance(loc, list) and loc else loc) or {}
+            locname = str(loc.get("name", "")).lower() if isinstance(loc, dict) else str(loc).lower()
+            vid = None
+            for v, keys in AKL_LIVE_ROUTES.items():
+                if any(k in locname for k in keys):
+                    vid = v; break
+            if not vid:
+                continue
+            name = (d.get("name") or "").strip()
+            if not name:
+                continue
+            out.append({"venue": vid, "title": name[:110], "date": str(sd), "kind": "gig",
+                        "url": d.get("url") or src["url"],
+                        "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]})
+    print(f"[ok]   aucklandlive-router: {len(out)} events")
+    return out
+
 def weekly_rule_events():
     """固定周期的集市：直接按规则生成未来31天。"""
     rules = [  # (venue, weekday 一=0…日=6, title, zh, kind, url)
@@ -283,6 +403,10 @@ def main():
                 print(f"[ok]   {venue}: {len(got)} events")
             except Exception as e:
                 print(f"[warn] {venue}: {e}", file=sys.stderr)
+    try:
+        items += scrape_aucklandlive()       # Civic/Aotea/市政厅/Bruce Mason 共享路由
+    except Exception as e:
+        print(f"[warn] aucklandlive-router: {e}", file=sys.stderr)
     items += weekly_rule_events()
     hist = load_history()
     seen_keys = {(e["venue"], e["title"][:40], e["date"]) for e in items}
