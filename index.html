@@ -99,6 +99,7 @@
   .stk.off.faint .ring{opacity:.25}
   .stk.off.faint:hover .front{filter:grayscale(1) opacity(.75)}
   .stk.dim{opacity:.12; pointer-events:none}
+  .stk.hidecat{display:none}   /* 类别开关关闭 → 整张贴纸隐藏 */
   /* 待机动画：右下角轻轻翘起（dog-ear），不浮动 */
   .stk .curl{transform-box:fill-box; transform-origin:100% 100%;
     animation:curlpulse 3.4s ease-in-out infinite}
@@ -1393,7 +1394,11 @@ var FACADES = {
 };
 
 /* ================= 状态 ================= */
-var S = {win:"week", cat:"all", lang:"en", open:null};
+/* cats：多选开关，书店/文学类默认关闭，用户自行开启 */
+var S = {win:"week",
+  cats:{gallery:true, literary:false, music:true, performance:true, workshop:true, market:true},
+  lang:"en", open:null};
+var VCAT = {};   /* venue id → 类别，初始化时填充 */
 var EV = (window.EVENTS && window.EVENTS.items) || [];
 
 function inWindow(dstr){
@@ -1493,7 +1498,7 @@ function stickerHTML(v){
   /* 贴纸太小时（缩放 ≤12）隐藏底部横幅，只留计数点 */
   var showRibbon = live && map.getZoom() >= 13;
   var cls = "stk " + (live ? "live" : ("off" + (venueShows(v.id).length ? "" : " faint")))
-          + (S.cat !== "all" && v.cat !== S.cat ? " dim" : "")
+          + (S.cats[v.cat] ? "" : " hidecat")
           + (S.open === v.id ? " gone" : "");
   /* 有活动且够大时贴纸更高：底部多一条黄色活动横幅 */
   var ph = showRibbon ? 108 : 94;               /* paper 高度 */
@@ -1567,7 +1572,7 @@ function nearIds(anchorId){
   var a = VENUES.filter(function(x){ return x.id === anchorId; })[0];
   var cos = Math.cos(a.lat * Math.PI / 180);
   return VENUES.filter(function(x){
-      return x.id !== anchorId && (S.cat === "all" || x.cat === S.cat);
+      return x.id !== anchorId && S.cats[x.cat];
     })
     .map(function(x){
       var dy = x.lat - a.lat, dx = (x.lng - a.lng) * cos;
@@ -1756,18 +1761,21 @@ map.on("click", function(){ if(S.open) closePanel(); });
 /* ================= 控件 ================= */
 function renderChips(){
   var el = document.getElementById("chips");
-  var h = '<button class="chip'+(S.cat==="all"?" on":"")+'" data-cat="all">'+
-          '<span class="en">All</span><span class="zh">全部</span></button>';
+  var allOn = Object.keys(CATS).every(function(k){ return S.cats[k]; });
+  var h = '<button class="chip'+(allOn?" on":"")+'" data-cat="all">'+
+          '<span class="en">All on</span><span class="zh">全开</span></button>';
   Object.keys(CATS).forEach(function(k){
-    h += '<button class="chip'+(S.cat===k?" on":"")+'" data-cat="'+k+'">'+
+    h += '<button class="chip'+(S.cats[k]?" on":"")+'" data-cat="'+k+'" aria-pressed="'+(!!S.cats[k])+'">'+
          '<span class="sw" style="background:'+CATS[k].hex+'"></span>'+
          '<span class="en">'+CATS[k].en+'</span><span class="zh">'+CATS[k].zh+'</span></button>';
   });
   el.innerHTML = h;
+  /* 多选开关：点击切换该类显示/隐藏；"全开"一键全部打开。菜单不自动收起，方便连续勾选 */
   Array.prototype.forEach.call(el.querySelectorAll(".chip"), function(b){
     b.addEventListener("click", function(){
-      S.cat = b.getAttribute("data-cat");
-      document.getElementById("filterbox").classList.remove("open");  /* 选完类别收起菜单 */
+      var k = b.getAttribute("data-cat");
+      if(k === "all"){ Object.keys(CATS).forEach(function(c){ S.cats[c] = true; }); }
+      else { S.cats[k] = !S.cats[k]; }
       refresh();
     });
   });
@@ -1819,7 +1827,11 @@ function refresh(){
     (S.lang==="zh" ? "数据更新于 " : "Data updated ") + g;
   /* 手机筛选按钮上的当前选择摘要 */
   var segL = S.win==="week" ? (S.lang==="zh"?"本周":"This week") : (S.lang==="zh"?"本月":"This month");
-  var catL = S.cat==="all" ? (S.lang==="zh"?"全部":"All") : (S.lang==="zh"?CATS[S.cat].zh:CATS[S.cat].en);
+  var onCats = Object.keys(CATS).filter(function(k){ return S.cats[k]; });
+  var catL = onCats.length === Object.keys(CATS).length ? (S.lang==="zh"?"全部":"All")
+           : onCats.length === 0 ? (S.lang==="zh"?"无":"None")
+           : onCats.length <= 2 ? onCats.map(function(k){ return S.lang==="zh"?CATS[k].zh:CATS[k].en; }).join(" · ")
+           : (S.lang==="zh" ? onCats.length+" 类" : onCats.length+" cats");
   document.getElementById("fsum").textContent = segL + " · " + catL;
   if(S.open) openPanel(S.open);
 }
@@ -1841,12 +1853,14 @@ function soonestVenue(){
   var best = null;
   EV.forEach(function(e){
     if(e.kind === "exhibition") return;
+    if(VCAT[e.venue] && !S.cats[VCAT[e.venue]]) return;   /* 尊重类别开关（默认跳过书店） */
     var d = new Date(e.date + "T00:00:00");
     if(d < today) return;
     if(!best || e.date < best.date) best = e;
   });
   return best && best.venue;
 }
+VENUES.forEach(function(v){ VCAT[v.id] = v.cat; });
 
 applyLang("en"); refresh();   /* 默认英文 */
 var _sv = soonestVenue();
