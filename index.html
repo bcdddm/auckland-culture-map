@@ -1534,7 +1534,8 @@ L.control.layers({
 /* 贴纸随缩放变大变小 */
 function stickerSize(){
   var z = map.getZoom();
-  return z <= 10 ? 30 : z <= 11 ? 38 : z === 12 ? 46 : z === 13 ? 58 : z === 14 ? 74 : 90;
+  /* 2026-07-11 视觉缩小 33% */
+  return z <= 10 ? 20 : z <= 11 ? 25 : z === 12 ? 31 : z === 13 ? 39 : z === 14 ? 50 : 60;
 }
 
 /* 标签过长时用 textLength 压进贴纸内（修正文字超框） */
