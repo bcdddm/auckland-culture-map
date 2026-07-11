@@ -6,7 +6,7 @@
   "area": "Central",
   "addr_hint": "CBD / AUT City Campus",
   "url": "https://twng.aut.ac.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Elam Projectspace / Elam Galleries",
@@ -15,7 +15,7 @@
   "area": "Central",
   "addr_hint": "CBD / University of Auckland",
   "url": "https://www.auckland.ac.nz/en/creative/our-faculty/elam-school-of-fine-arts/elam-galleries.html",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Kumeū Arts",
@@ -24,7 +24,7 @@
   "area": "West/Northwest",
   "addr_hint": "Huapai / Kumeū",
   "url": "https://www.kumeuarts.org/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "West Coast Gallery",
@@ -33,7 +33,7 @@
   "area": "West Coast",
   "addr_hint": "Piha",
   "url": "https://www.westcoastgallery.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Brick Bay Sculpture Trail",
@@ -42,7 +42,7 @@
   "area": "Outer North",
   "addr_hint": "Snells Beach",
   "url": "https://www.brickbaysculpture.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Sculptureum",
@@ -51,7 +51,7 @@
   "area": "Outer North",
   "addr_hint": "Matakana",
   "url": "https://www.sculptureum.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Auckland War Memorial Museum Tāmaki Paenga Hira",
@@ -96,7 +96,7 @@
   "area": "Central",
   "addr_hint": "Newmarket",
   "url": "https://foxjensengallery.com/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Season",
@@ -105,7 +105,7 @@
   "area": "Central",
   "addr_hint": "CBD",
   "url": "https://seasonaotearoa.com/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Anna Miles Gallery",
@@ -114,7 +114,7 @@
   "area": "Central",
   "addr_hint": "CBD",
   "url": "https://annamilesgallery.com/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "FHE Galleries",
@@ -123,7 +123,7 @@
   "area": "Central",
   "addr_hint": "Ponsonby",
   "url": "https://fhegalleries.com/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Masterworks Gallery",
@@ -150,7 +150,7 @@
   "area": "East",
   "addr_hint": "St Heliers",
   "url": "https://www.turuagallery.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Railway Street Gallery + Studios",
@@ -159,7 +159,7 @@
   "area": "Central",
   "addr_hint": "Newmarket",
   "url": "https://www.railwaystreetstudios.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "S{U}ITE Gallery Auckland",
@@ -168,7 +168,7 @@
   "area": "Central",
   "addr_hint": "Ponsonby",
   "url": "https://suite.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Satellite2",
@@ -177,7 +177,7 @@
   "area": "Central",
   "addr_hint": "Newton / Eden Terrace",
   "url": "https://satellite2.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "ArtSelect Gallery",
@@ -186,7 +186,7 @@
   "area": "Central",
   "addr_hint": "Newmarket",
   "url": "https://www.artselect.gallery/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Little Unity",
@@ -195,7 +195,7 @@
   "area": "Central",
   "addr_hint": "High Street / CBD",
   "url": "https://unitybooks.nz/little-unity/",
-  "status": "todo"
+  "status": "skip-colocated-unity"
  },
  {
   "name": "The Women's Bookshop",
@@ -213,7 +213,7 @@
   "area": "Central",
   "addr_hint": "Grey Lynn",
   "url": "https://www.dearreader.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Lamplight Books",
@@ -222,7 +222,7 @@
   "area": "Central",
   "addr_hint": "Parnell",
   "url": "https://lamplightbooks.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Anec.dote",
@@ -231,7 +231,7 @@
   "area": "Central",
   "addr_hint": "Mt Eden",
   "url": "https://anecdote.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "The Open Book",
@@ -249,7 +249,7 @@
   "area": "Central/South",
   "addr_hint": "Onehunga",
   "url": "https://www.hardtofind.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Jason Books",
@@ -267,7 +267,7 @@
   "area": "West",
   "addr_hint": "Titirangi",
   "url": "https://www.facebook.com/bluehillsbooks/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Books on High",
@@ -276,7 +276,7 @@
   "area": "Central",
   "addr_hint": "CBD / High Street",
   "url": "https://booksonhigh.com/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Chapter Book and Tea Shop",
@@ -285,7 +285,7 @@
   "area": "Central",
   "addr_hint": "Mt Eden",
   "url": "https://chapter.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "The Dorothy Butler Children's Bookshop",
@@ -294,7 +294,7 @@
   "area": "Central",
   "addr_hint": "Ponsonby",
   "url": "https://dorothybutler.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "The Booklover",
@@ -303,7 +303,7 @@
   "area": "North",
   "addr_hint": "Milford",
   "url": "https://thebooklover.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Paradox Books",
@@ -312,7 +312,7 @@
   "area": "North",
   "addr_hint": "Devonport",
   "url": "https://paradoxbooks.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Bookmark Secondhand Books",
@@ -321,7 +321,7 @@
   "area": "North",
   "addr_hint": "Devonport",
   "url": "https://www.facebook.com/bookmarkdevonport/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Poppies Books Howick",
@@ -330,7 +330,7 @@
   "area": "East",
   "addr_hint": "Howick",
   "url": "https://www.poppiesbooks.co.nz/store/howick",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Onehunga Books & Stationery",
@@ -339,7 +339,7 @@
   "area": "Central/South",
   "addr_hint": "Onehunga",
   "url": "https://www.facebook.com/onehungabooks/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Matakana Village Books",
@@ -348,7 +348,7 @@
   "area": "Outer North",
   "addr_hint": "Matakana",
   "url": "https://matakanavillagebooks.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "The Nook Bookshop",
@@ -357,7 +357,7 @@
   "area": "Outer North",
   "addr_hint": "Wellsford",
   "url": "https://www.facebook.com/thenookwellsford/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Parallel",
@@ -366,7 +366,7 @@
   "area": "Central",
   "addr_hint": "Karangahape Road",
   "url": "https://www.instagram.com/parallelbooks.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Aotea Centre",
@@ -447,7 +447,7 @@
   "area": "West",
   "addr_hint": "Titirangi",
   "url": "https://www.titirangitheatre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Artworks Theatre",
@@ -456,7 +456,7 @@
   "area": "Islands",
   "addr_hint": "Oneroa, Waiheke Island",
   "url": "https://www.artworkstheatre.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Howick Little Theatre",
@@ -465,7 +465,7 @@
   "area": "East",
   "addr_hint": "Pakuranga / Howick",
   "url": "https://hlt.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Dolphin Theatre",
@@ -474,7 +474,7 @@
   "area": "Central/South",
   "addr_hint": "Onehunga",
   "url": "https://dolphintheatre.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Papakura Theatre Company",
@@ -483,7 +483,7 @@
   "area": "South",
   "addr_hint": "Papakura",
   "url": "https://www.facebook.com/PapakuraTheatreCompany/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Harlequin Musical Theatre",
@@ -492,7 +492,7 @@
   "area": "East",
   "addr_hint": "Howick",
   "url": "https://harlequintheatre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Academy Cinemas",
@@ -537,7 +537,7 @@
   "area": "North",
   "addr_hint": "Devonport",
   "url": "https://writerscentre.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Abacus Educational Books",
@@ -546,7 +546,7 @@
   "area": "North",
   "addr_hint": "Albany",
   "url": "https://abacusbooks.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Antoinette Godkin Gallery",
@@ -555,7 +555,7 @@
   "area": "Central",
   "addr_hint": "CBD",
   "url": "https://antoinettegodkin.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Connells Bay Sculpture Park",
@@ -564,7 +564,7 @@
   "area": "Islands",
   "addr_hint": "Waiheke Island",
   "url": "https://www.connellsbay.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Galatos",
@@ -591,7 +591,7 @@
   "area": "Central",
   "addr_hint": "CBD / Shortland Street",
   "url": "https://www.themothership.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "BIG FAN",
@@ -600,7 +600,7 @@
   "area": "Central/West",
   "addr_hint": "Morningside",
   "url": "https://www.bigfan.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Anthology Lounge",
@@ -618,7 +618,7 @@
   "area": "West",
   "addr_hint": "Glen Eden",
   "url": "https://www.playhousetheatre.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "The Rose Centre",
@@ -627,7 +627,7 @@
   "area": "North",
   "addr_hint": "Belmont / North Shore",
   "url": "https://rosecentre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "TheatreWorks Birkenhead",
@@ -636,7 +636,7 @@
   "area": "North",
   "addr_hint": "Birkenhead",
   "url": "https://www.theatreworks.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Company Theatre",
@@ -645,7 +645,7 @@
   "area": "North",
   "addr_hint": "Belmont / North Shore",
   "url": "https://www.companytheatre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Centrestage Theatre Company",
@@ -654,7 +654,7 @@
   "area": "North/Hibiscus Coast",
   "addr_hint": "Ōrewa",
   "url": "https://centrestagetheatre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Hawkins Theatre",
@@ -663,7 +663,7 @@
   "area": "South",
   "addr_hint": "Papakura",
   "url": "https://www.hawkinstheatre.co.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "St Matthew-in-the-City",
@@ -672,7 +672,7 @@
   "area": "Central",
   "addr_hint": "CBD",
   "url": "https://www.stmatthews.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Holy Trinity Cathedral",
@@ -681,7 +681,7 @@
   "area": "Central",
   "addr_hint": "Parnell",
   "url": "https://www.holy-trinity.org.nz/",
-  "status": "todo"
+  "status": "done-batch2"
  },
  {
   "name": "Spark Arena",
@@ -699,7 +699,7 @@
   "area": "Central",
   "addr_hint": "Aotea Centre / CBD",
   "url": "https://www.aucklandlive.co.nz/venue/herald-theatre",
-  "status": "todo"
+  "status": "skip-inside-aotea"
  },
  {
   "name": "Kiri Te Kanawa Theatre",
@@ -708,6 +708,6 @@
   "area": "Central",
   "addr_hint": "Aotea Centre / CBD",
   "url": "https://www.aucklandlive.co.nz/venue/kiri-te-kanawa-theatre",
-  "status": "todo"
+  "status": "skip-inside-aotea"
  }
 ]

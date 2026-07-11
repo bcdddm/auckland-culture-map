@@ -56,12 +56,14 @@
 
   /* ---------- map ---------- */
   .mapwrap{max-width:1120px; margin:0 auto; border:1.5px solid var(--ink); border-radius:4px; overflow:hidden; position:relative}
-  .mapwrap:fullscreen{max-width:none; border:0; border-radius:0; background:#111}
+  .mapwrap:fullscreen{max-width:none; border:0; border-radius:0; background:#003153}
   .mapwrap:fullscreen #map{height:100vh}
   .mapwrap:-webkit-full-screen{max-width:none; border:0; border-radius:0}
   #fsbtn{border-color:var(--dblue); color:var(--dblue)}
-  #map{width:100%; height:72vh; min-height:420px; background:#222}
-  .leaflet-tile{filter:grayscale(1) contrast(1.06) brightness(1.04)}
+  /* 普鲁士蓝海水：容器底色为普鲁士蓝，瓦片灰度后用 lighten 混合——
+     暗部（海水）透出蓝色，亮部（陆地）保持灰度。无需海岸线数据。 */
+  #map{width:100%; height:72vh; min-height:420px; background:#003153}
+  .leaflet-tile{filter:grayscale(1) contrast(1.08) brightness(1.02); mix-blend-mode:lighten}
   .leaflet-container{font-family:-apple-system,"PingFang SC",sans-serif}
   /* 来源/开源署名：法律要求保留，但缩到极小；点击/悬停展开可读 */
   .leaflet-control-attribution{font-size:7px; line-height:1.4; opacity:.55;
@@ -413,7 +415,62 @@ var VENUES = [
  /* ---- 批次1：书店 ---- */
  {id:"womensbookshop", en:"The Women's Bookshop", zh:"女性书店",            label:"Women's Bkshp", cat:"literary", lat:-36.85550, lng:174.74600, r:2,  addr:"105 Ponsonby Rd"},
  {id:"jasonbooks",  en:"Jason Books",           zh:"Jason 二手书店",        label:"Jason Books",   cat:"literary", lat:-36.84740, lng:174.76680, r:-2, addr:"16 O'Connell St, CBD"},
- {id:"openbook",    en:"The Open Book",         zh:"The Open Book 二手书店", label:"The Open Book", cat:"literary", lat:-36.85320, lng:174.74720, r:3,  addr:"201 Ponsonby Rd"}
+ {id:"openbook",    en:"The Open Book",         zh:"The Open Book 二手书店", label:"The Open Book", cat:"literary", lat:-36.85320, lng:174.74720, r:3,  addr:"201 Ponsonby Rd"},
+ /* ---- 批次2：画廊/雕塑园/大学空间 ---- */
+ {id:"twng",        en:"Te Wai Ngutu Kākā (AUT)", zh:"Te Wai Ngutu Kākā 画廊", label:"Te Wai Ngutu", cat:"gallery", lat:-36.85400, lng:174.76500, r:2, addr:"AUT City Campus"},
+ {id:"elam",        en:"Elam Galleries (UoA)",  zh:"Elam 美院画廊",         label:"Elam",          cat:"gallery",  lat:-36.85550, lng:174.77000, r:-2, addr:"20 Whitaker Pl, UoA"},
+ {id:"westcoastgallery", en:"West Coast Gallery", zh:"West Coast 画廊",     label:"West Coast",    cat:"gallery",  lat:-36.95300, lng:174.46900, r:3,  addr:"21 Seaview Rd, Piha"},
+ {id:"brickbay",    en:"Brick Bay Sculpture Trail", zh:"Brick Bay 雕塑步道", label:"Brick Bay",    cat:"gallery",  lat:-36.44300, lng:174.71300, r:-3, addr:"Arabella Ln, Snells Beach"},
+ {id:"sculptureum", en:"Sculptureum",           zh:"Sculptureum 雕塑园",    label:"Sculptureum",   cat:"gallery",  lat:-36.36600, lng:174.74200, r:2,  addr:"40 Omaha Flats Rd, Matakana"},
+ {id:"foxjensen",   en:"Fox Jensen McCrory",    zh:"Fox Jensen McCrory 画廊", label:"Fox Jensen",  cat:"gallery",  lat:-36.86650, lng:174.77600, r:-2, addr:"Newmarket"},
+ {id:"season",      en:"Season",                zh:"Season 画廊",           label:"Season",        cat:"gallery",  lat:-36.84550, lng:174.76800, r:3,  addr:"CBD"},
+ {id:"annamiles",   en:"Anna Miles Gallery",    zh:"Anna Miles 画廊",       label:"Anna Miles",    cat:"gallery",  lat:-36.85980, lng:174.76120, r:-3, addr:"Upper Queen St"},
+ {id:"fhe",         en:"FHE Galleries",         zh:"FHE 画廊",              label:"FHE",           cat:"gallery",  lat:-36.85450, lng:174.74400, r:2,  addr:"Ponsonby"},
+ {id:"turua",       en:"Turua Gallery",         zh:"Turua 画廊",            label:"Turua",         cat:"gallery",  lat:-36.84800, lng:174.86000, r:-2, addr:"St Heliers"},
+ {id:"railwayst",   en:"Railway Street Gallery + Studios", zh:"Railway St 画廊工作室", label:"Railway St", cat:"gallery", lat:-36.86900, lng:174.77800, r:3, addr:"8 Railway St, Newmarket"},
+ {id:"suite",       en:"S{U}ITE Gallery",       zh:"Suite 画廊",            label:"Suite",         cat:"gallery",  lat:-36.85250, lng:174.74650, r:-2, addr:"Ponsonby"},
+ {id:"satellite2",  en:"Satellite2",            zh:"Satellite2 独立画廊",   label:"Satellite2",    cat:"gallery",  lat:-36.86150, lng:174.75800, r:2,  addr:"Newton / Eden Terrace"},
+ {id:"artselect",   en:"ArtSelect Gallery",     zh:"ArtSelect 画廊",        label:"ArtSelect",     cat:"gallery",  lat:-36.87000, lng:174.77700, r:-3, addr:"Newmarket"},
+ {id:"antoinettegodkin", en:"Antoinette Godkin Gallery", zh:"Antoinette Godkin 画廊", label:"A. Godkin", cat:"gallery", lat:-36.85450, lng:174.76450, r:2, addr:"CBD"},
+ {id:"connellsbay", en:"Connells Bay Sculpture Park", zh:"Connells Bay 雕塑公园", label:"Connells Bay", cat:"gallery", lat:-36.81800, lng:175.11400, r:-2, addr:"Waiheke Island (预约制)"},
+ {id:"kumeuarts",   en:"Kumeū Arts",            zh:"Kumeū 艺术中心",        label:"Kumeū Arts",    cat:"workshop", lat:-36.77700, lng:174.55600, r:3,  addr:"Access Rd, Kumeū"},
+ /* ---- 批次2：书店与文学 ---- */
+ {id:"dearreader",  en:"Dear Reader",           zh:"Dear Reader 书店",      label:"Dear Reader",   cat:"literary", lat:-36.86000, lng:174.73500, r:-2, addr:"Grey Lynn"},
+ {id:"lamplight",   en:"Lamplight Books",       zh:"Lamplight 书店",        label:"Lamplight",     cat:"literary", lat:-36.85650, lng:174.78000, r:2,  addr:"Parnell"},
+ {id:"anecdote",    en:"Anec.dote",             zh:"Anec.dote 书店画廊",    label:"Anec.dote",     cat:"literary", lat:-36.87850, lng:174.76350, r:-3, addr:"Mt Eden village"},
+ {id:"hardtofind",  en:"Hard to Find Books",    zh:"Hard to Find 二手书店", label:"Hard to Find",  cat:"literary", lat:-36.92500, lng:174.78300, r:2,  addr:"81 Church St, Onehunga"},
+ {id:"bluehills",   en:"Blue Hills Books",      zh:"Blue Hills 书店",       label:"Blue Hills",    cat:"literary", lat:-36.93650, lng:174.65700, r:-2, addr:"Titirangi village"},
+ {id:"booksonhigh", en:"Books on High",         zh:"Books on High 书店",    label:"Books on High", cat:"literary", lat:-36.84860, lng:174.76680, r:3,  addr:"High St, CBD"},
+ {id:"chapter",     en:"Chapter Book & Tea Shop", zh:"Chapter 书茶铺",      label:"Chapter",       cat:"literary", lat:-36.87750, lng:174.76300, r:-2, addr:"Mt Eden"},
+ {id:"dorothybutler", en:"Dorothy Butler Children's Bookshop", zh:"Dorothy Butler 童书店", label:"Dorothy Butler", cat:"literary", lat:-36.84800, lng:174.73950, r:2, addr:"Jervois Rd, Herne Bay"},
+ {id:"booklover",   en:"The Booklover",         zh:"The Booklover 书店",    label:"Booklover",     cat:"literary", lat:-36.77100, lng:174.76500, r:-3, addr:"Milford"},
+ {id:"paradox",     en:"Paradox Books",         zh:"Paradox 书店",          label:"Paradox",       cat:"literary", lat:-36.83180, lng:174.79900, r:2,  addr:"Victoria Rd, Devonport"},
+ {id:"bookmarkdev", en:"Bookmark Secondhand Books", zh:"Bookmark 二手书店", label:"Bookmark",      cat:"literary", lat:-36.83350, lng:174.79750, r:-2, addr:"Devonport"},
+ {id:"poppieshowick", en:"Poppies Books Howick", zh:"Poppies 书店",         label:"Poppies",       cat:"literary", lat:-36.89350, lng:174.93100, r:3,  addr:"Howick village"},
+ {id:"onehungabooks", en:"Onehunga Books & Stationery", zh:"Onehunga 书店", label:"Onehunga Books", cat:"literary", lat:-36.92350, lng:174.78450, r:-2, addr:"Onehunga Mall"},
+ {id:"matakanabooks", en:"Matakana Village Books", zh:"Matakana 村书店",    label:"Matakana Books", cat:"literary", lat:-36.35900, lng:174.71800, r:2, addr:"Matakana Village"},
+ {id:"nook",        en:"The Nook Bookshop",     zh:"The Nook 书店",         label:"The Nook",      cat:"literary", lat:-36.29600, lng:174.52300, r:-3, addr:"Wellsford"},
+ {id:"parallel",    en:"Parallel",              zh:"Parallel 艺术书店",     label:"Parallel",      cat:"literary", lat:-36.85720, lng:174.75700, r:2,  addr:"Karangahape Rd"},
+ {id:"michaelking", en:"Michael King Writers Centre", zh:"Michael King 作家中心", label:"Writers Centre", cat:"literary", lat:-36.82900, lng:174.79300, r:-2, addr:"Mt Victoria, Devonport"},
+ {id:"abacus",      en:"Abacus Educational Books", zh:"Abacus 教育书店",    label:"Abacus",        cat:"literary", lat:-36.72900, lng:174.70000, r:3,  addr:"Albany"},
+ /* ---- 批次2：社区剧场与影像 ---- */
+ {id:"titirangitheatre", en:"Titirangi Theatre", zh:"Titirangi 剧场",       label:"Titirangi Thtr", cat:"performance", lat:-36.93780, lng:174.65400, r:-2, addr:"Lopdell House, Titirangi"},
+ {id:"artworkstheatre", en:"Artworks Theatre",  zh:"Artworks 社区剧场",     label:"Artworks",      cat:"performance", lat:-36.78420, lng:175.00500, r:2, addr:"Artworks, Oneroa, Waiheke"},
+ {id:"howicklittle", en:"Howick Little Theatre", zh:"Howick 小剧场",        label:"Howick Little", cat:"performance", lat:-36.89400, lng:174.90400, r:-3, addr:"Sir Lloyd Dr, Pakuranga"},
+ {id:"dolphin",     en:"Dolphin Theatre",       zh:"Dolphin 剧场",          label:"Dolphin",       cat:"performance", lat:-36.92300, lng:174.78600, r:2,  addr:"Spring St, Onehunga"},
+ {id:"papakuratheatre", en:"Papakura Theatre Co.", zh:"Papakura 剧团",      label:"Papakura Thtr", cat:"performance", lat:-37.06300, lng:174.94300, r:-2, addr:"Papakura"},
+ {id:"harlequin",   en:"Harlequin Musical Theatre", zh:"Harlequin 音乐剧场", label:"Harlequin",    cat:"performance", lat:-36.89900, lng:174.88800, r:3,  addr:"563 Pakuranga Rd"},
+ {id:"playhouse",   en:"Playhouse Theatre",     zh:"Playhouse 剧场",        label:"Playhouse",     cat:"performance", lat:-36.91200, lng:174.65300, r:-2, addr:"15 Glendale Rd, Glen Eden"},
+ {id:"rosecentre",  en:"The Rose Centre",       zh:"Rose Centre 剧场",      label:"Rose Centre",   cat:"performance", lat:-36.81100, lng:174.79000, r:2,  addr:"Belmont, North Shore"},
+ {id:"theatreworks", en:"TheatreWorks Birkenhead", zh:"TheatreWorks 剧场",  label:"TheatreWorks",  cat:"performance", lat:-36.81000, lng:174.73300, r:-3, addr:"Birkenhead"},
+ {id:"companytheatre", en:"Company Theatre",    zh:"Company 剧场",          label:"Company Thtr",  cat:"performance", lat:-36.80950, lng:174.78850, r:2,  addr:"Belmont, North Shore"},
+ {id:"centrestage", en:"Centrestage Theatre",   zh:"Centrestage 剧场",      label:"Centrestage",   cat:"performance", lat:-36.58600, lng:174.69600, r:-2, addr:"Centreway Rd, Ōrewa"},
+ {id:"hawkins",     en:"Hawkins Theatre",       zh:"Hawkins 剧院",          label:"Hawkins",       cat:"performance", lat:-37.06650, lng:174.94500, r:3,  addr:"Ray Small Dr, Papakura"},
+ /* ---- 批次2：音乐场地与教堂音乐 ---- */
+ {id:"mothership",  en:"The Mothership",        zh:"Mothership 俱乐部",     label:"Mothership",    cat:"music",    lat:-36.84650, lng:174.76900, r:-2, addr:"CBD"},
+ {id:"bigfan",      en:"BIG FAN",               zh:"BIG FAN 音乐中心",      label:"BIG FAN",       cat:"music",    lat:-36.87300, lng:174.73500, r:2,  addr:"Morningside"},
+ {id:"stmatthews",  en:"St Matthew-in-the-City", zh:"圣马太教堂（音乐会）",  label:"St Matthew's",  cat:"music",    lat:-36.84850, lng:174.76050, r:-3, addr:"Cnr Hobson & Wellesley St"},
+ {id:"holytrinity", en:"Holy Trinity Cathedral", zh:"圣三一大教堂（音乐会）", label:"Holy Trinity",  cat:"music",    lat:-36.85950, lng:174.78600, r:2,  addr:"Parnell"}
 ];
 
 /* ================= 场馆官网（卡片地址行显示"官网 →"；不确定的暂缺） ================= */
@@ -468,7 +525,34 @@ var SITES = {
   masterworks:"https://masterworksgallery.co.nz/", timmelville:"https://timmelvillegallery.com/",
   webbs:"https://www.webbs.co.nz/", artobject:"https://www.artandobject.co.nz/",
   womensbookshop:"https://www.womensbookshop.co.nz/", jasonbooks:"https://www.jasonbooks.co.nz/",
-  openbook:"https://theopenbook.co.nz/"
+  openbook:"https://theopenbook.co.nz/",
+  /* ---- 批次2 ---- */
+  twng:"https://twng.aut.ac.nz/", elam:"https://www.auckland.ac.nz/en/creative.html",
+  westcoastgallery:"https://www.westcoastgallery.co.nz/", brickbay:"https://www.brickbaysculpture.co.nz/",
+  sculptureum:"https://www.sculptureum.nz/", foxjensen:"https://foxjensengallery.com/",
+  season:"https://seasonaotearoa.com/", annamiles:"https://annamilesgallery.com/",
+  fhe:"https://fhegalleries.com/", turua:"https://www.turuagallery.co.nz/",
+  railwayst:"https://www.railwaystreetstudios.co.nz/", suite:"https://suite.co.nz/",
+  satellite2:"https://satellite2.co.nz/", artselect:"https://www.artselect.gallery/",
+  antoinettegodkin:"https://antoinettegodkin.co.nz/", connellsbay:"https://www.connellsbay.co.nz/",
+  kumeuarts:"https://www.kumeuarts.org/",
+  dearreader:"https://www.dearreader.co.nz/", lamplight:"https://lamplightbooks.co.nz/",
+  anecdote:"https://anecdote.co.nz/", hardtofind:"https://www.hardtofind.co.nz/",
+  bluehills:"https://www.facebook.com/bluehillsbooks/", booksonhigh:"https://booksonhigh.com/",
+  chapter:"https://chapter.co.nz/", dorothybutler:"https://dorothybutler.co.nz/",
+  booklover:"https://thebooklover.co.nz/", paradox:"https://paradoxbooks.co.nz/",
+  bookmarkdev:"https://www.facebook.com/bookmarkdevonport/", poppieshowick:"https://www.poppiesbooks.co.nz/store/howick",
+  onehungabooks:"https://www.facebook.com/onehungabooks/", matakanabooks:"https://matakanavillagebooks.co.nz/",
+  nook:"https://www.facebook.com/thenookwellsford/", parallel:"https://www.instagram.com/parallelbooks.nz/",
+  michaelking:"https://writerscentre.org.nz/", abacus:"https://abacusbooks.co.nz/",
+  titirangitheatre:"https://www.titirangitheatre.co.nz/", artworkstheatre:"https://www.artworkstheatre.org.nz/",
+  howicklittle:"https://hlt.nz/", dolphin:"https://dolphintheatre.org.nz/",
+  papakuratheatre:"https://www.facebook.com/PapakuraTheatreCompany/", harlequin:"https://harlequintheatre.co.nz/",
+  playhouse:"https://www.playhousetheatre.org.nz/", rosecentre:"https://rosecentre.co.nz/",
+  theatreworks:"https://www.theatreworks.co.nz/", companytheatre:"https://www.companytheatre.co.nz/",
+  centrestage:"https://centrestagetheatre.co.nz/", hawkins:"https://www.hawkinstheatre.co.nz/",
+  mothership:"https://www.themothership.co.nz/", bigfan:"https://www.bigfan.co.nz/",
+  stmatthews:"https://www.stmatthews.org.nz/", holytrinity:"https://www.holy-trinity.org.nz/"
   /* ostend 官网待确认 */
 };
 
@@ -1103,7 +1187,209 @@ var FACADES = {
       '<rect x="14" y="28" width="30" height="26" fill="#FDF8EC"/>'+
       '<path d="M18 40 h9 v-2 l-4.5 -2 -4.5 2 z" fill="#C0402B"/><path d="M29 40 h9 v-2 l-4.5 -2 -4.5 2 z" fill="#2A6FB0"/>'+
       '<g><rect x="18" y="44" width="9" height="2.4" fill="#E8A200"/><rect x="19" y="47" width="8" height="2.4" fill="#7A4FB0"/><rect x="18.5" y="50" width="8.5" height="2.4" fill="#2E8B57"/></g>'+
-      '<rect x="48" y="28" width="14" height="26" fill="#1E5650"/><circle cx="55" cy="42" r="1.5" fill="#F2C94C"/>'
+      '<rect x="48" y="28" width="14" height="26" fill="#1E5650"/><circle cx="55" cy="42" r="1.5" fill="#F2C94C"/>',
+ /* 批次2 · 画廊/大学空间/雕塑园 */
+ twng: '<rect x="8" y="12" width="60" height="46" fill="#23211C"/><rect x="12" y="16" width="30" height="4" fill="#fff"/>'+
+      '<rect x="12" y="26" width="34" height="26" fill="#FDF8EC"/><path d="M16 48 q8 -16 14 0 z" fill="#C0402B"/><circle cx="38" cy="36" r="5" fill="#2A6FB0"/>'+
+      '<rect x="52" y="24" width="10" height="34" fill="#3A3A42"/>',
+ elam: '<rect x="6" y="18" width="64" height="40" fill="#F4F2EC" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<polygon points="6,18 24,8 42,18" fill="#8E9BA5"/>'+
+      '<rect x="12" y="26" width="22" height="18" fill="#D8E6F1"/><g stroke="#8E9BA5" stroke-width="1.4"><line x1="19" y1="26" x2="19" y2="44"/><line x1="27" y1="26" x2="27" y2="44"/></g>'+
+      '<circle cx="48" cy="34" r="6" fill="#E4572E"/><rect x="56" y="28" width="8" height="12" fill="#7A4FB0"/>'+
+      '<rect x="42" y="46" width="16" height="12" fill="#23211C"/>',
+ westcoastgallery: '<path d="M4 20 Q20 8 36 18 L36 22 L4 24 z" fill="#4C7A45"/>'+
+      '<rect x="8" y="24" width="60" height="34" fill="#3A342E"/><g stroke="#23211C" stroke-width="1.5"><line x1="18" y1="24" x2="18" y2="58"/><line x1="28" y1="24" x2="28" y2="58"/><line x1="48" y1="24" x2="48" y2="58"/><line x1="58" y1="24" x2="58" y2="58"/></g>'+
+      '<rect x="32" y="32" width="14" height="26" fill="#D9A24B"/><path d="M35 44 q3.5 -6 7 0" fill="none" stroke="#23211C" stroke-width="2"/>'+
+      '<path d="M4 58 Q12 54 20 58 T36 58" fill="none" stroke="#7FB2C9" stroke-width="2"/>',
+ brickbay: '<rect x="4" y="46" width="68" height="12" fill="#7A9E4C"/><circle cx="12" cy="44" r="6" fill="#4C7A45"/><circle cx="64" cy="42" r="7" fill="#5E8C4A"/>'+
+      '<path d="M28 46 q-4 -18 8 -30 q2 12 -2 30 z" fill="#C0402B"/>'+
+      '<circle cx="48" cy="34" r="9" fill="none" stroke="#37556E" stroke-width="4"/>'+
+      '<rect x="40" y="50" width="16" height="4" fill="#F4F2EC"/>',
+ sculptureum: '<rect x="4" y="48" width="68" height="10" fill="#7A9E4C"/>'+
+      '<path d="M14 48 a9 9 0 1 1 9 -9" fill="none" stroke="#C2427E" stroke-width="4"/>'+
+      '<polygon points="36,48 44,22 52,48" fill="#2A6FB0"/><circle cx="44" cy="18" r="4" fill="#F2C94C"/>'+
+      '<rect x="58" y="34" width="10" height="14" fill="#E4572E"/>'+
+      '<rect x="26" y="52" width="24" height="4" fill="#F4F2EC"/>',
+ foxjensen: '<rect x="8" y="14" width="60" height="44" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="18" width="26" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="28" width="26" height="24" fill="#E8E2D4"/><rect x="16" y="32" width="18" height="16" fill="#8E9BA5"/>'+
+      '<rect x="44" y="28" width="18" height="30" fill="#20242A"/>',
+ season: '<rect x="8" y="14" width="60" height="44" fill="#F7F4EA"/><rect x="8" y="14" width="60" height="6" fill="#2E8B57"/>'+
+      '<rect x="12" y="26" width="32" height="26" fill="#FDF8EC" stroke="#D8D5CC" stroke-width="1"/>'+
+      '<path d="M16 48 L26 32 L34 44 L40 36 L40 48 z" fill="#D9A24B"/><circle cx="22" cy="34" r="3" fill="#C2427E"/>'+
+      '<rect x="50" y="26" width="12" height="32" fill="#23211C"/>',
+ annamiles: '<rect x="8" y="16" width="60" height="42" fill="#EFE3C8"/><g fill="#8E9BA5"><rect x="14" y="20" width="9" height="11" rx="4"/><rect x="34" y="20" width="9" height="11" rx="4"/><rect x="54" y="20" width="9" height="11" rx="4"/></g>'+
+      '<rect x="12" y="36" width="32" height="18" fill="#FDF8EC"/><circle cx="22" cy="45" r="4.5" fill="#7A4FB0"/><rect x="30" y="40" width="10" height="10" fill="#E8A200"/>'+
+      '<rect x="50" y="34" width="12" height="24" fill="#3A2A28"/>',
+ fhe: '<rect x="8" y="12" width="60" height="46" fill="#2E3238"/><rect x="12" y="16" width="18" height="4" fill="#D9A24B"/>'+
+      '<rect x="12" y="26" width="32" height="28" fill="#FDF8EC"/><path d="M18 48 q6 -14 10 0 z" fill="#3C8C8C"/><circle cx="36" cy="38" r="4" fill="#C0402B"/>'+
+      '<rect x="50" y="24" width="12" height="34" fill="#0C0C0E" stroke="#D9A24B" stroke-width="1.2"/>',
+ turua: '<rect x="8" y="14" width="60" height="44" fill="#FDFBF4"/><rect x="8" y="14" width="60" height="7" fill="#37556E"/><rect x="12" y="15.5" width="24" height="3.5" fill="#FDFBF4"/>'+
+      '<rect x="12" y="28" width="34" height="24" fill="#FDF8EC" stroke="#C9C2B2" stroke-width="1.5"/>'+
+      '<path d="M15 48 Q22 34 30 42 T44 40 L44 50 L15 50 z" fill="#5B7E9E"/>'+
+      '<rect x="52" y="28" width="10" height="30" fill="#2F4858"/><path d="M4 58 Q12 55 20 58 T36 58 T52 58 T68 58" fill="none" stroke="#7FB2C9" stroke-width="1.6"/>',
+ railwayst: '<rect x="6" y="20" width="64" height="38" fill="#8E5A44"/><g stroke="#7A4A36" stroke-width="1"><line x1="6" y1="30" x2="70" y2="30"/><line x1="6" y1="40" x2="70" y2="40"/><line x1="6" y1="50" x2="70" y2="50"/></g>'+
+      '<polygon points="4,20 38,8 72,20" fill="#5A5F66"/>'+
+      '<g fill="#D8E6F1"><rect x="12" y="26" width="12" height="14"/><rect x="32" y="26" width="12" height="14"/><rect x="52" y="26" width="12" height="14"/></g>'+
+      '<rect x="30" y="44" width="16" height="14" fill="#23211C"/><circle cx="60" cy="50" r="4" fill="#E8A200"/>',
+ suite: '<rect x="10" y="12" width="56" height="46" fill="#FBFBF8" stroke="#23211C" stroke-width="2"/>'+
+      '<rect x="14" y="16" width="22" height="4" fill="#23211C"/>'+
+      '<rect x="14" y="28" width="30" height="24" fill="#FDF8EC"/><rect x="18" y="32" width="10" height="16" fill="#23211C"/><circle cx="36" cy="40" r="5" fill="#C0402B"/>'+
+      '<rect x="50" y="26" width="12" height="32" fill="#20242A"/>',
+ satellite2: '<rect x="8" y="16" width="60" height="42" fill="#3A3A42"/>'+
+      '<circle cx="26" cy="34" r="9" fill="none" stroke="#5EE08A" stroke-width="3"/><circle cx="26" cy="34" r="2.5" fill="#5EE08A"/><line x1="33" y1="27" x2="40" y2="22" stroke="#5EE08A" stroke-width="2"/>'+
+      '<rect x="44" y="26" width="18" height="20" fill="#FDF8EC"/><rect x="48" y="30" width="10" height="12" fill="#7A4FB0"/>'+
+      '<rect x="24" y="48" width="16" height="10" fill="#0C0C0E"/>',
+ artselect: '<rect x="8" y="14" width="60" height="44" fill="#F4F2EC" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="18" width="26" height="3" fill="#23211C"/>'+
+      '<g><rect x="12" y="28" width="14" height="11" fill="#2A6FB0"/><rect x="30" y="28" width="14" height="11" fill="#E8A200"/><rect x="12" y="42" width="14" height="11" fill="#C2427E"/><rect x="30" y="42" width="14" height="11" fill="#2E8B57"/></g>'+
+      '<rect x="50" y="26" width="12" height="32" fill="#23211C"/>',
+ antoinettegodkin: '<rect x="8" y="12" width="60" height="46" fill="#FBFBF8" stroke="#D8D5CC" stroke-width="1.5"/>'+
+      '<rect x="12" y="16" width="28" height="3" fill="#23211C"/>'+
+      '<rect x="12" y="26" width="32" height="26" fill="#FDF8EC"/><path d="M16 46 q8 -18 14 -4 q4 -8 10 2 l0 6 l-24 0 z" fill="#7FA8C9"/>'+
+      '<rect x="50" y="24" width="12" height="34" fill="#20242A"/>',
+ connellsbay: '<rect x="4" y="46" width="68" height="12" fill="#7A9E4C"/><path d="M4 58 Q14 54 24 58 T44 58 T64 58" fill="none" stroke="#7FB2C9" stroke-width="2"/>'+
+      '<path d="M18 46 q0 -22 14 -26 q-2 14 -8 26 z" fill="#E4572E"/>'+
+      '<g stroke="#37556E" stroke-width="4"><line x1="46" y1="46" x2="46" y2="26"/><line x1="56" y1="46" x2="56" y2="30"/><line x1="66" y1="46" x2="66" y2="34"/></g>'+
+      '<circle cx="10" cy="42" r="5" fill="#4C7A45"/>',
+ kumeuarts: '<polygon points="6,26 38,10 70,26" fill="#B33A2F"/><rect x="10" y="26" width="56" height="32" fill="#F0EADA"/>'+
+      '<g stroke="#B9B4A8" stroke-width="1.3"><line x1="20" y1="26" x2="20" y2="58"/><line x1="56" y1="26" x2="56" y2="58"/></g>'+
+      '<rect x="26" y="32" width="24" height="16" fill="#FDF8EC" stroke="#B33A2F" stroke-width="1.5"/><circle cx="33" cy="40" r="4" fill="#2E8B57"/><rect x="40" y="35" width="7" height="10" fill="#E8A200"/>'+
+      '<rect x="32" y="50" width="12" height="8" fill="#5E7A4A"/>',
+ /* 批次2 · 书店与文学（店面模板 + 各自识别元素） */
+ dearreader: '<rect x="10" y="12" width="56" height="46" fill="#B7654F"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="26" height="3" fill="#8A4234"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><g><rect x="18" y="36" width="3" height="14" fill="#2A6FB0"/><rect x="22" y="34" width="3" height="16" fill="#2E8B57"/><rect x="26" y="37" width="3" height="13" fill="#E8A200"/><rect x="30" y="35" width="3" height="15" fill="#7A4FB0"/></g>'+
+      '<circle cx="40" cy="46" r="3.6" fill="#F2C94C"/>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#8A4234"/>',
+ lamplight: '<rect x="10" y="12" width="56" height="46" fill="#2F4858"/><rect x="14" y="16" width="48" height="8" fill="#F2C94C"/><rect x="18" y="18.5" width="28" height="3" fill="#2F4858"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><line x1="36" y1="32" x2="36" y2="46" stroke="#23211C" stroke-width="2"/><path d="M32 32 h8 l-1.5 5 h-5 z" fill="#F2C94C"/><circle cx="36" cy="30" r="2" fill="#FFD400"/>'+
+      '<g><rect x="17" y="42" width="3" height="10" fill="#C0402B"/><rect x="21" y="40" width="3" height="12" fill="#2E8B57"/><rect x="25" y="43" width="3" height="9" fill="#7A4FB0"/></g>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#22333F"/>',
+ anecdote: '<rect x="10" y="12" width="56" height="46" fill="#3C8C8C"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="24" height="3" fill="#2F6E6E"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><rect x="18" y="32" width="12" height="10" fill="#C2427E"/><g><rect x="34" y="36" width="3" height="14" fill="#2A6FB0"/><rect x="38" y="34" width="3" height="16" fill="#E8A200"/></g>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#2F6E6E"/><circle cx="56" cy="40" r="1.5" fill="#F2C94C"/>',
+ hardtofind: '<rect x="8" y="10" width="60" height="48" fill="#6B4A2F"/><rect x="12" y="14" width="52" height="8" fill="#D9CBA8"/><rect x="16" y="16.5" width="34" height="3" fill="#4A3320"/>'+
+      '<rect x="12" y="26" width="34" height="28" fill="#FDF8EC"/>'+
+      '<g><rect x="15" y="30" width="9" height="2.6" fill="#8E2F2A"/><rect x="16" y="33" width="8" height="2.6" fill="#37556E"/><rect x="15.5" y="36" width="9" height="2.6" fill="#7A8B5E"/><rect x="16" y="39" width="8" height="2.6" fill="#B5793A"/><rect x="15" y="42" width="9" height="2.6" fill="#4A2E58"/><rect x="16" y="45" width="8" height="2.6" fill="#8E2F2A"/></g>'+
+      '<g><rect x="28" y="34" width="8" height="2.6" fill="#2A6FB0"/><rect x="28.5" y="37" width="7" height="2.6" fill="#C0402B"/><rect x="28" y="40" width="8" height="2.6" fill="#2E8B57"/></g>'+
+      '<rect x="50" y="26" width="12" height="28" fill="#4A3320"/>',
+ bluehills: '<rect x="10" y="14" width="56" height="44" fill="#37556E"/><polygon points="8,14 38,6 68,14" fill="#2A4256"/>'+
+      '<rect x="14" y="20" width="40" height="7" fill="#FDF8EC"/><rect x="18" y="22" width="24" height="3" fill="#37556E"/>'+
+      '<rect x="14" y="32" width="30" height="22" fill="#FDF8EC"/><path d="M17 50 l6 -9 5 6 6 -8 6 11 z" fill="#5B7E9E"/>'+
+      '<rect x="48" y="32" width="14" height="26" fill="#2A4256"/><circle cx="12" cy="12" r="4" fill="#4C7A45"/>',
+ booksonhigh: '<rect x="10" y="10" width="56" height="48" fill="#1C1C1E"/><rect x="14" y="14" width="48" height="8" fill="#D9A24B"/><rect x="18" y="16.5" width="28" height="3" fill="#1C1C1E"/>'+
+      '<rect x="14" y="26" width="30" height="28" fill="#FDF8EC"/><g><rect x="17" y="32" width="3" height="18" fill="#C0402B"/><rect x="21" y="30" width="3" height="20" fill="#2A6FB0"/><rect x="25" y="33" width="3" height="17" fill="#2E8B57"/><rect x="29" y="31" width="3" height="19" fill="#7A4FB0"/><rect x="33" y="32" width="3" height="18" fill="#E8A200"/><rect x="37" y="30" width="3" height="20" fill="#C2427E"/></g>'+
+      '<rect x="48" y="26" width="14" height="28" fill="#0C0C0E" stroke="#D9A24B" stroke-width="1.2"/>',
+ chapter: '<rect x="10" y="12" width="56" height="46" fill="#7A8B5E"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="24" height="3" fill="#5E6B47"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><path d="M20 44 h10 v-10 q-5 -3 -10 0 z" fill="#B5793A"/><path d="M25 34 q0 -4 4 -4" fill="none" stroke="#8D887A" stroke-width="1.6"/>'+
+      '<rect x="34" y="38" width="8" height="10" fill="#C0402B"/>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#5E6B47"/>',
+ dorothybutler: '<rect x="10" y="12" width="56" height="46" fill="#E8A200"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="30" height="3" fill="#B57F00"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/>'+
+      '<circle cx="24" cy="38" r="5" fill="#C2427E"/><circle cx="22" cy="36" r="1" fill="#fff"/><path d="M29 44 l5 -8 5 8 z" fill="#2A6FB0"/><rect x="20" y="46" width="18" height="4" fill="#2E8B57"/>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#B57F00"/>',
+ booklover: '<rect x="10" y="12" width="56" height="46" fill="#8E2F2A"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="26" height="3" fill="#6E211D"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><path d="M23 36 q4 -5 7 0 q3 -5 7 0 q0 5 -7 10 q-7 -5 -7 -10" fill="#C2427E"/>'+
+      '<g><rect x="18" y="48" width="24" height="2.6" fill="#37556E"/><rect x="20" y="51" width="20" height="2.6" fill="#7A8B5E"/></g>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#6E211D"/>',
+ paradox: '<rect x="10" y="12" width="56" height="46" fill="#4A2E58"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="26" height="3" fill="#382145"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><path d="M22 34 q8 8 0 16 M38 34 q-8 8 0 16" fill="none" stroke="#7A4FB0" stroke-width="2.5"/>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#382145"/><circle cx="56" cy="40" r="1.5" fill="#F2C94C"/>',
+ bookmarkdev: '<rect x="10" y="14" width="56" height="44" fill="#2F4858"/><rect x="14" y="18" width="48" height="7" fill="#F0EADA"/><rect x="18" y="20" width="28" height="3" fill="#2F4858"/>'+
+      '<rect x="14" y="29" width="32" height="25" fill="#FDF8EC"/><rect x="24" y="33" width="10" height="14" fill="#37556E"/><polygon points="24,47 29,42 34,47" fill="#FDF8EC"/><rect x="26" y="30" width="6" height="8" fill="#C0402B"/>'+
+      '<rect x="50" y="29" width="12" height="25" fill="#22333F"/>',
+ poppieshowick: '<rect x="10" y="12" width="56" height="46" fill="#C0402B"/><rect x="14" y="16" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="18.5" width="26" height="3" fill="#8E2F22"/>'+
+      '<rect x="14" y="28" width="32" height="26" fill="#FDF8EC"/><circle cx="24" cy="38" r="5" fill="#E4572E"/><circle cx="24" cy="38" r="2" fill="#23211C"/><path d="M24 43 q-1 6 -3 9" fill="none" stroke="#2E8B57" stroke-width="2"/>'+
+      '<g><rect x="33" y="40" width="3" height="12" fill="#2A6FB0"/><rect x="37" y="38" width="3" height="14" fill="#E8A200"/></g>'+
+      '<rect x="50" y="28" width="12" height="26" fill="#8E2F22"/>',
+ onehungabooks: '<rect x="10" y="14" width="56" height="44" fill="#1E6E64"/><rect x="8" y="10" width="60" height="8" fill="#F0EADA"/><rect x="12" y="12" width="30" height="4" fill="#1E6E64"/>'+
+      '<rect x="14" y="26" width="32" height="28" fill="#FDF8EC"/><g><rect x="17" y="32" width="3" height="18" fill="#E4572E"/><rect x="21" y="34" width="3" height="16" fill="#2A6FB0"/><rect x="25" y="31" width="3" height="19" fill="#7A8B5E"/><rect x="29" y="33" width="3" height="17" fill="#D9A24B"/></g>'+
+      '<rect x="36" y="36" width="7" height="9" fill="#C2427E"/>'+
+      '<rect x="50" y="26" width="12" height="28" fill="#12474A"/>',
+ matakanabooks: '<polygon points="8,24 38,10 68,24" fill="#8E5A44"/><rect x="10" y="24" width="56" height="34" fill="#F0EADA"/>'+
+      '<rect x="14" y="28" width="40" height="6" fill="#5E7A4A"/><rect x="18" y="29.5" width="24" height="3" fill="#F0EADA"/>'+
+      '<rect x="14" y="38" width="28" height="16" fill="#FDF8EC" stroke="#8E5A44" stroke-width="1.4"/><g><rect x="17" y="42" width="3" height="10" fill="#C0402B"/><rect x="21" y="40" width="3" height="12" fill="#37556E"/><rect x="25" y="43" width="3" height="9" fill="#E8A200"/></g>'+
+      '<rect x="48" y="38" width="12" height="20" fill="#5E7A4A"/>',
+ nook: '<rect x="12" y="16" width="52" height="42" fill="#B5793A"/><polygon points="10,16 38,8 66,16" fill="#8A5A28"/>'+
+      '<rect x="16" y="22" width="36" height="6" fill="#FDF8EC"/><rect x="20" y="23.5" width="20" height="3" fill="#8A5A28"/>'+
+      '<rect x="16" y="32" width="24" height="22" fill="#FDF8EC"/><path d="M20 50 h16 v-3 l-8 -3 -8 3 z" fill="#8E2F2A"/><rect x="24" y="36" width="8" height="7" fill="#2A6FB0"/>'+
+      '<rect x="44" y="32" width="12" height="22" fill="#8A5A28"/>',
+ parallel: '<rect x="10" y="12" width="56" height="46" fill="#23211C"/>'+
+      '<g stroke="#C2427E" stroke-width="3"><line x1="16" y1="18" x2="16" y2="40"/><line x1="23" y1="18" x2="23" y2="40"/></g><rect x="30" y="18" width="26" height="4" fill="#fff"/>'+
+      '<rect x="14" y="30" width="32" height="24" fill="#FDF8EC"/><g><rect x="18" y="36" width="7" height="10" fill="#7A4FB0"/><rect x="27" y="34" width="7" height="12" fill="#E8A200"/><rect x="36" y="38" width="7" height="8" fill="#2A6FB0"/></g>'+
+      '<rect x="50" y="30" width="12" height="24" fill="#0C0C0E"/>',
+ michaelking: '<polygon points="6,28 38,10 70,28" fill="#8E9BA5"/><rect x="10" y="28" width="56" height="30" fill="#FDFBF4"/>'+
+      '<line x1="10" y1="36" x2="66" y2="36" stroke="#E4DCC8" stroke-width="1.2"/><rect x="10" y="44" width="56" height="3" fill="#8E9BA5"/>'+
+      '<rect x="15" y="32" width="11" height="11" fill="#BFD9E8" stroke="#8E9BA5" stroke-width="1.6"/><rect x="50" y="32" width="11" height="11" fill="#BFD9E8" stroke="#8E9BA5" stroke-width="1.6"/>'+
+      '<rect x="33" y="40" width="10" height="18" fill="#37556E"/><path d="M20 52 h8 v-2 l-4 -2 -4 2 z" fill="#8E2F2A"/>',
+ abacus: '<rect x="10" y="14" width="56" height="44" fill="#2A6FB0"/><rect x="14" y="18" width="48" height="8" fill="#FDF8EC"/><rect x="18" y="20.5" width="26" height="3" fill="#1D4D7A"/>'+
+      '<rect x="14" y="30" width="32" height="24" fill="#FDF8EC"/><g stroke="#23211C" stroke-width="1.6"><line x1="18" y1="36" x2="42" y2="36"/><line x1="18" y1="42" x2="42" y2="42"/><line x1="18" y1="48" x2="42" y2="48"/></g><g><circle cx="24" cy="36" r="2.2" fill="#C0402B"/><circle cx="32" cy="36" r="2.2" fill="#E8A200"/><circle cx="28" cy="42" r="2.2" fill="#2E8B57"/><circle cx="36" cy="48" r="2.2" fill="#7A4FB0"/></g>'+
+      '<rect x="50" y="30" width="12" height="24" fill="#1D4D7A"/>',
+ /* 批次2 · 社区剧场（会堂模板 + 各自识别元素） */
+ titirangitheatre: '<rect x="6" y="10" width="64" height="6" fill="#C96F4A"/><rect x="8" y="16" width="60" height="42" fill="#F7F4EA"/>'+
+      '<path d="M14 34 v-8 a5 5 0 0 1 10 0 v8 z" fill="#8FB3C9"/><path d="M52 34 v-8 a5 5 0 0 1 10 0 v8 z" fill="#8FB3C9"/>'+
+      '<g fill="#C2427E"><circle cx="33" cy="27" r="4.5"/><circle cx="43" cy="27" r="4.5"/></g><path d="M30 26 q3 4 6 0 M40 28 q3 -4 6 0" stroke="#fff" stroke-width="1.4" fill="none"/>'+
+      '<rect x="8" y="40" width="60" height="4" fill="#C96F4A"/><rect x="30" y="46" width="16" height="12" fill="#3E6B6B"/>',
+ artworkstheatre: '<polygon points="6,24 38,10 70,24" fill="#37556E"/><rect x="8" y="24" width="60" height="34" fill="#F0EADA"/>'+
+      '<rect x="24" y="30" width="28" height="9" fill="#C2427E"/><rect x="28" y="32.5" width="20" height="4" fill="#fff"/>'+
+      '<g fill="#8FB3C9"><rect x="12" y="32" width="9" height="12"/><rect x="56" y="32" width="9" height="12"/></g>'+
+      '<rect x="31" y="44" width="14" height="14" fill="#2F4858"/><path d="M4 58 Q12 55 20 58 T36 58" fill="none" stroke="#7FB2C9" stroke-width="1.6"/>',
+ howicklittle: '<polygon points="6,26 38,12 70,26" fill="#5E7A4A"/><rect x="8" y="26" width="60" height="32" fill="#FDFBF4"/>'+
+      '<g fill="#C2427E"><circle cx="32" cy="34" r="4"/><circle cx="42" cy="34" r="4"/></g><path d="M29 33 q3 3.5 6 0 M39 35 q3 -3.5 6 0" stroke="#fff" stroke-width="1.3" fill="none"/>'+
+      '<g fill="#BFD9E8" stroke="#5E7A4A" stroke-width="1.4"><rect x="12" y="32" width="10" height="10"/><rect x="54" y="32" width="10" height="10"/></g>'+
+      '<rect x="30" y="44" width="16" height="14" fill="#3E5A40"/>',
+ dolphin: '<rect x="8" y="16" width="60" height="42" fill="#2F6E8E"/><rect x="12" y="20" width="52" height="8" fill="#FDF8EC"/><rect x="16" y="22.5" width="28" height="3" fill="#245670"/>'+
+      '<path d="M24 44 q8 -10 16 0 q-4 2 -7 0 l-2 4 l-1 -4 q-3 2 -6 0" fill="#8FD3E8"/>'+
+      '<g fill="#FDF8EC" opacity=".9"><rect x="14" y="34" width="8" height="8"/><rect x="54" y="34" width="8" height="8"/></g>'+
+      '<rect x="31" y="48" width="14" height="10" fill="#1A3D52"/>',
+ papakuratheatre: '<polygon points="6,24 38,12 70,24" fill="#8E9BA5"/><rect x="8" y="24" width="60" height="34" fill="#F0EADA"/>'+
+      '<rect x="22" y="28" width="32" height="8" fill="#C2427E"/><rect x="26" y="30" width="24" height="4" fill="#fff"/>'+
+      '<path d="M18 50 q4 -8 8 0 M50 50 q4 -8 8 0" stroke="#8E2F2A" stroke-width="2.4" fill="none"/>'+
+      '<rect x="31" y="42" width="14" height="16" fill="#4A3320"/>',
+ harlequin: '<rect x="8" y="14" width="60" height="44" fill="#2A2E3A"/>'+
+      '<g><polygon points="20,22 28,22 24,32" fill="#F2C94C"/><polygon points="28,22 36,22 32,32" fill="#C2427E"/><polygon points="36,22 44,22 40,32" fill="#2A6FB0"/><polygon points="44,22 52,22 48,32" fill="#2E8B57"/></g>'+
+      '<rect x="18" y="36" width="40" height="7" fill="#FDF8EC"/><rect x="22" y="38" width="26" height="3" fill="#2A2E3A"/>'+
+      '<rect x="30" y="46" width="16" height="12" fill="#0C0C0E"/><circle cx="60" cy="50" r="4" fill="#F2C94C"/>',
+ playhouse: '<polygon points="6,26 38,12 70,26" fill="#B33A2F"/><rect x="8" y="26" width="60" height="32" fill="#FDFBF4"/>'+
+      '<rect x="24" y="30" width="28" height="9" fill="#37556E"/><rect x="28" y="32.5" width="20" height="4" fill="#FDF8EC"/>'+
+      '<g fill="#BFD9E8" stroke="#B33A2F" stroke-width="1.4"><rect x="12" y="32" width="9" height="11"/><rect x="55" y="32" width="9" height="11"/></g>'+
+      '<rect x="30" y="44" width="16" height="14" fill="#8E2F2A"/>',
+ rosecentre: '<rect x="8" y="18" width="60" height="40" fill="#F7F4EA"/><rect x="8" y="18" width="60" height="6" fill="#C2427E"/>'+
+      '<circle cx="38" cy="34" r="7" fill="#C2427E"/><circle cx="38" cy="34" r="3.5" fill="#E86FA4"/><path d="M38 41 q-1 5 -4 8" fill="none" stroke="#2E8B57" stroke-width="2"/>'+
+      '<g fill="#8FB3C9"><rect x="14" y="30" width="10" height="12"/><rect x="52" y="30" width="10" height="12"/></g>'+
+      '<rect x="31" y="46" width="14" height="12" fill="#3A2A38"/>',
+ theatreworks: '<rect x="8" y="16" width="60" height="42" fill="#3A3A42"/><rect x="8" y="16" width="60" height="6" fill="#5A5F66"/>'+
+      '<rect x="16" y="28" width="44" height="8" fill="#F2C94C"/><rect x="20" y="30" width="28" height="4" fill="#3A3A42"/>'+
+      '<g fill="#C2427E"><circle cx="30" cy="44" r="4"/><circle cx="46" cy="44" r="4"/></g><path d="M27 43 q3 3.5 6 0 M43 45 q3 -3.5 6 0" stroke="#fff" stroke-width="1.3" fill="none"/>'+
+      '<rect x="32" y="50" width="12" height="8" fill="#0C0C0E"/>',
+ companytheatre: '<polygon points="6,26 38,14 70,26" fill="#37556E"/><rect x="8" y="26" width="60" height="32" fill="#F0EADA"/>'+
+      '<rect x="22" y="30" width="32" height="8" fill="#2F4858"/><rect x="26" y="32" width="24" height="4" fill="#F0EADA"/>'+
+      '<g fill="#C2427E"><circle cx="26" cy="46" r="3.6"/><circle cx="38" cy="46" r="3.6"/><circle cx="50" cy="46" r="3.6"/></g>'+
+      '<rect x="31" y="50" width="14" height="8" fill="#22333F"/>',
+ centrestage: '<rect x="8" y="16" width="60" height="42" fill="#F4F2EC"/><rect x="8" y="16" width="60" height="7" fill="#E4572E"/><rect x="12" y="17.5" width="26" height="4" fill="#F4F2EC"/>'+
+      '<path d="M20 40 q18 -14 36 0 l0 4 l-36 0 z" fill="#C2427E"/><g stroke="#F4F2EC" stroke-width="1.4"><line x1="28" y1="32" x2="28" y2="44"/><line x1="38" y1="30" x2="38" y2="44"/><line x1="48" y1="32" x2="48" y2="44"/></g>'+
+      '<rect x="30" y="48" width="16" height="10" fill="#37556E"/>',
+ hawkins: '<rect x="8" y="16" width="60" height="42" fill="#B9B4A8"/><rect x="8" y="16" width="60" height="5" fill="#8D887A"/>'+
+      '<rect x="14" y="26" width="48" height="9" fill="#C2427E"/><rect x="18" y="28.5" width="30" height="4" fill="#fff"/>'+
+      '<rect x="14" y="40" width="34" height="14" fill="#7FA8C9"/><g stroke="#B9B4A8" stroke-width="1.5"><line x1="26" y1="40" x2="26" y2="54"/><line x1="38" y1="40" x2="38" y2="54"/></g>'+
+      '<rect x="52" y="38" width="12" height="20" fill="#23211C"/>',
+ /* 批次2 · 音乐场地与教堂 */
+ mothership: '<rect x="8" y="14" width="60" height="44" fill="#1A1A2E"/>'+
+      '<ellipse cx="38" cy="30" rx="18" ry="7" fill="#7A4FB0"/><ellipse cx="38" cy="27" rx="9" ry="5" fill="#A78BDA"/><g fill="#F2C94C"><circle cx="26" cy="32" r="1.6"/><circle cx="38" cy="34" r="1.6"/><circle cx="50" cy="32" r="1.6"/></g>'+
+      '<rect x="16" y="44" width="26" height="4" rx="2" fill="#5EE08A" opacity=".7"/>'+
+      '<rect x="48" y="42" width="14" height="16" fill="#0C0C0E"/>',
+ bigfan: '<polygon points="6,24 24,12 42,24" fill="#8E9BA5"/><rect x="6" y="24" width="64" height="34" fill="#C9C2B2"/>'+
+      '<circle cx="26" cy="40" r="10" fill="#23211C"/><g fill="#C2427E"><path d="M26 40 l7 -5 -4 8 z"/><path d="M26 40 l-8 -2 7 -4 z"/><path d="M26 40 l1 8 -6 -5 z"/></g><circle cx="26" cy="40" r="2.4" fill="#fff"/>'+
+      '<rect x="44" y="30" width="20" height="8" fill="#23211C"/><rect x="47" y="32" width="14" height="4" fill="#FF5FA2"/>'+
+      '<rect x="46" y="44" width="14" height="14" fill="#3A3A42"/>',
+ stmatthews: '<rect x="14" y="24" width="48" height="34" fill="#D9CBA8"/>'+
+      '<polygon points="10,24 38,10 66,24" fill="#C4B58E"/><rect x="34" y="2" width="8" height="14" fill="#D9CBA8"/><polygon points="32,4 38,-6 44,4" fill="#C4B58E"/>'+
+      '<path d="M32 50 v-14 q6 -8 12 0 v14 z" fill="#5B7E9E"/><g stroke="#D9CBA8" stroke-width="1.4"><line x1="38" y1="38" x2="38" y2="50"/><line x1="34" y1="42" x2="42" y2="42"/></g>'+
+      '<path d="M18 44 v-8 a4 4 0 0 1 8 0 v8 z" fill="#7FA8C9"/><path d="M50 44 v-8 a4 4 0 0 1 8 0 v8 z" fill="#7FA8C9"/>',
+ holytrinity: '<rect x="10" y="26" width="56" height="32" fill="#F0EADA"/>'+
+      '<polygon points="6,26 38,8 70,26" fill="#B5793A"/>'+
+      '<path d="M28 54 v-18 q10 -12 20 0 v18 z" fill="#37556E"/><g fill="#C2427E"><circle cx="38" cy="40" r="4"/></g><g stroke="#F0EADA" stroke-width="1.4"><line x1="38" y1="36" x2="38" y2="54"/><line x1="33" y1="44" x2="43" y2="44"/></g>'+
+      '<g fill="#8FB3C9"><path d="M14 50 v-8 a3.5 3.5 0 0 1 7 0 v8 z"/><path d="M55 50 v-8 a3.5 3.5 0 0 1 7 0 v8 z"/></g>'
 };
 
 /* ================= 状态 ================= */
