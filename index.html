@@ -1649,14 +1649,15 @@ function stickerSize(){
   return z <= 10 ? 20 : z <= 11 ? 25 : z === 12 ? 31 : z === 13 ? 39 : z === 14 ? 50 : 60;
 }
 
-/* 标签适配：一行放得下用 10px；放不下 → 8.5px 双行（按词均分断行），单行仍超宽再压缩 */
-function labelSVG(v, y){
+/* 标签动态分级：mode "none"=不显示（小视角）| "one"=单行压缩 | "full"=一行或 8.5px 双行 */
+function labelSVG(v, y, mode){
+  if(mode === "none") return "";
   var est = Math.round(v.label.length * 6.8);   /* 10px 字号估宽 */
   if(est <= 86){
     return '<text class="slabel" x="0" y="'+y+'">'+v.label+'</text>';
   }
   var words = v.label.split(" ");
-  if(words.length === 1){   /* 无空格可断 → 小字号 + 压缩 */
+  if(mode === "one" || words.length === 1){   /* 中视角或无法断行 → 单行小字压缩 */
     return '<text class="slabel two" x="0" y="'+y+'" textLength="86" lengthAdjust="spacingAndGlyphs">'+v.label+'</text>';
   }
   var best = 1, diff = 1e9;
@@ -1670,7 +1671,7 @@ function labelSVG(v, y){
     var tl = e > 88 ? ' textLength="88" lengthAdjust="spacingAndGlyphs"' : '';
     return '<text class="slabel two" x="0" y="'+yy+'"'+tl+'>'+t+'</text>';
   }
-  return line(a, y - 4.5) + line(b, y + 5);
+  return line(a, y - 5.5) + line(b, y + 5.5);   /* 行距 11px，消除双行重叠 */
 }
 /* 横幅文字：定样式 + 超宽压缩（此前 .ribbon 无样式导致大幅溢出） */
 function ribbonSVG(txt){
@@ -1697,14 +1698,17 @@ function stickerHTML(v){
   var evs = venueEvents(v.id);
   var live = evs.length > 0;
   /* 贴纸太小时（缩放 ≤12）隐藏底部横幅，只留计数点 */
-  var showRibbon = live && map.getZoom() >= 13;
+  var _z = map.getZoom();
+  var showRibbon = live && _z >= 13;
+  /* 标签动态分级：小视角不显示（悬停有原生提示），中视角单行，大视角完整双行 */
+  var _lmode = _z <= 12 ? "none" : (_z === 13 ? "one" : "full");
   var cls = "stk " + (live ? "live" : ("off" + (venueShows(v.id).length ? "" : " faint")))
           + (S.cats[v.cat] ? "" : " hidecat")
           + (S.open === v.id ? " gone" : "");
   /* 有活动且够大时贴纸更高：底部多一条黄色活动横幅 */
   var ph = showRibbon ? 108 : 94;               /* paper 高度 */
   var vb = showRibbon ? "-52 -50 104 116" : "-52 -50 104 100";
-  return '<div class="'+cls+'" style="--rot:'+v.r+'deg" data-id="'+v.id+'">'+
+  return '<div class="'+cls+'" style="--rot:'+v.r+'deg" data-id="'+v.id+'" title="'+(S.lang==="zh"?v.zh:v.en).replace(/"/g,"&quot;")+'">'+
     '<i class="ring" style="border-color:'+CATS[v.cat].hex+'"></i>'+
     '<div class="front">'+
     '<svg viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg">'+
@@ -1720,7 +1724,7 @@ function stickerHTML(v){
       '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
       /* 标签与横幅统一放进圆角裁剪组：硬边界，任何文字不出贴纸 */
       '<g clip-path="url(#cp-'+v.id+')">'+
-        labelSVG(v, showRibbon ? 36 : 38)+   /* 有横幅时双行标签上移避让 */
+        labelSVG(v, showRibbon ? 36 : 38, _lmode)+   /* 缩放动态分级 + 有横幅时上移避让 */
         (showRibbon ?
           '<rect x="-48" y="44" width="96" height="18" fill="#FFD400"/>'+
           ribbonSVG(ribbonText(evs))
@@ -1902,7 +1906,7 @@ function cardStickerSVG(v){
     '<defs><clipPath id="ccp-'+v.id+'"><rect x="-48" y="-46" width="96" height="94" rx="12"/></clipPath></defs>'+
     '<rect class="paper" x="-48" y="-46" width="96" height="94" rx="12"/>'+
     '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
-    '<g clip-path="url(#ccp-'+v.id+')">'+labelSVG(v, 38)+'</g>'+
+    '<g clip-path="url(#ccp-'+v.id+')">'+labelSVG(v, 38, "full")+'</g>'+
     '</svg></div>';
 }
 
@@ -2171,7 +2175,8 @@ function buildGazette(){
   /* 头条评分：主场馆 + 有简介 + 开幕类优先 */
   var lead = null, best = -1;
   evs.forEach(function(e){
-    var sc = (GZ_MAJORS.indexOf(e.venue) >= 0 ? 4 : 0)
+    var sc = (e.img ? 8 : 0)                          /* 头版头条必须有照片：图片权重压倒其他 */
+           + (GZ_MAJORS.indexOf(e.venue) >= 0 ? 4 : 0)
            + ((zh ? e.descZh : e.desc) ? 2 : 0)
            + (e.kind === "opening" ? 1 : 0) + (e.time ? 1 : 0);
     if(sc > best){ best = sc; lead = e; }
