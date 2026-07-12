@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-13",
+  "generated": "2026-07-12",
   "sample": false,
   "items": [
     {
@@ -649,12 +649,39 @@ window.EVENTS = {
       "desc": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More"
     },
     {
+      "venue": "melanieroger",
+      "title": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
+      "date": "2026-07-12",
+      "kind": "opening",
+      "url": "https://melanierogergallery.com/exhibitions/tuhononga",
+      "desc": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
+      "img": "http://melanierogergallery.com/media/cache/b7/57/b757d12a2d1b1a177c13faaaabdd7271.jpg"
+    },
+    {
       "venue": "window",
       "title": "Drive Thru Carlos Knight July 2026",
       "date": "2026-07-12",
       "kind": "opening",
       "url": "https://windowgallery.co.nz/exhibitions/drive-thru",
       "desc": "Drive Thru Carlos Knight July 2026"
+    },
+    {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-13",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-13",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
     },
     {
       "venue": "corban",
@@ -683,6 +710,33 @@ window.EVENTS = {
     },
     {
       "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
+      "date": "2026-07-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
+    },
+    {
+      "venue": "aotea",
       "title": "H.R. The Musical",
       "zh": "《H.R.》职场喜剧音乐剧",
       "kind": "gig",
@@ -696,14 +750,11 @@ window.EVENTS = {
     {
       "venue": "brucemason",
       "title": "Dog Man: The Musical",
-      "zh": "《神探狗狗》音乐剧",
-      "kind": "gig",
       "date": "2026-07-14",
-      "end": "2026-07-18",
-      "price": "paid",
+      "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
-      "desc": "Dav Pilkey's beloved Dog Man characters live on stage, 14–18 Jul.",
-      "descZh": "Dav Pilkey 绘本改编亲子音乐剧，学校假期档，7月14—18日"
+      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
       "venue": "corban",
@@ -723,6 +774,42 @@ window.EVENTS = {
       "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-15",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-15",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
+      "date": "2026-07-15",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Dog Man: The Musical",
+      "date": "2026-07-15",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
+      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "corban",
       "title": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school h",
       "date": "2026-07-15",
@@ -737,6 +824,42 @@ window.EVENTS = {
       "date": "2026-07-15",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
+      "date": "2026-07-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Dog Man: The Musical",
+      "date": "2026-07-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
+      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
       "venue": "corban",
@@ -761,6 +884,42 @@ window.EVENTS = {
       "date": "2026-07-16",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-17",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-17",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
+      "date": "2026-07-17",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Dog Man: The Musical",
+      "date": "2026-07-17",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
+      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
       "venue": "corban",
@@ -872,6 +1031,33 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-18",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-18",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
+      "date": "2026-07-18",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
+    },
+    {
       "venue": "artspace",
       "title": "18 July – 26 September 2026 CRIT: Art learning since 1987 Atarangi Anderson & Thies Vaihū Margaret Aull Elvis ",
       "date": "2026-07-18",
@@ -904,6 +1090,15 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Dog Man: The Musical",
+      "date": "2026-07-18",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
+      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
       "venue": "corban",
@@ -1045,6 +1240,24 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "ARawhetū",
+      "date": "2026-07-19",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
+      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-19",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -1120,12 +1333,39 @@ window.EVENTS = {
       "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-20",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Kumeu Vintage Brass",
+      "date": "2026-07-20",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/mm26-kumeu-vintage-brass",
+      "desc": "Excperience Kumeu Vintage Brass live at the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/kumeu-vintage-brass25-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "unity",
       "title": "20 Jul - Wellington IIML Writers on Mondays: Elizabeth Knox & Ingrid Horrocks Monday 20th July, 12:15-1:15pm, ",
       "date": "2026-07-20",
       "kind": "reading",
       "url": "https://unitybooks.co.nz/news-and-events/iiml-writers-on-mondays-elizabeth-knox-and-ingrid-horrocks",
       "desc": "20 Jul - Wellington IIML Writers on Mondays: Elizabeth Knox & Ingrid Horrocks Monday 20th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-21",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
     },
     {
       "venue": "corban",
@@ -1165,6 +1405,15 @@ window.EVENTS = {
       "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-22",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
       "venue": "basement",
       "title": "Live Reel Does Casino Royale 22 JUL, 8.30PM",
       "date": "2026-07-22",
@@ -1197,6 +1446,15 @@ window.EVENTS = {
       "url": "https://www.tepoutheatre.nz/home-made/",
       "desc": "HOME MADE 22 Jul 25 Jul Te Pou Theatre Book now More info",
       "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/TePou_1080x1080_logos_notext.png"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-23",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
     },
     {
       "venue": "aotea",
@@ -1271,6 +1529,15 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-24",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
       "venue": "basement",
       "title": "Mano Po - James Roque 23-24 JUL, 8PM",
       "date": "2026-07-24",
@@ -1293,6 +1560,15 @@ window.EVENTS = {
       "date": "2026-07-24",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-25",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
     },
     {
       "venue": "basement",
@@ -1398,6 +1674,15 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-26",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -1412,6 +1697,33 @@ window.EVENTS = {
       "date": "2026-07-26",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-27",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-28",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "asbwaterfront",
+      "title": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul –",
+      "date": "2026-07-28",
+      "kind": "opening",
+      "url": "https://www.atc.co.nz/whats-on/2026-season/macbeth",
+      "desc": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul – 22 Aug 2026",
+      "img": "https://cms.atc.co.nz/media/45edv5kx/macbeth_press_hero_square.jpg?cc=0,0.17208333333333334,0,0.30291666666666667&amp;width=1200&amp;height=630&amp;quality=90"
     },
     {
       "venue": "asbwaterfront",
@@ -1443,6 +1755,15 @@ window.EVENTS = {
       "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-29",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
       "venue": "civic",
       "title": "Whānau Mārama: NZ International Film Festival",
       "zh": "新西兰国际电影节（NZIFF）",
@@ -1468,6 +1789,15 @@ window.EVENTS = {
       "date": "2026-07-29",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-30",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
     },
     {
       "venue": "basement",
@@ -1535,6 +1865,24 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-07-31",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-07-31",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
       "venue": "basement",
       "title": "Asian Comedy Takeover 31 JUL, 8.30PM",
       "date": "2026-07-31",
@@ -1585,6 +1933,33 @@ window.EVENTS = {
       "date": "2026-07-31",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Alan Davies",
+      "date": "2026-08-01",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/alan-davies",
+      "desc": "Experience Alan Davies live in the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/alan-davies-1133x628-auckland-live.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-08-01",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-01",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
     },
     {
       "venue": "britomart",
@@ -1654,6 +2029,24 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aotea",
+      "title": "Are Atoms Alive?",
+      "date": "2026-08-02",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
+      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-02",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -1679,6 +2072,15 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-04",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
       "venue": "corban",
       "title": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ A",
       "date": "2026-08-04",
@@ -1696,6 +2098,24 @@ window.EVENTS = {
       "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
+      "venue": "townhall",
+      "title": "The John Psathas Group",
+      "date": "2026-08-04",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/cmnz26-the-john-psathas-group",
+      "desc": "Experience The John Psathas Group live in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/john-psathas-113x628-auckland-live.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-05",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
       "venue": "corban",
       "title": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13",
       "date": "2026-08-05",
@@ -1703,6 +2123,15 @@ window.EVENTS = {
       "url": "https://ceac.org.nz/workshops/art-workshop/printmaking-for-kids",
       "desc": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13 Get creative and a little bit inky in this 6-week afterschool printma",
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_6107.jpg.1200x630_q80_crop-smart.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-06",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
     },
     {
       "venue": "qtheatre",
@@ -1723,6 +2152,15 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Homepage%20Hero%20Slider%20silk.jpg?itok=8Jx4crVN"
     },
     {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-07",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
       "venue": "corban",
       "title": "Introduction to Flowering Chinoiserie Painting With Jolie Hutchings Weekly on Friday, 10:00AM - 12:30PM From 7",
       "date": "2026-08-07",
@@ -1737,6 +2175,15 @@ window.EVENTS = {
       "date": "2026-08-07",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Defending the Caveman",
+      "date": "2026-08-08",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
+      "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
     },
     {
       "venue": "basement",
@@ -1850,6 +2297,24 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/PIKIPIKI_Homepage%20Hero%20Slider%20-%201386x520.jpg?itok=JQdsGxuW"
     },
     {
+      "venue": "brucemason",
+      "title": "The Madeleines",
+      "date": "2026-08-10",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/mm26-the-madeleines",
+      "desc": "Experience The Madeleines live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/madelienes24-1133x628-auckland-live.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Max Amini",
+      "date": "2026-08-11",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/max-amini",
+      "desc": "Experience Max Amini at the Kiri Te Kanawa Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/auckland-veue-1133x628-1.jpg"
+    },
+    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -1865,6 +2330,15 @@ window.EVENTS = {
       "url": "https://pumphouse.co.nz/whats-on/show/50-years-of-sir-roger-halls-plays/",
       "desc": "Phoenix Theatre Presents 50 Years of Sir Roger Hall’s Plays A special celebration evening of NZ's most prolific playwright 11 August 2026 Get tickets Details",
       "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/Roger-Hall-Evening-Hero-Banner.jpg"
+    },
+    {
+      "venue": "melanieroger",
+      "title": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
+      "date": "2026-08-12",
+      "kind": "opening",
+      "url": "https://melanierogergallery.com/exhibitions/new-work-24",
+      "desc": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
+      "img": "http://melanierogergallery.com/media/cache/d8/20/d820cc188e768ba5c8e43cd47e330669.jpg"
     },
     {
       "venue": "upstairs",
