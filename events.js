@@ -633,15 +633,6 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "corban",
-      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Sun 12 Jul 2026",
-      "date": "2026-07-12",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
-      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Sun 12 Jul 2026",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_04/Wishes_to_Hiwa-i-te-Rangi.png.1200x630_q80_crop-smart.jpg"
-    },
-    {
       "venue": "lacigale",
       "title": "La Cigale French Market (Sun)",
       "zh": "La Cigale 法式集市（周日）",
@@ -650,22 +641,12 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "maritime",
-      "title": "events Kaui Whetū – Make Days 9–12 Jul",
-      "date": "2026-07-12",
-      "kind": "workshop",
-      "url": "https://www.maritimemuseum.co.nz/events/kaui-whetu-make-days",
-      "desc": "events Kaui Whetū – Make Days 9–12 Jul",
-      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/kaui-whetu-make-days-1.webp"
-    },
-    {
-      "venue": "pumphouse",
-      "title": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way",
+      "venue": "lakehouse",
+      "title": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More",
       "date": "2026-07-12",
       "kind": "opening",
-      "url": "https://pumphouse.co.nz/whats-on/show/old-macdonalds-farm/",
-      "desc": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way! 7-12 July 2026 Get tickets Details",
-      "img": "https://media.pumphouse.nz/wp-content/uploads/2026/04/Old-MacDonalds-Farm-Web-Banner-1400x460-1.jpg"
+      "url": "https://lakehousearts.org.nz/tag/becroft/",
+      "desc": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More"
     },
     {
       "venue": "window",
@@ -676,12 +657,29 @@ window.EVENTS = {
       "desc": "Drive Thru Carlos Knight July 2026"
     },
     {
+      "venue": "corban",
+      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Mon 13 Jul 2026",
+      "date": "2026-07-13",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
+      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Mon 13 Jul 2026",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_04/Wishes_to_Hiwa-i-te-Rangi.png.1200x630_q80_crop-smart.jpg"
+    },
+    {
       "venue": "unity",
       "title": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:1",
       "date": "2026-07-13",
       "kind": "reading",
       "url": "https://unitybooks.co.nz/news-and-events/iiml-writers-on-mondays-haro-lee-helen-rickerby-airini-beautrais-chris-tse",
       "desc": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
+    },
+    {
+      "venue": "webbs",
+      "title": "Current & Upcoming Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 July —Bidding Closing View ",
+      "date": "2026-07-13",
+      "kind": "workshop",
+      "url": "https://auctions.webbs.co.nz/auctions/catalog/id/951",
+      "desc": "Current & Upcoming Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 July —Bidding Closing View Catalogue & Bid The Estate | Design Edit Online Auction | 9—14 July —B"
     },
     {
       "venue": "corban",
@@ -699,14 +697,6 @@ window.EVENTS = {
       "date": "2026-07-14",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
-    },
-    {
-      "venue": "webbs",
-      "title": "Current & Upcoming The Estate | Design Edit Online Auction | 9—14 July —Bidding Open + On View View Catalogue ",
-      "date": "2026-07-14",
-      "kind": "workshop",
-      "url": "https://auctions.webbs.co.nz/auctions/catalog/id/965",
-      "desc": "Current & Upcoming The Estate | Design Edit Online Auction | 9—14 July —Bidding Open + On View View Catalogue & Bid Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 "
     },
     {
       "venue": "corban",
@@ -1140,8 +1130,7 @@ window.EVENTS = {
       "date": "2026-07-21",
       "kind": "gig",
       "url": "https://www.internationalartcentre.co.nz/auctions/4-koi5or",
-      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
-      "img": "https://assets.internationalartcentre.co.nz/images/og-image.jpg"
+      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026"
     },
     {
       "venue": "poetrylive",
@@ -1159,6 +1148,22 @@ window.EVENTS = {
       "url": "https://basementtheatre.co.nz/blogs/whats-on/live-reel-does-casino-royale",
       "desc": "Live Reel Does Casino Royale 22 JUL, 8.30PM",
       "img": "http://basementtheatre.co.nz/cdn/shop/articles/LIVE_REEL_Basement_685_x_435_px_10_1_5f54ec1b-de59-4755-895c-4bd8057c124a.png?v=1782864619"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Imogen Taylor 22 July — 22 August 2026",
+      "date": "2026-07-22",
+      "kind": "opening",
+      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
+      "desc": "Imogen Taylor 22 July — 22 August 2026"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026",
+      "date": "2026-07-22",
+      "kind": "opening",
+      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
+      "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
     },
     {
       "venue": "tepou",
