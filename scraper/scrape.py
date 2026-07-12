@@ -87,7 +87,9 @@ SOURCES = {
   "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：静态HTML
   "tworooms":    [{"type":"html", "url":"https://tworooms.co.nz/exhibitions/", "selector":"article, .exhibition, li"}],
   "sanderson":   [{"type":"html", "url":"https://www.sanderson.co.nz/exhibitions", "selector":"article, .exhibition, li"}],
-  "foenander":   [], "melanieroger": [], "ivananthony": [], "coastalsigns": [], "bergman": [],
+  "foenander":   [], "coastalsigns": [], "bergman": [],
+  "melanieroger": [{"type":"html", "render":True, "url":"https://melanierogergallery.com/exhibitions/", "selector":"article, .card, a[href*='/exhibitions/']"}],  # ✅ 2026-07-13 配源：拒脚本 UA → render
+  "ivananthony": [{"type":"html", "render":True, "url":"https://www.ivananthony.com/", "selector":"article, .card, a[href*='exhibition']"}],  # ✅ 2026-07-13 配源
   "artis": [], "flagstaff": [], "artbysea": [], "vivian": [],
   # ---- 2026-07-11 批量配源：表演/音乐/博物馆/画廊优先（书店暂缓）----
   # 博物馆
@@ -97,16 +99,16 @@ SOURCES = {
   # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
   "qtheatre":    [{"type":"html", "render":True, "url":"https://www.qtheatre.co.nz/whats-on", "selector":"a[href*='show'], article, .card"}],
   "basement":    [{"type":"html", "render":True, "url":"https://basementtheatre.co.nz/whats-on/", "selector":"a[href*='show'], article, .card"}],
-  "asbwaterfront": [{"type":"html", "render":True, "url":"https://www.asbwaterfronttheatre.co.nz/whats-on", "selector":"article, .card, a[href*='show']"}],
+  "asbwaterfront": [{"type":"html", "render":True, "url":"https://www.atc.co.nz/asb-waterfront-theatre-events", "selector":"a[href*='/whats-on/'], article, .card"}],  # ✅ 2026-07-13 校准：旧域名拒连，节目页在 ATC 官网
   "tepou":       [{"type":"html", "render":True, "url":"https://tepoutheatre.nz/whats-on/", "selector":"article, .card"}],
   "titirangitheatre": [{"type":"html", "render":True, "url":"https://www.titirangitheatre.co.nz/", "selector":"article, .card, li"}],
   "artworkstheatre": [{"type":"html", "render":True, "url":"https://www.artworkstheatre.org.nz/", "selector":"article, .card, a[href*='event']"}],
   "howicklittle": [{"type":"html", "render":True, "url":"https://hlt.nz/", "selector":"article, .card, a[href*='show']"}],
   "dolphin":     [{"type":"html", "render":True, "url":"https://dolphintheatre.org.nz/", "selector":"article, .card"}],
   "harlequin":   [{"type":"html", "render":True, "url":"https://harlequintheatre.co.nz/", "selector":"article, .card"}],
-  "playhouse":   [{"type":"html", "render":True, "url":"https://www.playhousetheatre.org.nz/", "selector":"article, .card"}],
+  "playhouse":   [{"type":"html", "render":True, "url":"https://www.playhouse.nz/", "selector":"article, .card, a[href*='show'], a[href*='event']"}],  # ✅ 2026-07-13 校准：新域名 playhouse.nz（旧域名 DNS 失效）
   "rosecentre":  [{"type":"html", "render":True, "url":"https://rosecentre.co.nz/", "selector":"article, .card, a[href*='event']"}],
-  "theatreworks": [{"type":"html", "render":True, "url":"https://www.theatreworks.co.nz/", "selector":"article, .card"}],
+  "theatreworks": [{"type":"html", "render":True, "url":"https://theatreworks.nz/", "selector":"article, .card, a[href*='show']"}],  # ✅ 2026-07-13 校准：新域名 theatreworks.nz（.co.nz 是达尼丁另一家公司）
   "companytheatre": [{"type":"html", "render":True, "url":"https://www.companytheatre.co.nz/", "selector":"article, .card"}],
   "centrestage": [{"type":"html", "render":True, "url":"https://centrestagetheatre.co.nz/", "selector":"article, .card, a[href*='show']"}],
   "hawkins":     [{"type":"html", "render":True, "url":"https://www.hawkinstheatre.co.nz/", "selector":"article, .card, a[href*='event']"}],
@@ -118,7 +120,7 @@ SOURCES = {
   "tuningfork":  [{"type":"html", "render":True, "url":"https://www.tuningfork.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "galatos":     [{"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "neckofthewoods": [{"type":"html", "render":True, "url":"https://neckofthewoods.co.nz/", "selector":"article, .card, a[href*='event']"}],
-  "anthology":   [{"type":"html", "render":True, "url":"https://anthology.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "anthology":   [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=4688"}],  # ✅ 2026-07-13 校准：anthology.co.nz 证书失效；UTR vid 4688 = Anthology Lounge（官网 anthologykroad.com 无排期页）
   "mothership":  [{"type":"html", "render":True, "url":"https://www.themothership.co.nz/", "selector":"article, .card"}],
   "bigfan":      [{"type":"html", "render":True, "url":"https://www.bigfan.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
   "stmatthews":  [{"type":"html", "render":True, "url":"https://www.stmatthews.org.nz/whats-on/", "selector":"article, .card, li"}],
@@ -129,16 +131,16 @@ SOURCES = {
   "stpaulst":    [{"type":"html", "render":True, "url":"https://stpaulst.aut.ac.nz/", "selector":"article, .card, a[href*='exhibition']"}],
   "window":      [{"type":"html", "render":True, "url":"https://windowgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
   "whitespace":  [{"type":"html", "render":True, "url":"https://www.whitespace.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
-  "allpress":    [{"type":"html", "render":True, "url":"https://www.allpressstudio.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "allpress":    [{"type":"html", "url":"https://www.eventfinda.co.nz/venue/allpress-studio-auckland", "selector":"article, .card, a[href*='/whatson/']"}],  # ✅ 2026-07-13 校准：allpressstudio.com DNS 失效，官网无活动页，用 Eventfinda 场馆页
   "intlart":     [{"type":"html", "render":True, "url":"https://www.internationalartcentre.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
   "parnellgallery": [{"type":"html", "render":True, "url":"https://www.parnellgallery.co.nz/exhibitions/", "selector":"article, .card, a[href*='exhibition']"}],
   "blackdoor":   [{"type":"html", "render":True, "url":"https://www.blackdoorgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
   "trishclark":  [{"type":"html", "render":True, "url":"https://trishclark.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
   "masterworks": [{"type":"html", "render":True, "url":"https://masterworksgallery.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],
-  "timmelville": [{"type":"html", "render":True, "url":"https://timmelvillegallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "timmelville": [{"type":"html", "render":True, "url":"https://www.timmelville.com/", "selector":"article, .card, a[href*='exhibition']"}],  # ✅ 2026-07-13 校准：现域名 timmelville.com
   "webbs":       [{"type":"html", "render":True, "url":"https://www.webbs.co.nz/auctions", "selector":"article, .card, a[href*='auction']"}],
   "artobject":   [{"type":"html", "render":True, "url":"https://www.artandobject.co.nz/", "selector":"article, .card, a[href*='auction']"}],
-  "twng":        [{"type":"html", "render":True, "url":"https://twng.aut.ac.nz/", "selector":"article, .card, a[href*='exhibition']"}],
+  "twng":        [{"type":"html", "url":"https://ngutukaka.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-13 校准：新官网 ngutukaka.nz（Statamic 静态，日期在链接文本）；twng.aut.ac.nz DNS 失效
   "foxjensen":   [{"type":"html", "render":True, "url":"https://foxjensengallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
   "season":      [{"type":"html", "render":True, "url":"https://seasonaotearoa.com/", "selector":"article, .card, a[href*='exhibition']"}],
   "annamiles":   [{"type":"html", "render":True, "url":"https://annamilesgallery.com/", "selector":"article, .card, a[href*='exhibition']"}],
@@ -159,12 +161,15 @@ SOURCES = {
   "kumeuarts":   [{"type":"html", "render":True, "url":"https://www.kumeuarts.org/", "selector":"article, .card, a[href*='event']"}],
   "mccahon":     [{"type":"html", "render":True, "url":"https://www.mccahonhouse.org.nz/", "selector":"article, .card"}],
   "tetoiuku":    [{"type":"html", "render":True, "url":"https://www.tetoiuku.org.nz/", "selector":"article, .card, li"}],
-  "teoro":       [{"type":"html", "render":True, "url":"https://www.eventfinda.co.nz/venue/te-oro-auckland", "selector":"article, .card, a[href*='/whatson/']"},
-                  {"type":"html", "render":True, "url":"https://www.teoro.org.nz/", "selector":"article, .card, a[href*='event']"}],  # ✅ 官网仍在 + Eventfinda 场馆页兜底
+  "teoro":       [{"type":"html", "render":True, "url":"https://www.eventfinda.co.nz/venue/te-oro-auckland", "selector":"article, .card, a[href*='/whatson/']"}],  # ✅ 2026-07-13：teoro.org.nz DNS 失效已移除，只留 Eventfinda 场馆页
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
-  "jonathangrant": [{"type":"html", "render":True, "url":"https://jonathangrantgalleries.com/", "selector":"article, .card, a[href*='exhibition']"}],
+  "jonathangrant": [{"type":"html", "url":"https://jgg.co.nz/", "selector":"article, .card, a[href*='exhibition']"}],  # ✅ 2026-07-13 校准：现域名 jgg.co.nz
   "winecellar":  [{"type":"html", "render":True, "url":"https://www.winecellar.co.nz/", "selector":"article, .card, a[href*='gig'], a[href*='event']"}],
   # 影院（academy/capitol/vic/bridgeway）日常排片刻意不抓；节展季由每周任务经 Eventfinda 手动补
+  # ---- 2026-07-13 本周新配：书店/文学 ----
+  "womensbookshop": [{"type":"html", "url":"https://womensbookshop.co.nz/pages/1311-NewsandEvents", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-07-13 配源：News and Events 页（静态）
+  "michaelking": [{"type":"html", "url":"https://writerscentre.org.nz/workshops/", "selector":"article, .card, h3, li"},
+                  {"type":"html", "url":"https://writerscentre.org.nz/events/", "selector":"article, .card, h3, li"}],  # ✅ 2026-07-13 配源：WordPress 静态
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
 # 之后可以加一个 artnow 适配器按场馆名反查，作为各画廊官网抓取的兜底。
@@ -314,10 +319,8 @@ AKL_LIVE_ROUTES = {   # Auckland Live 共享节目页 → 按 location.name 分�
     "townhall":   ["town hall"],
     "brucemason": ["bruce mason"],
 }
-def scrape_aucklandlive():
-    """一次渲染 aucklandlive.co.nz/whats-on，用 JSON-LD 的 location.name 路由到多个场馆。"""
-    src = {"render": True, "url": "https://www.aucklandlive.co.nz/whats-on"}
-    soup = BeautifulSoup(fetch_html(src), "html.parser")
+def _akl_parse_jsonld(soup, base):
+    """从一个 soup 里提取 JSON-LD Event 并按 location.name 路由；供列表页与详情页共用。"""
     out = []
     for tag in soup.find_all("script", type="application/ld+json"):
         try:
@@ -353,13 +356,45 @@ def scrape_aucklandlive():
             if not name:
                 continue
             item = {"venue": vid, "title": name[:110], "date": str(sd), "kind": "gig",
-                    "url": d.get("url") or src["url"],
+                    "url": d.get("url") or base,
                     "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]}
             img = d.get("image")
             if isinstance(img, list) and img: img = img[0]
             if isinstance(img, dict): img = img.get("url")
             if isinstance(img, str) and img.startswith("http"): item["img"] = img
             out.append(item)
+    return out
+
+def scrape_aucklandlive():
+    """渲染 aucklandlive.co.nz/whats-on 读 JSON-LD 路由到多个场馆。
+    2026-07-13 备援：What's On 列表是客户端渲染、JSON-LD 时有时无——若列表页拿到 0 条，
+    则从渲染后的列表页 + 官网首页收集 /show/、/event/ 详情链接，逐页（普通请求）读 JSON-LD。"""
+    src = {"render": True, "url": "https://www.aucklandlive.co.nz/whats-on"}
+    soup = BeautifulSoup(fetch_html(src), "html.parser")
+    out = _akl_parse_jsonld(soup, src["url"])
+    if not out:
+        links = set()
+        def collect(sp):
+            for a in sp.select("a[href*='/show/'], a[href*='/event/']"):
+                h = a.get("href") or ""
+                if h.startswith("/"): h = "https://www.aucklandlive.co.nz" + h
+                if h.startswith("https://www.aucklandlive.co.nz/"): links.add(h.split("?")[0].rstrip("/"))
+        collect(soup)
+        try:
+            collect(BeautifulSoup(fetch_html({"render": True, "url": "https://www.aucklandlive.co.nz/"}), "html.parser"))
+        except Exception:
+            pass
+        seen = set()
+        for u in sorted(links)[:30]:
+            try:
+                sp = BeautifulSoup(fetch_html({"url": u}), "html.parser")   # 详情页 JSON-LD 服务端渲染，普通请求即可
+            except Exception:
+                continue
+            for it in _akl_parse_jsonld(sp, u):
+                key = (it["venue"], it["title"][:40], it["date"])
+                if key in seen: continue
+                seen.add(key)
+                out.append(it)
     print(f"[ok]   aucklandlive-router: {len(out)} events")
     return out
 

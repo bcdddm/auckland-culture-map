@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-12",
+  "generated": "2026-07-13",
   "sample": false,
   "items": [
     {
@@ -682,6 +682,30 @@ window.EVENTS = {
       "desc": "Current & Upcoming Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 July —Bidding Closing View Catalogue & Bid The Estate | Design Edit Online Auction | 9—14 July —B"
     },
     {
+      "venue": "aotea",
+      "title": "H.R. The Musical",
+      "zh": "《H.R.》职场喜剧音乐剧",
+      "kind": "gig",
+      "date": "2026-07-14",
+      "end": "2026-07-18",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
+      "desc": "Hit workplace sketch-comedy, Herald Theatre fundraiser season, 14–18 Jul.",
+      "descZh": "职场素描喜剧音乐剧，Herald 剧院筹款季，7月14—18日"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Dog Man: The Musical",
+      "zh": "《神探狗狗》音乐剧",
+      "kind": "gig",
+      "date": "2026-07-14",
+      "end": "2026-07-18",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
+      "desc": "Dav Pilkey's beloved Dog Man characters live on stage, 14–18 Jul.",
+      "descZh": "Dav Pilkey 绘本改编亲子音乐剧，学校假期档，7月14—18日"
+    },
+    {
       "venue": "corban",
       "title": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create ",
       "date": "2026-07-14",
@@ -1175,6 +1199,18 @@ window.EVENTS = {
       "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/TePou_1080x1080_logos_notext.png"
     },
     {
+      "venue": "aotea",
+      "title": "Royal New Zealand Ballet: Winter Season",
+      "zh": "新西兰皇家芭蕾舞团冬季演出季",
+      "kind": "gig",
+      "date": "2026-07-23",
+      "end": "2026-07-25",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
+      "desc": "Three works celebrating the heritage of the RNZB, 23–25 Jul, Aotea Centre.",
+      "descZh": "三部经典作品致敬皇家芭蕾传统，7月23—25日 Aotea 中心"
+    },
+    {
       "venue": "parnellgallery",
       "title": "Share the Air Gareth Barlow Preview: Thursday 23 July, 5:30-7pm Exhibition: 23 July - 6 August 2026",
       "date": "2026-07-23",
@@ -1378,6 +1414,18 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "asbwaterfront",
+      "title": "Macbeth — Auckland Theatre Company",
+      "zh": "《麦克白》· 奥克兰戏剧公司",
+      "kind": "gig",
+      "date": "2026-07-28",
+      "end": "2026-08-22",
+      "price": "paid",
+      "url": "https://www.atc.co.nz/whats-on/2026-season/macbeth",
+      "desc": "by William Shakespeare. 28 Jul – 22 Aug, ASB Waterfront Theatre.",
+      "descZh": "莎士比亚经典，ATC 2026 剧季大戏，7月28日—8月22日在 ASB 海滨剧院上演"
+    },
+    {
       "venue": "basement",
       "title": "CHOOSE WHAT YOU PAY Single-Handed 28 JUL - 1 AUG",
       "date": "2026-07-28",
@@ -1393,6 +1441,18 @@ window.EVENTS = {
       "date": "2026-07-28",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
+    },
+    {
+      "venue": "civic",
+      "title": "Whānau Mārama: NZ International Film Festival",
+      "zh": "新西兰国际电影节（NZIFF）",
+      "kind": "film",
+      "date": "2026-07-29",
+      "end": "2026-08-09",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/event/nz-international-film-festival",
+      "desc": "NZIFF full line-up screening 29 Jul – 9 Aug, The Civic.",
+      "descZh": "NZIFF 主会场 Civic 大剧院，7月29日—8月9日"
     },
     {
       "venue": "tuningfork",
@@ -1817,6 +1877,30 @@ window.EVENTS = {
       "desc": "Opening Saturday 15 August 5–6:30pm; on show 14–30 August 2026.",
       "descZh": "双人展，8 月 15 日（周六）17:00–18:30 开幕，展期 8 月 14 日至 30 日。",
       "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters"
+    },
+    {
+      "venue": "aotea",
+      "title": "Autaia — Haka Theatre Showcase",
+      "zh": "Autaia 哈卡剧场展演",
+      "kind": "gig",
+      "date": "2026-08-20",
+      "end": "2026-08-21",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/show/autaia-2026",
+      "desc": "Haka theatre showcase back for its sixth season, Thu 20 – Fri 21 Aug.",
+      "descZh": "第六季哈卡剧场展演，8月20—21日 Aotea 中心（日期为周四/周五，官网横幅未标月份，据 2026 年历推定为 8 月）"
+    },
+    {
+      "venue": "civic",
+      "title": "Cirque Alice",
+      "zh": "《爱丽丝》马戏秀",
+      "kind": "gig",
+      "date": "2026-08-28",
+      "end": "2026-09-06",
+      "price": "paid",
+      "url": "https://www.aucklandlive.co.nz/show/cirque-alice",
+      "desc": "Circus spectacular by the creators of Cirque du Soleil, 28 Aug – 6 Sep, The Civic.",
+      "descZh": "太阳马戏创作团队打造的仙境马戏，8月28日—9月6日 Civic 大剧院"
     }
   ]
 };
