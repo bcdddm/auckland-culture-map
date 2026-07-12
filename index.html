@@ -83,6 +83,8 @@
     fill:var(--ink); text-anchor:middle}
   .stk .dot circle{fill:var(--yellow); stroke:var(--ink); stroke-width:1.4}
   .stk .dot text{font-family:-apple-system,sans-serif; font-size:10px; font-weight:700; fill:var(--ink); text-anchor:middle}
+  .stk .ribbon{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9px; font-weight:700;
+    fill:var(--ink); text-anchor:middle}
   .stk .ribbon{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9.5px; font-weight:700;
     fill:var(--ink); text-anchor:middle}
   .stk.live:hover{transform:scale(1.14) rotate(-2deg)}
@@ -1644,11 +1646,26 @@ function stickerSize(){
   return z <= 10 ? 20 : z <= 11 ? 25 : z === 12 ? 31 : z === 13 ? 39 : z === 14 ? 50 : 60;
 }
 
-/* 标签过长时用 textLength 压进贴纸内（修正文字超框） */
+/* 标签硬边界三档：正常 → textLength 压缩 → 裁剪内来回滚动 */
 function labelSVG(v, y){
-  var est = v.label.length * 6.2;   /* 10px 字号的估宽 */
-  var tl = est > 86 ? ' textLength="86" lengthAdjust="spacingAndGlyphs"' : '';
-  return '<text class="slabel" x="0" y="'+y+'"'+tl+'>'+v.label+'</text>';
+  var est = Math.round(v.label.length * 6.8);   /* 10px 字号估宽（加宽系数防漏） */
+  if(est <= 86){
+    return '<text class="slabel" x="0" y="'+y+'">'+v.label+'</text>';
+  }
+  if(est <= 112){
+    return '<text class="slabel" x="0" y="'+y+'" textLength="86" lengthAdjust="spacingAndGlyphs">'+v.label+'</text>';
+  }
+  /* 极端超长：自然字宽 + 在裁剪边界内左右往返滚动 */
+  var over = est - 86;
+  var dur = Math.max(5, Math.round(over / 6));
+  return '<text class="slabel" x="-43" y="'+y+'" style="text-anchor:start">'+v.label+
+    '<animate attributeName="x" values="-43;'+(-43-over)+';-43" dur="'+dur+'s" repeatCount="indefinite"/></text>';
+}
+/* 横幅文字：定样式 + 超宽压缩（此前 .ribbon 无样式导致大幅溢出） */
+function ribbonSVG(txt){
+  var est = Math.round(txt.length * 5.6);
+  var tl = est > 88 ? ' textLength="88" lengthAdjust="spacingAndGlyphs"' : '';
+  return '<text class="ribbon" x="0" y="56"'+tl+'>'+txt+'</text>';
 }
 
 /* 活动类型短标签（贴纸横幅用） */
@@ -1690,11 +1707,14 @@ function stickerHTML(v){
     '<g transform="rotate('+v.r+')">'+
       '<rect class="paper" x="-48" y="-46" width="96" height="'+ph+'" rx="12"/>'+
       '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
-      labelSVG(v, 38)+
-      (showRibbon ?
-        '<g clip-path="url(#cp-'+v.id+')"><rect x="-48" y="44" width="96" height="18" fill="#FFD400"/></g>'+
-        '<text class="ribbon" y="56">'+ribbonText(evs)+'</text>'
-        : '')+
+      /* 标签与横幅统一放进圆角裁剪组：硬边界，任何文字不出贴纸 */
+      '<g clip-path="url(#cp-'+v.id+')">'+
+        labelSVG(v, 38)+
+        (showRibbon ?
+          '<rect x="-48" y="44" width="96" height="18" fill="#FFD400"/>'+
+          ribbonSVG(ribbonText(evs))
+          : '')+
+      '</g>'+
       /* 右下角翘起的卷角：外层按贴纸圆角轮廓裁剪（直角尖不再溢出），内层做呼吸动画 */
       (live ? (function(){
         var b = -46 + ph;   /* 贴纸底边 y */
@@ -1731,7 +1751,7 @@ function pileIcon(cluster){
   return L.divIcon({className:"stkwrap", html:html, iconSize:[sz,sz], iconAnchor:[sz/2,sz/2]});
 }
 var clusterGroup = L.markerClusterGroup({
-  maxClusterRadius: function(z){ return z >= 14 ? 32 : 46; },
+  maxClusterRadius: function(z){ return z >= 14 ? 35 : 51; },   /* 释放阈值 +10% */
   disableClusteringAtZoom: 15,
   showCoverageOnHover: false,
   spiderLegPolylineOptions: {weight: 0, opacity: 0},   /* 堆栈式展开不需要连线 */
@@ -1856,9 +1876,10 @@ function restoreSticker(id){                                          /* ④ 贴
 /* 撕下来的那张贴纸，贴到卡片右上角 */
 function cardStickerSVG(v){
   return '<div class="cardstk"><svg viewBox="-52 -50 104 100" xmlns="http://www.w3.org/2000/svg">'+
+    '<defs><clipPath id="ccp-'+v.id+'"><rect x="-48" y="-46" width="96" height="94" rx="12"/></clipPath></defs>'+
     '<rect class="paper" x="-48" y="-46" width="96" height="94" rx="12"/>'+
     '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
-    labelSVG(v, 38)+
+    '<g clip-path="url(#ccp-'+v.id+')">'+labelSVG(v, 38)+'</g>'+
     '</svg></div>';
 }
 
