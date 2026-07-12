@@ -383,6 +383,36 @@ def weekly_rule_events():
         d += datetime.timedelta(days=1)
     return out
 
+OG_RE1 = re.compile(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', re.I)
+OG_RE2 = re.compile(r'content=["\']([^"\']+)["\'][^>]*property=["\']og:image', re.I)
+
+def enrich_images(items, cap_total=90):
+    """列表页通常没有 JSON-LD 图——逐条请求活动详情页，提取 og:image（普通请求即可，og 标签在原始 HTML 里）。"""
+    n = 0
+    for e in items:
+        if n >= cap_total:
+            break
+        if e.get("img") or e.get("kind") == "market":
+            continue
+        last = e.get("end") or e.get("date")
+        if not last or last < str(TODAY):        # 历史条目不补图
+            continue
+        u = e.get("url") or ""
+        if not u.startswith("http") or "facebook.com" in u or "instagram.com" in u:
+            continue
+        n += 1
+        try:
+            r = requests.get(u, headers=UA, timeout=12)
+            if r.status_code != 200:
+                continue
+            m = OG_RE1.search(r.text) or OG_RE2.search(r.text)
+            if m and m.group(1).startswith("http"):
+                e["img"] = m.group(1)
+        except Exception:
+            continue
+    got = sum(1 for e in items if e.get("img"))
+    print(f"[ok]   image-enrich: fetched {n} detail pages, {got} items now have images")
+
 def load_history():
     """保留上一版 events.js 里已结束的条目（卡片"上次活动"依赖它），每场馆最多留 5 条。"""
     if not OUT.exists():
@@ -432,6 +462,7 @@ def main():
         added = [e for e in manual if (e["venue"], e["title"][:40], e["date"]) not in keys]
         items += added
         print(f"[ok]   manual/curated: merged {len(added)}")
+    enrich_images(items)
     items.sort(key=lambda e: (e["date"], e["venue"]))
     payload = {"generated": str(TODAY), "sample": False, "items": items}
     OUT.write_text(
