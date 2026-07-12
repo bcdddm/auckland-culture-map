@@ -81,6 +81,7 @@
   .stk .paper{fill:#fff; stroke:#e2ddd0; stroke-width:1}
   .stk .slabel{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; font-weight:600;
     fill:var(--ink); text-anchor:middle}
+  .stk .slabel.two, .cardstk .slabel.two{font-size:8.5px}
   .stk .dot circle{fill:var(--yellow); stroke:var(--ink); stroke-width:1.4}
   .stk .dot text{font-family:-apple-system,sans-serif; font-size:10px; font-weight:700; fill:var(--ink); text-anchor:middle}
   .stk .ribbon{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9px; font-weight:700;
@@ -1648,20 +1649,28 @@ function stickerSize(){
   return z <= 10 ? 20 : z <= 11 ? 25 : z === 12 ? 31 : z === 13 ? 39 : z === 14 ? 50 : 60;
 }
 
-/* 标签硬边界三档：正常 → textLength 压缩 → 裁剪内来回滚动 */
+/* 标签适配：一行放得下用 10px；放不下 → 8.5px 双行（按词均分断行），单行仍超宽再压缩 */
 function labelSVG(v, y){
-  var est = Math.round(v.label.length * 6.8);   /* 10px 字号估宽（加宽系数防漏） */
+  var est = Math.round(v.label.length * 6.8);   /* 10px 字号估宽 */
   if(est <= 86){
     return '<text class="slabel" x="0" y="'+y+'">'+v.label+'</text>';
   }
-  if(est <= 112){
-    return '<text class="slabel" x="0" y="'+y+'" textLength="86" lengthAdjust="spacingAndGlyphs">'+v.label+'</text>';
+  var words = v.label.split(" ");
+  if(words.length === 1){   /* 无空格可断 → 小字号 + 压缩 */
+    return '<text class="slabel two" x="0" y="'+y+'" textLength="86" lengthAdjust="spacingAndGlyphs">'+v.label+'</text>';
   }
-  /* 极端超长：自然字宽 + 在裁剪边界内左右往返滚动 */
-  var over = est - 86;
-  var dur = Math.max(5, Math.round(over / 6));
-  return '<text class="slabel" x="-43" y="'+y+'" style="text-anchor:start">'+v.label+
-    '<animate attributeName="x" values="-43;'+(-43-over)+';-43" dur="'+dur+'s" repeatCount="indefinite"/></text>';
+  var best = 1, diff = 1e9;
+  for(var i = 1; i < words.length; i++){
+    var d = Math.abs(words.slice(0,i).join(" ").length - words.slice(i).join(" ").length);
+    if(d < diff){ diff = d; best = i; }
+  }
+  var a = words.slice(0, best).join(" "), b = words.slice(best).join(" ");
+  function line(t, yy){
+    var e = Math.round(t.length * 6.0);   /* 8.5px 估宽 */
+    var tl = e > 88 ? ' textLength="88" lengthAdjust="spacingAndGlyphs"' : '';
+    return '<text class="slabel two" x="0" y="'+yy+'"'+tl+'>'+t+'</text>';
+  }
+  return line(a, y - 4.5) + line(b, y + 5);
 }
 /* 横幅文字：定样式 + 超宽压缩（此前 .ribbon 无样式导致大幅溢出） */
 function ribbonSVG(txt){
@@ -1711,7 +1720,7 @@ function stickerHTML(v){
       '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
       /* 标签与横幅统一放进圆角裁剪组：硬边界，任何文字不出贴纸 */
       '<g clip-path="url(#cp-'+v.id+')">'+
-        labelSVG(v, 38)+
+        labelSVG(v, showRibbon ? 36 : 38)+   /* 有横幅时双行标签上移避让 */
         (showRibbon ?
           '<rect x="-48" y="44" width="96" height="18" fill="#FFD400"/>'+
           ribbonSVG(ribbonText(evs))
@@ -1753,7 +1762,7 @@ function pileIcon(cluster){
   return L.divIcon({className:"stkwrap", html:html, iconSize:[sz,sz], iconAnchor:[sz/2,sz/2]});
 }
 var clusterGroup = L.markerClusterGroup({
-  maxClusterRadius: function(z){ return z >= 14 ? 35 : 51; },   /* 释放阈值 +10% */
+  maxClusterRadius: function(z){ return z >= 14 ? 39 : 56; },   /* 释放阈值累计 +21% */
   disableClusteringAtZoom: 15,
   showCoverageOnHover: false,
   spiderLegPolylineOptions: {weight: 0, opacity: 0},   /* 堆栈式展开不需要连线 */
