@@ -114,6 +114,9 @@
   .pile:hover .sheet.s1{transform:rotate(-13deg) translate(-7%,3%)}
   .pile:hover .sheet.s2{transform:rotate(11deg) translate(7%,-2%)}
   .pile .sheet{transition:transform .2s}
+  /* 堆栈展开/收拢的缓入缓出（覆盖插件默认的匀速感） */
+  .leaflet-cluster-anim .leaflet-marker-icon{
+    transition:transform .5s cubic-bezier(.45,0,.12,1), opacity .3s ease-in !important}
   /* 待机动画：右下角轻轻翘起（dog-ear），不浮动 */
   .stk .curl{transform-box:fill-box; transform-origin:100% 100%;
     animation:curlpulse 3.4s ease-in-out infinite}
@@ -202,8 +205,18 @@
   #panel h2{font-size:19px; margin-bottom:2px}
   #panel .addr{font-size:11px; color:#6b675e; margin-bottom:12px; font-family:-apple-system,"PingFang SC",sans-serif}
   #panel .addr .weblink{color:var(--c-gallery); text-decoration:none; font-weight:600}
-  #panel .close{position:absolute; top:10px; right:12px; border:0; background:none; font-size:18px; cursor:pointer; color:var(--ink)}
+  #panel .close{position:absolute; top:8px; right:10px; width:36px; height:36px;
+    border:1.5px solid var(--ink); border-radius:50%; background:#fff; font-size:19px;
+    line-height:1; cursor:pointer; color:var(--ink); z-index:5;
+    box-shadow:0 2px 5px rgba(0,0,0,.2)}
+  #panel .close:hover{background:var(--yellow)}
   .ev{border-top:1px dashed #b9b4a8; padding:10px 0}
+  .evimg{width:100%; max-height:150px; object-fit:cover; border:1px solid #d8d0bd;
+    border-radius:4px; margin:2px 0 6px; display:block}
+  .gzphoto{width:100%; max-height:230px; object-fit:cover; border:1px solid var(--ink);
+    margin:10px 0 8px; display:block}
+  .gzit .itphoto{width:100%; max-height:88px; object-fit:cover; border:1px solid #d8d0bd;
+    margin-top:5px; display:block}
   .ev .d{font-family:-apple-system,"PingFang SC",sans-serif; font-size:11px; color:var(--dblue); font-weight:600}
   .ev .t{font-size:13.5px; line-height:1.45; margin-top:2px; font-weight:600}
   .ev .desc{font-size:12px; line-height:1.6; color:#4a463d; margin-top:4px}
@@ -251,9 +264,10 @@
     background-image:repeating-linear-gradient(0deg, rgba(35,33,28,.018) 0 2px, transparent 2px 4px)}
   /* 报纸上贴的贴纸 */
   #gazette .cardstk{animation:none}
+  /* 贴纸一律贴在标题与正文的右侧 */
   .gzlead .cardstk{width:86px; height:84px; margin:0 0 6px 14px; transform:rotate(6deg)}
-  .gzov .cardstk{width:42px; height:41px; float:left; margin:1px 9px 2px 0; transform:rotate(-5deg)}
-  .gzit .cardstk{width:36px; height:35px; float:left; margin:2px 8px 0 0; transform:rotate(-4deg)}
+  .gzov .cardstk{width:42px; height:41px; float:right; margin:1px 0 2px 9px; transform:rotate(5deg)}
+  .gzit .cardstk{width:36px; height:35px; float:right; margin:2px 0 0 8px; transform:rotate(4deg)}
   .gzit{overflow:hidden}
   .gzov .gzit{overflow:hidden}
   .gzclose{position:absolute; top:12px; right:14px; width:38px; height:38px; border-radius:50%;
@@ -1720,10 +1734,23 @@ var clusterGroup = L.markerClusterGroup({
   maxClusterRadius: function(z){ return z >= 14 ? 32 : 46; },
   disableClusteringAtZoom: 15,
   showCoverageOnHover: false,
-  spiderfyDistanceMultiplier: 1.7,
-  spiderLegPolylineOptions: {weight: 1.2, color: "#23211C", opacity: .55, dashArray: "2 3"},
+  spiderLegPolylineOptions: {weight: 0, opacity: 0},   /* 堆栈式展开不需要连线 */
   iconCreateFunction: pileIcon
 }).addTo(map);
+
+/* 展开形态：不用圆形扇，改为向右下微错角的"堆栈"排布 */
+(function(){
+  function stackPoints(count, centerPt){
+    var sz = stickerSize(), pts = [];
+    var dx = Math.round(sz * .38), dy = Math.round(sz * .68);
+    for(var i = 0; i < count; i++){
+      pts.push(new L.Point(centerPt.x + dx * (i + 1), centerPt.y + dy * (i + 1)));
+    }
+    return pts;
+  }
+  L.MarkerCluster.prototype._generatePointsCircle = function(c, p){ return stackPoints(c, p); };
+  L.MarkerCluster.prototype._generatePointsSpiral = function(c, p){ return stackPoints(c, p); };
+})();
 
 var markers = {};
 function buildMarkers(){
@@ -1742,11 +1769,14 @@ function buildMarkers(){
       m.setIcon(icon);
       m.setZIndexOffset(live ? 1000 : 0);   /* 有活动的压在上面 */
     }
-    /* 类别开关决定是否入图（聚类计数只含开启的类别） */
-    if(S.cats[v.cat]){
-      if(!m._in){ clusterGroup.addLayer(m); m._in = true; }
-    } else if(m._in){
-      clusterGroup.removeLayer(m); m._in = false;
+    /* 有活动的场馆永远独立显示；只有安静场馆参与堆叠；关闭的类别不入图 */
+    var want = !S.cats[v.cat] ? "none" : (live ? "solo" : "pile");
+    if(m._mode !== want){
+      if(m._mode === "solo") map.removeLayer(m);
+      else if(m._mode === "pile") clusterGroup.removeLayer(m);
+      if(want === "solo") m.addTo(map);
+      else if(want === "pile") clusterGroup.addLayer(m);
+      m._mode = want;
     }
   });
   if(clusterGroup.refreshClusters) clusterGroup.refreshClusters();
@@ -1789,7 +1819,7 @@ function openVenue(id, fromNav){
   var m = markers[id];
   var el = m && m.getElement() && m.getElement().querySelector(".stk");
   /* 贴纸在堆里（聚类中不可见）→ 先让聚类放大/展开露出它，再重试 */
-  if(!el && m && m._in && clusterGroup.zoomToShowLayer){
+  if(!el && m && m._mode === "pile" && clusterGroup.zoomToShowLayer){
     clusterGroup.zoomToShowLayer(m, function(){
       setTimeout(function(){ openVenue(id, true); }, 220);
     });
@@ -1850,6 +1880,7 @@ function openPanel(id){
       var priceMap = {free:{zh:"免费",en:"Free"}, paid:{zh:"收费",en:"Ticketed"}, koha:{zh:"随喜 Koha",en:"Koha"}};
       var p = priceMap[e.price];
       h += '<div class="ev">'+
+           (e.img ? '<img class="evimg" src="'+e.img+'" loading="lazy" onerror="this.remove()">' : '')+
            '<div class="d">'+fmtDate(e.date)+(e.time ? " · "+e.time : "")+'</div>'+
            '<div class="t">'+(S.lang==="zh"&&e.zh ? e.zh : e.title)+'</div>'+
            ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
@@ -1868,6 +1899,7 @@ function openPanel(id){
       var priceMap2 = {free:{zh:"免费",en:"Free"}, paid:{zh:"收费",en:"Ticketed"}, koha:{zh:"随喜 Koha",en:"Koha"}};
       var p2 = priceMap2[e.price];
       h += '<div class="ev">'+
+           (e.img ? '<img class="evimg" src="'+e.img+'" loading="lazy" onerror="this.remove()">' : '')+
            '<div class="d">'+(S.lang==="zh" ? "展至 " : "Until ")+fmtDate(e.end || e.date)+'</div>'+
            '<div class="t">'+(S.lang==="zh"&&e.zh ? e.zh : e.title)+'</div>'+
            ((S.lang==="zh"?e.descZh:e.desc) ? '<div class="desc">'+(S.lang==="zh" ? (e.descZh||e.desc) : (e.desc||e.descZh))+'</div>' : '')+
@@ -2122,6 +2154,7 @@ function buildGazette(){
       '<div class="kick">'+(zh?lc.zh:lc.en)+' · '+fmtDate(lead.date)+(lead.time?" · "+lead.time:"")+'</div>'+
       '<h2 data-venue="'+lead.venue+'">'+gzTitle(lead)+'</h2>'+
       '<div class="by">'+lv+'</div>'+
+      (lead.img ? '<img class="gzphoto" src="'+lead.img+'" loading="lazy" onerror="this.remove()">' : '')+
       ((zh?lead.descZh:lead.desc) ? '<div class="body">'+(zh?(lead.descZh||lead.desc):(lead.desc||lead.descZh))+'</div>' : '')+
       '</div><div class="gzov"><h3>'+(zh?"本周在展":"On view this week")+'</h3>';
     gzOnView().forEach(function(e){
@@ -2140,6 +2173,7 @@ function buildGazette(){
     sec.forEach(function(e){
       h += '<div class="gzit" data-venue="'+e.venue+'">'+gzStk(e.venue)+'<h5>'+gzTitle(e)+'</h5>'+
         '<div class="by">'+gzVenueName(e.venue)+' · '+fmtDate(e.date)+(e.time?" · "+e.time:"")+'</div>'+
+        (e.img ? '<img class="itphoto" src="'+e.img+'" loading="lazy" onerror="this.remove()">' : '')+
         ((zh?e.descZh:e.desc) ? '<div class="sm">'+((zh?(e.descZh||e.desc):(e.desc||e.descZh))).slice(0,90)+'</div>' : '')+
         '</div>';
     });

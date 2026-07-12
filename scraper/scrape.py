@@ -232,6 +232,10 @@ def extract_jsonld_events(venue, soup, base):
             item = {"venue": venue, "title": name[:110], "date": str(sd),
                     "kind": classify(name), "url": d.get("url") or base,
                     "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]}
+            img = d.get("image")
+            if isinstance(img, list) and img: img = img[0]
+            if isinstance(img, dict): img = img.get("url")
+            if isinstance(img, str) and img.startswith("http"): item["img"] = img
             offers = d.get("offers")
             o = (offers[0] if isinstance(offers, list) and offers else offers) or {}
             if isinstance(o, dict):
@@ -348,9 +352,14 @@ def scrape_aucklandlive():
             name = (d.get("name") or "").strip()
             if not name:
                 continue
-            out.append({"venue": vid, "title": name[:110], "date": str(sd), "kind": "gig",
-                        "url": d.get("url") or src["url"],
-                        "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]})
+            item = {"venue": vid, "title": name[:110], "date": str(sd), "kind": "gig",
+                    "url": d.get("url") or src["url"],
+                    "desc": re.sub(r"<[^>]+>", "", str(d.get("description") or ""))[:180]}
+            img = d.get("image")
+            if isinstance(img, list) and img: img = img[0]
+            if isinstance(img, dict): img = img.get("url")
+            if isinstance(img, str) and img.startswith("http"): item["img"] = img
+            out.append(item)
     print(f"[ok]   aucklandlive-router: {len(out)} events")
     return out
 
