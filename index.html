@@ -1901,12 +1901,12 @@ function restoreSticker(id){                                          /* ④ 贴
 
 /* ================= 纸质卡片 ================= */
 /* 撕下来的那张贴纸，贴到卡片右上角 */
-function cardStickerSVG(v){
+function cardStickerSVG(v, lmode){
   return '<div class="cardstk"><svg viewBox="-52 -50 104 100" xmlns="http://www.w3.org/2000/svg">'+
     '<defs><clipPath id="ccp-'+v.id+'"><rect x="-48" y="-46" width="96" height="94" rx="12"/></clipPath></defs>'+
     '<rect class="paper" x="-48" y="-46" width="96" height="94" rx="12"/>'+
     '<g transform="translate(-38,-40)">'+(FACADES[v.id]||"")+'</g>'+
-    '<g clip-path="url(#ccp-'+v.id+')">'+labelSVG(v, 38, "full")+'</g>'+
+    '<g clip-path="url(#ccp-'+v.id+')">'+labelSVG(v, 38, lmode || "full")+'</g>'+
     '</svg></div>';
 }
 
@@ -2163,10 +2163,10 @@ function gzTitle(e){ return (S.lang==="zh" && e.zh) ? e.zh : e.title; }
 function gzVenueName(id){
   var n = VNAME[id]; return n ? (S.lang==="zh" ? n.zh : n.en) : id;
 }
-/* 报纸上贴的场馆贴纸 */
+/* 报纸上贴的场馆贴纸（不带文字，纯图形邮票） */
 function gzStk(id){
   var vv = VENUES.filter(function(x){ return x.id === id; })[0];
-  return vv ? cardStickerSVG(vv) : "";
+  return vv ? cardStickerSVG(vv, "none") : "";
 }
 
 function buildGazette(){
