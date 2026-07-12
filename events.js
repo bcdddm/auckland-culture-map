@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-11",
+  "generated": "2026-07-12",
   "sample": false,
   "items": [
     {
@@ -673,20 +673,12 @@ window.EVENTS = {
       "desc": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way! 7-12 July 2026 Get tickets Details"
     },
     {
-      "venue": "qtheatre",
-      "title": "11 - 12 July 2026 Find out more",
+      "venue": "window",
+      "title": "Drive Thru Carlos Knight July 2026",
       "date": "2026-07-12",
       "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/iconic-auckland-school-bollywood-showcase",
-      "desc": "11 - 12 July 2026 Find out more"
-    },
-    {
-      "venue": "qtheatre",
-      "title": "11 - 12 July 2026 Dance ICONIC - An Auckland School of Bollywood Showcase 150 performers. 50 iconic Bollywood ",
-      "date": "2026-07-12",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/iconic-auckland-school-bollywood-showcase",
-      "desc": "11 - 12 July 2026 Dance ICONIC - An Auckland School of Bollywood Showcase 150 performers. 50 iconic Bollywood songs. One unforgettable night. Join to witness Auckland School of Bol"
+      "url": "https://windowgallery.co.nz/exhibitions/drive-thru",
+      "desc": "Drive Thru Carlos Knight July 2026"
     },
     {
       "venue": "unity",
