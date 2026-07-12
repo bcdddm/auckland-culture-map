@@ -638,7 +638,8 @@ window.EVENTS = {
       "date": "2026-07-12",
       "kind": "opening",
       "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
-      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Sun 12 Jul 2026"
+      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Sun 12 Jul 2026",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_04/Wishes_to_Hiwa-i-te-Rangi.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "lacigale",
@@ -649,20 +650,13 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "lakehouse",
-      "title": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More",
-      "date": "2026-07-12",
-      "kind": "opening",
-      "url": "https://lakehousearts.org.nz/tag/becroft/",
-      "desc": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More"
-    },
-    {
       "venue": "maritime",
       "title": "events Kaui Whetū – Make Days 9–12 Jul",
       "date": "2026-07-12",
       "kind": "workshop",
       "url": "https://www.maritimemuseum.co.nz/events/kaui-whetu-make-days",
-      "desc": "events Kaui Whetū – Make Days 9–12 Jul"
+      "desc": "events Kaui Whetū – Make Days 9–12 Jul",
+      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/kaui-whetu-make-days-1.webp"
     },
     {
       "venue": "pumphouse",
@@ -670,7 +664,8 @@ window.EVENTS = {
       "date": "2026-07-12",
       "kind": "opening",
       "url": "https://pumphouse.co.nz/whats-on/show/old-macdonalds-farm/",
-      "desc": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way! 7-12 July 2026 Get tickets Details"
+      "desc": "Pearangi Creative Presents Old MacDonald’s Farm Old MacDonald had a farm - and we’re going to keep it that way! 7-12 July 2026 Get tickets Details",
+      "img": "https://media.pumphouse.nz/wp-content/uploads/2026/04/Old-MacDonalds-Farm-Web-Banner-1400x460-1.jpg"
     },
     {
       "venue": "window",
@@ -694,7 +689,8 @@ window.EVENTS = {
       "date": "2026-07-14",
       "kind": "opening",
       "url": "https://ceac.org.nz/workshops/art-workshop/flora-gel-prints",
-      "desc": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create exciting layered prints using gel printing plates with artist Sarah Co"
+      "desc": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create exciting layered prints using gel printing plates with artist Sarah Co",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Sarah_Cowie_Gelli_Prints_Landscape.png.1200x630_q80_crop-smart.png"
     },
     {
       "venue": "poetrylive",
@@ -718,7 +714,8 @@ window.EVENTS = {
       "date": "2026-07-15",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/the-beginning-of-cinema",
-      "desc": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school holiday workshop children will enter the magical world of cinema! Worki"
+      "desc": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school holiday workshop children will enter the magical world of cinema! Worki",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_9398.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "whammy",
@@ -733,7 +730,8 @@ window.EVENTS = {
       "date": "2026-07-16",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/painted-and-stitched-in-flight",
-      "desc": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST FULLY BOOKED Join visual artist Alexandra Murphy for a fun, painting a"
+      "desc": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST FULLY BOOKED Join visual artist Alexandra Murphy for a fun, painting a",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/f496f1e9d1a090636b1d14c044eabee1_2.JPEG.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "unity",
@@ -764,7 +762,8 @@ window.EVENTS = {
       "date": "2026-07-17",
       "kind": "workshop",
       "url": "https://ceac.org.nz/events/matariki/matariki-evening-market",
-      "desc": "Matariki Evening Market With Corban Estate Arts Centre and Five Star Eats Fri 17 Jul 2026 4:30PM - 8:30PM Bring your whānau and friends along and join us for a magical evening hono"
+      "desc": "Matariki Evening Market With Corban Estate Arts Centre and Five Star Eats Fri 17 Jul 2026 4:30PM - 8:30PM Bring your whānau and friends along and join us for a magical evening hono",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/2Matariki_Evening_Market.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "corban",
@@ -772,7 +771,8 @@ window.EVENTS = {
       "date": "2026-07-17",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/watercolour-zines-imaginary-worlds",
-      "desc": "Watercolour Zines: Imaginary Worlds With Marina Grey Fri 17 Jul 2026 10:00AM - 2:30PM Children: 8 - 13 Join visual artist Marina Grey these school holidays in our hands-on watercol"
+      "desc": "Watercolour Zines: Imaginary Worlds With Marina Grey Fri 17 Jul 2026 10:00AM - 2:30PM Children: 8 - 13 Join visual artist Marina Grey these school holidays in our hands-on watercol",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Space_Frogs_1.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "corban",
@@ -792,7 +792,8 @@ window.EVENTS = {
       "date": "2026-07-17",
       "kind": "opening",
       "url": "https://www.maritimemuseum.co.nz/events/july-school-holidays-or-matariki-herenga-waka-matariki-the-waka-connector",
-      "desc": "events July School Holidays | Matariki Herenga Waka - Matariki … 5–17 Jul"
+      "desc": "events July School Holidays | Matariki Herenga Waka - Matariki … 5–17 Jul",
+      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/matariki-herenga-waka-matariki-the-waka-connector.webp"
     },
     {
       "venue": "northart",
@@ -818,7 +819,8 @@ window.EVENTS = {
       "date": "2026-07-17",
       "kind": "opening",
       "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan",
-      "desc": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are invited to Dean"
+      "desc": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are invited to Dean",
+      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a3119a9458d841b097da534/1781602736989/Dean+Buchanan.jpg?format=1500w"
     },
     {
       "venue": "upstairs",
@@ -869,7 +871,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/honey-kaha-returns",
-      "desc": "POSTPONED HONEY KAHA RETURNS 14-18 JUL, 8PM"
+      "desc": "POSTPONED HONEY KAHA RETURNS 14-18 JUL, 8PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/HK_Bment_web_Large_35d8052d-c22c-477a-bf6c-9fce9e93e330.jpg?v=1776319571"
     },
     {
       "venue": "basement",
@@ -877,7 +880,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/nature-brain",
-      "desc": "Choose What You Pay Nature Brain 14-18 JUL, 6:30PM"
+      "desc": "Choose What You Pay Nature Brain 14-18 JUL, 6:30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/2000x1333_1_1_d95e494b-5d54-489c-990a-3b4e4d6c6a55.jpg?v=1776318933"
     },
     {
       "venue": "britomart",
@@ -893,7 +897,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
-      "desc": "Wishes to Hiwa-i-te-Rangi With Penny Howard Daily, 10:00AM - 4:00PM From 4 - 18 Jul Join us for the interactive pop-up installation of Hiwa-i-te-Rangi: The Wishing Star by Penny Ho"
+      "desc": "Wishes to Hiwa-i-te-Rangi With Penny Howard Daily, 10:00AM - 4:00PM From 4 - 18 Jul Join us for the interactive pop-up installation of Hiwa-i-te-Rangi: The Wishing Star by Penny Ho",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_04/Wishes_to_Hiwa-i-te-Rangi.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "lacigale",
@@ -938,7 +943,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://www.objectspace.org.nz/exhibitions/",
-      "desc": "18 Jul–6 Sep 2026"
+      "desc": "18 Jul–6 Sep 2026",
+      "img": "https://www.objectspace.org.nz/static/img/sharing-image.2515c14c.jpg"
     },
     {
       "venue": "ostend",
@@ -962,7 +968,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/eddie-izzard-performs-shakespeares-hamlet",
-      "desc": "15 - 18 July 2026 Find out more"
+      "desc": "15 - 18 July 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2025-12/ei_HAMLET_1386x520px_300dpi_Auckland%20%281%29.jpg?itok=i5RnY5rx"
     },
     {
       "venue": "qtheatre",
@@ -970,7 +977,8 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/eddie-izzard-performs-shakespeares-hamlet",
-      "desc": "15 - 18 July 2026 Theatre EDDIE IZZARD PERFORMS SHAKESPEARE'S HAMLET BOHM PRESENTS EDDIE IZZARD THE TRAGEDY OF HAMLET This production comes directly from her critically acclaimed s"
+      "desc": "15 - 18 July 2026 Theatre EDDIE IZZARD PERFORMS SHAKESPEARE'S HAMLET BOHM PRESENTS EDDIE IZZARD THE TRAGEDY OF HAMLET This production comes directly from her critically acclaimed s",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2025-12/ei_HAMLET_1386x520px_300dpi_Auckland%20%281%29.jpg?itok=i5RnY5rx"
     },
     {
       "venue": "teuru",
@@ -1044,7 +1052,8 @@ window.EVENTS = {
       "date": "2026-07-19",
       "kind": "opening",
       "url": "https://www.maritimemuseum.co.nz/events/the-stars-of-matariki-nga-whetu-o-matariki",
-      "desc": "events The Stars of Matariki - Ngā Whetu o Matariki 3–19 Jul"
+      "desc": "events The Stars of Matariki - Ngā Whetu o Matariki 3–19 Jul",
+      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/the-sandman-2.webp"
     },
     {
       "venue": "motat",
@@ -1068,7 +1077,8 @@ window.EVENTS = {
       "date": "2026-07-19",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/constellations",
-      "desc": "02-19 July 2026 Find out more"
+      "desc": "02-19 July 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2025-12/Q_HomepageHero_Constellations%20NEW.jpg?itok=jxhaSfUr"
     },
     {
       "venue": "qtheatre",
@@ -1076,7 +1086,8 @@ window.EVENTS = {
       "date": "2026-07-19",
       "kind": "gig",
       "url": "https://www.qtheatre.co.nz/shows/constellations",
-      "desc": "02-19 July 2026 Theatre Constellations Grounded in Aotearoa and alive with the spirit of renewal, this is a story that reminds us every moment contains infinite possibilities."
+      "desc": "02-19 July 2026 Theatre Constellations Grounded in Aotearoa and alive with the spirit of renewal, this is a story that reminds us every moment contains infinite possibilities.",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2025-12/Q_HomepageHero_Constellations%20NEW.jpg?itok=jxhaSfUr"
     },
     {
       "venue": "tuningfork",
@@ -1108,7 +1119,8 @@ window.EVENTS = {
       "date": "2026-07-21",
       "kind": "opening",
       "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3",
-      "desc": "Dawn Wishes to Hiwa-i-te-Rangi With Penny Howard Tue 21 Jul 2026 6:30AM - 8:30AM Dawn Wishes to Hiwa-i-te-Rangi is a special dawn ceremony marking the close of the Matariki Festiva"
+      "desc": "Dawn Wishes to Hiwa-i-te-Rangi With Penny Howard Tue 21 Jul 2026 6:30AM - 8:30AM Dawn Wishes to Hiwa-i-te-Rangi is a special dawn ceremony marking the close of the Matariki Festiva",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Matariki_Dawn_Ceremony_22_3.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "corban",
@@ -1128,7 +1140,8 @@ window.EVENTS = {
       "date": "2026-07-21",
       "kind": "gig",
       "url": "https://www.internationalartcentre.co.nz/auctions/4-koi5or",
-      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026"
+      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
+      "img": "https://assets.internationalartcentre.co.nz/images/og-image.jpg"
     },
     {
       "venue": "poetrylive",
@@ -1144,23 +1157,8 @@ window.EVENTS = {
       "date": "2026-07-22",
       "kind": "gig",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/live-reel-does-casino-royale",
-      "desc": "Live Reel Does Casino Royale 22 JUL, 8.30PM"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Imogen Taylor 22 July — 22 August 2026"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
+      "desc": "Live Reel Does Casino Royale 22 JUL, 8.30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/LIVE_REEL_Basement_685_x_435_px_10_1_5f54ec1b-de59-4755-895c-4bd8057c124a.png?v=1782864619"
     },
     {
       "venue": "tepou",
@@ -1168,7 +1166,8 @@ window.EVENTS = {
       "date": "2026-07-22",
       "kind": "opening",
       "url": "https://www.tepoutheatre.nz/home-made/",
-      "desc": "HOME MADE 22 Jul 25 Jul Te Pou Theatre Book now More info"
+      "desc": "HOME MADE 22 Jul 25 Jul Te Pou Theatre Book now More info",
+      "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/TePou_1080x1080_logos_notext.png"
     },
     {
       "venue": "parnellgallery",
@@ -1184,7 +1183,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/every-kind-weather",
-      "desc": "23 July - 2 August 2026 Find out more"
+      "desc": "23 July - 2 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Hero%20Slider%20-%20Bruce%20Mason.jpg?itok=G522A1tc"
     },
     {
       "venue": "qtheatre",
@@ -1192,7 +1192,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "workshop",
       "url": "https://www.qtheatre.co.nz/shows/end-golden-weather",
-      "desc": "23 July - 2 August 2026 Theatre THE END OF THE GOLDEN WEATHER Bruce Mason’s quintessential Kiwi classic brought to life by award-winning actor Stephen Lovatt and director Shane Bos"
+      "desc": "23 July - 2 August 2026 Theatre THE END OF THE GOLDEN WEATHER Bruce Mason’s quintessential Kiwi classic brought to life by award-winning actor Stephen Lovatt and director Shane Bos",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Hero%20Slider%20-%20Golden%20Weather.jpg?itok=YiTb2A9_"
     },
     {
       "venue": "qtheatre",
@@ -1200,7 +1201,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/every-kind-weather",
-      "desc": "23 July - 2 August 2026 Festival Every Kind of Weather One iconic playwright. Two plays. One unmissable event."
+      "desc": "23 July - 2 August 2026 Festival Every Kind of Weather One iconic playwright. Two plays. One unmissable event.",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Hero%20Slider%20-%20Bruce%20Mason.jpg?itok=G522A1tc"
     },
     {
       "venue": "qtheatre",
@@ -1208,7 +1210,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/not-christmas-guy-fawkes",
-      "desc": "23 July - 2 August 2026 Theatre NOT CHRISTMAS, BUT GUY FAWKES Comic disasters and bruised egos. Iconic playwright Bruce Mason takes aim at New Zealand’s tall poppy syndrome."
+      "desc": "23 July - 2 August 2026 Theatre NOT CHRISTMAS, BUT GUY FAWKES Comic disasters and bruised egos. Iconic playwright Bruce Mason takes aim at New Zealand’s tall poppy syndrome.",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Not%20Christmas%20-%20Hero%20Slider.jpg?itok=FY2KkITA"
     },
     {
       "venue": "sanderson",
@@ -1216,7 +1219,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.sanderson.co.nz/exhibitions/481-mothermother/overview/",
-      "desc": "MOTHERMOTHER 23 Jul - 23 Aug 2026 Sanderson, in partnership with mothermother, are delighted to present MOTHERMOTHER – An exhibition that investigates mother-centred frameworks and"
+      "desc": "MOTHERMOTHER 23 Jul - 23 Aug 2026 Sanderson, in partnership with mothermother, are delighted to present MOTHERMOTHER – An exhibition that investigates mother-centred frameworks and",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite1962/usr/images/exhibitions/main_image_override/481/sophie-bannan.jpeg"
     },
     {
       "venue": "whammy",
@@ -1231,7 +1235,8 @@ window.EVENTS = {
       "date": "2026-07-24",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/the-push-presents-mano-po",
-      "desc": "Mano Po - James Roque 23-24 JUL, 8PM"
+      "desc": "Mano Po - James Roque 23-24 JUL, 8PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Mano_Po_2000x_1330_417353de-d03b-47d9-a76d-b1a5b92c5a05.jpg?v=1782859425"
     },
     {
       "venue": "tuningfork",
@@ -1254,7 +1259,8 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/wooof",
-      "desc": "CHOOSE WHAT YOU PAY WOOOF ! 21-25 JUL, 6:30PM"
+      "desc": "CHOOSE WHAT YOU PAY WOOOF ! 21-25 JUL, 6:30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/cared_1_1e58e220-cda7-4392-8fd8-d5004d71234a.png?v=1776725682"
     },
     {
       "venue": "britomart",
@@ -1294,7 +1300,8 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "opening",
       "url": "https://pumphouse.co.nz/whats-on/show/the-stranger/",
-      "desc": "Shoreside Theatre Presents The Stranger A mid-winter psychological thriller by Agatha Christie 25 July-9 August 2026 Get tickets Details"
+      "desc": "Shoreside Theatre Presents The Stranger A mid-winter psychological thriller by Agatha Christie 25 July-9 August 2026 Get tickets Details",
+      "img": "https://media.pumphouse.nz/wp-content/uploads/2026/05/SHST299618-Shoreside-Theatre-Agatha-Christie-The-Stranger-Digital-1400px-x-460px_NO-TEXT.jpg"
     },
     {
       "venue": "qtheatre",
@@ -1302,7 +1309,8 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/sharp-teeth",
-      "desc": "21 - 25 July 2026 Find out more"
+      "desc": "21 - 25 July 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/NEW%20IMAGERY%20Sharp%20Teeth%20homepage%20slider.jpg?itok=_EAtsO-C"
     },
     {
       "venue": "qtheatre",
@@ -1310,7 +1318,8 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/sharp-teeth",
-      "desc": "21 - 25 July 2026 Dance Sharp Teeth Sharp Teeth is a surreal, high-energy dance theatre work exploring love’s bite—tender, brutal, and absurd. From the creators of Dynamotion, expe"
+      "desc": "21 - 25 July 2026 Dance Sharp Teeth Sharp Teeth is a surreal, high-energy dance theatre work exploring love’s bite—tender, brutal, and absurd. From the creators of Dynamotion, expe",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/NEW%20IMAGERY%20Sharp%20Teeth%20homepage%20slider.jpg?itok=_EAtsO-C"
     },
     {
       "venue": "tepou",
@@ -1318,7 +1327,8 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "opening",
       "url": "https://www.tepoutheatre.nz/how-to-boosted-and-budget/",
-      "desc": "How to Boosted and Budget 25 Jul 25 Jul More info"
+      "desc": "How to Boosted and Budget 25 Jul 25 Jul More info",
+      "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/1080-x-1080-95.jpg"
     },
     {
       "venue": "teuru",
@@ -1368,7 +1378,8 @@ window.EVENTS = {
       "date": "2026-07-28",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/single-handed",
-      "desc": "CHOOSE WHAT YOU PAY Single-Handed 28 JUL - 1 AUG"
+      "desc": "CHOOSE WHAT YOU PAY Single-Handed 28 JUL - 1 AUG",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Iticket_1600_X_800_ad0d3636-9337-45ef-8288-3e5070ec4f68.jpg?v=1783479648"
     },
     {
       "venue": "poetrylive",
@@ -1399,7 +1410,8 @@ window.EVENTS = {
       "date": "2026-07-30",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/ngaro-ertach",
-      "desc": "CHOOSE WHAT YOU PAY NGARO/ERTACH 30 JUL - 1 AUG, 8PM"
+      "desc": "CHOOSE WHAT YOU PAY NGARO/ERTACH 30 JUL - 1 AUG, 8PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/ngaro_ertach_1600_x_800_6_4988f6ae-bdfe-42eb-a216-538fe7cd07c1.jpg?v=1777330944"
     },
     {
       "venue": "basement",
@@ -1407,7 +1419,8 @@ window.EVENTS = {
       "date": "2026-07-30",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/femmes-and-thems",
-      "desc": "Choose What You Pay Femmes and Thems 30 JUL, 8.30PM"
+      "desc": "Choose What You Pay Femmes and Thems 30 JUL, 8.30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/F_T_2000_x_1333_px.png?v=1774410668"
     },
     {
       "venue": "qtheatre",
@@ -1415,7 +1428,8 @@ window.EVENTS = {
       "date": "2026-07-30",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/andrew-tindall-power-compound-creativity",
-      "desc": "30 July 2026 Find out more"
+      "desc": "30 July 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Andrew%20Tindall%20Public%20Homepage%20Hero%20Slider%20%20%281386%20x%20520%20px%29%20%281%29.jpg?itok=ZNJJlJsH"
     },
     {
       "venue": "qtheatre",
@@ -1423,7 +1437,8 @@ window.EVENTS = {
       "date": "2026-07-30",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/andrew-tindall-power-compound-creativity",
-      "desc": "30 July 2026 Event Andrew Tindall - Power of Compound Creativity Andrew Tindall, Chief Growth Officer at System1, brings a science-first approach to brand growth. A global thought "
+      "desc": "30 July 2026 Event Andrew Tindall - Power of Compound Creativity Andrew Tindall, Chief Growth Officer at System1, brings a science-first approach to brand growth. A global thought ",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Andrew%20Tindall%20Public%20Homepage%20Hero%20Slider%20%20%281386%20x%20520%20px%29%20%281%29.jpg?itok=ZNJJlJsH"
     },
     {
       "venue": "studioone",
@@ -1460,7 +1475,8 @@ window.EVENTS = {
       "date": "2026-07-31",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/asian-comedy-takeover",
-      "desc": "Asian Comedy Takeover 31 JUL, 8.30PM"
+      "desc": "Asian Comedy Takeover 31 JUL, 8.30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/ASIAN_COMEDY_TAKEOVER_1026_d62cbb5f-9a58-42fe-8962-18cc5b63b393.jpg?v=1779421865"
     },
     {
       "venue": "northart",
@@ -1478,7 +1494,8 @@ window.EVENTS = {
       "date": "2026-07-31",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/maori-presented-steven-taputoro",
-      "desc": "31 July 2026 Find out more"
+      "desc": "31 July 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/c414d46f-8f47-420b-9672-e90459cddb73.png.jpg?itok=JoliOsm5"
     },
     {
       "venue": "qtheatre",
@@ -1486,7 +1503,8 @@ window.EVENTS = {
       "date": "2026-07-31",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/maori-presented-steven-taputoro",
-      "desc": "31 July 2026 Theatre Māori Presented by Steven Taputoro Dubbed the Māori Magician, Steven Taputoro brings his highly anticipated show MĀORI! The Show will give you an experience th"
+      "desc": "31 July 2026 Theatre Māori Presented by Steven Taputoro Dubbed the Māori Magician, Steven Taputoro brings his highly anticipated show MĀORI! The Show will give you an experience th",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/c414d46f-8f47-420b-9672-e90459cddb73.png.jpg?itok=JoliOsm5"
     },
     {
       "venue": "tuningfork",
@@ -1517,7 +1535,8 @@ window.EVENTS = {
       "date": "2026-08-01",
       "kind": "gig",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/526-the-first-incision-i-saw-i-dreamed-no-john-pule/",
-      "desc": "the first incision I saw I dreamed no more John Pule 1 Aug - 5 Sep 2026 Onehunga John Pule’s upcoming exhibition the first incision I saw I dreamed no more presents a body of recen"
+      "desc": "the first incision I saw I dreamed no more John Pule 1 Aug - 5 Sep 2026 Onehunga John Pule’s upcoming exhibition the first incision I saw I dreamed no more presents a body of recen",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/526/apul557-25-image_crop.jpg"
     },
     {
       "venue": "lacigale",
@@ -1583,7 +1602,8 @@ window.EVENTS = {
       "date": "2026-08-02",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/introduction-to-glass-casting",
-      "desc": "Introduction to Glass Casting With Sofia Athineou Daily, 9:00AM - 5:00PM From 1 - 2 Aug Adults: 18+ * NEW DATES * Join artist Sofia Athineou for an exciting and intensive two-and-a"
+      "desc": "Introduction to Glass Casting With Sofia Athineou Daily, 9:00AM - 5:00PM From 1 - 2 Aug Adults: 18+ * NEW DATES * Join artist Sofia Athineou for an exciting and intensive two-and-a",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_02/Hellenic_Sofia_Athineou_03.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "lacigale",
@@ -1599,7 +1619,8 @@ window.EVENTS = {
       "date": "2026-08-04",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/screen-printing-on-fabric",
-      "desc": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ ALMOST FULLY BOOKED Join visual artist Romina Ortega in a 6-week screen"
+      "desc": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ ALMOST FULLY BOOKED Join visual artist Romina Ortega in a 6-week screen",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/ScreenPrint1.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "poetrylive",
@@ -1615,7 +1636,8 @@ window.EVENTS = {
       "date": "2026-08-05",
       "kind": "opening",
       "url": "https://ceac.org.nz/workshops/art-workshop/printmaking-for-kids",
-      "desc": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13 Get creative and a little bit inky in this 6-week afterschool printma"
+      "desc": "Printmaking for Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 5 Aug - 9 Sep Children: 8 - 13 Get creative and a little bit inky in this 6-week afterschool printma",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_6107.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "qtheatre",
@@ -1623,7 +1645,8 @@ window.EVENTS = {
       "date": "2026-08-06",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/silk-soul-featuring-jaedyn-randell-naia-makayla",
-      "desc": "6 August 2026 Find out more"
+      "desc": "6 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Homepage%20Hero%20Slider%20silk.jpg?itok=8Jx4crVN"
     },
     {
       "venue": "qtheatre",
@@ -1631,7 +1654,8 @@ window.EVENTS = {
       "date": "2026-08-06",
       "kind": "gig",
       "url": "https://www.qtheatre.co.nz/shows/silk-soul-featuring-jaedyn-randell-naia-makayla",
-      "desc": "6 August 2026 Music Silk & Soul featuring Jaedyn Randell, NAIA & Makayla An intimate evening of soul, storytelling and live music featuring Jaedyn Randell, NAIA and Makayla in a pr"
+      "desc": "6 August 2026 Music Silk & Soul featuring Jaedyn Randell, NAIA & Makayla An intimate evening of soul, storytelling and live music featuring Jaedyn Randell, NAIA and Makayla in a pr",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Homepage%20Hero%20Slider%20silk.jpg?itok=8Jx4crVN"
     },
     {
       "venue": "corban",
@@ -1639,7 +1663,8 @@ window.EVENTS = {
       "date": "2026-08-07",
       "kind": "opening",
       "url": "https://ceac.org.nz/workshops/art-workshop/introduction-to-flowering-chinoiserie-painting",
-      "desc": "Introduction to Flowering Chinoiserie Painting With Jolie Hutchings Weekly on Friday, 10:00AM - 12:30PM From 7 Aug - 11 Sep Adults: 18+ Come and learn the centuries-old art of Flow"
+      "desc": "Introduction to Flowering Chinoiserie Painting With Jolie Hutchings Weekly on Friday, 10:00AM - 12:30PM From 7 Aug - 11 Sep Adults: 18+ Come and learn the centuries-old art of Flow",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Peony_Blooms_NcfE8xS.png.1200x630_q80_crop-smart.png"
     },
     {
       "venue": "whammy",
@@ -1654,7 +1679,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "opening",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/on-purpose",
-      "desc": "CHOOSE WHAT YOU PAY On Purpose 4-8 AUG, 8PM"
+      "desc": "CHOOSE WHAT YOU PAY On Purpose 4-8 AUG, 8PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Untitled_design_4.png?v=1776378334"
     },
     {
       "venue": "basement",
@@ -1662,7 +1688,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "gig",
       "url": "https://basementtheatre.co.nz/blogs/whats-on/el-divan",
-      "desc": "CHOOSE WHAT YOU PAY El Diván: The Live Therapy Show 6-8 AUG, 6:30PM"
+      "desc": "CHOOSE WHAT YOU PAY El Diván: The Live Therapy Show 6-8 AUG, 6:30PM",
+      "img": "http://basementtheatre.co.nz/cdn/shop/articles/unpacking_2000_x_1333_px_1_cd2132c7-0adb-495b-b7ee-0815cadd76c4.jpg?v=1779834354"
     },
     {
       "venue": "britomart",
@@ -1702,7 +1729,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/cross-party-lines-live",
-      "desc": "08 August 2026 Find out more"
+      "desc": "08 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Q-Theatre_Hero-1386x520px-300dpi.jpg?itok=yWu2rYYR"
     },
     {
       "venue": "qtheatre",
@@ -1710,7 +1738,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/over-and-out",
-      "desc": "4 - 8 August 2026 Find out more"
+      "desc": "4 - 8 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Over%20and%20Out%20Q%20Theatre_Eventfinda%20Banner_1170x504px.jpg?itok=IT7x-LzO"
     },
     {
       "venue": "qtheatre",
@@ -1718,7 +1747,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/over-and-out",
-      "desc": "4 - 8 August 2026 Theatre Over and Out In this award-winning verbatim comedy show, Burling brings a real interview, a big character, and even bigger questions to the stage. Buckle "
+      "desc": "4 - 8 August 2026 Theatre Over and Out In this award-winning verbatim comedy show, Burling brings a real interview, a big character, and even bigger questions to the stage. Buckle ",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Over%20and%20Out%20Q%20Theatre_Eventfinda%20Banner_1170x504px.jpg?itok=IT7x-LzO"
     },
     {
       "venue": "qtheatre",
@@ -1726,7 +1756,8 @@ window.EVENTS = {
       "date": "2026-08-08",
       "kind": "gig",
       "url": "https://www.qtheatre.co.nz/shows/cross-party-lines-live",
-      "desc": "08 August 2026 Event Cross Party Lines: Live Phil Goff and Chris Finlayson co-host a discussion on the political landscape in NZ and around the world. This event will also feature "
+      "desc": "08 August 2026 Event Cross Party Lines: Live Phil Goff and Chris Finlayson co-host a discussion on the political landscape in NZ and around the world. This event will also feature ",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Q-Theatre_Hero-1386x520px-300dpi.jpg?itok=yWu2rYYR"
     },
     {
       "venue": "avondale",
@@ -1750,7 +1781,8 @@ window.EVENTS = {
       "date": "2026-08-09",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/geneva-am-presents-pikipiki-music-light-storytelling",
-      "desc": "09 August 2026 Music Geneva AM presents: PIKIPIKI: Music, Light & Storytelling An all-ages afternoon of music, light and storytelling. Geneva AM performs PIKIPIKI alongside string "
+      "desc": "09 August 2026 Music Geneva AM presents: PIKIPIKI: Music, Light & Storytelling An all-ages afternoon of music, light and storytelling. Geneva AM performs PIKIPIKI alongside string ",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/PIKIPIKI_Homepage%20Hero%20Slider%20-%201386x520.jpg?itok=JQdsGxuW"
     },
     {
       "venue": "poetrylive",
@@ -1766,7 +1798,8 @@ window.EVENTS = {
       "date": "2026-08-11",
       "kind": "opening",
       "url": "https://pumphouse.co.nz/whats-on/show/50-years-of-sir-roger-halls-plays/",
-      "desc": "Phoenix Theatre Presents 50 Years of Sir Roger Hall’s Plays A special celebration evening of NZ's most prolific playwright 11 August 2026 Get tickets Details"
+      "desc": "Phoenix Theatre Presents 50 Years of Sir Roger Hall’s Plays A special celebration evening of NZ's most prolific playwright 11 August 2026 Get tickets Details",
+      "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/Roger-Hall-Evening-Hero-Banner.jpg"
     },
     {
       "venue": "upstairs",
