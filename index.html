@@ -224,6 +224,57 @@
   footer{max-width:1120px; margin:14px auto 30px; font-size:11px; color:#8d887a; padding:0 10px;
     font-family:-apple-system,"PingFang SC",sans-serif; line-height:1.8}
 
+  /* ---------- 每周周报（纽约时报式头版） ---------- */
+  #gazette{position:fixed; inset:0; z-index:2000; background:rgba(35,33,28,.5);
+    display:none; overflow-y:auto; padding:26px 12px}
+  #gazette.open{display:block; animation:gzfade .35s ease-out}
+  @keyframes gzfade{from{opacity:0}to{opacity:1}}
+  .gz{max-width:980px; margin:0 auto; background:var(--paper); border:1.5px solid var(--ink);
+    box-shadow:0 20px 60px rgba(0,0,0,.55); padding:24px 30px 34px; position:relative;
+    background-image:repeating-linear-gradient(0deg, rgba(35,33,28,.018) 0 2px, transparent 2px 4px)}
+  .gzclose{position:absolute; top:12px; right:14px; width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--ink); background:#fff; font-size:20px; line-height:1; cursor:pointer; z-index:5}
+  .gzmast{text-align:center; border-bottom:3px double var(--ink); padding-bottom:10px}
+  .gzmast .over{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9.5px;
+    letter-spacing:.3em; text-transform:uppercase; color:#6b675e}
+  .gzmast h1{font-size:clamp(26px,5vw,46px); font-weight:700; letter-spacing:.02em; margin:4px 0 2px}
+  .gzear{display:flex; justify-content:space-between; gap:10px; font-family:-apple-system,"PingFang SC",sans-serif;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6b675e;
+    border-bottom:1px solid var(--ink); padding:7px 2px}
+  .gzlead{display:grid; grid-template-columns:1.9fr 1fr; gap:26px; padding:18px 0 16px;
+    border-bottom:1px solid var(--ink)}
+  .gzlead .kick{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px;
+    letter-spacing:.24em; text-transform:uppercase; color:#C0402B; margin-bottom:4px}
+  .gzlead h2{font-size:clamp(20px,3.4vw,33px); line-height:1.16; cursor:pointer}
+  .gzlead h2:hover{color:var(--c-gallery)}
+  .gzlead .by{font-family:-apple-system,"PingFang SC",sans-serif; font-size:11px; color:#6b675e; margin:7px 0 2px}
+  .gzlead .body{font-size:13.5px; line-height:1.68; margin-top:6px}
+  .gzlead .body::first-letter{font-size:300%; float:left; line-height:.85; padding:3px 7px 0 0; font-weight:700}
+  .gzov{border-left:1px solid var(--ink); padding-left:20px}
+  .gzov h3{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.24em;
+    text-transform:uppercase; border-bottom:2px solid var(--ink); padding-bottom:4px; margin-bottom:8px}
+  .gzcols{column-count:3; column-gap:26px; column-rule:1px solid #d8d0bd; padding-top:16px}
+  .gzsec{break-inside:avoid; margin-bottom:18px}
+  .gzsec h4{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.24em;
+    text-transform:uppercase; border-bottom:2px solid var(--ink); padding-bottom:4px; margin-bottom:6px;
+    display:flex; align-items:center; gap:6px}
+  .gzsec h4 i{width:8px; height:8px; border-radius:50%; display:inline-block}
+  .gzit{padding:8px 0; border-bottom:1px dotted #c9c2b0; cursor:pointer}
+  .gzit:last-child{border-bottom:0}
+  .gzit h5{font-size:14px; line-height:1.32; font-weight:700}
+  .gzit:hover h5{color:var(--c-gallery)}
+  .gzit .by{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10.5px; color:#6b675e; margin-top:3px}
+  .gzit .sm{font-size:12px; line-height:1.55; color:#4a463d; margin-top:3px}
+  .gzfoot{border-top:3px double var(--ink); margin-top:8px; padding-top:8px; text-align:center;
+    font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; letter-spacing:.14em; color:#8d887a}
+  @media(max-width:700px){
+    #gazette{padding:10px 6px}
+    .gz{padding:16px 14px 22px}
+    .gzlead{grid-template-columns:1fr; gap:14px}
+    .gzov{border-left:0; padding-left:0; border-top:1px solid var(--ink); padding-top:12px}
+    .gzcols{column-count:1}
+  }
+
   @media(max-width:700px){
     /* 弹性纵向布局：头部定高，地图占满 iframe 剩余全部高度（适配 Wix 任意嵌入高度） */
     html,body{height:100%}
@@ -282,6 +333,7 @@
       </div>
       <div class="chips" id="chips"></div>
     </div>
+    <button class="chip" id="gzbtn" aria-label="weekly gazette">📰 <span class="en">This Week</span><span class="zh">周报</span></button>
     <button class="chip" id="fsbtn" aria-label="fullscreen">⛶ <span class="en">Fullscreen</span><span class="zh">全屏</span></button>
     <div class="langwrap">
       <span>EN</span><div class="lsw" id="lsw" role="switch" aria-label="language"><i></i></div><span>中</span>
@@ -293,6 +345,14 @@
 <div class="mapwrap">
   <div id="map"></div>
   <aside id="panel"></aside>
+</div>
+
+<!-- 每周周报：报纸式开场页 -->
+<div id="gazette" role="dialog" aria-label="weekly gazette">
+  <div class="gz">
+    <button class="gzclose" aria-label="close">&times;</button>
+    <div id="gzbody"></div>
+  </div>
 </div>
 
 <footer>
@@ -1809,8 +1869,11 @@ function closePanel(){
   S.open = null;
 }
 
-/* 键盘：← → 切附近场馆，Esc 关闭 */
+/* 键盘：← → 切附近场馆，Esc 关闭（周报优先） */
 document.addEventListener("keydown", function(e){
+  if(e.key === "Escape" && document.getElementById("gazette").classList.contains("open")){
+    closeGazette(); return;
+  }
   if(!S.open) return;
   if(e.key === "ArrowRight"){ navTo(1); }
   else if(e.key === "ArrowLeft"){ navTo(-1); }
@@ -1911,6 +1974,8 @@ function refresh(){
            : (S.lang==="zh" ? onCats.length+" 类" : onCats.length+" cats");
   document.getElementById("fsum").textContent = segL + " · " + catL;
   if(S.open) openPanel(S.open);
+  var gz = document.getElementById("gazette");
+  if(gz && gz.classList.contains("open")) buildGazette();   /* 切语言时重排周报 */
 }
 
 /* 手机筛选菜单开合 */
@@ -1923,6 +1988,109 @@ function refresh(){
     }
   });
 })();
+
+/* ================= 每周周报（报纸式头版） ================= */
+var VNAME = {};
+VENUES.forEach(function(v){ VNAME[v.id] = {en:v.en, zh:v.zh}; });
+var GZ_MAJORS = ["aag","civic","qtheatre","teuru","museum","artspace","gowlangsford","basement",
+                 "townhall","aotea","powerstation","sparkarena","tepou","objectspace"];
+
+function gzWeekEvents(){
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.filter(function(e){
+    if(e.kind === "exhibition") return false;
+    var d = new Date(e.date + "T00:00:00");
+    var days = (d - today) / 86400000;
+    return days >= 0 && days < 7;
+  }).sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+}
+function gzOnView(){
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.filter(function(e){
+    if(e.kind !== "exhibition") return false;
+    var s = new Date(e.date+"T00:00:00"), t = new Date((e.end||e.date)+"T00:00:00");
+    return s <= today && today <= t;
+  }).sort(function(a,b){ return (a.end||a.date) < (b.end||b.date) ? -1 : 1; }).slice(0, 9);
+}
+function gzTitle(e){ return (S.lang==="zh" && e.zh) ? e.zh : e.title; }
+function gzVenueName(id){
+  var n = VNAME[id]; return n ? (S.lang==="zh" ? n.zh : n.en) : id;
+}
+
+function buildGazette(){
+  var zh = S.lang === "zh";
+  var evs = gzWeekEvents();
+  /* 头条评分：主场馆 + 有简介 + 开幕类优先 */
+  var lead = null, best = -1;
+  evs.forEach(function(e){
+    var sc = (GZ_MAJORS.indexOf(e.venue) >= 0 ? 4 : 0)
+           + ((zh ? e.descZh : e.desc) ? 2 : 0)
+           + (e.kind === "opening" ? 1 : 0) + (e.time ? 1 : 0);
+    if(sc > best){ best = sc; lead = e; }
+  });
+  var rest = evs.filter(function(e){ return e !== lead; });
+  var today = new Date();
+  var end = new Date(today.getTime() + 6*86400000);
+  var mE = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var dateline = zh
+    ? (today.getMonth()+1)+"月"+today.getDate()+"日 – "+(end.getMonth()+1)+"月"+end.getDate()+"日"
+    : today.getDate()+" "+mE[today.getMonth()]+" – "+end.getDate()+" "+mE[end.getMonth()]+" "+end.getFullYear();
+
+  var h = '<div class="gzmast">'+
+    '<div class="over">'+(zh?"每周文化排期 · 大奥克兰":"The weekly culture sheet · Greater Auckland")+'</div>'+
+    '<h1>'+(zh?"奥克兰文化周报":"THE AUCKLAND CULTURE GAZETTE")+'</h1></div>'+
+    '<div class="gzear"><span>'+dateline+'</span>'+
+    '<span>'+evs.length+(zh?" 场活动":" events")+' · '+(zh?"点击任意条目直达地图贴纸":"Click any item to peel its sticker")+'</span>'+
+    '<span>'+(zh?"免费发行":"Free edition")+'</span></div>';
+
+  if(lead){
+    var lv = gzVenueName(lead.venue), lc = CATS[VCAT[lead.venue]] || CATS.gallery;
+    h += '<div class="gzlead"><div>'+
+      '<div class="kick">'+(zh?lc.zh:lc.en)+' · '+fmtDate(lead.date)+(lead.time?" · "+lead.time:"")+'</div>'+
+      '<h2 data-venue="'+lead.venue+'">'+gzTitle(lead)+'</h2>'+
+      '<div class="by">'+lv+'</div>'+
+      ((zh?lead.descZh:lead.desc) ? '<div class="body">'+(zh?(lead.descZh||lead.desc):(lead.desc||lead.descZh))+'</div>' : '')+
+      '</div><div class="gzov"><h3>'+(zh?"本周在展":"On view this week")+'</h3>';
+    gzOnView().forEach(function(e){
+      h += '<div class="gzit" data-venue="'+e.venue+'"><h5>'+gzTitle(e)+'</h5>'+
+           '<div class="by">'+gzVenueName(e.venue)+' · '+(zh?"展至 ":"until ")+fmtDate(e.end||e.date)+'</div></div>';
+    });
+    h += '</div></div>';
+  }
+
+  /* 分类栏目 */
+  h += '<div class="gzcols">';
+  Object.keys(CATS).forEach(function(k){
+    var sec = rest.filter(function(e){ return VCAT[e.venue] === k; });
+    if(!sec.length) return;
+    h += '<div class="gzsec"><h4><i style="background:'+CATS[k].hex+'"></i>'+(zh?CATS[k].zh:CATS[k].en)+'</h4>';
+    sec.forEach(function(e){
+      h += '<div class="gzit" data-venue="'+e.venue+'"><h5>'+gzTitle(e)+'</h5>'+
+        '<div class="by">'+gzVenueName(e.venue)+' · '+fmtDate(e.date)+(e.time?" · "+e.time:"")+'</div>'+
+        ((zh?e.descZh:e.desc) ? '<div class="sm">'+((zh?(e.descZh||e.desc):(e.desc||e.descZh))).slice(0,90)+'</div>' : '')+
+        '</div>';
+    });
+    h += '</div>';
+  });
+  h += '</div><div class="gzfoot">'+(zh
+    ? "数据每周一自动更新 · 贴纸地图即本报地图版"
+    : "Updated every Monday · The sticker map is our maps desk")+'</div>';
+
+  document.getElementById("gzbody").innerHTML = h;
+  Array.prototype.forEach.call(document.querySelectorAll("#gzbody [data-venue]"), function(el){
+    el.addEventListener("click", function(){
+      closeGazette();
+      setTimeout(function(){ openVenue(el.getAttribute("data-venue"), false); }, 250);
+    });
+  });
+}
+function openGazette(){ buildGazette(); document.getElementById("gazette").classList.add("open"); }
+function closeGazette(){ document.getElementById("gazette").classList.remove("open"); }
+document.getElementById("gzbtn").addEventListener("click", openGazette);
+document.querySelector("#gazette .gzclose").addEventListener("click", closeGazette);
+document.getElementById("gazette").addEventListener("click", function(e){
+  if(e.target === this) closeGazette();
+});
 
 /* 页面加载即打开一张卡片：最近即将发生的第一个活动的场馆 */
 function soonestVenue(){
@@ -1940,8 +2108,8 @@ function soonestVenue(){
 VENUES.forEach(function(v){ VCAT[v.id] = v.cat; });
 
 applyLang("en"); refresh();   /* 默认英文 */
-var _sv = soonestVenue();
-if(_sv){ setTimeout(function(){ openVenue(_sv, false); }, 700); }
+/* 开场显示每周周报（报纸头版），取代自动打开场馆卡片 */
+setTimeout(openGazette, 450);
 </script>
 </body>
 </html>
