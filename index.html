@@ -175,7 +175,9 @@
   .stk.live:hover .curl{animation:none; transform:scale(1.55)}
 
   /* ---- ③ 纸质卡片：纸色、微旋转、胶带、落下贴上 ---- */
-  #panel{position:absolute; right:14px; top:14px; width:320px; max-height:calc(72vh - 28px); overflow-y:auto;
+  /* 电脑端卡片占地图窗口右侧 1/3（全屏同样按比例），纵向铺满 */
+  #panel{position:absolute; right:12px; top:12px; bottom:12px;
+    width:calc(33.333% - 24px); min-width:300px; max-height:none; overflow-y:auto;
     background:
       linear-gradient(rgba(255,212,0,.55), rgba(255,212,0,.35)) no-repeat calc(50% - 8px) -6px / 96px 24px,
       repeating-linear-gradient(0deg, rgba(35,33,28,.022) 0 2px, transparent 2px 4px),
@@ -341,7 +343,7 @@
     .mapwrap{flex:1 1 auto; min-height:240px; max-width:none; width:100%; margin:0}
     #map{height:100%; width:100%; min-height:0}
     /* 卡片变底部抽屉：胶带即把手，滑动切换附近场馆 */
-    #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; max-height:62%;
+    #panel{left:8px; right:8px; top:auto; bottom:8px; width:auto; min-width:0; max-height:62%;
       padding:22px 14px 12px}
     /* 手机端关闭钮：明显的白底圆形按钮（放卡片内侧，避免被滚动容器裁剪） */
     #panel .close{font-size:22px; top:8px; right:8px; width:40px; height:40px;
@@ -1827,6 +1829,18 @@ function nearIds(anchorId){
     .map(function(x){ return x.id; });
 }
 
+/* 卡片占右侧 1/3 时，把场馆平移到左侧可见区（2/3）的中心 */
+function focusVenue(v){
+  if(window.innerWidth <= 700){
+    map.panTo([v.lat, v.lng], {animate:true, duration:.4});
+    return;
+  }
+  var size = map.getSize();
+  var target = L.point(size.x / 3, size.y / 2);   /* 左侧 2/3 的中心位于 x = 宽/3 */
+  var p = map.latLngToContainerPoint([v.lat, v.lng]);
+  map.panBy(p.subtract(target), {animate:true, duration:.45});
+}
+
 /* 打开场馆：fromNav=true 表示从卡片"附近"导航过来（平移地图，保持导航列表） */
 function openVenue(id, fromNav){
   if(!fromNav){
@@ -1835,7 +1849,7 @@ function openVenue(id, fromNav){
   }
   if(S.open && S.open !== id) restoreSticker(S.open);
   var v = VENUES.filter(function(x){ return x.id === id; })[0];
-  if(fromNav && v) map.panTo([v.lat, v.lng], {animate:true, duration:.4});
+  if(v) focusVenue(v);   /* 关注点移到左侧 2/3 区域的视觉中心 */
   var m = markers[id];
   var el = m && m.getElement() && m.getElement().querySelector(".stk");
   /* 贴纸在堆里（聚类中不可见）→ 先让聚类放大/展开露出它，再重试 */
