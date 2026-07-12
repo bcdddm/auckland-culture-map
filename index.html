@@ -93,14 +93,12 @@
   .stk .ring{position:absolute; inset:3.5%; border:2px solid; border-radius:14%;
     transform:rotate(var(--rot,0deg)); pointer-events:none; opacity:.9}
   .stk.tear .ring{opacity:0; transition:opacity .25s}
-  .stk.off{filter:drop-shadow(2px 3px 2px rgba(20,20,20,.45))}
-  .stk.off .front{filter:grayscale(1) opacity(.68)}
+  /* 黑白档（两档制）：图案黑白且不透明度 100%，白色贴纸底 50% 透明 */
+  .stk.off{filter:drop-shadow(2px 3px 2px rgba(20,20,20,.4))}
+  .stk.off .front{filter:grayscale(1)}
+  .stk.off .paper{fill-opacity:.5}
   .stk.off .ring{opacity:.45; border-width:1.5px}
   .stk.off:hover{transform:scale(1.07)}
-  /* 完全没有最新内容（无活动且无在展）的贴纸：再暗一档 */
-  .stk.off.faint .front{filter:grayscale(1) opacity(.42)}
-  .stk.off.faint .ring{opacity:.25}
-  .stk.off.faint:hover .front{filter:grayscale(1) opacity(.75)}
   .stk.dim{opacity:.12; pointer-events:none}
   .stk.hidecat{display:none}   /* 类别开关关闭 → 整张贴纸隐藏 */
   /* ---- 贴纸堆（方案D）：堆顶=优先级最高的贴纸，下面露出错角的"底张" ---- */
@@ -1576,6 +1574,31 @@ function inWindow(dstr){
   var days = (d - today) / 86400000;
   return days >= 0 && days < (S.win === "week" ? 7 : 31);
 }
+/* 未来一个月内的带日期活动（横幅与计数点用） */
+function venueLive(id){
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.filter(function(e){
+    if(e.venue !== id || e.kind === "exhibition") return false;
+    var d = new Date(e.date + "T00:00:00");
+    var days = (d - today) / 86400000;
+    return days >= 0 && days < 31;
+  }).sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+}
+/* 彩色档判定：过去或未来一个月内有活动（含在展/撤展不满一月的展览） */
+function isLive(id){
+  if(venueLive(id).length) return true;
+  var today = new Date(); today.setHours(0,0,0,0);
+  return EV.some(function(e){
+    if(e.venue !== id) return false;
+    if(e.kind === "exhibition"){
+      var s = new Date(e.date + "T00:00:00");
+      var t = new Date((e.end || e.date) + "T00:00:00");
+      return s <= today && (today - t) / 86400000 < 31;
+    }
+    var days = (today - new Date(e.date + "T00:00:00")) / 86400000;
+    return days > 0 && days <= 31;
+  });
+}
 /* 带日期的活动（开幕/演出/工作坊…），不含长期展 */
 function venueEvents(id){
   return EV.filter(function(e){ return e.venue === id && e.kind !== "exhibition" && inWindow(e.date); })
@@ -1695,14 +1718,14 @@ function ribbonText(evs){
 }
 
 function stickerHTML(v){
-  var evs = venueEvents(v.id);
-  var live = evs.length > 0;
+  var evs = venueLive(v.id);      /* 横幅与计数：未来一个月 */
+  var live = isLive(v.id);        /* 彩色档：过去或未来一个月有活动 */
   /* 贴纸太小时（缩放 ≤12）隐藏底部横幅，只留计数点 */
   var _z = map.getZoom();
-  var showRibbon = live && _z >= 13;
+  var showRibbon = evs.length > 0 && _z >= 13;   /* 横幅只在有未来活动时显示 */
   /* 标签动态分级：小视角不显示（悬停有原生提示），中视角单行，大视角完整双行 */
   var _lmode = _z <= 12 ? "none" : (_z === 13 ? "one" : "full");
-  var cls = "stk " + (live ? "live" : ("off" + (venueShows(v.id).length ? "" : " faint")))
+  var cls = "stk " + (live ? "live" : "off")
           + (S.cats[v.cat] ? "" : " hidecat")
           + (S.open === v.id ? " gone" : "");
   /* 有活动且够大时贴纸更高：底部多一条黄色活动横幅 */
@@ -1750,7 +1773,7 @@ function stickerHTML(v){
    低缩放：近距贴纸叠成一堆（堆顶=有活动的），点击放大；
    z≥15 完全散开；无法再分离时插件自动扇形展开（spiderfy）。 */
 function venuePriority(id){
-  return venueEvents(id).length ? 2 : (venueShows(id).length ? 1 : 0);
+  return venueLive(id).length ? 2 : (isLive(id) ? 1 : 0);
 }
 function pileIcon(cluster){
   var ms = cluster.getAllChildMarkers();
@@ -1791,7 +1814,7 @@ var markers = {};
 function buildMarkers(){
   var sz = stickerSize();
   VENUES.forEach(function(v){
-    var live = venueEvents(v.id).length > 0;
+    var live = isLive(v.id);
     var s = live ? Math.round(sz * 1.15) : sz;    /* 有活动的贴纸大 15% */
     var icon = L.divIcon({className:"stkwrap", html:stickerHTML(v), iconSize:[s,s], iconAnchor:[s/2,s/2]});
     var m = markers[v.id];
