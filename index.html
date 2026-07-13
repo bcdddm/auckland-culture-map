@@ -32,8 +32,9 @@
   h1{font-size:clamp(22px,4.6vw,40px); font-weight:700; margin:14px 0 4px; line-height:1.15}
   .sub{font-size:12px; color:#6b675e; margin-bottom:14px}
   .sub b{color:var(--dblue)}
-  .gdate{display:inline-block; margin-left:10px; font-family:-apple-system,"PingFang SC",sans-serif;
+  .gdate{display:none; margin-left:6px; font-family:-apple-system,"PingFang SC",sans-serif;
     font-size:10.5px; color:#8d887a; border-left:2px solid var(--yellow); padding-left:8px}
+  .gdate.show{display:inline-block}
 
   /* ---------- controls ---------- */
   .controls{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0 16px;
@@ -379,6 +380,7 @@
     <div class="langwrap">
       <span>EN</span><div class="lsw" id="lsw" role="switch" aria-label="language"><i></i></div><span>中</span>
     </div>
+    <button class="chip" id="updbtn" aria-label="data updated"><span class="en">Updated?</span><span class="zh">更新时间</span></button>
     <span id="gendate" class="gdate"></span>
   </div>
 </header>
@@ -2266,6 +2268,17 @@ function buildGazette(){
 function openGazette(){ buildGazette(); document.getElementById("gazette").classList.add("open"); }
 function closeGazette(){ document.getElementById("gazette").classList.remove("open"); }
 document.getElementById("gzbtn").addEventListener("click", openGazette);
+
+/* “更新时间”按钮：点击显示/收起 events.js 的 generated 日期 */
+(function(){
+  var ub = document.getElementById("updbtn"), gd = document.getElementById("gendate");
+  ub.addEventListener("click", function(e){ e.stopPropagation(); gd.classList.toggle("show"); });
+  document.addEventListener("click", function(e){
+    if(gd.classList.contains("show") && !gd.contains(e.target) && !ub.contains(e.target)){
+      gd.classList.remove("show");
+    }
+  });
+})();
 document.querySelector("#gazette .gzclose").addEventListener("click", closeGazette);
 document.getElementById("gazette").addEventListener("click", function(e){
   if(e.target === this) closeGazette();
