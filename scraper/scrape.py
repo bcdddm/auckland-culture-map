@@ -504,6 +504,9 @@ def main():
         "// 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）\n"
         "window.EVENTS = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n",
         encoding="utf-8")
+    # 纯 JSON 副本：供外部软件/API 消费（https://bcdddm.github.io/auckland-culture-map/events.json）
+    (OUT.parent / "events.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"[done] {len(items)} events -> {OUT}")
 
 if __name__ == "__main__":
