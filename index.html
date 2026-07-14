@@ -47,6 +47,41 @@
     font-size:11px; cursor:pointer; display:inline-flex; align-items:center; gap:6px}
   .chip .sw{width:9px; height:9px; border-radius:50%; display:inline-block}
   .chip.on{border-color:var(--ink); background:var(--yellow)}
+  /* ===== 区域选择：顶部触发条（微光）+ 下滑弹出的方位块面板（西高·北上·中央·东右·南宽） =====
+     放顶侧（不占右侧卡片位）；z-index 高于周报(1600)/卡片(1000)，读报时也能选。 */
+  #regiontop{position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:1700;
+    display:flex; flex-direction:column; align-items:center; pointer-events:none}
+  #regiontop .rbar{pointer-events:auto}
+  .rbar{position:relative; overflow:hidden; cursor:pointer;
+    padding:3px 22px; border:1.5px solid var(--ink); border-top:0; border-radius:0 0 8px 8px;
+    background:rgba(247,244,236,.92); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink); box-shadow:0 2px 6px rgba(20,20,20,.25)}
+  .rbar::after{content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(100deg, transparent 30%, rgba(255,255,255,.32) 50%, transparent 70%);
+    transform:translateX(-120%); animation:rshimmer 4s ease-in-out infinite}
+  @keyframes rshimmer{0%{transform:translateX(-120%)} 55%,100%{transform:translateX(120%)}}
+  /* 收起：面板往上藏进 bar 后面；展开：下滑露出 */
+  #regionpanel{margin-top:4px; padding:5px; display:flex; flex-direction:column; gap:4px;
+    background:rgba(247,244,236,.9); backdrop-filter:blur(2px);
+    border:1.5px solid var(--ink); border-radius:5px; box-shadow:1px 3px 7px rgba(20,20,20,.3);
+    opacity:0; transform:translateY(-14px); max-height:0; overflow:hidden; pointer-events:none;
+    transition:opacity .25s ease, transform .35s cubic-bezier(.22,1,.32,1), max-height .35s ease}
+  #regiontop.open #regionpanel{opacity:1; transform:none; max-height:170px; pointer-events:auto}
+  #regionpanel .rgrid{display:grid; gap:3px;
+    grid-template-columns:37px 46px 37px; grid-template-rows:24px 24px 22px}
+  #regionpanel .rgb{border:1px solid rgba(35,33,28,.28); border-radius:3px; cursor:pointer;
+    font-size:9.5px; line-height:1.05; font-weight:600; letter-spacing:.02em; padding:1px;
+    display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden}
+  #regionpanel .rgb.rg-west{grid-column:1; grid-row:1 / span 2}
+  #regionpanel .rgb.rg-north{grid-column:2; grid-row:1}
+  #regionpanel .rgb.rg-central{grid-column:2; grid-row:2}
+  #regionpanel .rgb.rg-east{grid-column:3; grid-row:2}
+  #regionpanel .rgb.rg-south{grid-column:2 / span 2; grid-row:3}
+  #regionpanel .rgb.on{outline:2px solid var(--ink); outline-offset:-2px;
+    box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85)}
+  #regionpanel .rg-all{font-size:9px; padding:3px 4px; border-radius:3px; cursor:pointer;
+    background:#fff; color:#23211c; border:1px solid rgba(35,33,28,.3); text-align:center}
+  #regionpanel .rg-all.on{background:var(--ink); color:#f7f4ec; border-color:var(--ink)}
   /* 筛选菜单：桌面直接平铺（display:contents），手机折叠成点开的菜单 */
   #filterbtn{display:none}
   #filterbox{display:contents}
@@ -102,6 +137,9 @@
   .stk.off:hover{transform:scale(1.07)}
   .stk.dim{opacity:.12; pointer-events:none}
   .stk.hidecat{display:none}   /* 类别开关关闭 → 整张贴纸隐藏 */
+  /* 右上角区域圆点：白描边让它在纸面/计数徽章上都清晰 */
+  .stk svg circle.rgd, .stk svg .rgd circle{ stroke:#fff; stroke-width:1.1 }
+  .stk.off .rgd{ opacity:.55 }   /* 无活动的灰贴纸，区域点也稍隐 */
   /* ---- 贴纸堆（方案D）：堆顶=优先级最高的贴纸，下面露出错角的"底张" ---- */
   .pile{position:relative; width:100%; height:100%}
   .pile .sheet{position:absolute; inset:5%; background:#fff; border:1px solid #e2ddd0;
@@ -387,6 +425,11 @@
 
 <div class="mapwrap">
   <div id="map"></div>
+  <!-- 区域选择：顶部触发条（微光）+ 鼠标靠近顶端下滑弹出的方位块面板（同图纸）；读报时也可用 -->
+  <div id="regiontop">
+    <div class="rbar"><span class="en">Region ▾</span><span class="zh">区域 ▾</span></div>
+    <div id="regionpanel" aria-label="region selector"></div>
+  </div>
   <aside id="panel"></aside>
   <!-- 每周周报：铺在地图框内约80%面积的报纸，四周露出地图 -->
   <div id="gazette" role="dialog" aria-label="weekly gazette">
@@ -416,6 +459,19 @@ var CATS = {
   workshop: {hex:"#2E8B57", en:"Workshops",  zh:"手工作坊"},
   market:   {hex:"#E8A200", en:"Markets",    zh:"集市"}
 };
+
+/* ================= 区域（奥克兰传统五分法；配色按方位，见附图） =================
+   右上角小圆点 = 该区颜色。边缘场馆可属两区（VREGION 里存数组，圆点做半分）。 */
+var REGIONS = {
+  central: {hex:"#B07A6C", en:"Central", zh:"中区"},   /* 陶土红（原红）· 中心地峡 */
+  north:   {hex:"#8FA6AE", en:"North",   zh:"北区"},   /* 灰蓝（原浅蓝）· 北岸/Hibiscus/Rodney */
+  west:    {hex:"#A6AC85", en:"West",    zh:"西区"},   /* 鼠尾草绿（原绿）· Waitākere/西区 */
+  east:    {hex:"#C6A667", en:"East",    zh:"东区"},   /* 赭黄（原金黄）· 东区/激流岛 */
+  south:   {hex:"#4E4A43", en:"South",   zh:"南区"}    /* 暖炭黑（原黑）· Manukau/Franklin */
+};
+/* 配色：莫兰迪/古典油画的降饱和土色系，5 色同处一个灰调区间，彼此协调又可分辨。改这里即可全局生效。 */
+/* 区域顺序（选择器与图例用）：中 北 西 东 南 */
+var REGION_ORDER = ["central","north","west","east","south"];
 
 /* ================= 场馆（真实经纬度，approx） ================= */
 var VENUES = [
@@ -576,6 +632,49 @@ var VENUES = [
  {id:"stmatthews",  en:"St Matthew-in-the-City", zh:"圣马太教堂（音乐会）",  label:"St Matthew's",  cat:"music",    lat:-36.84850, lng:174.76050, r:-3, addr:"Cnr Hobson & Wellesley St"},
  {id:"holytrinity", en:"Holy Trinity Cathedral", zh:"圣三一大教堂（音乐会）", label:"Holy Trinity",  cat:"music",    lat:-36.85950, lng:174.78600, r:2,  addr:"Parnell"}
 ];
+
+/* ================= 场馆 → 区域（venue id → [region…]） =================
+   奥克兰传统五分法。中区=地峡；南区=Manukau 以南（Onehunga/Hillsborough 属地峡=中区）；
+   东区=Pakuranga/Howick/Glen Innes/激流岛；北区=北岸+Hibiscus+Rodney；西区=Waitākere。
+   数组含两项 = 边缘双覆盖（改这里即可，不用动 VENUES）。 */
+var VREGION = {
+  /* 边缘双覆盖 */
+  avondale:["west","central"],   teoro:["east","central"],   turua:["central","east"],   kumeuarts:["west","north"],
+  /* —— 中区 Central（地峡：CBD/K Rd/Ponsonby/Grey Lynn/Mt Eden/Newmarket/Parnell/Onehunga/Hillsborough） —— */
+  aag:["central"], gusfisher:["central"], artspace:["central"], michaellett:["central"], objectspace:["central"],
+  library:["central"], unity:["central"], timeout:["central"], poetrylive:["central"], townhall:["central"],
+  whammy:["central"], powerstation:["central"], studioone:["central"], britomart:["central"], lacigale:["central"],
+  pah:["central"], gowlangsford:["central"], starkwhite:["central"], tworooms:["central"], sanderson:["central"],
+  foenander:["central"], melanieroger:["central"], ivananthony:["central"], rmgallery:["central"], tautai:["central"],
+  stpaulst:["central"], window:["central"], coastalsigns:["central"], bergman:["central"], whitespace:["central"],
+  allpress:["central"], artis:["central"], intlart:["central"], parnellgallery:["central"], jonathangrant:["central"],
+  blackdoor:["central"], civic:["central"], aotea:["central"], qtheatre:["central"], basement:["central"],
+  asbwaterfront:["central"], academy:["central"], capitol:["central"], sparkarena:["central"], winecellar:["central"],
+  galatos:["central"], neckofthewoods:["central"], anthology:["central"], tuningfork:["central"], museum:["central"],
+  maritime:["central"], motat:["central"], trishclark:["central"], masterworks:["central"], timmelville:["central"],
+  webbs:["central"], artobject:["central"], womensbookshop:["central"], jasonbooks:["central"], openbook:["central"],
+  twng:["central"], elam:["central"], foxjensen:["central"], season:["central"], annamiles:["central"],
+  fhe:["central"], railwayst:["central"], suite:["central"], satellite2:["central"], artselect:["central"],
+  antoinettegodkin:["central"], dearreader:["central"], lamplight:["central"], anecdote:["central"], hardtofind:["central"],
+  booksonhigh:["central"], chapter:["central"], dorothybutler:["central"], onehungabooks:["central"], parallel:["central"],
+  dolphin:["central"], mothership:["central"], bigfan:["central"], stmatthews:["central"], holytrinity:["central"],
+  /* —— 北区 North（北岸 + Hibiscus Coast + Rodney） —— */
+  depot:["north"], northart:["north"], lakehouse:["north"], mairangi:["north"], estuary:["north"],
+  flagstaff:["north"], artbysea:["north"], pumphouse:["north"], helensville:["north"], vivian:["north"],
+  vic:["north"], bridgeway:["north"], brucemason:["north"], brickbay:["north"], sculptureum:["north"],
+  booklover:["north"], paradox:["north"], bookmarkdev:["north"], matakanabooks:["north"], nook:["north"],
+  michaelking:["north"], abacus:["north"], rosecentre:["north"], theatreworks:["north"], companytheatre:["north"],
+  centrestage:["north"],
+  /* —— 西区 West（Waitākere） —— */
+  teuru:["west"], corban:["west"], upstairs:["west"], mccahon:["west"], tetoiuku:["west"],
+  westcoastgallery:["west"], bluehills:["west"], titirangitheatre:["west"], tepou:["west"], playhouse:["west"],
+  /* —— 南区 South（Manukau + Franklin） —— */
+  mangere:["south"], freshgallery:["south"], nathan:["south"], otaramarket:["south"], papakura:["south"],
+  franklin:["south"], papakuratheatre:["south"], hawkins:["south"],
+  /* —— 东区 East（Pakuranga/Howick/Glen Innes/激流岛 Waiheke） —— */
+  tetuhi:["east"], uxbridge:["east"], waihekegallery:["east"], ostend:["east"], connellsbay:["east"],
+  poppieshowick:["east"], artworkstheatre:["east"], howicklittle:["east"], harlequin:["east"]
+};
 
 /* ================= 场馆官网（卡片地址行显示"官网 →"；不确定的暂缺） ================= */
 var SITES = {
@@ -1566,9 +1665,37 @@ var FACADES = {
 /* cats：多选开关，书店/文学类默认关闭，用户自行开启 */
 var S = {win:"week",
   cats:{gallery:true, literary:false, music:true, performance:true, workshop:true, market:true},
+  regions:[],   /* 多选：已选区域 key 列表；空 = 全区。区域选择只移动相机 + 过滤周报，不隐藏地图贴纸 */
   lang:"en", open:null};
 var VCAT = {};   /* venue id → 类别，初始化时填充 */
 var EV = (window.EVENTS && window.EVENTS.items) || [];
+
+/* ---- 区域：右上角圆点 + 相机移动 + 周报过滤（不隐藏地图贴纸） ---- */
+function venueRegions(id){ return VREGION[id] || []; }
+/* 贴纸是否可见：只看类别（区域选择不抹除其他区域） */
+function venueOn(v){ return S.cats[v.cat]; }
+function regionSelected(k){ return S.regions.indexOf(k) !== -1; }
+/* 事件/展览是否命中已选区域（空选 = 全部） */
+function eventInRegions(e){
+  if(!S.regions.length) return true;
+  var rs = venueRegions(e.venue);
+  for(var i=0;i<rs.length;i++){ if(S.regions.indexOf(rs[i]) !== -1) return true; }
+  return false;
+}
+/* 右上角很小的彩色圆点：单区=实心；双区=左右半分 */
+function regionDotSVG(v){
+  var rs = venueRegions(v.id);
+  if(!rs.length) return "";
+  var cx = 47, cy = -45, r = 3.8;
+  if(rs.length === 1){
+    return '<circle class="rgd" cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+(REGIONS[rs[0]]||{}).hex+'"/>';
+  }
+  var A = (REGIONS[rs[0]]||{}).hex, B = (REGIONS[rs[1]]||{}).hex, top = cy - r, bot = cy + r;
+  return '<g class="rgd">'+
+    '<path d="M'+cx+' '+top+' A'+r+' '+r+' 0 0 0 '+cx+' '+bot+' Z" fill="'+A+'"/>'+
+    '<path d="M'+cx+' '+top+' A'+r+' '+r+' 0 0 1 '+cx+' '+bot+' Z" fill="'+B+'"/>'+
+    '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none"/></g>';
+}
 
 function inWindow(dstr){
   var today = new Date(); today.setHours(0,0,0,0);
@@ -1728,7 +1855,7 @@ function stickerHTML(v){
   /* 标签动态分级：小视角不显示（悬停有原生提示），中视角单行，大视角完整双行 */
   var _lmode = _z <= 12 ? "none" : (_z === 13 ? "one" : "full");
   var cls = "stk " + (live ? "live" : "off")
-          + (S.cats[v.cat] ? "" : " hidecat")
+          + (venueOn(v) ? "" : " hidecat")
           + (S.open === v.id ? " gone" : "");
   /* 有活动且够大时贴纸更高：底部多一条黄色活动横幅 */
   var ph = showRibbon ? 108 : 94;               /* paper 高度 */
@@ -1767,7 +1894,8 @@ function stickerHTML(v){
         '<rect x="-72" y="-72" width="28" height="170" fill="#fff" opacity=".12" transform="rotate(24)"/>'+
         '<g class="sweep"><rect x="-15" y="-85" width="30" height="170" fill="url(#sw-'+v.id+')" transform="rotate(24)"/></g>'+
       '</g>'+
-      (live ? '<g class="dot" transform="translate(40,-38)"><circle r="10"/><text y="3.4">'+evs.length+'</text></g>' : '')+
+      (live ? '<g class="dot" transform="translate(34,-38)"><circle r="10"/><text y="3.4">'+evs.length+'</text></g>' : '')+
+      regionDotSVG(v)+   /* 右上角区域圆点（在计数徽章更靠角的位置） */
     '</g></svg></div><div class="roll"></div></div>';
 }
 
@@ -1830,7 +1958,7 @@ function buildMarkers(){
       m.setZIndexOffset(live ? 1000 : 0);   /* 有活动的压在上面 */
     }
     /* 有活动的场馆永远独立显示；只有安静场馆参与堆叠；关闭的类别不入图 */
-    var want = !S.cats[v.cat] ? "none" : (live ? "solo" : "pile");
+    var want = !venueOn(v) ? "none" : (live ? "solo" : "pile");
     if(m._mode !== want){
       if(m._mode === "solo") map.removeLayer(m);
       else if(m._mode === "pile") clusterGroup.removeLayer(m);
@@ -1857,7 +1985,7 @@ function nearIds(anchorId){
   var a = VENUES.filter(function(x){ return x.id === anchorId; })[0];
   var cos = Math.cos(a.lat * Math.PI / 180);
   return VENUES.filter(function(x){
-      return x.id !== anchorId && S.cats[x.cat];
+      return x.id !== anchorId && venueOn(x);
     })
     .map(function(x){
       var dy = x.lat - a.lat, dx = (x.lng - a.lng) * cos;
@@ -2092,6 +2220,81 @@ function renderChips(){
     });
   });
 }
+/* 区域选择面板（多选）。方位块布局同图纸：西=左高 / 北=上 / 中=中 / 东=右 / 南=下宽。
+   块用区域色填充；文字按亮度自动取深/浅色。点击=切换选中，并把地图中心移到该区（不隐藏其他区）。 */
+function textOn(hex){
+  var m = /^#?([0-9a-f]{6})$/i.exec(hex || ""); if(!m) return "#23211c";
+  var n = parseInt(m[1], 16), r = (n>>16)&255, g = (n>>8)&255, b = n&255;
+  var lum = (0.299*r + 0.587*g + 0.114*b);   /* 感知亮度 */
+  return lum > 150 ? "#23211c" : "#f7f4ec";
+}
+/* 某些区域内所有场馆的经纬度边界（用于把相机移过去） */
+function regionBounds(keys){
+  var pts = [];
+  VENUES.forEach(function(v){
+    if(venueRegions(v.id).some(function(r){ return keys.indexOf(r) !== -1; })) pts.push([v.lat, v.lng]);
+  });
+  return pts.length ? L.latLngBounds(pts) : null;
+}
+/* 点某区 → 把视角中心移到该区（保留大致缩放，至少放大到能看清） */
+function flyToRegion(k){
+  var b = regionBounds([k]); if(!b) return;
+  map.flyTo(b.getCenter(), Math.max(map.getZoom(), 12), {duration:.8});
+}
+function fitAllRegions(){
+  var b = regionBounds(REGION_ORDER);
+  if(b) map.flyToBounds(b, {padding:[30,30], duration:.8});
+}
+function gazetteIsOpen(){ return document.getElementById("gazette").classList.contains("open"); }
+function afterRegionChange(){
+  renderRegionPanel();
+  applyLang(S.lang);                     /* 重建按钮后重新套用语言显示（否则中英双显） */
+  if(gazetteIsOpen()) buildGazette();    /* 读报时实时按区域调整 */
+}
+function toggleRegion(k){
+  var i = S.regions.indexOf(k);
+  if(i === -1){ S.regions.push(k); flyToRegion(k); }   /* 选中 → 移中心到该区 */
+  else { S.regions.splice(i, 1); }                     /* 取消（不移动相机） */
+  afterRegionChange();
+}
+function clearRegions(){ S.regions = []; fitAllRegions(); afterRegionChange(); }
+function renderRegionPanel(){
+  var el = document.getElementById("regionpanel");
+  if(!el) return;
+  var grid = '';
+  REGION_ORDER.forEach(function(k){
+    var r = REGIONS[k], on = regionSelected(k);
+    grid += '<button class="rgb rg-'+k+(on?" on":"")+'" data-region="'+k+'" '+
+            'style="background:'+r.hex+';color:'+textOn(r.hex)+'" aria-pressed="'+on+'">'+
+            '<span class="en">'+r.en+'</span><span class="zh">'+r.zh+'</span></button>';
+  });
+  el.innerHTML =
+    '<div class="rgrid">'+grid+'</div>'+
+    '<button class="rg-all'+(S.regions.length?"":" on")+'" data-region="all">'+
+      '<span class="en">All areas</span><span class="zh">全区</span></button>';
+  Array.prototype.forEach.call(el.querySelectorAll("[data-region]"), function(b){
+    b.addEventListener("click", function(){
+      var k = b.getAttribute("data-region");
+      if(k === "all") clearRegions(); else toggleRegion(k);
+    });
+  });
+}
+/* 顶部触发：鼠标靠近地图顶端 → 面板下滑弹出（读报时也可用，故监听 .mapwrap 冒泡） */
+(function(){
+  var top = document.getElementById("regiontop");
+  var wrap = document.querySelector(".mapwrap");
+  if(!top || !wrap) return;
+  var hideT;
+  function open(){ clearTimeout(hideT); top.classList.add("open"); }
+  function closeSoon(){ clearTimeout(hideT); hideT = setTimeout(function(){ top.classList.remove("open"); }, 450); }
+  wrap.addEventListener("mousemove", function(e){
+    if(e.clientY - wrap.getBoundingClientRect().top < 72) open(); else closeSoon();
+  });
+  top.addEventListener("mouseenter", open);
+  top.addEventListener("mouseleave", closeSoon);
+  var bar = top.querySelector(".rbar");
+  if(bar) bar.addEventListener("click", function(){ top.classList.toggle("open"); });   /* 触屏：点 bar 展开 */
+})();
 document.getElementById("winseg").addEventListener("click", function(e){
   var b = e.target.closest("button"); if(!b) return;
   S.win = b.getAttribute("data-win");
@@ -2131,7 +2334,7 @@ document.getElementById("fsbtn").addEventListener("click", function(){
 map.on("resize", buildMarkers);   /* 进出全屏后贴纸尺寸重算 */
 
 function refresh(){
-  renderChips(); buildMarkers();
+  renderChips(); renderRegionPanel(); buildMarkers();
   applyLang(S.lang);
   /* 数据更新时间：读 events.js 的 generated 字段 */
   var g = (window.EVENTS && window.EVENTS.generated) || "—";
@@ -2171,6 +2374,7 @@ function gzWeekEvents(){
   var today = new Date(); today.setHours(0,0,0,0);
   return EV.filter(function(e){
     if(e.kind === "exhibition") return false;
+    if(!eventInRegions(e)) return false;            /* 读报时按已选区域过滤 */
     var d = new Date(e.date + "T00:00:00");
     var days = (d - today) / 86400000;
     return days >= 0 && days < 7;
@@ -2180,6 +2384,7 @@ function gzOnView(){
   var today = new Date(); today.setHours(0,0,0,0);
   return EV.filter(function(e){
     if(e.kind !== "exhibition") return false;
+    if(!eventInRegions(e)) return false;            /* 读报时按已选区域过滤 */
     var s = new Date(e.date+"T00:00:00"), t = new Date((e.end||e.date)+"T00:00:00");
     return s <= today && today <= t;
   }).sort(function(a,b){ return (a.end||a.date) < (b.end||b.date) ? -1 : 1; }).slice(0, 9);
@@ -2214,11 +2419,14 @@ function buildGazette(){
     ? (today.getMonth()+1)+"月"+today.getDate()+"日 – "+(end.getMonth()+1)+"月"+end.getDate()+"日"
     : today.getDate()+" "+mE[today.getMonth()]+" – "+end.getDate()+" "+mE[end.getMonth()]+" "+end.getFullYear();
 
+  var rtag = S.regions.length
+    ? ' · '+(zh?"区域：":"Areas: ")+S.regions.map(function(k){ return zh?REGIONS[k].zh:REGIONS[k].en; }).join(zh?"、":", ")
+    : '';
   var h = '<div class="gzmast">'+
     '<div class="over">'+(zh?"每周文化排期 · 大奥克兰":"The weekly culture sheet · Greater Auckland")+'</div>'+
     '<h1>'+(zh?"奥克兰文化周报":"THE AUCKLAND CULTURE GAZETTE")+'</h1></div>'+
     '<div class="gzear"><span>'+dateline+'</span>'+
-    '<span>'+evs.length+(zh?" 场活动":" events")+' · '+(zh?"点击任意条目直达地图贴纸":"Click any item to peel its sticker")+'</span>'+
+    '<span>'+evs.length+(zh?" 场活动":" events")+rtag+' · '+(zh?"点击任意条目直达地图贴纸":"Click any item to peel its sticker")+'</span>'+
     '<span>'+(zh?"免费发行":"Free edition")+'</span></div>';
 
   if(lead){
