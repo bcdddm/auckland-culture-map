@@ -321,6 +321,27 @@
   .gzear{display:flex; justify-content:space-between; gap:10px; font-family:-apple-system,"PingFang SC",sans-serif;
     font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6b675e;
     border-bottom:1px solid var(--ink); padding:7px 2px}
+  /* 报纸「地图版」：手绘 5 区示意地图 */
+  .gzmap{text-align:center; padding:12px 0 10px; border-bottom:1px solid var(--ink)}
+  .gzmaptitle{font-family:-apple-system,"PingFang SC",sans-serif; font-size:9.5px; letter-spacing:.18em;
+    text-transform:uppercase; color:#6b675e; margin-bottom:8px}
+  .gzmapsvg{width:100%; max-width:300px; height:auto; display:inline-block}
+  .gzmapsvg .gzr{cursor:pointer; transition:fill-opacity .15s ease}
+  .gzmapsvg .gzr:hover{fill-opacity:1}
+  .gzmaplbl{font-family:Georgia,"Songti SC",serif; font-size:10px; font-weight:600; fill:#23211c; letter-spacing:.03em}
+  .gzmapcap{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px; color:#6b675e; margin-top:7px; letter-spacing:.04em}
+  .gzmapcap b{cursor:pointer; text-decoration:underline; color:var(--ink)}
+  /* 下载日历按钮：周报「下载本期」+ 卡片「加入日历」 */
+  .gzdl{display:inline-flex; align-items:center; gap:6px; margin-top:10px; padding:6px 14px;
+    font-family:-apple-system,"PingFang SC",sans-serif; font-size:11px; font-weight:600; letter-spacing:.04em;
+    cursor:pointer; color:var(--ink); background:#fff; border:1.5px solid var(--ink); border-radius:3px}
+  .gzdl:hover{background:var(--yellow)}
+  .calbtn{display:inline-flex; align-items:center; gap:6px; margin:0 0 14px; padding:6px 13px;
+    font-family:-apple-system,"PingFang SC",sans-serif; font-size:12px; font-weight:600; cursor:pointer;
+    color:var(--ink); background:var(--yellow); border:1.5px solid var(--ink); border-radius:999px}
+  .calbtn:hover{background:#ffe680}
+  .calbtn .n{display:inline-flex; align-items:center; justify-content:center; min-width:16px; height:16px;
+    padding:0 4px; font-size:10px; background:var(--ink); color:var(--yellow); border-radius:999px}
   .gzlead{display:grid; grid-template-columns:1.9fr 1fr; gap:26px; padding:18px 0 16px;
     border-bottom:1px solid var(--ink)}
   .gzlead .kick{font-family:-apple-system,"PingFang SC",sans-serif; font-size:10px;
@@ -463,11 +484,12 @@ var CATS = {
 /* ================= 区域（奥克兰传统五分法；配色按方位，见附图） =================
    右上角小圆点 = 该区颜色。边缘场馆可属两区（VREGION 里存数组，圆点做半分）。 */
 var REGIONS = {
-  central: {hex:"#B07A6C", en:"Central", zh:"中区"},   /* 陶土红（原红）· 中心地峡 */
-  north:   {hex:"#8FA6AE", en:"North",   zh:"北区"},   /* 灰蓝（原浅蓝）· 北岸/Hibiscus/Rodney */
-  west:    {hex:"#A6AC85", en:"West",    zh:"西区"},   /* 鼠尾草绿（原绿）· Waitākere/西区 */
-  east:    {hex:"#C6A667", en:"East",    zh:"东区"},   /* 赭黄（原金黄）· 东区/激流岛 */
-  south:   {hex:"#4E4A43", en:"South",   zh:"南区"}    /* 暖炭黑（原黑）· Manukau/Franklin */
+  /* focus = 点该区后相机对准的视觉中心（不是场馆外接框中心）。lat/lng/zoom 一处可调。 */
+  central: {hex:"#B07A6C", en:"Central", zh:"中区", focus:{lat:-36.8490, lng:174.7630, zoom:14}},  /* 市中心 CBD */
+  north:   {hex:"#8FA6AE", en:"North",   zh:"北区", focus:{lat:-36.7880, lng:174.7730, zoom:13}},  /* Takapuna 附近 */
+  west:    {hex:"#A6AC85", en:"West",    zh:"西区", focus:{lat:-36.8950, lng:174.6450, zoom:12}},  /* Western Springs 以西 */
+  east:    {hex:"#C6A667", en:"East",    zh:"东区", focus:{lat:-36.8695, lng:174.8630, zoom:13}},  /* Point England 海边看出去 */
+  south:   {hex:"#4E4A43", en:"South",   zh:"南区", focus:{lat:-36.9530, lng:174.7900, zoom:13}}   /* Mangere Bridge 及往南 */
 };
 /* 配色：莫兰迪/古典油画的降饱和土色系，5 色同处一个灰调区间，彼此协调又可分辨。改这里即可全局生效。 */
 /* 区域顺序（选择器与图例用）：中 北 西 东 南 */
@@ -2068,6 +2090,7 @@ function openPanel(id){
   if(!v) return;
   S.open = id;
   var evs = venueEvents(id);
+  var cal = venueCalEvents(id);   /* 该馆未结束的活动/展览，可下载为日历 */
   var cat = CATS[v.cat];
   var h = '<button class="close" aria-label="close">&times;</button>'+
     cardStickerSVG(v)+
@@ -2075,7 +2098,9 @@ function openPanel(id){
     '<h2>'+(S.lang==="zh"?v.zh:v.en)+'</h2>'+
     '<div class="addr">'+v.addr+
       (SITES[v.id] ? ' &nbsp;·&nbsp; <a class="weblink" href="'+SITES[v.id]+'" target="_blank" rel="noopener">'+(S.lang==="zh"?"官网 →":"Website →")+'</a>' : '')+
-    '</div>';
+    '</div>'+
+    (cal.length ? '<button class="calbtn" id="calbtn">📅 '+(S.lang==="zh"?"加入日历":"Add to calendar")+
+        '<span class="n">'+cal.length+'</span></button>' : '');
   if(evs.length){
     evs.forEach(function(e){
       var priceMap = {free:{zh:"免费",en:"Free"}, paid:{zh:"收费",en:"Ticketed"}, koha:{zh:"随喜 Koha",en:"Koha"}};
@@ -2157,6 +2182,8 @@ function openPanel(id){
   p.classList.remove("open"); void p.offsetWidth;   /* 重触发落卡动画 */
   p.classList.add("open");
   p.querySelector(".close").addEventListener("click", closePanel);
+  var cb = p.querySelector("#calbtn");
+  if(cb) cb.addEventListener("click", function(){ downloadICS(cal, "auckland-culture-"+id+".ics"); });
   var bp = p.querySelector("#navprev"), bn = p.querySelector("#navnext");
   if(bp) bp.addEventListener("click", function(){ navTo(-1); });
   if(bn) bn.addEventListener("click", function(){ navTo(1); });
@@ -2238,8 +2265,10 @@ function regionBounds(keys){
 }
 /* 点某区 → 把视角中心移到该区（保留大致缩放，至少放大到能看清） */
 function flyToRegion(k){
-  var b = regionBounds([k]); if(!b) return;
-  map.flyTo(b.getCenter(), Math.max(map.getZoom(), 12), {duration:.8});
+  var f = (REGIONS[k] || {}).focus;
+  if(f){ map.flyTo([f.lat, f.lng], f.zoom, {duration:.8}); return; }
+  var b = regionBounds([k]);                       /* 兜底：无 focus 时退回外接框中心 */
+  if(b) map.flyTo(b.getCenter(), Math.max(map.getZoom(), 12), {duration:.8});
 }
 function fitAllRegions(){
   var b = regionBounds(REGION_ORDER);
@@ -2399,6 +2428,108 @@ function gzStk(id){
   return vv ? cardStickerSVG(vv, "none") : "";
 }
 
+/* 报纸「地图版」：手绘 5 区示意地图，方位同实地（北上·西左·中央·东右·南下），
+   点区块 = 切换选中并按区域筛选本期报纸（多选）。未选=全部满色；有选=选中满色、其余淡。 */
+var GZMAP_SHAPES = {
+  north:  "M58,30 Q70,14 96,12 Q150,6 208,13 Q238,17 246,34 Q250,50 236,60 Q210,66 150,62 Q96,66 74,60 Q56,50 58,30 Z",
+  west:   "M20,74 Q16,62 32,58 Q56,56 76,66 Q88,80 86,104 Q88,132 76,150 Q60,164 36,158 Q20,148 20,120 Q18,98 20,74 Z",
+  central:"M104,100 Q120,90 150,92 Q182,90 196,100 Q204,112 194,123 Q168,132 150,129 Q124,132 106,123 Q96,112 104,100 Z",
+  east:   "M214,74 Q226,62 250,64 Q274,68 282,88 Q286,110 274,133 Q262,148 240,143 Q219,137 214,116 Q210,94 214,74 Z",
+  south:  "M100,160 Q120,148 150,150 Q188,148 216,158 Q230,168 224,184 Q210,200 166,200 Q120,202 104,191 Q90,177 100,160 Z"
+};
+var GZMAP_LBL = { north:[152,40], west:[50,114], central:[150,120], east:[248,108], south:[162,178] };
+function gzMapSVG(){
+  var zh = S.lang === "zh", none = S.regions.length === 0;
+  var s = '<svg viewBox="0 0 300 214" class="gzmapsvg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Auckland districts">';
+  /* 两条海湾水波（Waitematā / Manukau），点缀报纸质感 */
+  s += '<path d="M106,78 q12,5 24,0 t24,0 t24,0 t24,0" fill="none" stroke="#8FA6AE" stroke-width="1" opacity=".45"/>'+
+       '<path d="M108,140 q12,5 24,0 t24,0 t22,0" fill="none" stroke="#8FA6AE" stroke-width="1" opacity=".45"/>';
+  REGION_ORDER.forEach(function(k){
+    var on = regionSelected(k), op = (none || on) ? 1 : .38, sw = on ? 2.4 : 1;
+    s += '<path class="gzr" d="'+GZMAP_SHAPES[k]+'" data-region="'+k+'" fill="'+REGIONS[k].hex+'" '+
+         'fill-opacity="'+op+'" stroke="#23211c" stroke-width="'+sw+'" stroke-linejoin="round"/>';
+  });
+  s += '<g pointer-events="none">';
+  s += '<text x="150" y="106" text-anchor="middle" font-size="12" fill="#23211c">★</text>';   /* CBD */
+  REGION_ORDER.forEach(function(k){
+    var p = GZMAP_LBL[k];
+    s += '<text x="'+p[0]+'" y="'+p[1]+'" text-anchor="middle" class="gzmaplbl">'+(zh?REGIONS[k].zh:REGIONS[k].en)+'</text>';
+  });
+  s += '</g></svg>';
+  return s;
+}
+function gzMapBlock(){
+  var zh = S.lang === "zh";
+  var cap = S.regions.length
+    ? (zh?"已选：":"Showing: ")+S.regions.map(function(k){ return zh?REGIONS[k].zh:REGIONS[k].en; }).join(zh?"、":", ")+
+      ' · <b data-clear="1">'+(zh?"看全部":"Show all")+'</b>'
+    : (zh?"当前：全部区域":"Currently: all districts");
+  return '<div class="gzmap">'+
+    '<div class="gzmaptitle">'+(zh?"地图版 · 点区域筛选本期（可多选）":"Maps Desk · tap a district to filter (multi-select)")+'</div>'+
+    gzMapSVG()+
+    '<div class="gzmapcap">'+cap+'</div>'+
+    '<button class="gzdl" data-gzdl="1">📅 '+(zh?"下载本期日历（.ics）":"Download this edition (.ics)")+'</button>'+
+    '</div>';
+}
+
+/* ===== 一键下载日历（.ics · 纯前端生成 · 可导入 Apple/Google/Outlook） ===== */
+function icsPad(n){ return (n<10?"0":"")+n; }
+function icsToday(){ var d=new Date(); return d.getFullYear()+"-"+icsPad(d.getMonth()+1)+"-"+icsPad(d.getDate()); }
+function icsEsc(s){ return String(s==null?"":s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n"); }
+function icsFold(line){ var o=""; while(line.length>72){ o+=line.slice(0,72)+"\r\n "; line=line.slice(72); } return o+line; }
+function icsDate(dstr){ return dstr.replace(/-/g,""); }
+function icsDatePlus1(dstr){ var d=new Date(dstr+"T00:00:00"); d.setDate(d.getDate()+1);
+  return d.getFullYear()+icsPad(d.getMonth()+1)+icsPad(d.getDate()); }
+function icsStamp(){ var d=new Date();
+  return d.getUTCFullYear()+icsPad(d.getUTCMonth()+1)+icsPad(d.getUTCDate())+"T"+
+         icsPad(d.getUTCHours())+icsPad(d.getUTCMinutes())+icsPad(d.getUTCSeconds())+"Z"; }
+/* 该场馆未结束（今天及以后）的活动/展览 */
+function venueCalEvents(id){
+  var t = icsToday();
+  return EV.filter(function(e){ return e.venue===id && (e.end||e.date) >= t; })
+           .sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+}
+function icsEvent(e, stamp){
+  var zh = S.lang==="zh";
+  var v = VENUES.filter(function(x){ return x.id===e.venue; })[0] || {};
+  var vname = zh ? (v.zh||e.venue) : (v.en||e.venue);
+  var title = (zh && e.zh) ? e.zh : e.title;
+  var out = ["BEGIN:VEVENT"];
+  out.push("UID:"+(e.venue+"-"+e.date+"-"+String(e.title||"").replace(/[^a-z0-9]/gi,"").slice(0,24)).toLowerCase()+"@akl-culture-map");
+  out.push("DTSTAMP:"+stamp);
+  var tm = (e.time||"").match(/(\d{1,2}):(\d{2})/);
+  if(tm && e.kind!=="exhibition"){
+    var st = new Date(e.date+"T"+icsPad(+tm[1])+":"+tm[2]+":00"), en = new Date(st.getTime()+2*3600*1000);
+    var f = function(d){ return d.getFullYear()+icsPad(d.getMonth()+1)+icsPad(d.getDate())+"T"+icsPad(d.getHours())+icsPad(d.getMinutes())+"00"; };
+    out.push("DTSTART:"+f(st)); out.push("DTEND:"+f(en));        /* 浮动本地时间 */
+  } else {
+    out.push("DTSTART;VALUE=DATE:"+icsDate(e.date));             /* 全天（展览=多天） */
+    out.push("DTEND;VALUE=DATE:"+((e.end && e.end>e.date) ? icsDatePlus1(e.end) : icsDatePlus1(e.date)));
+  }
+  out.push("SUMMARY:"+icsEsc(title+" · "+vname));
+  out.push("LOCATION:"+icsEsc(v.addr ? vname+", "+v.addr+", Auckland, New Zealand" : vname));
+  var desc = (zh ? (e.descZh||e.desc) : (e.desc||e.descZh)) || "";
+  if(e.url && e.url!=="#") desc += (desc?"\n\n":"")+e.url;
+  if(desc) out.push("DESCRIPTION:"+icsEsc(desc));
+  if(e.url && e.url!=="#") out.push("URL:"+icsEsc(e.url));
+  out.push("END:VEVENT");
+  return out.map(icsFold).join("\r\n");
+}
+function downloadICS(events, filename){
+  if(!events || !events.length) return;
+  var stamp = icsStamp();
+  var body = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Auckland Culture Map//NONSGML//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH","X-WR-CALNAME:Auckland Culture Map"];
+  events.forEach(function(e){ body.push(icsEvent(e, stamp)); });
+  body.push("END:VCALENDAR");
+  var blob = new Blob([body.join("\r\n")+"\r\n"], {type:"text/calendar;charset=utf-8"});
+  var url = URL.createObjectURL(blob), a = document.createElement("a");
+  a.href = url; a.download = filename; document.body.appendChild(a); a.click();
+  setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 800);
+}
+function downloadEdition(){   /* 周报「本期」：本周活动 + 在展（跟随当前区域筛选） */
+  downloadICS(gzWeekEvents().concat(gzOnView()), "auckland-culture-"+icsToday()+".ics");
+}
+
 function buildGazette(){
   var zh = S.lang === "zh";
   var evs = gzWeekEvents();
@@ -2428,6 +2559,8 @@ function buildGazette(){
     '<div class="gzear"><span>'+dateline+'</span>'+
     '<span>'+evs.length+(zh?" 场活动":" events")+rtag+' · '+(zh?"点击任意条目直达地图贴纸":"Click any item to peel its sticker")+'</span>'+
     '<span>'+(zh?"免费发行":"Free edition")+'</span></div>';
+
+  h += gzMapBlock();   /* 报纸地图版：点区域筛选本期 */
 
   if(lead){
     var lv = gzVenueName(lead.venue), lc = CATS[VCAT[lead.venue]] || CATS.gallery;
@@ -2472,6 +2605,14 @@ function buildGazette(){
       setTimeout(function(){ openVenue(el.getAttribute("data-venue"), false); }, 250);
     });
   });
+  /* 地图版：点区块筛选本期（toggleRegion 会重排周报并移动相机）；“看全部”清空 */
+  Array.prototype.forEach.call(document.querySelectorAll("#gzbody [data-region]"), function(el){
+    el.addEventListener("click", function(e){ e.stopPropagation(); toggleRegion(el.getAttribute("data-region")); });
+  });
+  var clr = document.querySelector("#gzbody [data-clear]");
+  if(clr) clr.addEventListener("click", function(e){ e.stopPropagation(); clearRegions(); });
+  var dl = document.querySelector("#gzbody [data-gzdl]");
+  if(dl) dl.addEventListener("click", function(e){ e.stopPropagation(); downloadEdition(); });
 }
 function openGazette(){ buildGazette(); document.getElementById("gazette").classList.add("open"); }
 function closeGazette(){ document.getElementById("gazette").classList.remove("open"); }
