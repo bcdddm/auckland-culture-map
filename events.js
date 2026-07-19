@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-19",
+  "generated": "2026-07-20",
   "sample": false,
   "items": [
     {
@@ -279,6 +279,18 @@ window.EVENTS = {
       "url": "https://lett-thomas.com/exhibition/peter-stichbury-4/"
     },
     {
+      "venue": "coastalsigns",
+      "title": "Timothy Webby: Someday My Prince Will Come",
+      "zh": "Timothy Webby 个展",
+      "kind": "exhibition",
+      "date": "2026-06-18",
+      "end": "2026-07-25",
+      "price": "free",
+      "url": "https://coastal-signs.net/shows/someday-my-prince-will-come",
+      "desc": "Timothy Webby solo exhibition, 18 June – 25 July 2026.",
+      "descZh": "Timothy Webby 个展《Someday My Prince Will Come》，至7月25日。"
+    },
+    {
       "venue": "corban",
       "title": "Whetūrangitia — Pou Kapua Creations / Waitākere College / Florence Ulutunu",
       "zh": "《Whetūrangitia》马塔里基青年艺术家群展（三展同期）",
@@ -458,6 +470,18 @@ window.EVENTS = {
       "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
+      "venue": "artbysea",
+      "title": "Christian Nicolson: The Kiss",
+      "zh": "Christian Nicolson《The Kiss》",
+      "kind": "exhibition",
+      "date": "2026-07-04",
+      "end": "2026-07-21",
+      "price": "free",
+      "url": "https://www.artbythesea.co.nz/category/christian-nicholson-the-kiss",
+      "desc": "NZ pop & landscape artist Christian Nicolson celebrates the romance of a kiss. 4 – 21 July 2026.",
+      "descZh": "NZ 波普/风景画家 Christian Nicolson 以“吻”为主题的新展，至7月21日。"
+    },
+    {
       "venue": "corban",
       "title": "Wishes to Hiwa-i-te-Rangi — Penny Howard (pop-up installation)",
       "zh": "《向许愿星 Hiwa-i-te-Rangi 许愿》互动装置",
@@ -469,6 +493,18 @@ window.EVENTS = {
       "desc": "Interactive Matariki wishing-star installation by Penny Howard in the Homestead reception.",
       "descZh": "Penny Howard 的马塔里基许愿星互动装置，位于 Homestead 前厅。",
       "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi"
+    },
+    {
+      "venue": "artis",
+      "title": "July — group exhibition",
+      "zh": "《July》七月群展",
+      "kind": "exhibition",
+      "date": "2026-07-07",
+      "end": "2026-07-31",
+      "price": "free",
+      "url": "https://www.artisgallery.co.nz/exhibitions/128-july/",
+      "desc": "Group exhibition at ARTIS Gallery, Parnell. 7 – 31 July 2026.",
+      "descZh": "ARTIS 画廊（Parnell）七月群展，7月7日至31日。"
     },
     {
       "venue": "gowlangsford",
@@ -1183,6 +1219,18 @@ window.EVENTS = {
       "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3"
     },
     {
+      "venue": "foenander",
+      "title": "Catfish",
+      "zh": "《Catfish》群展",
+      "kind": "exhibition",
+      "date": "2026-07-21",
+      "end": "2026-08-04",
+      "price": "free",
+      "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
+      "desc": "Cat Fish swims between worlds — cats and fish in art history's visual language. 21 Jul – 4 Aug 2026.",
+      "descZh": "以猫与鱼在艺术史中的意象为线索的群展，7月21日至8月4日。"
+    },
+    {
       "venue": "intlart",
       "title": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
       "date": "2026-07-21",
@@ -1710,6 +1758,18 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
       "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
+      "venue": "coastalsigns",
+      "title": "Group Show",
+      "zh": "冬末群展",
+      "kind": "exhibition",
+      "date": "2026-07-31",
+      "end": "2026-08-29",
+      "price": "free",
+      "url": "https://coastal-signs.net/",
+      "desc": "Group show at Coastal Signs, 31 July – 29 August 2026.",
+      "descZh": "Coastal Signs 群展，7月31日至8月29日。"
     },
     {
       "venue": "northart",
@@ -2355,6 +2415,18 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/cirque-alice",
       "desc": "Circus spectacular by the creators of Cirque du Soleil, 28 Aug – 6 Sep, The Civic.",
       "descZh": "太阳马戏创作团队打造的仙境马戏，8月28日—9月6日 Civic 大剧院"
+    },
+    {
+      "venue": "coastalsigns",
+      "title": "Shannon Te Ao",
+      "zh": "Shannon Te Ao 个展",
+      "kind": "exhibition",
+      "date": "2026-09-10",
+      "end": "2026-10-10",
+      "price": "free",
+      "url": "https://coastal-signs.net/",
+      "desc": "Shannon Te Ao solo exhibition, 10 September – 10 October 2026.",
+      "descZh": "Shannon Te Ao 个展，9月10日至10月10日。"
     }
   ]
 };

@@ -170,6 +170,14 @@ SOURCES = {
   "womensbookshop": [{"type":"html", "url":"https://womensbookshop.co.nz/pages/1311-NewsandEvents", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-07-13 配源：News and Events 页（静态）
   "michaelking": [{"type":"html", "url":"https://writerscentre.org.nz/workshops/", "selector":"article, .card, h3, li"},
                   {"type":"html", "url":"https://writerscentre.org.nz/events/", "selector":"article, .card, h3, li"}],  # ✅ 2026-07-13 配源：WordPress 静态
+  # ---- 2026-07-20 本周新配：dealer 画廊收尾 ----
+  "artis":       [{"type":"html", "url":"https://www.artisgallery.co.nz/exhibitions/current/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态（同 gowlangsford），日期在链接文本
+  "foenander":   [{"type":"html", "url":"https://foenandergalleries.co.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态
+  "coastalsigns":[{"type":"html", "url":"https://coastal-signs.net/", "selector":"p, figcaption, li"}],  # ✅ 2026-07-20 配源：Kirby 静态站，首页列当季展讯；命中率不稳 → manual_events 兜底
+  "flagstaff":   [{"type":"html", "url":"https://www.flagstaff.nz/pages/events", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Shopify 服务端渲染；官网 footer 地址 6 Victoria Rd（VENUES 已修正）
+  "artbysea":    [{"type":"html", "render":True, "url":"https://www.artbythesea.co.nz/", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Wix JS 站；画廊已迁址 Takapuna 162 Hurstmere Rd（VENUES 已修正）
+  "vivian":      [{"type":"html", "render":True, "url":"https://www.thevivian.co.nz/", "selector":"article, .card, p, h2, h3"}],  # ✅ 2026-07-20 配源：Matakana，冬季周五–周一开放（TripAdvisor 标 CLOSED 系误标，官网在营）
+  # "bergman" 不配源：奥克兰空间 2022–2026 运营已于 2026 年结束（Cook Islands News 报道），主画廊回迁拉罗汤加；地图上保留灰色
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
 # 之后可以加一个 artnow 适配器按场馆名反查，作为各画廊官网抓取的兜底。
@@ -194,7 +202,13 @@ def fetch_html(src):
             with sync_playwright() as pw:
                 b = pw.chromium.launch()
                 pg = b.new_page(user_agent=UA["User-Agent"])
-                pg.goto(src["url"], wait_until="networkidle", timeout=45000)
+                try:
+                    pg.goto(src["url"], wait_until="networkidle", timeout=30000)
+                except Exception:
+                    # 2026-07-20：networkidle 常被长轮询/统计脚本挡住而超时（上周 9 例）→
+                    # 退回 domcontentloaded + 固定等待 4s，仍拿渲染后的 DOM，而不是降级普通请求
+                    pg.goto(src["url"], wait_until="domcontentloaded", timeout=30000)
+                    pg.wait_for_timeout(4000)
                 html = pg.content()
                 b.close()
                 return html
