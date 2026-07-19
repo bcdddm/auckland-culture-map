@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-12",
+  "generated": "2026-07-19",
   "sample": false,
   "items": [
     {
@@ -193,7 +193,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "Collection shows through 2026: also Giacometti Without End; Ngā Taonga Tūturu; Threads of Time.",
       "descZh": "贯穿 2026 的馆藏陈列，同期《贾科梅蒂》《玛欧里肖像珍藏》《时间之线》。",
-      "url": "https://www.aucklandartgallery.com/visit/exhibitions"
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions",
+      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/exhibitions-auckland-art-gallery-search-thumbnail.jpg"
     },
     {
       "venue": "teuru",
@@ -203,7 +204,8 @@ window.EVENTS = {
       "date": "2026-05-16",
       "end": "2026-07-26",
       "price": "free",
-      "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele"
+      "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele",
+      "img": "http://teuru.org.nz/cdn/shop/files/Curves_1_copy.jpg?v=1782106158"
     },
     {
       "venue": "aag",
@@ -215,7 +217,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "20 major New Zealand works promised to the Gallery. Free entry.",
       "descZh": "收藏家 Greg Moyle 允诺捐赠的 20 件新西兰重要作品。免费。",
-      "url": "https://www.aucklandartgallery.com/"
+      "url": "https://www.aucklandartgallery.com/",
+      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/auckland-art-gallery-visit-home-thumbnail.jpg"
     },
     {
       "venue": "teuru",
@@ -226,7 +229,8 @@ window.EVENTS = {
       "end": "2026-08-09",
       "price": "free",
       "descZh": "树皮布星图与 Yolŋu 星河绘画的跨太平洋对话。",
-      "url": "https://teuru.org.nz/products/nikau-hindin-and-naminapu-maymuru-white-cosmologies"
+      "url": "https://teuru.org.nz/products/nikau-hindin-and-naminapu-maymuru-white-cosmologies",
+      "img": "http://teuru.org.nz/cdn/shop/files/DSF1709web.jpg?v=1782107950"
     },
     {
       "venue": "teuru",
@@ -236,7 +240,8 @@ window.EVENTS = {
       "date": "2026-05-31",
       "end": "2026-08-09",
       "price": "free",
-      "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you"
+      "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you",
+      "img": "http://teuru.org.nz/cdn/shop/files/AyeshGreenCoverWebsite.jpg?v=1782248513"
     },
     {
       "venue": "aag",
@@ -248,7 +253,8 @@ window.EVENTS = {
       "price": "paid",
       "desc": "Major ticketed survey of Chinese contemporary art. Adults $22. End date TBC.",
       "descZh": "中国当代艺术大展：雕塑、摄影、数字作品。成人 $22。展期以官网为准。",
-      "url": "https://www.aucklandartgallery.com/"
+      "url": "https://www.aucklandartgallery.com/",
+      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/auckland-art-gallery-visit-home-thumbnail.jpg"
     },
     {
       "venue": "upstairs",
@@ -292,7 +298,8 @@ window.EVENTS = {
       "date": "2026-06-20",
       "end": "2026-07-25",
       "price": "free",
-      "url": "https://starkwhite.co.nz/exhibition/martin-basher-vermillion-sands/"
+      "url": "https://starkwhite.co.nz/exhibition/martin-basher-vermillion-sands/",
+      "img": "https://starkwhite.co.nz/wp-content/uploads/2026/06/BASHER-WEB--scaled.jpg"
     },
     {
       "venue": "teuru",
@@ -302,7 +309,8 @@ window.EVENTS = {
       "date": "2026-06-20",
       "end": "2026-08-23",
       "price": "free",
-      "url": "https://teuru.org.nz/products/te-uru-x-whitecliffe-mahitahi"
+      "url": "https://teuru.org.nz/products/te-uru-x-whitecliffe-mahitahi",
+      "img": "http://teuru.org.nz/cdn/shop/files/Whotecliff.jpg?v=1781673991"
     },
     {
       "venue": "studioone",
@@ -314,7 +322,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "Still-life fine art prints honouring taonga as living carriers of mauri, memory and spirit; Gallery 1, created for Matariki.",
       "descZh": "以静物摄影版画礼赞 taonga（珍宝）承载的生命力与记忆，1 号展厅，为马塔里基而作。",
-      "url": "https://www.studioone.org.nz/exhibitions/"
+      "url": "https://www.studioone.org.nz/exhibitions/",
+      "img": "http://"
     },
     {
       "venue": "studioone",
@@ -326,7 +335,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "Three Toi Māori practitioners explore taniwha narratives through paint, print, raranga and sculpture; Gallery 2.",
       "descZh": "三位毛利艺术家以绘画、版画、编织与雕塑演绎 taniwha（水怪守护神）叙事，2 号展厅。",
-      "url": "https://www.studioone.org.nz/exhibitions/"
+      "url": "https://www.studioone.org.nz/exhibitions/",
+      "img": "http://"
     },
     {
       "venue": "studioone",
@@ -338,7 +348,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "Māori migration and its 21st-century continuation, curated by Giulia Pianelli; Gallery 3.",
       "descZh": "探讨毛利迁徙及其在 21 世纪的延续，Giulia Pianelli 策展，3 号展厅。",
-      "url": "https://www.studioone.org.nz/exhibitions/"
+      "url": "https://www.studioone.org.nz/exhibitions/",
+      "img": "http://"
     },
     {
       "venue": "studioone",
@@ -479,30 +490,6 @@ window.EVENTS = {
     },
     {
       "venue": "corban",
-      "title": "Matariki: Matariki Shorts Thu 9 Jul 2026",
-      "date": "2026-07-09",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/events/matariki/matariki-shorts",
-      "desc": "Matariki: Matariki Shorts Thu 9 Jul 2026"
-    },
-    {
-      "venue": "corban",
-      "title": "Matariki Shorts With Day One Hāpai te Haeata Thu 9 Jul 2026 6:30PM - 8:30PM In celebration of Matariki, Day On",
-      "date": "2026-07-09",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/events/matariki/matariki-shorts",
-      "desc": "Matariki Shorts With Day One Hāpai te Haeata Thu 9 Jul 2026 6:30PM - 8:30PM In celebration of Matariki, Day One Hāpai te Haeata Films with Corban Estate Arts Centre presents Matari"
-    },
-    {
-      "venue": "corban",
-      "title": "Bug Life With Leela Bhai Thu 9 Jul 2026 10:00AM - 2:30PM Children: 5 - 9 From observation to imagination, kids",
-      "date": "2026-07-09",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/workshops/art-workshop/bug-life",
-      "desc": "Bug Life With Leela Bhai Thu 9 Jul 2026 10:00AM - 2:30PM Children: 5 - 9 From observation to imagination, kids will explore the tiny world of ladybugs, Huhu beetles, centipedes, Wē"
-    },
-    {
-      "venue": "corban",
       "title": "Matariki Shorts — rangatahi Māori short films",
       "zh": "马塔里基短片之夜（毛利青年电影人）",
       "date": "2026-07-09",
@@ -522,14 +509,6 @@ window.EVENTS = {
       "desc": "Manawatia a Matariki - He reka te ngahau 9 July - 30 August 2026"
     },
     {
-      "venue": "corban",
-      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Fri 10 Jul 2026",
-      "date": "2026-07-10",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
-      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Fri 10 Jul 2026"
-    },
-    {
       "venue": "lakehouse",
       "title": "Becroft , workshop Kona Weaving Workshop – Hei Āpōpō Workshop Date: Saturday 4th July 10am-2pm . Learn More",
       "date": "2026-07-10",
@@ -544,13 +523,6 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://pumphouse.co.nz/whats-on/show/waiatatia-mo-matariki/",
       "desc": "The PumpHouse Theatre Presents Waiatatia Mo Matariki A magical Matariki singalong under the stars in our Outdoor Amphitheatre 10 July 2026 Get tickets Details"
-    },
-    {
-      "venue": "whammy",
-      "title": "Oscar Dowling Album Release Show -",
-      "date": "2026-07-10",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "basement",
@@ -666,33 +638,6 @@ window.EVENTS = {
       "desc": "Drive Thru Carlos Knight July 2026"
     },
     {
-      "venue": "aotea",
-      "title": "ARawhetū",
-      "date": "2026-07-13",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
-      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-13",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "Matariki: Wishes to Hiwa-i-te-Rangi Mon 13 Jul 2026",
-      "date": "2026-07-13",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi",
-      "desc": "Matariki: Wishes to Hiwa-i-te-Rangi Mon 13 Jul 2026",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_04/Wishes_to_Hiwa-i-te-Rangi.png.1200x630_q80_crop-smart.jpg"
-    },
-    {
       "venue": "unity",
       "title": "13 Jul - IIML Writers on Mondays: Haro Lee, Helen Rickerby, Airini Beautrais, Chris Tse Monday 13th July, 12:1",
       "date": "2026-07-13",
@@ -707,33 +652,6 @@ window.EVENTS = {
       "kind": "workshop",
       "url": "https://auctions.webbs.co.nz/auctions/catalog/id/951",
       "desc": "Current & Upcoming Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 July —Bidding Closing View Catalogue & Bid The Estate | Design Edit Online Auction | 9—14 July —B"
-    },
-    {
-      "venue": "aotea",
-      "title": "ARawhetū",
-      "date": "2026-07-14",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
-      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-14",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
-      "date": "2026-07-14",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
-      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
     },
     {
       "venue": "aotea",
@@ -757,48 +675,12 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
-      "venue": "corban",
-      "title": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create ",
-      "date": "2026-07-14",
-      "kind": "opening",
-      "url": "https://ceac.org.nz/workshops/art-workshop/flora-gel-prints",
-      "desc": "Flora Gel Prints With Sarah Cowie Tue 14 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 POSTPONED Learn to create exciting layered prints using gel printing plates with artist Sarah Co",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Sarah_Cowie_Gelli_Prints_Landscape.png.1200x630_q80_crop-smart.png"
-    },
-    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-14",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
-    },
-    {
-      "venue": "aotea",
-      "title": "ARawhetū",
-      "date": "2026-07-15",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
-      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-15",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
-      "date": "2026-07-15",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
-      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
     },
     {
       "venue": "brucemason",
@@ -808,15 +690,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
       "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school h",
-      "date": "2026-07-15",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/workshops/art-workshop/the-beginning-of-cinema",
-      "desc": "The Beginning of Cinema With Eloiza Montaña Wed 15 Jul 2026 10:00AM - 2:30PM Children: 6 - 12 In this school holiday workshop children will enter the magical world of cinema! Worki",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_9398.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "whammy",
@@ -826,33 +699,6 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
-      "venue": "aotea",
-      "title": "ARawhetū",
-      "date": "2026-07-16",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
-      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-16",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
-      "date": "2026-07-16",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
-      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
-    },
-    {
       "venue": "brucemason",
       "title": "Dog Man: The Musical",
       "date": "2026-07-16",
@@ -860,15 +706,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
       "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST ",
-      "date": "2026-07-16",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/workshops/art-workshop/painted-and-stitched-in-flight",
-      "desc": "Painted and Stitched in Flight With Alexandra Murphy Thu 16 Jul 2026 10:00AM - 2:30PM Children: 9 - 15 ALMOST FULLY BOOKED Join visual artist Alexandra Murphy for a fun, painting a",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/f496f1e9d1a090636b1d14c044eabee1_2.JPEG.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "unity",
@@ -893,24 +730,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/arawhetu",
       "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-17",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "H.R. The Musical: The Edinburgh Fringe Fundraiser Season",
-      "date": "2026-07-17",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
-      "desc": "Experience H.R. The Musical at the Herald Theatre! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hr-the-musical-1133w-x-628h.jpg"
     },
     {
       "venue": "brucemason",
@@ -1240,24 +1059,6 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
-      "venue": "aotea",
-      "title": "ARawhetū",
-      "date": "2026-07-19",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/arawhetu",
-      "desc": "Experience ARawhetū, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/arawhetu-webtile-1133x628px.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Are Atoms Alive?",
-      "date": "2026-07-19",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
-      "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -1274,29 +1075,13 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "maritime",
-      "title": "events The Stars of Matariki - Ngā Whetu o Matariki 3–19 Jul",
+      "venue": "melanieroger",
+      "title": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
       "date": "2026-07-19",
       "kind": "opening",
-      "url": "https://www.maritimemuseum.co.nz/events/the-stars-of-matariki-nga-whetu-o-matariki",
-      "desc": "events The Stars of Matariki - Ngā Whetu o Matariki 3–19 Jul",
-      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/the-sandman-2.webp"
-    },
-    {
-      "venue": "motat",
-      "title": "Event Family Currently on Matariki ki MOTAT 04 - 19 July 2026 View more",
-      "date": "2026-07-19",
-      "kind": "opening",
-      "url": "https://www.motat.nz/events/manawatia-a-matariki-2026/",
-      "desc": "Event Family Currently on Matariki ki MOTAT 04 - 19 July 2026 View more"
-    },
-    {
-      "venue": "motat",
-      "title": "Event Family LIVE Day: Weather Science 19 Jul 2026 | 10:00AM - 4:00PM View more",
-      "date": "2026-07-19",
-      "kind": "gig",
-      "url": "https://www.motat.nz/events/live-day-weather-science-2026/",
-      "desc": "Event Family LIVE Day: Weather Science 19 Jul 2026 | 10:00AM - 4:00PM View more"
+      "url": "https://melanierogergallery.com/exhibitions/tuhononga",
+      "desc": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
+      "img": "http://melanierogergallery.com/media/cache/b7/57/b757d12a2d1b1a177c13faaaabdd7271.jpg"
     },
     {
       "venue": "qtheatre",
@@ -1317,14 +1102,6 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2025-12/Q_HomepageHero_Constellations%20NEW.jpg?itok=jxhaSfUr"
     },
     {
-      "venue": "tuningfork",
-      "title": "Sounds Fun for Kids with Suzy Cato and Kath Bee 19 JUL 2026",
-      "date": "2026-07-19",
-      "kind": "opening",
-      "url": "https://www.tuningfork.co.nz/all-events/sounds-fun-for-kids-with-suzy-cato-and-kath-bee-tickets-ae1684840",
-      "desc": "Sounds Fun for Kids with Suzy Cato and Kath Bee 19 JUL 2026"
-    },
-    {
       "venue": "unity",
       "title": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unit",
       "date": "2026-07-19",
@@ -1333,13 +1110,21 @@ window.EVENTS = {
       "desc": "19 Jul - Wellington Sunday Sessions: Happy Moments by Len Lye (Ed. Roger Horrocks) Sunday 19th July, 5pm. Unity Books Wellington. 57 Willis Street. All welcome! EVENT DETAILS"
     },
     {
+      "venue": "window",
+      "title": "Drive Thru Carlos Knight July 2026",
+      "date": "2026-07-19",
+      "kind": "opening",
+      "url": "https://windowgallery.co.nz/exhibitions/drive-thru",
+      "desc": "Drive Thru Carlos Knight July 2026"
+    },
+    {
       "venue": "aotea",
       "title": "Are Atoms Alive?",
       "date": "2026-07-20",
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "brucemason",
@@ -1365,7 +1150,16 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "corban",
+      "title": "Matariki: Dawn Wishes to Hiwa-i-te-Rangi Tue 21 Jul 2026",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3",
+      "desc": "Matariki: Dawn Wishes to Hiwa-i-te-Rangi Tue 21 Jul 2026",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/Matariki_Dawn_Ceremony_22_3.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "corban",
@@ -1394,7 +1188,17 @@ window.EVENTS = {
       "date": "2026-07-21",
       "kind": "gig",
       "url": "https://www.internationalartcentre.co.nz/auctions/4-koi5or",
-      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026"
+      "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
+      "img": "https://assets.internationalartcentre.co.nz/images/og-image.jpg"
+    },
+    {
+      "venue": "objectspace",
+      "title": "21 Jul–9 Aug 2026",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://www.objectspace.org.nz/exhibitions/",
+      "desc": "21 Jul–9 Aug 2026",
+      "img": "https://www.objectspace.org.nz/static/img/sharing-image.2515c14c.jpg"
     },
     {
       "venue": "poetrylive",
@@ -1402,7 +1206,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-21",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "aotea",
@@ -1411,32 +1216,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "Live Reel Does Casino Royale 22 JUL, 8.30PM",
-      "date": "2026-07-22",
-      "kind": "gig",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/live-reel-does-casino-royale",
-      "desc": "Live Reel Does Casino Royale 22 JUL, 8.30PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/LIVE_REEL_Basement_685_x_435_px_10_1_5f54ec1b-de59-4755-895c-4bd8057c124a.png?v=1782864619"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Imogen Taylor 22 July — 22 August 2026"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Upcoming Exhibition Imogen Taylor 22 July — 22 August 2026"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "tepou",
@@ -1448,13 +1228,38 @@ window.EVENTS = {
       "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/TePou_1080x1080_logos_notext.png"
     },
     {
+      "venue": "unity",
+      "title": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books We",
+      "date": "2026-07-22",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/lunchtime-author-talk-gareth-shute",
+      "desc": "22 Jul - Wellington Lunchtime Author Talk: Gareth Shute In-store, Wednesday 22nd July, 12:30pm, Unity Books Wellington, 57 Willis St. All welcome, chairs available. EVENT DETAILS"
+    },
+    {
+      "venue": "webbs",
+      "title": "Current & Upcoming Fine Wines & Whiskies Online Auction | 17—22 July —Bidding Open View Catalogue & Bid Art On",
+      "date": "2026-07-22",
+      "kind": "workshop",
+      "url": "https://webbsbn.acemlna.com/lt.php?x=41xtmrUFUqPUT55qA3P3VeRu~3QjvNDyke0vYHXIUFWbE58t__xFUBVzAH7TvN_fx2YxYXXMMnOh65KKy.xMV.R02u3U-N_f0DYx",
+      "desc": "Current & Upcoming Fine Wines & Whiskies Online Auction | 17—22 July —Bidding Open View Catalogue & Bid Art Online Online Auction | 17—22 July —Bidding Open View Catalogue & Bid Zo"
+    },
+    {
       "venue": "aotea",
       "title": "Are Atoms Alive?",
       "date": "2026-07-23",
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Winter Season",
+      "date": "2026-07-23",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
+      "desc": "Experience Winter Season by the Royal New Zealand Ballet live in the Aotea Centre. Visit aucklandlive.co.nz for more information on tickets and times. ",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/rnzb26-winter-season-1133x628.jpg"
     },
     {
       "venue": "aotea",
@@ -1474,7 +1279,8 @@ window.EVENTS = {
       "date": "2026-07-23",
       "kind": "opening",
       "url": "https://www.parnellgallery.co.nz/exhibitions/gareth-barlow-2026/",
-      "desc": "Share the Air Gareth Barlow Preview: Thursday 23 July, 5:30-7pm Exhibition: 23 July - 6 August 2026"
+      "desc": "Share the Air Gareth Barlow Preview: Thursday 23 July, 5:30-7pm Exhibition: 23 July - 6 August 2026",
+      "img": "https://www.parnellgallery.co.nz/app/uploads/2022/02/og-social.png"
     },
     {
       "venue": "qtheatre",
@@ -1522,6 +1328,30 @@ window.EVENTS = {
       "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite1962/usr/images/exhibitions/main_image_override/481/sophie-bannan.jpeg"
     },
     {
+      "venue": "stpaulst",
+      "title": "Upcoming Melter of Limbs | Emerita Baik and Georgie Hill Date 23 Jul — 04 Sep 2026 Location Gallery 1",
+      "date": "2026-07-23",
+      "kind": "opening",
+      "url": "https://stpaulst.aut.ac.nz/exhibitions/melter_of_limbs",
+      "desc": "Upcoming Melter of Limbs | Emerita Baik and Georgie Hill Date 23 Jul — 04 Sep 2026 Location Gallery 1"
+    },
+    {
+      "venue": "stpaulst",
+      "title": "Upcoming 23 Jul — 04 Sep 2026 Melter of Limbs | Emerita Baik and Georgie Hill Read more",
+      "date": "2026-07-23",
+      "kind": "opening",
+      "url": "https://stpaulst.aut.ac.nz/exhibitions/melter_of_limbs",
+      "desc": "Upcoming 23 Jul — 04 Sep 2026 Melter of Limbs | Emerita Baik and Georgie Hill Read more"
+    },
+    {
+      "venue": "twng",
+      "title": "Upcoming 23 Jul — 04 Sep 2026 Melter of Limbs | Emerita Baik and Georgie Hill Read more",
+      "date": "2026-07-23",
+      "kind": "opening",
+      "url": "https://ngutukaka.nz/exhibitions/melter_of_limbs",
+      "desc": "Upcoming 23 Jul — 04 Sep 2026 Melter of Limbs | Emerita Baik and Georgie Hill Read more"
+    },
+    {
       "venue": "whammy",
       "title": "Mortal Sin NZ Tour -",
       "date": "2026-07-23",
@@ -1535,16 +1365,16 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
-      "venue": "basement",
-      "title": "Mano Po - James Roque 23-24 JUL, 8PM",
+      "venue": "aotea",
+      "title": "Winter Season",
       "date": "2026-07-24",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/the-push-presents-mano-po",
-      "desc": "Mano Po - James Roque 23-24 JUL, 8PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Mano_Po_2000x_1330_417353de-d03b-47d9-a76d-b1a5b92c5a05.jpg?v=1782859425"
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
+      "desc": "Experience Winter Season by the Royal New Zealand Ballet live in the Aotea Centre. Visit aucklandlive.co.nz for more information on tickets and times. ",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/rnzb26-winter-season-1133x628.jpg"
     },
     {
       "venue": "tuningfork",
@@ -1568,16 +1398,16 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY WOOOF ! 21-25 JUL, 6:30PM",
+      "venue": "aotea",
+      "title": "Winter Season",
       "date": "2026-07-25",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/wooof",
-      "desc": "CHOOSE WHAT YOU PAY WOOOF ! 21-25 JUL, 6:30PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/cared_1_1e58e220-cda7-4392-8fd8-d5004d71234a.png?v=1776725682"
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
+      "desc": "Experience Winter Season by the Royal New Zealand Ballet live in the Aotea Centre. Visit aucklandlive.co.nz for more information on tickets and times. ",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/rnzb26-winter-season-1133x628.jpg"
     },
     {
       "venue": "britomart",
@@ -1594,6 +1424,14 @@ window.EVENTS = {
       "date": "2026-07-25",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "motat",
+      "title": "Event Adult Children 10yrs+ Letterpress printing workshop Saturday 25 July, 10:30am - 3:00pm View more",
+      "date": "2026-07-25",
+      "kind": "workshop",
+      "url": "https://www.motat.nz/events/letterpress-printing-workshop/",
+      "desc": "Event Adult Children 10yrs+ Letterpress printing workshop Saturday 25 July, 10:30am - 3:00pm View more"
     },
     {
       "venue": "ostend",
@@ -1648,6 +1486,15 @@ window.EVENTS = {
       "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/1080-x-1080-95.jpg"
     },
     {
+      "venue": "tepou",
+      "title": "Musical Theatre Workshop 25 Jul 25 Jul More info",
+      "date": "2026-07-25",
+      "kind": "workshop",
+      "url": "https://www.tepoutheatre.nz/musical-theatre-workshop/",
+      "desc": "Musical Theatre Workshop 25 Jul 25 Jul More info",
+      "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/1080-x-1080-95.jpg"
+    },
+    {
       "venue": "teuru",
       "title": "Herehere: a Panel Discussion",
       "zh": "Herehere 座谈会",
@@ -1680,7 +1527,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "avondale",
@@ -1705,7 +1552,15 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
+    },
+    {
+      "venue": "unity",
+      "title": "27 Jul - IIML Writers on Mondays: Ingrid Horrocks & Lawrence Patchett in convo with Anthony Lapwood Monday 27t",
+      "date": "2026-07-27",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/iiml-writers-on-mondays-haro-lee-helen-rickerby-airini-beautrais-chris-tse",
+      "desc": "27 Jul - IIML Writers on Mondays: Ingrid Horrocks & Lawrence Patchett in convo with Anthony Lapwood Monday 27th July, 12:15-1:15pm, Te Papa Tongarewa EVENT DETAILS"
     },
     {
       "venue": "aotea",
@@ -1714,7 +1569,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "asbwaterfront",
@@ -1738,21 +1593,13 @@ window.EVENTS = {
       "descZh": "莎士比亚经典，ATC 2026 剧季大戏，7月28日—8月22日在 ASB 海滨剧院上演"
     },
     {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY Single-Handed 28 JUL - 1 AUG",
-      "date": "2026-07-28",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/single-handed",
-      "desc": "CHOOSE WHAT YOU PAY Single-Handed 28 JUL - 1 AUG",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Iticket_1600_X_800_ad0d3636-9337-45ef-8288-3e5070ec4f68.jpg?v=1783479648"
-    },
-    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-28",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "aotea",
@@ -1761,7 +1608,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "civic",
@@ -1797,25 +1644,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY NGARO/ERTACH 30 JUL - 1 AUG, 8PM",
-      "date": "2026-07-30",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/ngaro-ertach",
-      "desc": "CHOOSE WHAT YOU PAY NGARO/ERTACH 30 JUL - 1 AUG, 8PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/ngaro_ertach_1600_x_800_6_4988f6ae-bdfe-42eb-a216-538fe7cd07c1.jpg?v=1777330944"
-    },
-    {
-      "venue": "basement",
-      "title": "Choose What You Pay Femmes and Thems 30 JUL, 8.30PM",
-      "date": "2026-07-30",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/femmes-and-thems",
-      "desc": "Choose What You Pay Femmes and Thems 30 JUL, 8.30PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/F_T_2000_x_1333_px.png?v=1774410668"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "qtheatre",
@@ -1871,7 +1700,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "aotea",
@@ -1881,15 +1710,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
       "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "Asian Comedy Takeover 31 JUL, 8.30PM",
-      "date": "2026-07-31",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/asian-comedy-takeover",
-      "desc": "Asian Comedy Takeover 31 JUL, 8.30PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/ASIAN_COMEDY_TAKEOVER_1026_d62cbb5f-9a58-42fe-8962-18cc5b63b393.jpg?v=1779421865"
     },
     {
       "venue": "northart",
@@ -1928,6 +1748,14 @@ window.EVENTS = {
       "desc": "Fancy New Band 31 JUL 2026"
     },
     {
+      "venue": "unity",
+      "title": "31 Jul - Wellington Lunchtime Author Conversation: Noelle McCarthy & Sue Orr 12:30pm, Friday 31st July. In-sto",
+      "date": "2026-07-31",
+      "kind": "reading",
+      "url": "https://unitybooks.co.nz/news-and-events/lunchtime-author-conversation-noelle-mccarthy-and-sue-orr",
+      "desc": "31 Jul - Wellington Lunchtime Author Conversation: Noelle McCarthy & Sue Orr 12:30pm, Friday 31st July. In-store at Unity Books Wellington, 57 Willis St, Te Aro. All welcome, seats"
+    },
+    {
       "venue": "whammy",
       "title": "Dropper: Live At Whammy Bar -",
       "date": "2026-07-31",
@@ -1950,7 +1778,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "aotea",
@@ -1968,6 +1796,15 @@ window.EVENTS = {
       "date": "2026-08-01",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "corban",
+      "title": "Workshop: Introduction to Glass Casting Sat 1 Aug 2026",
+      "date": "2026-08-01",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/introduction-to-glass-casting",
+      "desc": "Workshop: Introduction to Glass Casting Sat 1 Aug 2026",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_02/Hellenic_Sofia_Athineou_03.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "gowlangsford",
@@ -2035,7 +1872,7 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.aucklandlive.co.nz/show/are-atoms-alive",
       "desc": "Experience Are Atoms Alive?, as part of our Matariki celebrations, at Aotea Square through to Myers Park! Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628.jpg"
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/are-atoms-alive-webtile-1133x628px.jpg"
     },
     {
       "venue": "aotea",
@@ -2082,11 +1919,11 @@ window.EVENTS = {
     },
     {
       "venue": "corban",
-      "title": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ A",
+      "title": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ F",
       "date": "2026-08-04",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/screen-printing-on-fabric",
-      "desc": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ ALMOST FULLY BOOKED Join visual artist Romina Ortega in a 6-week screen",
+      "desc": "Screen Printing on Fabric With Romina Ortega Weekly on Tuesday, 6:30 - 9:00PM From 4 Aug - 8 Sep Adults: 18+ FULLY BOOKED Join visual artist Romina Ortega in a 6-week screen printi",
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/ScreenPrint1.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
@@ -2095,7 +1932,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-04",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "townhall",
@@ -2132,6 +1970,15 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/defending-the-caveman",
       "desc": "Celebrate Defending the Caveman at the Herald Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
+    },
+    {
+      "venue": "brucemason",
+      "title": "ODYSSEY",
+      "date": "2026-08-06",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/rangitoto-college-odyssey",
+      "desc": "Experience Odyssey, presented by the Rangitoto College Dance Department, at the Bruce Mason Centre! Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/odyssey-al-heroimage-1133x628.jpg"
     },
     {
       "venue": "qtheatre",
@@ -2186,30 +2033,21 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/caveman-1133-x-628px.jpg"
     },
     {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY On Purpose 4-8 AUG, 8PM",
-      "date": "2026-08-08",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/on-purpose",
-      "desc": "CHOOSE WHAT YOU PAY On Purpose 4-8 AUG, 8PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/Untitled_design_4.png?v=1776378334"
-    },
-    {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY El Diván: The Live Therapy Show 6-8 AUG, 6:30PM",
-      "date": "2026-08-08",
-      "kind": "gig",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/el-divan",
-      "desc": "CHOOSE WHAT YOU PAY El Diván: The Live Therapy Show 6-8 AUG, 6:30PM",
-      "img": "http://basementtheatre.co.nz/cdn/shop/articles/unpacking_2000_x_1333_px_1_cd2132c7-0adb-495b-b7ee-0815cadd76c4.jpg?v=1779834354"
-    },
-    {
       "venue": "britomart",
       "title": "Britomart Saturday Markets",
       "zh": "Britomart 周六集市",
       "date": "2026-08-08",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "corban",
+      "title": "Leather Bound Journal With Michelle Zhao Sat 8 Aug 2026 10:00AM - 2:00PM Adults: 18+ Back by popular demand! C",
+      "date": "2026-08-08",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/leather-bound-journal-3",
+      "desc": "Leather Bound Journal With Michelle Zhao Sat 8 Aug 2026 10:00AM - 2:00PM Adults: 18+ Back by popular demand! Create your own beautiful leather-bound journal to keep or gift, in thi",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_4322.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "lacigale",
@@ -2320,7 +2158,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-11",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "pumphouse",
@@ -2332,13 +2171,41 @@ window.EVENTS = {
       "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/Roger-Hall-Evening-Hero-Banner.jpg"
     },
     {
-      "venue": "melanieroger",
-      "title": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
+      "venue": "gowlangsford",
+      "title": "Aiko Robinson 12 Aug - 12 Sep 2026 Auckland City Intimate, erotic and exquisitely detailed, Gow Langsford is d",
       "date": "2026-08-12",
       "kind": "opening",
-      "url": "https://melanierogergallery.com/exhibitions/new-work-24",
-      "desc": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
-      "img": "http://melanierogergallery.com/media/cache/d8/20/d820cc188e768ba5c8e43cd47e330669.jpg"
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/530-aiko-robinson/",
+      "desc": "Aiko Robinson 12 Aug - 12 Sep 2026 Auckland City Intimate, erotic and exquisitely detailed, Gow Langsford is delighted to present Aiko Robinson’s latest body of work. Over the past",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/530/robinson_2026_tbc_565x775mm_arsn034-26_detail.jpg"
+    },
+    {
+      "venue": "pumphouse",
+      "title": "Northcote Intermediate Presents High School Musical JR Get ready to break free and sing your heart out with th",
+      "date": "2026-08-13",
+      "kind": "opening",
+      "url": "https://pumphouse.co.nz/whats-on/show/high-school-musical-jr/",
+      "desc": "Northcote Intermediate Presents High School Musical JR Get ready to break free and sing your heart out with the coolest kids in school! 12-13 August 2026 Get tickets Details",
+      "price": "free",
+      "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/NIS-High-School-Musical-Banner-2.png"
+    },
+    {
+      "venue": "townhall",
+      "title": "Sheku Plays Elgar",
+      "date": "2026-08-13",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/aklphil26-sheku-plays-elgar",
+      "desc": "Experience Sheku Plays Elgar with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/sheku-plays-elgar-1133x628-auckland-live.jpg"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm ",
+      "date": "2026-08-14",
+      "kind": "opening",
+      "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters",
+      "desc": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are warmly invi",
+      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a4c958f57cad2413c2ebdc5/1783403939361/Chloe+Marsters++%26+Sylvia+Marsters.jpg?format=1500w"
     },
     {
       "venue": "upstairs",
@@ -2351,6 +2218,119 @@ window.EVENTS = {
       "desc": "Opening Saturday 15 August 5–6:30pm; on show 14–30 August 2026.",
       "descZh": "双人展，8 月 15 日（周六）17:00–18:30 开幕，展期 8 月 14 日至 30 日。",
       "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters"
+    },
+    {
+      "venue": "whammy",
+      "title": "Ben Chavasse 'Teething' Single Release Show With Evie Bamford -",
+      "date": "2026-08-14",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "britomart",
+      "title": "Britomart Saturday Markets",
+      "zh": "Britomart 周六集市",
+      "date": "2026-08-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sat)",
+      "zh": "La Cigale 法式集市（周六）",
+      "date": "2026-08-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "ostend",
+      "title": "Ostend Market (Waiheke)",
+      "zh": "Ostend 集市（激流岛，周六）",
+      "date": "2026-08-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "otaramarket",
+      "title": "Ōtara Flea Market",
+      "zh": "Ōtara 周六集市",
+      "date": "2026-08-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "qtheatre",
+      "title": "15 August 2026 Dance TELEKINETIK TELEKINETIK is a powerful contemporary production exploring memory, loss, ide",
+      "date": "2026-08-15",
+      "kind": "opening",
+      "url": "https://www.qtheatre.co.nz/shows/telekinetik",
+      "desc": "15 August 2026 Dance TELEKINETIK TELEKINETIK is a powerful contemporary production exploring memory, loss, identity and human connection—where thoughts collide, memories erase, and",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Homepage_Hero_Slider%20%282%29.jpg?itok=1WZNdy7d"
+    },
+    {
+      "venue": "avondale",
+      "title": "Avondale Sunday Markets",
+      "zh": "Avondale 周日集市",
+      "date": "2026-08-16",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sun)",
+      "zh": "La Cigale 法式集市（周日）",
+      "date": "2026-08-16",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "motat",
+      "title": "Event Family LIVE Day: Trams 16 Aug 2026 | 10:00AM - 4:00PM View more",
+      "date": "2026-08-16",
+      "kind": "gig",
+      "url": "https://www.motat.nz/events/live-day-trams-2026/",
+      "desc": "Event Family LIVE Day: Trams 16 Aug 2026 | 10:00AM - 4:00PM View more"
+    },
+    {
+      "venue": "tuningfork",
+      "title": "Kirsty Webeck 16 AUG 2026",
+      "date": "2026-08-16",
+      "kind": "opening",
+      "url": "https://www.tuningfork.co.nz/all-events/kirsty-webeck-tickets-ae1658432",
+      "desc": "Kirsty Webeck 16 AUG 2026"
+    },
+    {
+      "venue": "poetrylive",
+      "title": "Poetry Live — open mic (every Tuesday)",
+      "zh": "Poetry Live 开放麦（每周二）",
+      "date": "2026-08-18",
+      "kind": "reading",
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+    },
+    {
+      "venue": "melanieroger",
+      "title": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
+      "date": "2026-08-19",
+      "kind": "opening",
+      "url": "https://melanierogergallery.com/exhibitions/new-work-24",
+      "desc": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
+      "img": "http://melanierogergallery.com/media/cache/d8/20/d820cc188e768ba5c8e43cd47e330669.jpg"
+    },
+    {
+      "venue": "tuningfork",
+      "title": "London Calling (UK) (The Clash Tribute) 19 AUG 2026",
+      "date": "2026-08-19",
+      "kind": "opening",
+      "url": "https://www.tuningfork.co.nz/all-events/london-calling-tickets-ae525088",
+      "desc": "London Calling (UK) (The Clash Tribute) 19 AUG 2026"
+    },
+    {
+      "venue": "whammy",
+      "title": "Rivers of Nihil -",
+      "date": "2026-08-19",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "aotea",
