@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-26",
+  "generated": "2026-07-27",
   "sample": false,
   "items": [
     {
@@ -188,6 +188,17 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/aag/assets/media/exhibitions-auckland-art-gallery-search-thumbnail.jpg"
     },
     {
+      "venue": "objectspace",
+      "title": "Overtime",
+      "zh": "加时 Overtime",
+      "descZh": "Objectspace 奥克兰馆长期项目。",
+      "kind": "exhibition",
+      "date": "2026-03-27",
+      "end": "2027-03-07",
+      "price": "free",
+      "url": "https://www.objectspace.org.nz/exhibitions/overtime/"
+    },
+    {
       "venue": "teuru",
       "title": "Herehere — Faletau / Hawkins / Sagapolutele",
       "zh": "Herehere 三人展",
@@ -210,6 +221,28 @@ window.EVENTS = {
       "descZh": "收藏家 Greg Moyle 允诺捐赠的 20 件新西兰重要作品。免费。",
       "url": "https://www.aucklandartgallery.com/",
       "img": "https://cdn.aucklandunlimited.com/aag/assets/media/auckland-art-gallery-visit-home-thumbnail.jpg"
+    },
+    {
+      "venue": "gusfisher",
+      "title": "Studies for a Keepsake: Claude Cahun and Marcel Moore",
+      "zh": "留作纪念的习作：Claude Cahun 与 Marcel Moore",
+      "descZh": "法国超现实主义艺术家 Claude Cahun 与 Marcel Moore 双人展。",
+      "kind": "exhibition",
+      "date": "2026-05-29",
+      "end": "2026-08-22",
+      "price": "free",
+      "url": "https://gusfishergallery.auckland.ac.nz/studies-for-a-keepsake-claude-cahun-and-marcel-moore/"
+    },
+    {
+      "venue": "gusfisher",
+      "title": "The Changing Room: Phone Tree — Lucy Meyle",
+      "zh": "更衣室系列：电话树 — Lucy Meyle",
+      "descZh": "Aotearoa 艺术家 Lucy Meyle 的 The Changing Room 项目新作。",
+      "kind": "exhibition",
+      "date": "2026-05-29",
+      "end": "2026-08-22",
+      "price": "free",
+      "url": "https://gusfishergallery.auckland.ac.nz/the-changing-room-lucy-meyle/"
     },
     {
       "venue": "teuru",
@@ -395,6 +428,28 @@ window.EVENTS = {
       "end": "2026-07-25",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/525-another-day-claudia-kogachi/"
+    },
+    {
+      "venue": "objectspace",
+      "title": "He maramara tupu aranga: Carin Wilson and 50 years of Aotearoa design",
+      "zh": "He maramara tupu aranga：Carin Wilson 与 Aotearoa 设计五十年",
+      "descZh": "回顾设计师 Carin Wilson 与 Aotearoa 设计半世纪。",
+      "kind": "exhibition",
+      "date": "2026-06-27",
+      "end": "2026-08-30",
+      "price": "free",
+      "url": "https://www.objectspace.org.nz/exhibitions/he-maramara-tupu-aranga-carin-wilson-and/"
+    },
+    {
+      "venue": "objectspace",
+      "title": "walking sticks & canes",
+      "zh": "手杖与拐杖",
+      "descZh": "Objectspace 奥克兰馆当季展览。",
+      "kind": "exhibition",
+      "date": "2026-06-27",
+      "end": "2026-08-30",
+      "price": "free",
+      "url": "https://www.objectspace.org.nz/exhibitions/walking-sticks-canes/"
     },
     {
       "venue": "estuary",
@@ -757,6 +812,28 @@ window.EVENTS = {
       "url": "https://northart.co.nz/"
     },
     {
+      "venue": "tworooms",
+      "title": "Judy Darragh: Pool",
+      "zh": "Judy Darragh：泳池",
+      "descZh": "Two Rooms 画廊 Judy Darragh 个展。",
+      "kind": "exhibition",
+      "date": "2026-07-17",
+      "end": "2026-08-22",
+      "price": "free",
+      "url": "https://ocula.com/art-galleries/two-rooms/exhibitions/judy-darragh-pool/"
+    },
+    {
+      "venue": "tworooms",
+      "title": "Marie Le Lievre: Salt (House)",
+      "zh": "Marie Le Lievre：盐（屋）",
+      "descZh": "Two Rooms 画廊 Marie Le Lievre 个展。",
+      "kind": "exhibition",
+      "date": "2026-07-17",
+      "end": "2026-08-22",
+      "price": "free",
+      "url": "https://ocula.com/art-galleries/two-rooms/exhibitions/marie-le-lievre-salt-house/"
+    },
+    {
       "venue": "upstairs",
       "title": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The ",
       "date": "2026-07-17",
@@ -1084,6 +1161,17 @@ window.EVENTS = {
       "img": "https://www.objectspace.org.nz/static/img/sharing-image.2515c14c.jpg"
     },
     {
+      "venue": "objectspace",
+      "title": "We used to be a mighty mauka",
+      "zh": "我们曾是巍峨的山峦",
+      "descZh": "Objectspace 奥克兰馆当季展览。",
+      "kind": "exhibition",
+      "date": "2026-07-21",
+      "end": "2026-08-09",
+      "price": "free",
+      "url": "https://www.objectspace.org.nz/exhibitions/we-used-to-be-a-mighty-mauka/"
+    },
+    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -1115,6 +1203,17 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
       "desc": "Upcoming Exhibition Imogen Taylor Deep Impact 22 July — 22 August 2026"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Imogen Taylor: Deep Impact",
+      "zh": "Imogen Taylor：深度撞击",
+      "descZh": "Lett Thomas（原 Michael Lett）K 路空间，Imogen Taylor 个展。",
+      "kind": "exhibition",
+      "date": "2026-07-22",
+      "end": "2026-08-22",
+      "price": "free",
+      "url": "https://ocula.com/art-galleries/lett-thomas/exhibitions/imogen-taylor/"
     },
     {
       "venue": "tepou",
