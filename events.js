@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-07-27",
+  "generated": "2026-07-26",
   "sample": false,
   "items": [
     {
@@ -196,7 +196,8 @@ window.EVENTS = {
       "date": "2026-03-27",
       "end": "2027-03-07",
       "price": "free",
-      "url": "https://www.objectspace.org.nz/exhibitions/overtime/"
+      "url": "https://www.objectspace.org.nz/exhibitions/overtime/",
+      "img": "https://www.objectspace.org.nz/assets/sm/upload/ze/o4/gf/ds/HERO.jpg?k=13f2a0487c"
     },
     {
       "venue": "teuru",
@@ -438,7 +439,8 @@ window.EVENTS = {
       "date": "2026-06-27",
       "end": "2026-08-30",
       "price": "free",
-      "url": "https://www.objectspace.org.nz/exhibitions/he-maramara-tupu-aranga-carin-wilson-and/"
+      "url": "https://www.objectspace.org.nz/exhibitions/he-maramara-tupu-aranga-carin-wilson-and/",
+      "img": "https://www.objectspace.org.nz/assets/sm/upload/we/ni/n4/j7/HERO%201.jpg?k=511e3b7d36"
     },
     {
       "venue": "objectspace",
@@ -449,7 +451,8 @@ window.EVENTS = {
       "date": "2026-06-27",
       "end": "2026-08-30",
       "price": "free",
-      "url": "https://www.objectspace.org.nz/exhibitions/walking-sticks-canes/"
+      "url": "https://www.objectspace.org.nz/exhibitions/walking-sticks-canes/",
+      "img": "https://www.objectspace.org.nz/assets/sm/upload/ed/2s/7t/vv/HERO.jpg?k=c252c31fbc"
     },
     {
       "venue": "estuary",
@@ -474,8 +477,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Group show celebrating Matariki. Galleries Two & Three, 1–26 July 2026.",
       "descZh": "庆祝玛塔里基的群展，二、三号展厅，7 月 1 日至 26 日。",
-      "url": "https://www.estuaryarts.org/exhibitions",
-      "img": "https://static.wixstatic.com/media/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg"
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "estuary",
@@ -487,8 +489,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Annual group exhibition of the Hibiscus Coast Printmakers Collective. Gallery Four, 1–26 July 2026.",
       "descZh": "Hibiscus Coast 版画家协会年度群展，四号展厅，7 月 1 日至 26 日。",
-      "url": "https://www.estuaryarts.org/exhibitions",
-      "img": "https://static.wixstatic.com/media/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg"
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "estuary",
@@ -500,8 +501,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Helensville Art Trail artists' collective winter group show. Gallery One, 1–26 July 2026.",
       "descZh": "Helensville 艺术小径艺术家冬季联展，一号展厅，7 月 1 日至 26 日。",
-      "url": "https://www.estuaryarts.org/exhibitions",
-      "img": "https://static.wixstatic.com/media/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg"
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "estuary",
@@ -513,8 +513,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Members' group exhibition. Gallery Five, 1–26 July 2026.",
       "descZh": "会员作品联展，五号展厅，7 月 1 日至 26 日。",
-      "url": "https://www.estuaryarts.org/exhibitions",
-      "img": "https://static.wixstatic.com/media/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg"
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "artbysea",
@@ -551,8 +550,7 @@ window.EVENTS = {
       "price": "free",
       "url": "https://www.artisgallery.co.nz/exhibitions/128-july/",
       "desc": "Group exhibition at ARTIS Gallery, Parnell. 7 – 31 July 2026.",
-      "descZh": "ARTIS 画廊（Parnell）七月群展，7月7日至31日。",
-      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite1490/usr/images/exhibitions/main_image_override/128/july-selection.jpg"
+      "descZh": "ARTIS 画廊（Parnell）七月群展，7月7日至31日。"
     },
     {
       "venue": "gowlangsford",
@@ -744,15 +742,6 @@ window.EVENTS = {
       "date": "2026-07-14",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
-    },
-    {
-      "venue": "brucemason",
-      "title": "Dog Man: The Musical",
-      "date": "2026-07-15",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
-      "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
     },
     {
       "venue": "brucemason",
@@ -1611,7 +1600,7 @@ window.EVENTS = {
       "date": "2026-07-28",
       "kind": "workshop",
       "url": "https://www.webbs.co.nz/art",
-      "desc": "Current & Upcoming Zoomorphic Lounge: A Private Collection of Modern and Contemporary Art Single Owner Live Auction | 28.07.26 —Bidding Open + On View, Auckland View Catalogue & Bi"
+      "desc": "Current & Upcoming Zoomorphic Lounge: A Private Collection of Modern and Contemporary Art Single Owner Live Auction | 28.07.26 —Bidding Open + Live Auction Tomorrow View Catalogue "
     },
     {
       "venue": "aotea",
@@ -1705,15 +1694,6 @@ window.EVENTS = {
       "time": "10–11.30am",
       "price": "free",
       "url": "https://teuru.org.nz/products/talk-draw-gold-card-holders"
-    },
-    {
-      "venue": "townhall",
-      "title": "Mozart 39",
-      "date": "2026-07-30",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/aklphil26-mozart-39",
-      "desc": "Experience Mozart 39 with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/mozart39-1133x628-auckland-live.jpg"
     },
     {
       "venue": "whammy",
@@ -1810,15 +1790,6 @@ window.EVENTS = {
       "date": "2026-07-31",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
-    },
-    {
-      "venue": "aotea",
-      "title": "Alan Davies",
-      "date": "2026-08-01",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/alan-davies",
-      "desc": "Experience Alan Davies live in the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/alan-davies-1133x628-auckland-live.jpg"
     },
     {
       "venue": "aotea",
@@ -2076,11 +2047,11 @@ window.EVENTS = {
     },
     {
       "venue": "lakehouse",
-      "title": "Becroft , exhibition He Aha Te Wā / Moments in Time – JACK CATHRO & FIONA NEWTON Exhibition Dates: August 8th ",
+      "title": "Becroft , exhibition Moments in Time – JACK CATHRO & FIONA NEWTON Exhibition Dates: August 8th - August 27th, ",
       "date": "2026-08-08",
       "kind": "opening",
       "url": "https://lakehousearts.org.nz/tag/becroft/",
-      "desc": "Becroft , exhibition He Aha Te Wā / Moments in Time – JACK CATHRO & FIONA NEWTON Exhibition Dates: August 8th - August 27th, 2026, Exhibition Celebration SUNDAY August 9 at 4pm . L"
+      "desc": "Becroft , exhibition Moments in Time – JACK CATHRO & FIONA NEWTON Exhibition Dates: August 8th - August 27th, 2026, Exhibition Celebration SUNDAY August 9 at 4pm . Learn More"
     },
     {
       "venue": "motat",
@@ -2143,15 +2114,6 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-05/Q-Theatre_Hero-1386x520px-300dpi.jpg?itok=yWu2rYYR"
     },
     {
-      "venue": "townhall",
-      "title": "Taal Mila",
-      "date": "2026-08-08",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/taal-mila",
-      "desc": "Experience Taal Mila live in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/hero-image-1133x628-2.jpg"
-    },
-    {
       "venue": "tuningfork",
       "title": "Lacquered Black 8 AUG 2026",
       "date": "2026-08-08",
@@ -2201,6 +2163,15 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-07/NEW_PIKIPIKI_Homepage%20Hero%20Slider%20-%201386x520.png.jpg?itok=qAsW7IsM"
     },
     {
+      "venue": "townhall",
+      "title": "Shades of Blue",
+      "date": "2026-08-09",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/shades-of-blue",
+      "desc": "Experience Shades of Blue by the Auckland Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/shades-of-blue-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "brucemason",
       "title": "The Madeleines",
       "date": "2026-08-10",
@@ -2208,15 +2179,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/mm26-the-madeleines",
       "desc": "Experience The Madeleines live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/madelienes24-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Max Amini",
-      "date": "2026-08-11",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/max-amini",
-      "desc": "Experience Max Amini at the Kiri Te Kanawa Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/auckland-veue-1133x628-1.jpg"
     },
     {
       "venue": "poetrylive",
@@ -2263,6 +2225,15 @@ window.EVENTS = {
       "desc": "Northcote Intermediate Presents High School Musical JR Get ready to break free and sing your heart out with the coolest kids in school! 12-13 August 2026 Get tickets Details",
       "price": "free",
       "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/NIS-High-School-Musical-Banner-2.png"
+    },
+    {
+      "venue": "townhall",
+      "title": "Sheku Plays Elgar",
+      "date": "2026-08-13",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/aklphil26-sheku-plays-elgar",
+      "desc": "Experience Sheku Plays Elgar with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/sheku-plays-elgar-1133x628-auckland-live.jpg"
     },
     {
       "venue": "brucemason",
@@ -2378,6 +2349,15 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "brucemason",
+      "title": "Shades of Blue",
+      "date": "2026-08-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/shades-of-blue",
+      "desc": "Experience Shades of Blue by the Auckland Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/shades-of-blue-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "lacigale",
       "title": "La Cigale French Market (Sun)",
       "zh": "La Cigale 法式集市（周日）",
@@ -2465,15 +2445,6 @@ window.EVENTS = {
       "img": "https://www.parnellgallery.co.nz/app/uploads/2022/02/og-social.png"
     },
     {
-      "venue": "townhall",
-      "title": "Lucas & Arthur Jussen",
-      "date": "2026-08-20",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/cmnz26-lucas-and-arthur-jussen",
-      "desc": "Experience Lucas and Arthur Jussen live in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/lucas-arthur-1133x628-auckland-live.jpg"
-    },
-    {
       "venue": "whammy",
       "title": "Sweet Treats Punk Night #61 -",
       "date": "2026-08-20",
@@ -2490,6 +2461,15 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/autaia-al-hero-image-1133-x-628px.jpg"
     },
     {
+      "venue": "townhall",
+      "title": "Radiance",
+      "date": "2026-08-21",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/nzso26-radiance",
+      "desc": "Experience Radiance with the New Zealand Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/radiance-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "tuningfork",
       "title": "Reece Mastin 21 AUG 2026",
       "date": "2026-08-21",
@@ -2498,21 +2478,21 @@ window.EVENTS = {
       "desc": "Reece Mastin 21 AUG 2026"
     },
     {
-      "venue": "aotea",
-      "title": "The Dire Straits Experience",
-      "date": "2026-08-22",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/the-dire-straits-experience-2026",
-      "desc": "Experience The Dire Straits Experience live in the Kiri Te Kanawa Theatre, Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/dse26-al-heroimage-1133x628.jpg"
-    },
-    {
       "venue": "britomart",
       "title": "Britomart Saturday Markets",
       "zh": "Britomart 周六集市",
       "date": "2026-08-22",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Kiri and Lou in Concert",
+      "date": "2026-08-22",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/aklphil26-kiri-and-lou-in-concert",
+      "desc": "Experience Kiri and Lou in Concert live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/kiri-and-lou-1133x628-auckland-live.jpg"
     },
     {
       "venue": "lacigale",
@@ -2595,6 +2575,15 @@ window.EVENTS = {
       "date": "2026-08-23",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "townhall",
+      "title": "Echoes of Culture",
+      "date": "2026-08-23",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/echoes-of-culture",
+      "desc": "Experience Echoes of Culture live in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/echoes-of-culture26-1133x628-auckland-live.jpg"
     },
     {
       "venue": "tuningfork",
