@@ -66,7 +66,9 @@
     border:1.5px solid var(--ink); border-radius:5px; box-shadow:1px 3px 7px rgba(20,20,20,.3);
     opacity:0; transform:translateY(-14px); max-height:0; overflow:hidden; pointer-events:none;
     transition:opacity .25s ease, transform .35s cubic-bezier(.22,1,.32,1), max-height .35s ease}
-  #regiontop.open #regionpanel{opacity:1; transform:none; max-height:170px; pointer-events:auto}
+  #regiontop.open #regionpanel{opacity:1; transform:none; max-height:250px; pointer-events:auto}
+  #regionpanel .gzmapsvg{max-width:198px; margin:0 auto}
+  #regionpanel .gzmaplbl{font-size:11px}
   #regionpanel .rgrid{display:grid; gap:3px;
     grid-template-columns:37px 46px 37px; grid-template-rows:24px 24px 22px}
   #regionpanel .rgb{border:1px solid rgba(35,33,28,.28); border-radius:3px; cursor:pointer;
@@ -2290,19 +2292,14 @@ function clearRegions(){ S.regions = []; fitAllRegions(); afterRegionChange(); }
 function renderRegionPanel(){
   var el = document.getElementById("regionpanel");
   if(!el) return;
-  var grid = '';
-  REGION_ORDER.forEach(function(k){
-    var r = REGIONS[k], on = regionSelected(k);
-    grid += '<button class="rgb rg-'+k+(on?" on":"")+'" data-region="'+k+'" '+
-            'style="background:'+r.hex+';color:'+textOn(r.hex)+'" aria-pressed="'+on+'">'+
-            '<span class="en">'+r.en+'</span><span class="zh">'+r.zh+'</span></button>';
-  });
+  /* 几何版：复用报纸「地图版」的区块 SVG（gzMapSVG），点区块筛选本期 */
   el.innerHTML =
-    '<div class="rgrid">'+grid+'</div>'+
+    gzMapSVG()+
     '<button class="rg-all'+(S.regions.length?"":" on")+'" data-region="all">'+
       '<span class="en">All areas</span><span class="zh">全区</span></button>';
   Array.prototype.forEach.call(el.querySelectorAll("[data-region]"), function(b){
-    b.addEventListener("click", function(){
+    b.addEventListener("click", function(e){
+      e.stopPropagation();
       var k = b.getAttribute("data-region");
       if(k === "all") clearRegions(); else toggleRegion(k);
     });
