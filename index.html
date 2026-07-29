@@ -66,24 +66,26 @@
     border:1.5px solid var(--ink); border-radius:5px; box-shadow:1px 3px 7px rgba(20,20,20,.3);
     opacity:0; transform:translateY(-14px); max-height:0; overflow:hidden; pointer-events:none;
     transition:opacity .25s ease, transform .35s cubic-bezier(.22,1,.32,1), max-height .35s ease}
-  #regiontop.open #regionpanel{opacity:1; transform:none; max-height:250px; pointer-events:auto}
-  #regionpanel .gzmapsvg{max-width:198px; margin:0 auto}
-  #regionpanel .gzmaplbl{font-size:11px}
-  #regionpanel .rgrid{display:grid; gap:3px;
+  #regiontop.open #regionpanel{opacity:1; transform:none; max-height:170px; pointer-events:auto}
+  .rgrid{display:grid; gap:3px;
     grid-template-columns:37px 46px 37px; grid-template-rows:24px 24px 22px}
-  #regionpanel .rgb{border:1px solid rgba(35,33,28,.28); border-radius:3px; cursor:pointer;
+  .rgb{border:1px solid rgba(35,33,28,.28); border-radius:3px; cursor:pointer;
     font-size:9.5px; line-height:1.05; font-weight:600; letter-spacing:.02em; padding:1px;
     display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden}
-  #regionpanel .rgb.rg-west{grid-column:1; grid-row:1 / span 2}
-  #regionpanel .rgb.rg-north{grid-column:2; grid-row:1}
-  #regionpanel .rgb.rg-central{grid-column:2; grid-row:2}
-  #regionpanel .rgb.rg-east{grid-column:3; grid-row:2}
-  #regionpanel .rgb.rg-south{grid-column:2 / span 2; grid-row:3}
-  #regionpanel .rgb.on{outline:2px solid var(--ink); outline-offset:-2px;
+  .rgb.rg-west{grid-column:1; grid-row:1 / span 2}
+  .rgb.rg-north{grid-column:2; grid-row:1}
+  .rgb.rg-central{grid-column:2; grid-row:2}
+  .rgb.rg-east{grid-column:3; grid-row:2}
+  .rgb.rg-south{grid-column:2 / span 2; grid-row:3}
+  .rgb.on{outline:2px solid var(--ink); outline-offset:-2px;
     box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85)}
-  #regionpanel .rg-all{font-size:9px; padding:3px 4px; border-radius:3px; cursor:pointer;
+  .rg-all{font-size:9px; padding:3px 4px; border-radius:3px; cursor:pointer;
     background:#fff; color:#23211c; border:1px solid rgba(35,33,28,.3); text-align:center}
-  #regionpanel .rg-all.on{background:var(--ink); color:#f7f4ec; border-color:var(--ink)}
+  .rg-all.on{background:var(--ink); color:#f7f4ec; border-color:var(--ink)}
+  /* 报纸「地图版」里的网格：放大 + 居中，占位与原几何图相当 */
+  .gzmap .rgrid{grid-template-columns:52px 64px 52px; grid-template-rows:34px 34px 30px;
+    gap:4px; margin:2px auto 4px; justify-content:center}
+  .gzmap .rgb{font-size:11px}
   /* 筛选菜单：桌面直接平铺（display:contents），手机折叠成点开的菜单 */
   #filterbtn{display:none}
   #filterbox{display:contents}
@@ -2289,17 +2291,25 @@ function toggleRegion(k){
   afterRegionChange();
 }
 function clearRegions(){ S.regions = []; fitAllRegions(); afterRegionChange(); }
+function regionGridHTML(){
+  var grid = '';
+  REGION_ORDER.forEach(function(k){
+    var r = REGIONS[k], on = regionSelected(k);
+    grid += '<button class="rgb rg-'+k+(on?" on":"")+'" data-region="'+k+'" '+
+            'style="background:'+r.hex+';color:'+textOn(r.hex)+'" aria-pressed="'+on+'">'+
+            '<span class="en">'+r.en+'</span><span class="zh">'+r.zh+'</span></button>';
+  });
+  return '<div class="rgrid">'+grid+'</div>';
+}
 function renderRegionPanel(){
   var el = document.getElementById("regionpanel");
   if(!el) return;
-  /* 几何版：复用报纸「地图版」的区块 SVG（gzMapSVG），点区块筛选本期 */
   el.innerHTML =
-    gzMapSVG()+
+    regionGridHTML()+
     '<button class="rg-all'+(S.regions.length?"":" on")+'" data-region="all">'+
       '<span class="en">All areas</span><span class="zh">全区</span></button>';
   Array.prototype.forEach.call(el.querySelectorAll("[data-region]"), function(b){
-    b.addEventListener("click", function(e){
-      e.stopPropagation();
+    b.addEventListener("click", function(){
       var k = b.getAttribute("data-region");
       if(k === "all") clearRegions(); else toggleRegion(k);
     });
@@ -2463,7 +2473,7 @@ function gzMapBlock(){
     : (zh?"当前：全部区域":"Currently: all districts");
   return '<div class="gzmap">'+
     '<div class="gzmaptitle">'+(zh?"地图版 · 点区域筛选本期（可多选）":"Maps Desk · tap a district to filter (multi-select)")+'</div>'+
-    gzMapSVG()+
+    regionGridHTML()+
     '<div class="gzmapcap">'+cap+'</div>'+
     '<button class="gzdl" data-gzdl="1">📅 '+(zh?"下载本期日历（.ics）":"Download this edition (.ics)")+'</button>'+
     '</div>';
