@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-08-03",
+  "generated": "2026-08-02",
   "sample": false,
   "items": [
     {
@@ -2068,15 +2068,6 @@ window.EVENTS = {
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-07/NEW_PIKIPIKI_Homepage%20Hero%20Slider%20-%201386x520.png.jpg?itok=qAsW7IsM"
     },
     {
-      "venue": "townhall",
-      "title": "Shades of Blue",
-      "date": "2026-08-09",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/shades-of-blue",
-      "desc": "Experience Shades of Blue by the Auckland Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/shades-of-blue-1133x628-auckland-live.jpg"
-    },
-    {
       "venue": "brucemason",
       "title": "The Madeleines",
       "date": "2026-08-10",
@@ -2084,6 +2075,15 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/mm26-the-madeleines",
       "desc": "Experience The Madeleines live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/madelienes24-1133x628-auckland-live.jpg"
+    },
+    {
+      "venue": "aotea",
+      "title": "Max Amini",
+      "date": "2026-08-11",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/max-amini",
+      "desc": "Experience Max Amini at the Kiri Te Kanawa Theatre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/auckland-veue-1133x628-1.jpg"
     },
     {
       "venue": "objectspace",
@@ -2131,6 +2131,15 @@ window.EVENTS = {
       "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/540/mcintyre_1920_self-portrait_oil-on-panel_391x202mm_gmcn007-20_cropped-detail.jpg"
     },
     {
+      "venue": "townhall",
+      "title": "Six-thirty Session: Sheku & Elgar",
+      "date": "2026-08-12",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/aklphil26-six-thirty-session-sheku-and-elgar",
+      "desc": "Experience an early night concert of Sheku & Elgar with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/sts-sheku-elgar-1133x628-aucklnad-live.jpg"
+    },
+    {
       "venue": "pumphouse",
       "title": "Northcote Intermediate Presents High School Musical JR Get ready to break free and sing your heart out with th",
       "date": "2026-08-13",
@@ -2139,15 +2148,6 @@ window.EVENTS = {
       "desc": "Northcote Intermediate Presents High School Musical JR Get ready to break free and sing your heart out with the coolest kids in school! 12-13 August 2026 Get tickets Details",
       "price": "free",
       "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/NIS-High-School-Musical-Banner-2.png"
-    },
-    {
-      "venue": "townhall",
-      "title": "Sheku Plays Elgar",
-      "date": "2026-08-13",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/aklphil26-sheku-plays-elgar",
-      "desc": "Experience Sheku Plays Elgar with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/sheku-plays-elgar-1133x628-auckland-live.jpg"
     },
     {
       "venue": "whammy",
@@ -2201,15 +2201,6 @@ window.EVENTS = {
       "date": "2026-08-14",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
-    },
-    {
-      "venue": "aotea",
-      "title": "Atsuko Okatsuka – The Big Bowl Tour",
-      "date": "2026-08-15",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/atsuko-okatsuka-the-big-bowl-tour",
-      "desc": "Award-winning comedian Atsuko Okatsuka brings The Big Bowl Tour to Auckland this August. Don’t miss her viral, high-energy stand-up live.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/atsuko-okatsuka-1133x628-auckland-live.jpg"
     },
     {
       "venue": "artbysea",
@@ -2273,6 +2264,19 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "maritime",
+      "title": "Our Ocean of Islands",
+      "zh": "《我们的岛屿之海》",
+      "kind": "exhibition",
+      "date": "2026-08-15",
+      "end": "2028-03-01",
+      "price": "free",
+      "time": "10am–5pm daily",
+      "desc": "Landmark exhibition bringing together the Indigenous knowledge systems and cultural practices of 24 Moana Oceania island nations, incl. Tangata Whenua and all 17 island nations with diaspora in Aotearoa. Edmiston Gallery, Level 2.",
+      "descZh": "重磅大展：汇集大洋洲 24 个岛屿民族的原住民知识体系与文化实践（含 Aotearoa 及 17 个有侨民社群的太平洋岛国），Edmiston 展厅（2 楼），随门票免费。",
+      "url": "https://www.maritimemuseum.co.nz/exhibitions/our-ocean-of-islands"
+    },
+    {
       "venue": "ostend",
       "title": "Ostend Market (Waiheke)",
       "zh": "Ostend 集市（激流岛，周六）",
@@ -2315,15 +2319,6 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "brucemason",
-      "title": "Shades of Blue",
-      "date": "2026-08-16",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/shades-of-blue",
-      "desc": "Experience Shades of Blue by the Auckland Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/shades-of-blue-1133x628-auckland-live.jpg"
-    },
-    {
       "venue": "lacigale",
       "title": "La Cigale French Market (Sun)",
       "zh": "La Cigale 法式集市（周日）",
@@ -2338,6 +2333,15 @@ window.EVENTS = {
       "kind": "gig",
       "url": "https://www.motat.nz/events/live-day-trams-2026/",
       "desc": "Event Family LIVE Day: Trams 16 Aug 2026 | 10:00AM - 4:00PM View more"
+    },
+    {
+      "venue": "townhall",
+      "title": "Free Organ Concert Series: Benjamin Sheen",
+      "date": "2026-08-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/free-organ-concert-series-benjamin-sheen",
+      "desc": "Experience Benjamin Sheen as part of the Free Organ Concert Series. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/benjamin-sheen-1133x628-auckland-live.jpg"
     },
     {
       "venue": "townhall",
@@ -2419,6 +2423,15 @@ window.EVENTS = {
       "img": "https://www.parnellgallery.co.nz/app/uploads/2022/02/og-social.png"
     },
     {
+      "venue": "townhall",
+      "title": "Lucas & Arthur Jussen",
+      "date": "2026-08-20",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/cmnz26-lucas-and-arthur-jussen",
+      "desc": "Experience Lucas and Arthur Jussen live in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/lucas-arthur-1133x628-auckland-live.jpg"
+    },
+    {
       "venue": "whammy",
       "title": "Sweet Treats Punk Night #61 -",
       "date": "2026-08-20",
@@ -2435,15 +2448,6 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/autaia-al-hero-image-1133-x-628px.jpg"
     },
     {
-      "venue": "townhall",
-      "title": "Radiance",
-      "date": "2026-08-21",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/nzso26-radiance",
-      "desc": "Experience Radiance with the New Zealand Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/radiance-1133x628-auckland-live.jpg"
-    },
-    {
       "venue": "tuningfork",
       "title": "Reece Mastin 21 AUG 2026",
       "date": "2026-08-21",
@@ -2458,15 +2462,6 @@ window.EVENTS = {
       "date": "2026-08-22",
       "kind": "market",
       "url": "#"
-    },
-    {
-      "venue": "brucemason",
-      "title": "Kiri and Lou in Concert",
-      "date": "2026-08-22",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/aklphil26-kiri-and-lou-in-concert",
-      "desc": "Experience Kiri and Lou in Concert live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/kiri-and-lou-1133x628-auckland-live.jpg"
     },
     {
       "venue": "lacigale",
@@ -2526,6 +2521,15 @@ window.EVENTS = {
       "url": "https://www.qtheatre.co.nz/shows/te-boil-up",
       "desc": "Aug 22 2026 Comedy Te Boil Up Te Boil Up is a 'one night only' charity event bringing together some of Aotearoa's most recognis",
       "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-07/1386x520.jpg?itok=5kYLKE1v"
+    },
+    {
+      "venue": "townhall",
+      "title": "Myths and Legends",
+      "date": "2026-08-22",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/nzso26-myths-and-legends",
+      "desc": "Experience Myths and Legends with the New Zealand Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/myths-legends-1133x628-auckland-live.jpg"
     },
     {
       "venue": "tuningfork",
@@ -2853,18 +2857,6 @@ window.EVENTS = {
       "url": "https://coastal-signs.net/",
       "desc": "Shannon Te Ao solo exhibition, 10 September – 10 October 2026.",
       "descZh": "Shannon Te Ao 个展，9月10日至10月10日。"
-    },
-    {
-      "venue": "maritime",
-      "title": "Our Ocean of Islands",
-      "zh": "《我们的岛屿之海》",
-      "kind": "exhibition",
-      "date": "2026-08-15",
-      "end": "2028-03-01",
-      "url": "https://www.maritimemuseum.co.nz/exhibitions/our-ocean-of-islands",
-      "desc": "Landmark exhibition bringing together the Indigenous knowledge systems and cultural practices of 24 Moana Oceania island nations, incl. Tangata Whenua and all 17 island nations with diaspora in Aotearoa. Edmiston Gallery, Level 2.",
-      "descZh": "重磅大展：汇集大洋洲 24 个岛屿民族的原住民知识体系与文化实践（含 Aotearoa 及 17 个有侨民社群的太平洋岛国），Edmiston 展厅（2 楼），随门票免费。",
-      "price": "free"
     }
   ]
 };
