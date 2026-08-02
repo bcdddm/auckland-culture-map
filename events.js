@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-08-02",
+  "generated": "2026-08-03",
   "sample": false,
   "items": [
     {
@@ -2853,6 +2853,18 @@ window.EVENTS = {
       "url": "https://coastal-signs.net/",
       "desc": "Shannon Te Ao solo exhibition, 10 September – 10 October 2026.",
       "descZh": "Shannon Te Ao 个展，9月10日至10月10日。"
+    },
+    {
+      "venue": "maritime",
+      "title": "Our Ocean of Islands",
+      "zh": "《我们的岛屿之海》",
+      "kind": "exhibition",
+      "date": "2026-08-15",
+      "end": "2028-03-01",
+      "url": "https://www.maritimemuseum.co.nz/exhibitions/our-ocean-of-islands",
+      "desc": "Landmark exhibition bringing together the Indigenous knowledge systems and cultural practices of 24 Moana Oceania island nations, incl. Tangata Whenua and all 17 island nations with diaspora in Aotearoa. Edmiston Gallery, Level 2.",
+      "descZh": "重磅大展：汇集大洋洲 24 个岛屿民族的原住民知识体系与文化实践（含 Aotearoa 及 17 个有侨民社群的太平洋岛国），Edmiston 展厅（2 楼），随门票免费。",
+      "price": "free"
     }
   ]
 };

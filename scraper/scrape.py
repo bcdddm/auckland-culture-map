@@ -168,8 +168,7 @@ SOURCES = {
   # 影院（academy/capitol/vic/bridgeway）日常排片刻意不抓；节展季由每周任务经 Eventfinda 手动补
   # ---- 2026-07-13 本周新配：书店/文学 ----
   "womensbookshop": [{"type":"html", "url":"https://womensbookshop.co.nz/pages/1311-NewsandEvents", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-07-13 配源：News and Events 页（静态）
-  "michaelking": [{"type":"html", "url":"https://writerscentre.org.nz/workshops/", "selector":"article, .card, h3, li"},
-                  {"type":"html", "url":"https://writerscentre.org.nz/events/", "selector":"article, .card, h3, li"}],  # ✅ 2026-07-13 配源：WordPress 静态
+  "michaelking": [{"type":"html", "render":True, "url":"https://writerscentre.org.nz/events/", "selector":"article, .card, h3, li, a[href*=\'event\']"}],  # ✅ 2026-08-03 修复：/workshops/ 已 404（移除）；/events/ 纯requests 被 UA 封锁返 404 → 改 render:True
   # ---- 2026-07-20 本周新配：dealer 画廊收尾 ----
   "artis":       [{"type":"html", "url":"https://www.artisgallery.co.nz/exhibitions/current/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态（同 gowlangsford），日期在链接文本
   "foenander":   [{"type":"html", "url":"https://foenandergalleries.co.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态
