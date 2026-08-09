@@ -764,5 +764,63 @@
     "desc": "Landmark exhibition bringing together the Indigenous knowledge systems and cultural practices of 24 Moana Oceania island nations, incl. Tangata Whenua and all 17 island nations with diaspora in Aotearoa. Edmiston Gallery, Level 2.",
     "descZh": "重磅大展：汇集大洋洲 24 个岛屿民族的原住民知识体系与文化实践（含 Aotearoa 及 17 个有侨民社群的太平洋岛国），Edmiston 展厅（2 楼），随门票免费。",
     "url": "https://www.maritimemuseum.co.nz/exhibitions/our-ocean-of-islands"
+  },
+  {
+    "venue": "timeout",
+    "title": "Special Event: Raising Readers in the Digital Age",
+    "zh": "讲座：数字时代如何养出爱读书的孩子",
+    "kind": "reading",
+    "date": "2026-08-16",
+    "time": "15:00",
+    "price": "free",
+    "desc": "Evidence-backed strategies to re-engage tweens and teens with reading; RSVP books@timeout.co.nz.",
+    "descZh": "教育博士分享让青少年重新爱上阅读的实证方法，需邮件 RSVP。",
+    "url": "https://www.timeout.co.nz/upcoming-events/raisingreaders2026"
+  },
+  {
+    "venue": "timeout",
+    "title": "Author Talk: kluge — pip adam & Frances Libeau",
+    "zh": "作家对谈：pip adam 新作《kluge》",
+    "kind": "reading",
+    "date": "2026-08-25",
+    "time": "18:00",
+    "price": "free",
+    "desc": "pip adam and artist Frances Libeau in conversation for the release of the novel kluge.",
+    "descZh": "小说《kluge》发布，作者 pip adam 与跨媒介艺术家 Frances Libeau 对谈。",
+    "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026"
+  },
+  {
+    "venue": "timeout",
+    "title": "Winter Poetry Series #3: All Tomorrow's Poets",
+    "zh": "冬季诗歌系列 #3：全国诗歌日",
+    "kind": "reading",
+    "date": "2026-08-28",
+    "time": "18:00",
+    "price": "free",
+    "desc": "Annual NZ Poetry Day event closing Time Out's Winter Poetry Series.",
+    "descZh": "年度新西兰诗歌日活动，也是冬季诗歌系列收官场。",
+    "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026"
+  },
+  {
+    "venue": "powerstation",
+    "title": "Avatar (NZ debut)",
+    "zh": "Avatar 首度访纽",
+    "kind": "gig",
+    "date": "2026-09-01",
+    "price": "paid",
+    "desc": "Swedish metal band Avatar play New Zealand for the first time. R18.",
+    "descZh": "瑞典重金属乐队 Avatar 首次来新西兰演出，R18。",
+    "url": "https://www.powerstation.net.nz/shows/avatar-sep-2026"
+  },
+  {
+    "venue": "powerstation",
+    "title": "The Damned – 50th Anniversary",
+    "zh": "The Damned 五十周年巡演",
+    "kind": "gig",
+    "date": "2026-09-08",
+    "price": "paid",
+    "desc": "UK punk originators The Damned bring their 50th anniversary tour to the Powerstation.",
+    "descZh": "英国朋克元老 The Damned 五十周年巡演登陆 Powerstation。",
+    "url": "https://www.powerstation.net.nz/shows/damned-50th-anniversary-sep-2026"
   }
 ]

@@ -44,13 +44,13 @@ SOURCES = {
   "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
-  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/", "selector":"a[href*='event'], article, .card"}],
+  "timeout":     [{"type":"html", "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, article, .card"}],   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
   "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
   # 2026-07-07 已确认：Whammy=316，Powerstation=105（venue 119 是 Safari Lounge，勿用）
   "whammy":      [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"}],   # ✅ 2026-07-07 确认：UTR vid 316 = Whammy Bar（另有 3991 Backroom / 6373 Double Whammy）
-  "powerstation":[{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=105"}],   # ✅ 2026-07-07 确认：UTR vid 105 = The Powerstation
+  "powerstation":[{"type":"html", "url":"https://www.powerstation.net.nz/shows/coming", "selector":"li"}],   # ✅ 2026-08-10 修复：UTR iCal(vid=105) 连续多周返 0；官网 Drupal 静态列表可直接抓（“1 Sep 2026”）   # ✅ 2026-07-07 确认：UTR vid 105 = The Powerstation
   "studioone":   [{"type":"html", "url":"https://www.studioone.org.nz/exhibitions/", "selector":"article, .event, .card, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 404，展讯在 /exhibitions/（静态WP）
   "britomart":   [],   # 固定每周六 → 规则生成
   "lacigale":    [],   # 固定周六/周日 → 规则生成
@@ -93,7 +93,8 @@ SOURCES = {
   "artis": [], "flagstaff": [], "artbysea": [], "vivian": [],
   # ---- 2026-07-11 批量配源：表演/音乐/博物馆/画廊优先（书店暂缓）----
   # 博物馆
-  "museum":      [{"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on", "selector":"a[href*='whats-on'], article, .card"}],
+  "museum":      [{"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on/query/upcoming", "selector":"a[href*='whats-on'], article, .card, li"},
+                  {"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on", "selector":"a[href*='whats-on'], article, .card"}],   # ✅ 2026-08-10：/visit/whats-on 卡片文本不带日期→连周 0，先试带日期的 /query/upcoming
   "maritime":    [{"type":"html", "render":True, "url":"https://www.maritimemuseum.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
   "motat":       [{"type":"html", "render":True, "url":"https://www.motat.nz/whats-on/", "selector":"article, .card, a[href*='event']"}],
   # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
@@ -118,7 +119,8 @@ SOURCES = {
   # 音乐
   "sparkarena":  [{"type":"html", "render":True, "url":"https://www.sparkarena.co.nz/events", "selector":"article, .card, a[href*='event']"}],
   "tuningfork":  [{"type":"html", "render":True, "url":"https://www.tuningfork.co.nz/", "selector":"article, .card, a[href*='event']"}],
-  "galatos":     [{"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "galatos":     [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=1638"},
+                  {"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],   # ✅ 2026-08-10：官网连周 0，改以 UTR vid=1638 (Galatos) iCal 为主源，官网留兜底
   "neckofthewoods": [{"type":"html", "render":True, "url":"https://neckofthewoods.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "anthology":   [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=4688"}],  # ✅ 2026-07-13 校准：anthology.co.nz 证书失效；UTR vid 4688 = Anthology Lounge（官网 anthologykroad.com 无排期页）
   "mothership":  [{"type":"html", "render":True, "url":"https://www.themothership.co.nz/", "selector":"article, .card"}],
@@ -176,6 +178,9 @@ SOURCES = {
   "flagstaff":   [{"type":"html", "url":"https://www.flagstaff.nz/pages/events", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Shopify 服务端渲染；官网 footer 地址 6 Victoria Rd（VENUES 已修正）
   "artbysea":    [{"type":"html", "render":True, "url":"https://www.artbythesea.co.nz/", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Wix JS 站；画廊已迁址 Takapuna 162 Hurstmere Rd（VENUES 已修正）
   "vivian":      [{"type":"html", "render":True, "url":"https://www.thevivian.co.nz/", "selector":"article, .card, p, h2, h3"}],  # ✅ 2026-07-20 配源：Matakana，冬季周五–周一开放（TripAdvisor 标 CLOSED 系误标，官网在营）
+  # ---- 2026-08-10 本周新配：书店 ----
+  "dorothybutler": [{"type":"html", "url":"https://dorothybutler.co.nz/pages/3165-EVENTS", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-08-10 配源：与 womensbookshop 同款 Bookmanager 静态页（当前无排期）
+  "poppieshowick": [{"type":"html", "url":"https://www.booksellers.co.nz/event-organizer/poppies-howick", "selector":".wpem-event-box-col, article, .card, li, h3"}],  # ✅ 2026-08-10 配源：官网无活动页，改用 Booksellers NZ 会员活动页（WP Event Manager 静态）
   # "bergman" 不配源：奥克兰空间 2022–2026 运营已于 2026 年结束（Cook Islands News 报道），主画廊回迁拉罗汤加；地图上保留灰色
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
