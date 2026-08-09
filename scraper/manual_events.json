@@ -779,7 +779,7 @@
   },
   {
     "venue": "timeout",
-    "title": "Author Talk: kluge — pip adam & Frances Libeau",
+    "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation",
     "zh": "作家对谈：pip adam 新作《kluge》",
     "kind": "reading",
     "date": "2026-08-25",
@@ -800,27 +800,5 @@
     "desc": "Annual NZ Poetry Day event closing Time Out's Winter Poetry Series.",
     "descZh": "年度新西兰诗歌日活动，也是冬季诗歌系列收官场。",
     "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026"
-  },
-  {
-    "venue": "powerstation",
-    "title": "Avatar (NZ debut)",
-    "zh": "Avatar 首度访纽",
-    "kind": "gig",
-    "date": "2026-09-01",
-    "price": "paid",
-    "desc": "Swedish metal band Avatar play New Zealand for the first time. R18.",
-    "descZh": "瑞典重金属乐队 Avatar 首次来新西兰演出，R18。",
-    "url": "https://www.powerstation.net.nz/shows/avatar-sep-2026"
-  },
-  {
-    "venue": "powerstation",
-    "title": "The Damned – 50th Anniversary",
-    "zh": "The Damned 五十周年巡演",
-    "kind": "gig",
-    "date": "2026-09-08",
-    "price": "paid",
-    "desc": "UK punk originators The Damned bring their 50th anniversary tour to the Powerstation.",
-    "descZh": "英国朋克元老 The Damned 五十周年巡演登陆 Powerstation。",
-    "url": "https://www.powerstation.net.nz/shows/damned-50th-anniversary-sep-2026"
   }
 ]

@@ -44,7 +44,7 @@ SOURCES = {
   "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
-  "timeout":     [{"type":"html", "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, article, .card"}],   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
+  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card"}],   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
   "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
@@ -302,7 +302,8 @@ def scrape_html(venue, src):
         # 年份合法性：文本里写明的年份全部早于今年 → 是旧展归档，跳过（防止 2024 展被误标为今年）
         yrs = [int(y) for y in re.findall(r"\b(20[0-3]\d)\b", text)]
         if yrs and max(yrs) < TODAY.year: continue
-        title = text[:110]
+        # 2026-08-10：去掉卡片里的按钮文案，标题更干净（Powerstation/Squarespace 等）
+        title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more|Find out more)\s*", " ", text).strip()[:110]
         link = node.get("href") or (node.find("a")["href"] if node.find("a") and node.find("a").get("href") else src["url"])
         if link and link.startswith("/"):
             from urllib.parse import urljoin; link = urljoin(src["url"], link)

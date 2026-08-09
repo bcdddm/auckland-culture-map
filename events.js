@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-08-09",
+  "generated": "2026-08-10",
   "sample": false,
   "items": [
     {
@@ -2454,7 +2454,7 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Author Talk: kluge — pip adam & Frances Libeau",
+      "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation",
       "zh": "作家对谈：pip adam 新作《kluge》",
       "kind": "reading",
       "date": "2026-08-25",
@@ -2734,17 +2734,6 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.powerstation.net.nz/shows/avatar-sep-2026",
       "desc": "Avatar 1 Sep 2026 Show & ticket info"
-    },
-    {
-      "venue": "powerstation",
-      "title": "Avatar (NZ debut)",
-      "zh": "Avatar 首度访纽",
-      "kind": "gig",
-      "date": "2026-09-01",
-      "price": "paid",
-      "desc": "Swedish metal band Avatar play New Zealand for the first time. R18.",
-      "descZh": "瑞典重金属乐队 Avatar 首次来新西兰演出，R18。",
-      "url": "https://www.powerstation.net.nz/shows/avatar-sep-2026"
     },
     {
       "venue": "civic",
@@ -3048,17 +3037,6 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.powerstation.net.nz/shows/damned-50th-anniversary-sep-2026",
       "desc": "The Damned 50th Anniversary 8 Sep 2026 Show & ticket info"
-    },
-    {
-      "venue": "powerstation",
-      "title": "The Damned – 50th Anniversary",
-      "zh": "The Damned 五十周年巡演",
-      "kind": "gig",
-      "date": "2026-09-08",
-      "price": "paid",
-      "desc": "UK punk originators The Damned bring their 50th anniversary tour to the Powerstation.",
-      "descZh": "英国朋克元老 The Damned 五十周年巡演登陆 Powerstation。",
-      "url": "https://www.powerstation.net.nz/shows/damned-50th-anniversary-sep-2026"
     },
     {
       "venue": "melanieroger",
