@@ -184,7 +184,8 @@ window.EVENTS = {
       "price": "free",
       "desc": "Collection shows through 2026: also Giacometti Without End; Ngā Taonga Tūturu; Threads of Time.",
       "descZh": "贯穿 2026 的馆藏陈列，同期《贾科梅蒂》《玛欧里肖像珍藏》《时间之线》。",
-      "url": "https://www.aucklandartgallery.com/visit/exhibitions"
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions",
+      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/exhibitions-auckland-art-gallery-search-thumbnail.jpg"
     },
     {
       "venue": "objectspace",
@@ -205,8 +206,7 @@ window.EVENTS = {
       "date": "2026-05-16",
       "end": "2026-07-26",
       "price": "free",
-      "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele",
-      "img": "http://teuru.org.nz/cdn/shop/files/Curves_1_copy.jpg?v=1782106158"
+      "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele"
     },
     {
       "venue": "aag",
@@ -455,8 +455,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Oils inspired by Northland's coast, forest and Māori heritage. Foyer Wall, 1–26 July 2026.",
       "descZh": "以北地海岸、森林与毛利文化为灵感的油画系列。门厅展墙，7 月 1 日至 26 日。",
-      "url": "https://www.estuaryarts.org/exhibitions",
-      "img": "https://static.wixstatic.com/media/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/f830e2_f4f79dff90a44fff84ca814c4c6f381f%7Emv2.jpg"
+      "url": "https://www.estuaryarts.org/exhibitions"
     },
     {
       "venue": "estuary",
@@ -545,6 +544,14 @@ window.EVENTS = {
     },
     {
       "venue": "gowlangsford",
+      "title": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traver",
+      "date": "2026-07-08",
+      "kind": "opening",
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/",
+      "desc": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traverses Aotearoa with a focus on the shifting seasons, from summer in The "
+    },
+    {
+      "venue": "gowlangsford",
       "title": "Michael Hight: The Seasons (City)",
       "zh": "Michael Hight《The Seasons》",
       "kind": "exhibition",
@@ -552,14 +559,6 @@ window.EVENTS = {
       "end": "2026-08-08",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
-    },
-    {
-      "venue": "gowlangsford",
-      "title": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traver",
-      "date": "2026-07-08",
-      "kind": "opening",
-      "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/",
-      "desc": "The Seasons Michael Hight 8 Jul - 8 Aug 2026 Auckland City Michael Hight’s new body of work The Seasons traverses Aotearoa with a focus on the shifting seasons, from summer in The "
     },
     {
       "venue": "corban",
@@ -716,7 +715,11 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-14",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "price": "koha",
+      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
+      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。",
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00"
     },
     {
       "venue": "brucemason",
@@ -853,16 +856,6 @@ window.EVENTS = {
     },
     {
       "venue": "northart",
-      "title": "Arrested Practice",
-      "zh": "Arrested Practice 群展",
-      "kind": "exhibition",
-      "date": "2026-07-18",
-      "end": "2026-08-03",
-      "price": "free",
-      "url": "https://northart.co.nz/"
-    },
-    {
-      "venue": "northart",
       "title": "Arrested Practice + SELECT — three shows open",
       "zh": "Arrested Practice 等三展同日开幕",
       "date": "2026-07-18",
@@ -877,6 +870,16 @@ window.EVENTS = {
       "zh": "Drisana Tonga《Heliaki》开幕",
       "date": "2026-07-18",
       "kind": "opening",
+      "price": "free",
+      "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "northart",
+      "title": "Arrested Practice",
+      "zh": "Arrested Practice 群展",
+      "kind": "exhibition",
+      "date": "2026-07-18",
+      "end": "2026-08-03",
       "price": "free",
       "url": "https://northart.co.nz/"
     },
@@ -964,6 +967,15 @@ window.EVENTS = {
     },
     {
       "venue": "foenander",
+      "title": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and i",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
+      "desc": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and imagination: cats and fish, creatures that have long occupied a rich pl",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2706/usr/images/exhibitions/main_image_override/106/gavin-chai-kate-fish-tom-kate-ceramic-tiles.jpg"
+    },
+    {
+      "venue": "foenander",
       "title": "Catfish",
       "zh": "《Catfish》群展",
       "kind": "exhibition",
@@ -973,15 +985,6 @@ window.EVENTS = {
       "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
       "desc": "Cat Fish swims between worlds — cats and fish in art history's visual language. 21 Jul – 4 Aug 2026.",
       "descZh": "以猫与鱼在艺术史中的意象为线索的群展，7月21日至8月4日。"
-    },
-    {
-      "venue": "foenander",
-      "title": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and i",
-      "date": "2026-07-21",
-      "kind": "opening",
-      "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
-      "desc": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and imagination: cats and fish, creatures that have long occupied a rich pl",
-      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2706/usr/images/exhibitions/main_image_override/106/gavin-chai-kate-fish-tom-kate-ceramic-tiles.jpg"
     },
     {
       "venue": "intlart",
@@ -1018,7 +1021,11 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-21",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "price": "koha",
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "time": "19:00",
+      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
+      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。"
     },
     {
       "venue": "michaellett",
@@ -1274,8 +1281,11 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-07-28",
       "kind": "reading",
+      "price": "koha",
       "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "time": "19:00",
+      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
+      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。"
     },
     {
       "venue": "webbs",
@@ -1584,8 +1594,11 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-04",
       "kind": "reading",
+      "price": "koha",
       "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "time": "19:00",
+      "desc": "Aotearoa's longest-running live poetry night (46 years), Tuesdays 7pm at Thirty Nine, 39 Ponsonby Road.",
+      "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。"
     },
     {
       "venue": "unity",
@@ -2139,12 +2152,15 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM 15:00 16:00 Time Out",
-      "date": "2026-08-16",
+      "title": "Special Event: Raising Readers in the Digital Age",
+      "zh": "讲座：数字时代如何养出爱读书的孩子",
       "kind": "reading",
-      "url": "https://www.timeout.co.nz/upcoming-events/raisingreaders2026",
-      "desc": "Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM 15:00 16:00 Time Out Bookstore (map) Google Calendar ICS Are you struggling to get your tw",
-      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a4b225f9947b63e3ebff4f3/1783386125161/raisingreaders2026+%282%29.png?format=1500w"
+      "date": "2026-08-16",
+      "time": "15:00",
+      "price": "free",
+      "desc": "Evidence-backed strategies to re-engage tweens and teens with reading; RSVP books@timeout.co.nz.",
+      "descZh": "教育博士分享让青少年重新爱上阅读的实证方法，需邮件 RSVP。",
+      "url": "https://www.timeout.co.nz/upcoming-events/raisingreaders2026"
     },
     {
       "venue": "townhall",
@@ -2192,7 +2208,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-18",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "tuningfork",
@@ -2444,7 +2461,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-25",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "qtheatre",
@@ -2457,12 +2475,15 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August 25, 2026 6:00 PM 7:00 PM 18:00",
-      "date": "2026-08-25",
+      "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation",
+      "zh": "作家对谈：pip adam 新作《kluge》",
       "kind": "reading",
-      "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026",
-      "desc": "Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August 25, 2026 6:00 PM 7:00 PM 18:00 19:00 Time Out Bookstore (map) Google Calendar ICS Tuesday 25 August,",
-      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a6fc48a15ef2128415ed522/1785989478299/kluge+Time+Out+tile.png?format=1500w"
+      "date": "2026-08-25",
+      "time": "18:00",
+      "price": "free",
+      "desc": "pip adam and artist Frances Libeau in conversation for the release of the novel kluge.",
+      "descZh": "小说《kluge》发布，作者 pip adam 与跨媒介艺术家 Frances Libeau 对谈。",
+      "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026"
     },
     {
       "venue": "basement",
@@ -2538,11 +2559,14 @@ window.EVENTS = {
     {
       "venue": "civic",
       "title": "Cirque Alice",
-      "date": "2026-08-28",
+      "zh": "《爱丽丝》马戏秀",
       "kind": "gig",
+      "date": "2026-08-28",
+      "end": "2026-09-06",
+      "price": "paid",
       "url": "https://www.aucklandlive.co.nz/show/cirque-alice",
-      "desc": "Experience Cirque Alice live in The Civic. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/cirque-alice-1133x628-auckland-live.jpg"
+      "desc": "Circus spectacular by the creators of Cirque du Soleil, 28 Aug – 6 Sep, The Civic.",
+      "descZh": "太阳马戏创作团队打造的仙境马戏，8月28日—9月6日 Civic 大剧院"
     },
     {
       "venue": "qtheatre",
@@ -2555,12 +2579,15 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time Out Boo",
-      "date": "2026-08-28",
+      "title": "Winter Poetry Series #3: All Tomorrow's Poets",
+      "zh": "冬季诗歌系列 #3：全国诗歌日",
       "kind": "reading",
-      "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026",
-      "desc": "Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time Out Bookstore (map) Google Calendar ICS Our annual NZ Poetry Day event is bac",
-      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a1f5eee09ef7a3ccec8adf2/1785710346241/ATP+Poster+Ideas+2026.png?format=1500w"
+      "date": "2026-08-28",
+      "time": "18:00",
+      "price": "free",
+      "desc": "Annual NZ Poetry Day event closing Time Out's Winter Poetry Series.",
+      "descZh": "年度新西兰诗歌日活动，也是冬季诗歌系列收官场。",
+      "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026"
     },
     {
       "venue": "tuningfork",
@@ -2730,7 +2757,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-09-01",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "powerstation",
@@ -2748,22 +2776,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/cirque-alice",
       "desc": "Experience Cirque Alice live in The Civic. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/cirque-alice-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "michaellett",
-      "title": "one of these situations Diane Arbus Chris Booth Mike Hewson Kate Newby 02 September — 03 October 2026",
-      "date": "2026-09-02",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/one-of-these-situations/",
-      "desc": "one of these situations Diane Arbus Chris Booth Mike Hewson Kate Newby 02 September — 03 October 2026"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Upcoming Exhibition one of these situations Diane Arbus Chris Booth Mike Hewson Kate Newby 02 September — 03 O",
-      "date": "2026-09-02",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/one-of-these-situations/",
-      "desc": "Upcoming Exhibition one of these situations Diane Arbus Chris Booth Mike Hewson Kate Newby 02 September — 03 October 2026"
     },
     {
       "venue": "whammy",
@@ -3032,7 +3044,8 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-09-08",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
+      "url": "https://www.thirtynine.co.nz/event-list",
+      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
     },
     {
       "venue": "powerstation",
