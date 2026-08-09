@@ -184,8 +184,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "Collection shows through 2026: also Giacometti Without End; Ngā Taonga Tūturu; Threads of Time.",
       "descZh": "贯穿 2026 的馆藏陈列，同期《贾科梅蒂》《玛欧里肖像珍藏》《时间之线》。",
-      "url": "https://www.aucklandartgallery.com/visit/exhibitions",
-      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/exhibitions-auckland-art-gallery-search-thumbnail.jpg"
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions"
     },
     {
       "venue": "objectspace",
@@ -196,8 +195,7 @@ window.EVENTS = {
       "date": "2026-03-27",
       "end": "2027-03-07",
       "price": "free",
-      "url": "https://www.objectspace.org.nz/exhibitions/overtime/",
-      "img": "https://www.objectspace.org.nz/assets/sm/upload/ze/o4/gf/ds/HERO.jpg?k=13f2a0487c"
+      "url": "https://www.objectspace.org.nz/exhibitions/overtime/"
     },
     {
       "venue": "teuru",
@@ -220,8 +218,7 @@ window.EVENTS = {
       "price": "free",
       "desc": "20 major New Zealand works promised to the Gallery. Free entry.",
       "descZh": "收藏家 Greg Moyle 允诺捐赠的 20 件新西兰重要作品。免费。",
-      "url": "https://www.aucklandartgallery.com/",
-      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/auckland-art-gallery-visit-home-thumbnail.jpg"
+      "url": "https://www.aucklandartgallery.com/"
     },
     {
       "venue": "gusfisher",
@@ -254,8 +251,7 @@ window.EVENTS = {
       "end": "2026-08-09",
       "price": "free",
       "descZh": "树皮布星图与 Yolŋu 星河绘画的跨太平洋对话。",
-      "url": "https://teuru.org.nz/products/nikau-hindin-and-naminapu-maymuru-white-cosmologies",
-      "img": "http://teuru.org.nz/cdn/shop/files/DSF1709web.jpg?v=1782107950"
+      "url": "https://teuru.org.nz/products/nikau-hindin-and-naminapu-maymuru-white-cosmologies"
     },
     {
       "venue": "teuru",
@@ -265,8 +261,7 @@ window.EVENTS = {
       "date": "2026-05-31",
       "end": "2026-08-09",
       "price": "free",
-      "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you",
-      "img": "http://teuru.org.nz/cdn/shop/files/AyeshGreenCoverWebsite.jpg?v=1782248513"
+      "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you"
     },
     {
       "venue": "aag",
@@ -1899,6 +1894,24 @@ window.EVENTS = {
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_05/IMG_6107.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
+      "venue": "gowlangsford",
+      "title": "My brush cannot begin to paint you a picture of my feelings Aiko Robinson 12 Aug - 12 Sep 2026 Auckland City I",
+      "date": "2026-08-12",
+      "kind": "opening",
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/530-my-brush-cannot-begin-to-paint-you-a-aiko-robinson/",
+      "desc": "My brush cannot begin to paint you a picture of my feelings Aiko Robinson 12 Aug - 12 Sep 2026 Auckland City Intimate, erotic and exquisitely detailed, Gow Langsford is delighted t",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/530/robinson_2026_tbc_565x775mm_arsn034-26_detail.jpg"
+    },
+    {
+      "venue": "gowlangsford",
+      "title": "to be oneself Raymond McIntyre 12 Aug - 12 Sep 2026 Auckland City Few artists occupy a more enigmatic place wi",
+      "date": "2026-08-12",
+      "kind": "opening",
+      "url": "https://gowlangsfordgallery.co.nz/exhibitions/540-to-be-oneself-raymond-mcintyre/",
+      "desc": "to be oneself Raymond McIntyre 12 Aug - 12 Sep 2026 Auckland City Few artists occupy a more enigmatic place within New Zealand art history than Raymond McIntyre (1879–1933). A pain",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/540/mcintyre_1920_self-portrait_oil-on-panel_391x202mm_gmcn007-20_cropped-detail.jpg"
+    },
+    {
       "venue": "stpaulst",
       "title": "12 Aug 26 6PM Melter of Limbs | Emerita Baik and Georgie Hill Public talk: Georgie Hill & Nina Dyer in convers",
       "date": "2026-08-12",
@@ -2084,6 +2097,15 @@ window.EVENTS = {
     },
     {
       "venue": "qtheatre",
+      "title": "15 August 2026",
+      "date": "2026-08-15",
+      "kind": "opening",
+      "url": "https://www.qtheatre.co.nz/shows/telekinetik",
+      "desc": "15 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-06/Homepage_Hero_Slider%20%282%29.jpg?itok=1WZNdy7d"
+    },
+    {
+      "venue": "qtheatre",
       "title": "15 August 2026 Dance TELEKINETIK TELEKINETIK is a powerful contemporary production exploring memory, loss, ide",
       "date": "2026-08-15",
       "kind": "opening",
@@ -2117,23 +2139,12 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Author Talk , Events Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM",
+      "title": "Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM 15:00 16:00 Time Out",
       "date": "2026-08-16",
       "kind": "reading",
-      "url": "?category=Author+Talk",
-      "desc": "Author Talk , Events Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM 15:00 16:00 Time Out Bookstore (map) Google Calendar ICS Are you stru"
-    },
-    {
-      "venue": "timeout",
-      "title": "Special Event: Raising Readers in the Digital Age",
-      "zh": "讲座：数字时代如何养出爱读书的孩子",
-      "kind": "reading",
-      "date": "2026-08-16",
-      "time": "15:00",
-      "price": "free",
-      "desc": "Evidence-backed strategies to re-engage tweens and teens with reading; RSVP books@timeout.co.nz.",
-      "descZh": "教育博士分享让青少年重新爱上阅读的实证方法，需邮件 RSVP。",
-      "url": "https://www.timeout.co.nz/upcoming-events/raisingreaders2026"
+      "url": "https://www.timeout.co.nz/upcoming-events/raisingreaders2026",
+      "desc": "Special Event: Raising Readers in the Digital Age Sunday, August 16, 2026 3:00 PM 4:00 PM 15:00 16:00 Time Out Bookstore (map) Google Calendar ICS Are you struggling to get your tw",
+      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a4b225f9947b63e3ebff4f3/1783386125161/raisingreaders2026+%282%29.png?format=1500w"
     },
     {
       "venue": "townhall",
@@ -2181,8 +2192,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-18",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "tuningfork",
@@ -2362,6 +2372,15 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "artis",
+      "title": "Richard Mathieson Shadow Casters 9 - 23 August 2026 Shadow Casters brings together a collection of new and rec",
+      "date": "2026-08-23",
+      "kind": "workshop",
+      "url": "https://www.artisgallery.co.nz/exhibitions/129-richard-mathieson-shadow-casters/",
+      "desc": "Richard Mathieson Shadow Casters 9 - 23 August 2026 Shadow Casters brings together a collection of new and recent works exploring Richard Mathieson's enduring interest in form, str",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite1490/usr/images/exhibitions/main_image_override/129/glance.jpeg"
+    },
+    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -2403,6 +2422,15 @@ window.EVENTS = {
       "desc": "Sounds Fun for Kids with Suzy Cato, Gramalama Ding Dong & Sam Smith 23 AUG 2026"
     },
     {
+      "venue": "foenander",
+      "title": "Plischke and the Architecture of Suspicion 6 - 24 Aug 2026 Natalie Guy’s new body of work explores the endurin",
+      "date": "2026-08-24",
+      "kind": "opening",
+      "url": "https://foenandergalleries.co.nz/exhibitions/108-plischke-and-the-architecture-of-suspicion/",
+      "desc": "Plischke and the Architecture of Suspicion 6 - 24 Aug 2026 Natalie Guy’s new body of work explores the enduring relationship between modernist architecture, surveillance, and the u",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/artlogicstorage/foenandergalleries/images/view/a0af51f9db24ce5cd511ef7954753ebe/f-enandergalleries-natalie-guy-plant-the-decoy-2026.jpg"
+    },
+    {
       "venue": "webbs",
       "title": "Current & Upcoming Works of Art Live Auction | Monday 24 August —Bidding Open + Launch Invitations View Catalo",
       "date": "2026-08-24",
@@ -2416,8 +2444,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-08-25",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "qtheatre",
@@ -2430,23 +2457,12 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Author Talk , Signing , Events Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August",
+      "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August 25, 2026 6:00 PM 7:00 PM 18:00",
       "date": "2026-08-25",
       "kind": "reading",
-      "url": "?category=Author+Talk",
-      "desc": "Author Talk , Signing , Events Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August 25, 2026 6:00 PM 7:00 PM 18:00 19:00 Time Out Bookstore (map) Google "
-    },
-    {
-      "venue": "timeout",
-      "title": "Author Talk: kluge: pip adam and Frances Libeau in conversation",
-      "zh": "作家对谈：pip adam 新作《kluge》",
-      "kind": "reading",
-      "date": "2026-08-25",
-      "time": "18:00",
-      "price": "free",
-      "desc": "pip adam and artist Frances Libeau in conversation for the release of the novel kluge.",
-      "descZh": "小说《kluge》发布，作者 pip adam 与跨媒介艺术家 Frances Libeau 对谈。",
-      "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026"
+      "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026",
+      "desc": "Author Talk: kluge: pip adam and Frances Libeau in conversation Tuesday, August 25, 2026 6:00 PM 7:00 PM 18:00 19:00 Time Out Bookstore (map) Google Calendar ICS Tuesday 25 August,",
+      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a6fc48a15ef2128415ed522/1785989478299/kluge+Time+Out+tile.png?format=1500w"
     },
     {
       "venue": "basement",
@@ -2467,6 +2483,15 @@ window.EVENTS = {
       "img": "https://media.pumphouse.nz/wp-content/uploads/2026/06/Web-banner-no-text-2.jpg"
     },
     {
+      "venue": "sanderson",
+      "title": "JULIA HOLDERNESS Botanical Correspondents 26 Aug - 14 Sep 2026 Opening - Thursday 27th August - 5.30-7pm Catal",
+      "date": "2026-08-26",
+      "kind": "opening",
+      "url": "https://www.sanderson.co.nz/exhibitions/482-julia-holderness-botanical-correspondents/overview/",
+      "desc": "JULIA HOLDERNESS Botanical Correspondents 26 Aug - 14 Sep 2026 Opening - Thursday 27th August - 5.30-7pm Catalogue Requests - Please email info@sanderson.co.nz Julia Holderness pre",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite1962/usr/images/exhibitions/main_image_override/482/julia-holderness-campbell-island-flowers-cameo-2026-watercolour-on-mat-board-330-x-250mm-framed.png"
+    },
+    {
       "venue": "tuningfork",
       "title": "Play It Strange Live 26 AUG 2026",
       "date": "2026-08-26",
@@ -2482,6 +2507,15 @@ window.EVENTS = {
       "url": "https://basementtheatre.co.nz/blogs/whats-on/god-mothers-1",
       "desc": "God Mothers 27 AUG, 8PM",
       "img": "http://basementtheatre.co.nz/cdn/shop/articles/God_mothers_Website_82e52136-e389-4eb1-9c36-bb13176d8eee.png?v=1784174099"
+    },
+    {
+      "venue": "foenander",
+      "title": "Every Time The Sun Comes Up 27 Aug - 15 Sep 2026 Every Time The Sun Comes Up Michael Dell’s paintings are unre",
+      "date": "2026-08-27",
+      "kind": "opening",
+      "url": "https://foenandergalleries.co.nz/exhibitions/109-every-time-the-sun-comes-up/",
+      "desc": "Every Time The Sun Comes Up 27 Aug - 15 Sep 2026 Every Time The Sun Comes Up Michael Dell’s paintings are unremarkable in the conventional sense - landscape views from the roadside",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2706/usr/images/exhibitions/main_image_override/109/m-dell-26-5-velvet-morning.jpg"
     },
     {
       "venue": "aotea",
@@ -2521,23 +2555,12 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Poetry Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time ",
+      "title": "Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time Out Boo",
       "date": "2026-08-28",
       "kind": "reading",
-      "url": "?category=Poetry",
-      "desc": "Poetry Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time Out Bookstore (map) Google Calendar ICS Our annual NZ Poetry Day event"
-    },
-    {
-      "venue": "timeout",
-      "title": "Winter Poetry Series #3: All Tomorrow's Poets",
-      "zh": "冬季诗歌系列 #3：全国诗歌日",
-      "kind": "reading",
-      "date": "2026-08-28",
-      "time": "18:00",
-      "price": "free",
-      "desc": "Annual NZ Poetry Day event closing Time Out's Winter Poetry Series.",
-      "descZh": "年度新西兰诗歌日活动，也是冬季诗歌系列收官场。",
-      "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026"
+      "url": "https://www.timeout.co.nz/upcoming-events/alltomorrowspoets2026",
+      "desc": "Winter Poetry Series #3: All Tomorrow's Poets Friday, August 28, 2026 6:00 PM 8:30 PM 18:00 20:30 Time Out Bookstore (map) Google Calendar ICS Our annual NZ Poetry Day event is bac",
+      "img": "http://static1.squarespace.com/static/591b97a515cf7dd5fafa17a7/5986936915d5dba84b5e54b9/6a1f5eee09ef7a3ccec8adf2/1785710346241/ATP+Poster+Ideas+2026.png?format=1500w"
     },
     {
       "venue": "tuningfork",
@@ -2676,6 +2699,15 @@ window.EVENTS = {
     },
     {
       "venue": "qtheatre",
+      "title": "29 - 30 August 2026",
+      "date": "2026-08-30",
+      "kind": "opening",
+      "url": "https://www.qtheatre.co.nz/shows/mythos-flipnfly-circus-school",
+      "desc": "29 - 30 August 2026 Find out more",
+      "img": "https://www.qtheatre.co.nz/sites/default/files/styles/social_media/public/2026-07/FNF_Mythos_Q_HomepageSlider_1386x520.jpg?itok=uoilndUV"
+    },
+    {
+      "venue": "qtheatre",
       "title": "29 - 30 August 2026 Theatre Mythos by FlipnFly Circus School Experience a magical circus show weaving myths an",
       "date": "2026-08-30",
       "kind": "opening",
@@ -2698,8 +2730,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-09-01",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "powerstation",
@@ -3001,8 +3032,7 @@ window.EVENTS = {
       "zh": "Poetry Live 开放麦（每周二）",
       "date": "2026-09-08",
       "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list",
-      "img": "https://static.wixstatic.com/media/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg/v1/fill/w_1200,h_630,al_c/0845b2_2796baf28f314ba3a465f341df4bd9c8~mv2.jpg"
+      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "powerstation",
