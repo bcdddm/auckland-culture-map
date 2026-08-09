@@ -44,7 +44,7 @@ SOURCES = {
   "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
-  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card"}],   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
+  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card", "strip":".eventlist-cats"}],   # ✅ 2026-08-10：render 后拿到 3 场；strip 掉分类标签行，标题才与 manual_events 去重   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
   "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
@@ -289,6 +289,10 @@ def parse_date(text):
 def scrape_html(venue, src):
     out = []
     soup = BeautifulSoup(fetch_html(src), "html.parser")
+    # strip: 抓取前先删掉噪音节点（如 Squarespace 活动卡片顶部的分类标签），让标题干净、便于与 manual 去重
+    for sel in [x.strip() for x in (src.get("strip") or "").split(",") if x.strip()]:
+        for n in soup.select(sel):
+            n.decompose()
     # 第一优先级：JSON-LD 结构化数据，命中即返回
     ld = extract_jsonld_events(venue, soup, src["url"])
     if ld:
