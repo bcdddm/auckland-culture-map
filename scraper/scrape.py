@@ -515,11 +515,12 @@ def main():
     print(f"[ok]   history: kept {len(hist)} past items")
     if MANUAL.exists():
         # 策展母本：全量并入（含双语、展览、历史），页面自行按日期归类显示；按 (venue,title前40,date) 去重
+        # 2026-08-10：母本优先——同一 (venue,title前40,date) 若抓取与手工都有，保留手工版（含 zh/descZh/price）
         manual = json.loads(MANUAL.read_text(encoding="utf-8"))
-        keys = {(e["venue"], e["title"][:40], e["date"]) for e in items}
-        added = [e for e in manual if (e["venue"], e["title"][:40], e["date"]) not in keys]
-        items += added
-        print(f"[ok]   manual/curated: merged {len(added)}")
+        mkeys = {(e["venue"], e["title"][:40], e["date"]) for e in manual}
+        before = len(items)
+        items = [e for e in items if (e["venue"], e["title"][:40], e["date"]) not in mkeys] + manual
+        print(f"[ok]   manual/curated: merged {len(manual)} (overrode {before + len(manual) - len(items)} scraped dupes)")
     enrich_images(items)
     items.sort(key=lambda e: (e["date"], e["venue"]))
     payload = {"generated": str(TODAY), "sample": False, "items": items}
