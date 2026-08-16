@@ -516,6 +516,16 @@ def enrich_images(items, cap_total=90):
     got = sum(1 for e in items if e.get("img"))
     print(f"[ok]   image-enrich: fetched {n} detail pages, {got} items now have images")
 
+def _fuzzy_key(title):
+    """标题去日期后取前两个词做模糊键（同场馆内足够区分，又能容忍抓取标题的描述尾巴）。"""
+    words = re.findall(r"[0-9a-z\u4e00-\u9fff]+", strip_dates(title).lower())
+    k = ""
+    for w in words[:3]:            # 取到 10 个字符为止，最多 3 个词
+        k += w
+        if len(k) >= 10:
+            break
+    return k if len(k) >= 10 else ""
+
 def load_history():
     """保留上一版 events.js 里已结束的条目（卡片"上次活动"依赖它），每场馆最多留 5 条。"""
     if not OUT.exists():
@@ -559,12 +569,28 @@ def main():
     items += [e for e in hist if (e["venue"], e["title"][:40], e["date"]) not in seen_keys]
     print(f"[ok]   history: kept {len(hist)} past items")
     if MANUAL.exists():
-        # 策展母本：全量并入（含双语、展览、历史），页面自行按日期归类显示；按 (venue,title前40,date) 去重
+        # 策展母本：全量并入（含双语、展览、历史），页面自行按日期归类显示。
         # 2026-08-10：母本优先——同一 (venue,title前40,date) 若抓取与手工都有，保留手工版（含 zh/descZh/price）
+        # 2026-08-17：精确键太脆——抓取标题常带描述尾巴（“Sharon Bourne On View: Sunday…”）、
+        #   撇号也可能是 ’ 而不是 '，runner 用 UTC 还会让日期差一天 → 再加一层
+        #   「同场馆 + 标题前两个词相同 + 日期区间重叠」的模糊去重，避免同一场展览出现两张贴纸。
         manual = json.loads(MANUAL.read_text(encoding="utf-8"))
         mkeys = {(e["venue"], e["title"][:40], e["date"]) for e in manual}
+        mfuzzy = {}
+        for e in manual:
+            k = _fuzzy_key(e["title"])
+            if k:
+                mfuzzy.setdefault((e["venue"], k), []).append(e)
+        def _dup_of_manual(e):
+            if (e["venue"], e["title"][:40], e["date"]) in mkeys:
+                return True
+            k = _fuzzy_key(e["title"])
+            for c in mfuzzy.get((e["venue"], k), []) if k else []:
+                if e["date"] <= (c.get("end") or c["date"]) and (e.get("end") or e["date"]) >= c["date"]:
+                    return True
+            return False
         before = len(items)
-        items = [e for e in items if (e["venue"], e["title"][:40], e["date"]) not in mkeys] + manual
+        items = [e for e in items if not _dup_of_manual(e)] + manual
         print(f"[ok]   manual/curated: merged {len(manual)} (overrode {before + len(manual) - len(items)} scraped dupes)")
     enrich_images(items)
     items.sort(key=lambda e: (e["date"], e["venue"]))

@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+env:
+  # runner 默认 UTC，周日 18:00 UTC 跑出来的 "today" 会比新西兰早一天，
+  # 导致展期区间与 manual_events 差一天对不上 → 统一按奥克兰时区计算
+  TZ: Pacific/Auckland
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
