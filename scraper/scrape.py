@@ -34,8 +34,8 @@ HORIZON = TODAY + datetime.timedelta(days=31)
 # ---------------------------------------------------------------
 SOURCES = {
   # render:True → 用 Playwright 无头浏览器渲染（JS 站 / 反爬站），Actions 已装 chromium
-  "aag":         [{"type":"html", "render":True, "url":"https://www.aucklandartgallery.com/whats-on/events", "selector":"a[href*='whats-on'], article, .card"},
-                  {"type":"html", "render":True, "url":"https://www.aucklandartgallery.com/visit/exhibitions", "selector":"a[href*='exhibition'], article, .card"}],
+  "aag":         [{"type":"html", "url":"https://www.aucklandartgallery.com/visit/exhibitions", "selector":"a.group.block, div.min-h-0.flex-1"},
+                  {"type":"html", "url":"https://www.aucklandartgallery.com/visit/events", "selector":"a.group.block, div.min-h-0.flex-1"}],   # ✅ 2026-08-17 修复：/whats-on/events 与 /exhibitions 均 404（新站改版）；正确路径是 /visit/exhibitions 与 /visit/events，React 服务端渲染、卡片为 a.group.block，无需 render
   "gusfisher":   [{"type":"html", "url":"https://gusfishergallery.auckland.ac.nz/exhibitions/", "selector":"article, .et_pb_text, h1, h3"}],  # ✅ 2026-07-07 校准：/exhibitions/ 是静态HTML（WordPress/Divi），日期在 h3
   "artspace":    [{"type":"html", "url":"https://artspace-aotearoa.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准：列表页静态HTML，日期直接在链接文本里
   "michaellett": [{"type":"html", "url":"https://lett-thomas.com/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：已改名 Lett Thomas，静态HTML
@@ -72,7 +72,7 @@ SOURCES = {
   # ✅ gowlangsford 用 Artlogic CMS，静态HTML，展览卡片是 a[href*='/exhibitions/']（下方已配置）
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
   "lakehouse":   [{"type":"html", "render":True, "url":"https://www.lakehousearts.org.nz/", "selector":"article, .card, .event, a[href*='event']"}],
-  "mairangi":    [{"type":"html", "url":"https://mairangiarts.co.nz/exhibitions/", "selector":"article, .card, .event"}],
+  "mairangi":    [{"type":"html", "url":"https://mairangiarts.co.nz/exhibitions/", "selector":"li.item, div.product, article, .card, .event"}],   # ✅ 2026-08-17 修复：页面确有展讯（“On View: Sunday 16 August - Monday 31 August”），但卡片是 li.item / div.product，旧选择器全落空
   "estuary":     [{"type":"html", "render":True, "url":"https://www.estuaryarts.org/exhibitions", "selector":"article, .card, .event, h2"}],  # ✅ 2026-07-10 校准：Wix 站拒脚本 UA（RemoteDisconnected），改 /exhibitions + render
   "pumphouse":   [{"type":"html", "url":"https://pumphouse.co.nz/whats-on/", "selector":"article, .card, .event"}],
   # ---- 西区 / Rodney / 南区 社区艺术中心 ----
@@ -84,7 +84,7 @@ SOURCES = {
   "franklin":    [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html", "selector":"article, .card, li"}],
   # ---- Dealer 画廊（官网结构各异，开幕信息统一走 ArtNow 兜底更省事）----
   "gowlangsford": [{"type":"html", "url":"https://gowlangsfordgallery.co.nz/exhibitions/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准
-  "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：静态HTML
+  "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/'], li, p"}],  # ✅ 2026-07-07 校准：静态HTML   # ⚠️ 2026-08-17：首页日期写成 “07.08 - 19.09”（dd.mm），DATE_RE 不认；且奥/墨/悉三地混排 → 本周先由 manual_events 兜底，下周考虑加 dd.mm 解析 + “⚫ Auckland” 过滤
   "tworooms":    [{"type":"html", "url":"https://tworooms.co.nz/exhibitions/", "selector":"article, .exhibition, li"}],
   "sanderson":   [{"type":"html", "url":"https://www.sanderson.co.nz/exhibitions", "selector":"article, .exhibition, li"}],
   "foenander":   [], "coastalsigns": [], "bergman": [],
@@ -93,8 +93,7 @@ SOURCES = {
   "artis": [], "flagstaff": [], "artbysea": [], "vivian": [],
   # ---- 2026-07-11 批量配源：表演/音乐/博物馆/画廊优先（书店暂缓）----
   # 博物馆
-  "museum":      [{"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on/query/upcoming", "selector":"a[href*='whats-on'], article, .card, li"},
-                  {"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/whats-on", "selector":"a[href*='whats-on'], article, .card"}],   # ✅ 2026-08-10：/visit/whats-on 卡片文本不带日期→连周 0，先试带日期的 /query/upcoming
+  "museum":      [{"type":"html", "url":"https://www.aucklandmuseum.com/visit/exhibitions", "selector":"div.object-inner-wrap, div.object__info"}],   # ✅ 2026-08-17 修复：/query/upcoming 已 404、/visit/whats-on 客户端渲染且卡片无日期 → 改 /visit/exhibitions（静态，写“ON NOW UNTIL SUN 30 AUG 2026”，由 parse_span 的 UNTIL 规则解析）   # ✅ 2026-08-10：/visit/whats-on 卡片文本不带日期→连周 0，先试带日期的 /query/upcoming
   "maritime":    [{"type":"html", "render":True, "url":"https://www.maritimemuseum.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
   "motat":       [{"type":"html", "render":True, "url":"https://www.motat.nz/whats-on/", "selector":"article, .card, a[href*='event']"}],
   # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
@@ -117,7 +116,7 @@ SOURCES = {
   # 影院：只抓特别放映/节展，日常排片噪音大 → 暂不配源，待做"特殊场次"过滤后再开
   "academy": [], "capitol": [], "vic": [], "bridgeway": [],
   # 音乐
-  "sparkarena":  [{"type":"html", "render":True, "url":"https://www.sparkarena.co.nz/events", "selector":"article, .card, a[href*='event']"}],
+  "sparkarena":  [{"type":"html", "render":True, "url":"https://www.sparkarena.co.nz/all-events", "selector":"a[href*='/all-events/'], article, .card"}],   # ✅ 2026-08-17 修复：/events 404，列表页实为 /all-events
   "tuningfork":  [{"type":"html", "render":True, "url":"https://www.tuningfork.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "galatos":     [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=1638"},
                   {"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],   # ✅ 2026-08-10：官网连周 0，改以 UTR vid=1638 (Galatos) iCal 为主源，官网留兜底
@@ -169,17 +168,17 @@ SOURCES = {
   "winecellar":  [{"type":"html", "render":True, "url":"https://www.winecellar.co.nz/", "selector":"article, .card, a[href*='gig'], a[href*='event']"}],
   # 影院（academy/capitol/vic/bridgeway）日常排片刻意不抓；节展季由每周任务经 Eventfinda 手动补
   # ---- 2026-07-13 本周新配：书店/文学 ----
-  "womensbookshop": [{"type":"html", "url":"https://womensbookshop.co.nz/pages/1311-NewsandEvents", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-07-13 配源：News and Events 页（静态）
-  "michaelking": [{"type":"html", "render":True, "url":"https://writerscentre.org.nz/events/", "selector":"article, .card, h3, li, a[href*=\'event\']"}],  # ✅ 2026-08-03 修复：/workshops/ 已 404（移除）；/events/ 纯requests 被 UA 封锁返 404 → 改 render:True
+  "womensbookshop": [{"type":"html", "render":True, "url":"https://womensbookshop.co.nz/pages/1311-NewsandEvents", "selector":"article, .card, p, li, h3"}],   # ✅ 2026-08-17 修复：Actions runner IP 被 Bookmanager 403（本机 curl 200）→ 改 Playwright 渲染带全套浏览器头  # ✅ 2026-07-13 配源：News and Events 页（静态）
+  "michaelking": [],   # ⚠️ 2026-08-17：writerscentre.org.nz/events/ 已 404（官网改版后只剩驻村/News，无活动页；render 拿到 404 页所以不报 warn，白跑一周）→ 撤源，公开活动由 manual_events 补  # ✅ 2026-08-03 修复：/workshops/ 已 404（移除）；/events/ 纯requests 被 UA 封锁返 404 → 改 render:True
   # ---- 2026-07-20 本周新配：dealer 画廊收尾 ----
   "artis":       [{"type":"html", "url":"https://www.artisgallery.co.nz/exhibitions/current/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态（同 gowlangsford），日期在链接文本
   "foenander":   [{"type":"html", "url":"https://foenandergalleries.co.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-20 配源：Artlogic CMS 静态
   "coastalsigns":[{"type":"html", "url":"https://coastal-signs.net/", "selector":"p, figcaption, li"}],  # ✅ 2026-07-20 配源：Kirby 静态站，首页列当季展讯；命中率不稳 → manual_events 兜底
   "flagstaff":   [{"type":"html", "url":"https://www.flagstaff.nz/pages/events", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Shopify 服务端渲染；官网 footer 地址 6 Victoria Rd（VENUES 已修正）
   "artbysea":    [{"type":"html", "render":True, "url":"https://www.artbythesea.co.nz/", "selector":"article, .card, p, h2, h3, li"}],  # ✅ 2026-07-20 配源：Wix JS 站；画廊已迁址 Takapuna 162 Hurstmere Rd（VENUES 已修正）
-  "vivian":      [{"type":"html", "render":True, "url":"https://www.thevivian.co.nz/", "selector":"article, .card, p, h2, h3"}],  # ✅ 2026-07-20 配源：Matakana，冬季周五–周一开放（TripAdvisor 标 CLOSED 系误标，官网在营）
+  "vivian":      [],   # ⚠️ 2026-08-17：thevivian.co.nz 连 Leo 本机 curl 都 ERR_CONNECTION_RESET（DNS 正常，服务器拒连）→ 暂时撤源，靠 manual_events；下次先确认官网是否复活  # ✅ 2026-07-20 配源：Matakana，冬季周五–周一开放（TripAdvisor 标 CLOSED 系误标，官网在营）
   # ---- 2026-08-10 本周新配：书店 ----
-  "dorothybutler": [{"type":"html", "url":"https://dorothybutler.co.nz/pages/3165-EVENTS", "selector":"article, .card, p, li, h3"}],  # ✅ 2026-08-10 配源：与 womensbookshop 同款 Bookmanager 静态页（当前无排期）
+  "dorothybutler": [{"type":"html", "render":True, "url":"https://dorothybutler.co.nz/pages/3165-EVENTS", "selector":"article, .card, p, li, h3"}],   # ✅ 2026-08-17 修复：同 womensbookshop，datacenter IP 被 403 → render  # ✅ 2026-08-10 配源：与 womensbookshop 同款 Bookmanager 静态页（当前无排期）
   "poppieshowick": [{"type":"html", "url":"https://www.booksellers.co.nz/event-organizer/poppies-howick", "selector":".wpem-event-box-col, article, .card, li, h3"}],  # ✅ 2026-08-10 配源：官网无活动页，改用 Booksellers NZ 会员活动页（WP Event Manager 静态）
   # "bergman" 不配源：奥克兰空间 2022–2026 运营已于 2026 年结束（Cook Islands News 报道），主画廊回迁拉罗汤加；地图上保留灰色
 }
@@ -286,6 +285,41 @@ def parse_date(text):
     except Exception:
         return None
 
+RANGE_SEP = r"\s*(?:–|—|−|-|to|until|till|thru|through|至|~)\s*"
+RANGE_RE = re.compile(DATE_RE.pattern + RANGE_SEP + DATE_RE.pattern, re.I)
+
+def _norm(raw):
+    try:
+        d = dparse.parse(raw, default=datetime.datetime(TODAY.year, TODAY.month, TODAY.day), dayfirst=True).date()
+    except Exception:
+        return None
+    if d < TODAY - datetime.timedelta(days=300):   # 没写年份被解析成过去 → 加一年
+        d = d.replace(year=d.year + 1)
+    return d
+
+UNTIL_RE = re.compile(r"(?:until|til|till|through|thru|closes?(?:\s+on)?|ends?(?:\s+on)?)\s+"
+                      r"(?:(?:mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\.?,?\s+)?" + DATE_RE.pattern, re.I)
+
+def parse_span(text):
+    """返回 (start, end)。文本里出现两个及以上日期 → 视为展期区间（end 取最晚）。
+    2026-08-17：正在展出的展览开幕日通常已过去，只看 start 会被 31 天窗口滤光——
+    改成解析区间后，与 [今天, 今天+31] 有重叠即收录，画廊类场馆才不会连周 0。"""
+    ds = [d for d in (_norm(m) for m in DATE_RE.findall(text)) if d]
+    if not ds:
+        return None, None
+    if len(ds) == 1 and UNTIL_RE.search(text) and ds[0] >= TODAY:
+        return TODAY, ds[0]     # “ON NOW UNTIL 30 AUG” 这类只写闭展日的 → 视为正在展出
+    return ds[0], max(ds)
+
+def strip_dates(text):
+    """把日期/年份从标题里剔掉，避免标题变成一串日期、也便于与 manual_events 去重。"""
+    t = RANGE_RE.sub(" ", text)
+    t = DATE_RE.sub(" ", t)
+    t = re.sub(r"\b20[2-3]\d\b", " ", t)
+    t = re.sub(r"^\s*(Featured|Current Exhibition|Upcoming Exhibition|Current exhibitions|Exhibition)\s+", "", t, flags=re.I)
+    t = re.sub(r"\s{2,}", " ", t)
+    return t.strip(" ·|,.–—−-")
+
 def scrape_html(venue, src):
     out = []
     soup = BeautifulSoup(fetch_html(src), "html.parser")
@@ -301,13 +335,20 @@ def scrape_html(venue, src):
     for node in soup.select(src["selector"])[:60]:
         text = " ".join(node.get_text(" ", strip=True).split())
         if len(text) < 12: continue
-        d = parse_date(text)
-        if not d or not (TODAY <= d <= HORIZON): continue
+        d, dend = parse_span(text)
+        if not d: continue
+        if dend > d:
+            # 展期区间：与 [今天, 今天+31天] 有重叠即收（正在展出的展览开幕日已过去）
+            if not (d <= HORIZON and dend >= TODAY): continue
+        else:
+            if not (TODAY <= d <= HORIZON): continue
         # 年份合法性：文本里写明的年份全部早于今年 → 是旧展归档，跳过（防止 2024 展被误标为今年）
         yrs = [int(y) for y in re.findall(r"\b(20[0-3]\d)\b", text)]
         if yrs and max(yrs) < TODAY.year: continue
         # 2026-08-10：去掉卡片里的按钮文案，标题更干净（Powerstation/Squarespace 等）
-        title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more|Find out more)\s*", " ", text).strip()[:110]
+        title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more|Find out more|View exhibition|Learn more|More info)\s*", " ", text)
+        title = strip_dates(title)[:110]
+        if len(title) < 6: continue   # 只剩日期没有标题的节点（如 Objectspace 的 h2）直接丢
         link = node.get("href") or (node.find("a")["href"] if node.find("a") and node.find("a").get("href") else src["url"])
         if link and link.startswith("/"):
             from urllib.parse import urljoin; link = urljoin(src["url"], link)
@@ -316,8 +357,12 @@ def scrape_html(venue, src):
         seen.add(key)
         price = "free" if re.search(r"free entry|free admission|entry is free|\bfree\b", text, re.I) \
                 else ("koha" if re.search(r"\bkoha\b", text, re.I) else None)
-        item = {"venue": venue, "title": title, "date": str(d), "kind": classify(text),
+        kind = classify(text)
+        if dend > d and (dend - d).days >= 5 and kind == "opening":
+            kind = "exhibition"   # 跨多日的区间默认是展览，不是开幕酒会
+        item = {"venue": venue, "title": title, "date": str(d), "kind": kind,
                 "url": link, "desc": text[:180]}
+        if dend > d: item["end"] = str(dend)
         if price: item["price"] = price
         out.append(item)
     return out

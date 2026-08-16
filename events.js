@@ -1,161 +1,8 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-08-16",
+  "generated": "2026-08-17",
   "sample": false,
   "items": [
-    {
-      "venue": "objectspace",
-      "title": "Warwick Freeman: Hook Hand Heart Star",
-      "zh": "Warwick Freeman 首饰回顾展",
-      "kind": "exhibition",
-      "date": "2025-11-01",
-      "end": "2026-03-08",
-      "url": "https://objectspace.org.nz/"
-    },
-    {
-      "venue": "artis",
-      "title": "J. S. Parker: Plain Song — Station of the Soul",
-      "zh": "J. S. Parker《素歌》",
-      "kind": "exhibition",
-      "date": "2025-11-08",
-      "end": "2025-12-15",
-      "url": "#"
-    },
-    {
-      "venue": "artspace",
-      "title": "Echo — Erica Holm, Ngaroma Riley, Tarika Sabherwal",
-      "zh": "《Echo》三人展",
-      "kind": "exhibition",
-      "date": "2025-11-08",
-      "end": "2025-12-20",
-      "url": "https://artspace-aotearoa.nz/"
-    },
-    {
-      "venue": "tworooms",
-      "title": "Robin White: Finding my way in Aomori",
-      "zh": "Robin White《青森寻路》",
-      "kind": "exhibition",
-      "date": "2025-11-08",
-      "end": "2025-12-20",
-      "url": "https://tworooms.co.nz/"
-    },
-    {
-      "venue": "bergman",
-      "title": "New Collectors — Leleisi'uao, Fong, Good & more",
-      "zh": "《新藏家》群展",
-      "kind": "exhibition",
-      "date": "2025-11-15",
-      "end": "2025-12-20",
-      "url": "#"
-    },
-    {
-      "venue": "gusfisher",
-      "title": "Eva During: Under the Bridge",
-      "zh": "Eva During《Under the Bridge》",
-      "kind": "exhibition",
-      "date": "2025-11-15",
-      "end": "2026-01-18",
-      "url": "https://gusfishergallery.auckland.ac.nz/"
-    },
-    {
-      "venue": "ivananthony",
-      "title": "Brendon Wilkinson: east, west, east direction is the yellow sky",
-      "zh": "Brendon Wilkinson 个展",
-      "kind": "exhibition",
-      "date": "2025-11-15",
-      "end": "2025-12-20",
-      "url": "#"
-    },
-    {
-      "venue": "jonathangrant",
-      "title": "Zarahn Tūwharetoa Southon: HĪTORI",
-      "zh": "Southon《HĪTORI》",
-      "kind": "exhibition",
-      "date": "2025-11-15",
-      "end": "2025-12-15",
-      "url": "#"
-    },
-    {
-      "venue": "papakura",
-      "title": "ALESANA — Vaai & Lealiifano-Faletoese",
-      "zh": "《ALESANA》双人展",
-      "kind": "exhibition",
-      "date": "2025-11-15",
-      "end": "2026-01-31",
-      "url": "#"
-    },
-    {
-      "venue": "coastalsigns",
-      "title": "Body Language — Miller, Ffrench, Turei",
-      "zh": "《身体语言》三人展",
-      "kind": "exhibition",
-      "date": "2025-11-22",
-      "end": "2026-01-31",
-      "url": "#"
-    },
-    {
-      "venue": "foenander",
-      "title": "Haka — Bailey, Birch, Forde, Jahnke, Reihana, Waetford",
-      "zh": "《Haka》群展",
-      "kind": "exhibition",
-      "date": "2025-11-22",
-      "end": "2025-12-24",
-      "url": "#"
-    },
-    {
-      "venue": "freshgallery",
-      "title": "Jim To'o Filiva'a Stretton: Echoes of the Pacific",
-      "zh": "《太平洋回声》",
-      "kind": "exhibition",
-      "date": "2025-11-22",
-      "end": "2026-01-10",
-      "url": "#"
-    },
-    {
-      "venue": "uxbridge",
-      "title": "Pat Basse: Visual Diary of An Astral Traveller",
-      "zh": "Pat Basse 星旅视觉日记",
-      "kind": "exhibition",
-      "date": "2025-11-22",
-      "end": "2026-01-17",
-      "url": "https://uxbridge.org.nz/"
-    },
-    {
-      "venue": "sanderson",
-      "title": "Summer Exhibition 25-26 — gallery artists",
-      "zh": "画廊艺术家夏季群展",
-      "kind": "exhibition",
-      "date": "2025-12-01",
-      "end": "2026-02-01",
-      "url": "https://www.sanderson.co.nz/"
-    },
-    {
-      "venue": "franklin",
-      "title": "Mike Tupaea: Te Oho The Awakening",
-      "zh": "Mike Tupaea《觉醒》",
-      "kind": "exhibition",
-      "date": "2025-12-06",
-      "end": "2026-02-07",
-      "url": "#"
-    },
-    {
-      "venue": "mangere",
-      "title": "8 Contemporary Cook Islands Artists",
-      "zh": "八位库克群岛当代艺术家",
-      "kind": "exhibition",
-      "date": "2025-12-13",
-      "end": "2026-02-14",
-      "url": "#"
-    },
-    {
-      "venue": "pah",
-      "title": "Yvonne Todd: Diary of a Carrot",
-      "zh": "Yvonne Todd《胡萝卜日记》",
-      "kind": "exhibition",
-      "date": "2025-12-13",
-      "end": "2026-03-22",
-      "url": "#"
-    },
     {
       "venue": "aag",
       "title": "Taimoana | Coastlines: Art in Aotearoa (collection)",
@@ -178,6 +25,18 @@ window.EVENTS = {
       "end": "2027-03-07",
       "price": "free",
       "url": "https://www.objectspace.org.nz/exhibitions/overtime/"
+    },
+    {
+      "venue": "aag",
+      "title": "Forever Tomorrow: Chinese Art Now",
+      "zh": "《永远的明天：中国当代艺术》",
+      "kind": "exhibition",
+      "date": "2026-05-02",
+      "end": "2026-08-23",
+      "price": "paid",
+      "desc": "Final weeks: special $10 entry. Closes 23 August 2026.",
+      "descZh": "中国当代艺术大展，闭展前最后数周，成人特惠 $10（会员及 12 岁以下免费）。",
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions/forever-tomorrow-chinese-art-now"
     },
     {
       "venue": "teuru",
@@ -243,18 +102,6 @@ window.EVENTS = {
       "end": "2026-08-09",
       "price": "free",
       "url": "https://teuru.org.nz/products/all-the-forest-stands-with-you"
-    },
-    {
-      "venue": "aag",
-      "title": "Forever Tomorrow: Chinese Art Now",
-      "zh": "《永远的明天：中国当代艺术》",
-      "kind": "exhibition",
-      "date": "2026-06-01",
-      "end": "2026-09-30",
-      "price": "paid",
-      "desc": "Major ticketed survey of Chinese contemporary art. Adults $22. End date TBC.",
-      "descZh": "中国当代艺术大展：雕塑、摄影、数字作品。成人 $22。展期以官网为准。",
-      "url": "https://www.aucklandartgallery.com/"
     },
     {
       "venue": "upstairs",
@@ -383,18 +230,6 @@ window.EVENTS = {
       "url": "https://www.studioone.org.nz/exhibitions/"
     },
     {
-      "venue": "upstairs",
-      "title": "'Lifetime of Looking' — Cyndie Bryon",
-      "zh": "Cyndie Bryon 个展《Lifetime of Looking（凝视一生）》",
-      "date": "2026-06-26",
-      "end": "2026-07-12",
-      "kind": "exhibition",
-      "price": "free",
-      "desc": "On show 26 June – 12 July 2026 at the Upstairs Art Gallery, Lopdell House.",
-      "descZh": "展期 6 月 26 日至 7 月 12 日，Lopdell House 二楼 Upstairs 画廊。",
-      "url": "https://www.upstairs.org.nz/events/2026/6/26/lifetime-of-looking-cyndie-bryon"
-    },
-    {
       "venue": "gowlangsford",
       "title": "Claudia Kogachi: Another Day (Onehunga)",
       "zh": "Claudia Kogachi《Another Day》",
@@ -499,19 +334,6 @@ window.EVENTS = {
       "descZh": "NZ 波普/风景画家 Christian Nicolson 以“吻”为主题的新展，至7月21日。"
     },
     {
-      "venue": "corban",
-      "title": "Wishes to Hiwa-i-te-Rangi — Penny Howard (pop-up installation)",
-      "zh": "《向许愿星 Hiwa-i-te-Rangi 许愿》互动装置",
-      "date": "2026-07-04",
-      "end": "2026-07-18",
-      "kind": "exhibition",
-      "price": "free",
-      "time": "10:00AM-4:00PM",
-      "desc": "Interactive Matariki wishing-star installation by Penny Howard in the Homestead reception.",
-      "descZh": "Penny Howard 的马塔里基许愿星互动装置，位于 Homestead 前厅。",
-      "url": "https://ceac.org.nz/events/matariki/wishes-to-hiwa-i-te-rangi"
-    },
-    {
       "venue": "artis",
       "title": "July — group exhibition",
       "zh": "《July》七月群展",
@@ -532,18 +354,6 @@ window.EVENTS = {
       "end": "2026-08-08",
       "price": "free",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/529-the-seasons-michael-hight/"
-    },
-    {
-      "venue": "corban",
-      "title": "Matariki Shorts — rangatahi Māori short films",
-      "zh": "马塔里基短片之夜（毛利青年电影人）",
-      "date": "2026-07-09",
-      "kind": "film",
-      "price": "free",
-      "time": "6:30PM-8:30PM",
-      "desc": "Short films by rangatahi Māori filmmakers, with Day One Hāpai te Haeata.",
-      "descZh": "毛利青年电影人短片放映，与 Day One Hāpai te Haeata 合办。",
-      "url": "https://ceac.org.nz/events/matariki/matariki-shorts"
     },
     {
       "venue": "waihekegallery",
@@ -594,29 +404,12 @@ window.EVENTS = {
       "desc": "Drive Thru Carlos Knight July 2026"
     },
     {
-      "venue": "avondale",
-      "title": "Avondale Sunday Markets",
-      "zh": "Avondale 周日集市",
-      "date": "2026-07-12",
-      "kind": "market",
-      "url": "#"
-    },
-    {
       "venue": "lakehouse",
       "title": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More",
       "date": "2026-07-12",
       "kind": "opening",
       "url": "https://lakehousearts.org.nz/tag/becroft/",
       "desc": "Becroft , film Māoriland Films’ Screening Event Date: Sunday July 12th 6pm . Learn More"
-    },
-    {
-      "venue": "melanieroger",
-      "title": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
-      "date": "2026-07-12",
-      "kind": "opening",
-      "url": "https://melanierogergallery.com/exhibitions/tuhononga",
-      "desc": "Shane Cotton / Nikau Hindin / Rangi Kipa / Reuben Paterson / Lisa Reihana Tūhononga 1st Jul – 25th Jul 2026",
-      "img": "http://melanierogergallery.com/media/cache/b7/57/b757d12a2d1b1a177c13faaaabdd7271.jpg"
     },
     {
       "venue": "window",
@@ -633,18 +426,6 @@ window.EVENTS = {
       "kind": "workshop",
       "url": "https://auctions.webbs.co.nz/auctions/catalog/id/951",
       "desc": "Current & Upcoming Fine Jewels, Watches & Luxury Accessories Online Auction | 7—13 July —Bidding Closing View Catalogue & Bid The Estate | Design Edit Online Auction | 9—14 July —B"
-    },
-    {
-      "venue": "aotea",
-      "title": "H.R. The Musical",
-      "zh": "《H.R.》职场喜剧音乐剧",
-      "kind": "gig",
-      "date": "2026-07-14",
-      "end": "2026-07-18",
-      "price": "paid",
-      "url": "https://www.aucklandlive.co.nz/show/hr-the-musical",
-      "desc": "Hit workplace sketch-comedy, Herald Theatre fundraiser season, 14–18 Jul.",
-      "descZh": "职场素描喜剧音乐剧，Herald 剧院筹款季，7月14—18日"
     },
     {
       "venue": "brucemason",
@@ -678,18 +459,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/dog-man-the-musical",
       "desc": "Experience Dog Man: The Musical live in the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/dogman-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "Matariki Evening Market — makers market, kai & live music",
-      "zh": "马塔里基夜市（手作市集＋美食＋现场音乐）",
-      "date": "2026-07-17",
-      "kind": "market",
-      "price": "free",
-      "time": "4:30PM-8:30PM",
-      "desc": "Makers market, Five Star Eats kai collective and live music from Crescendo.",
-      "descZh": "手作市集、Five Star Eats 美食团体与 Crescendo 现场音乐。",
-      "url": "https://ceac.org.nz/events/matariki/matariki-evening-market"
     },
     {
       "venue": "maritime",
@@ -734,15 +503,6 @@ window.EVENTS = {
     },
     {
       "venue": "upstairs",
-      "title": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The ",
-      "date": "2026-07-17",
-      "kind": "opening",
-      "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan",
-      "desc": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are invited to Dean",
-      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a3119a9458d841b097da534/1781602736989/Dean+Buchanan.jpg?format=1500w"
-    },
-    {
-      "venue": "upstairs",
       "title": "Dean Buchanan — 'A Journey'",
       "zh": "Dean Buchanan 个展《A Journey（旅程）》",
       "date": "2026-07-17",
@@ -752,6 +512,15 @@ window.EVENTS = {
       "desc": "West Auckland painter Dean Buchanan, opening Friday 17 July 6pm; on show 17 July – 9 August 2026.",
       "descZh": "西奥克兰画家 Dean Buchanan 个展，7 月 17 日（周五）18:00 开幕，展期至 8 月 9 日。",
       "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The ",
+      "date": "2026-07-17",
+      "kind": "opening",
+      "url": "https://www.upstairs.org.nz/events/2026/7/17/2026-07-17-dean-buchanan-a-journey-dean-buchanan",
+      "desc": "Jul 17 to 9 Aug Dean Buchanan 'Dean Buchanan a Journey' Fri, 17 Jul 2026 10:00 am Sun, 9 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are invited to Dean",
+      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a3119a9458d841b097da534/1781602736989/Dean+Buchanan.jpg?format=1500w"
     },
     {
       "venue": "waihekegallery",
@@ -771,11 +540,15 @@ window.EVENTS = {
     },
     {
       "venue": "artspace",
-      "title": "18 July – 26 September 2026 CRIT: Art learning since 1987 Atarangi Anderson & Thies Vaihū Margaret Aull Elvis ",
+      "title": "CRIT: Art learning since 1987",
+      "zh": "《CRIT：1987 年以来的艺术学习》",
+      "kind": "exhibition",
       "date": "2026-07-18",
-      "kind": "opening",
-      "url": "https://artspace-aotearoa.nz/exhibitions/crit-art-learning-since-1987",
-      "desc": "18 July – 26 September 2026 CRIT: Art learning since 1987 Atarangi Anderson & Thies Vaihū Margaret Aull Elvis Booth-Claveria Chris Bryant-Toi Fiona Connor Millie Dunstall Jef Geys "
+      "end": "2026-09-26",
+      "price": "free",
+      "desc": "Atarangi Anderson & others; on art education and critique culture.",
+      "descZh": "回看 1987 年以来的艺术教育与“讲评（crit）”文化，免费。",
+      "url": "https://artspace-aotearoa.nz/exhibitions"
     },
     {
       "venue": "britomart",
@@ -796,6 +569,16 @@ window.EVENTS = {
     },
     {
       "venue": "northart",
+      "title": "Arrested Practice",
+      "zh": "Arrested Practice 群展",
+      "kind": "exhibition",
+      "date": "2026-07-18",
+      "end": "2026-08-03",
+      "price": "free",
+      "url": "https://northart.co.nz/"
+    },
+    {
+      "venue": "northart",
       "title": "Arrested Practice + SELECT — three shows open",
       "zh": "Arrested Practice 等三展同日开幕",
       "date": "2026-07-18",
@@ -810,16 +593,6 @@ window.EVENTS = {
       "zh": "Drisana Tonga《Heliaki》开幕",
       "date": "2026-07-18",
       "kind": "opening",
-      "price": "free",
-      "url": "https://northart.co.nz/"
-    },
-    {
-      "venue": "northart",
-      "title": "Arrested Practice",
-      "zh": "Arrested Practice 群展",
-      "kind": "exhibition",
-      "date": "2026-07-18",
-      "end": "2026-08-03",
       "price": "free",
       "url": "https://northart.co.nz/"
     },
@@ -847,17 +620,6 @@ window.EVENTS = {
       "date": "2026-07-18",
       "kind": "market",
       "url": "#"
-    },
-    {
-      "venue": "teuru",
-      "title": "Film Screening: From the Breach",
-      "zh": "放映：From the Breach",
-      "date": "2026-07-18",
-      "kind": "film",
-      "time": "7pm",
-      "desc": "Evening film screening at Te Uru.",
-      "descZh": "Te Uru 晚间放映，票务详见活动页。",
-      "url": "https://teuru.org.nz/products/film-screening-from-the-breach-1"
     },
     {
       "venue": "avondale",
@@ -894,27 +656,6 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/kumeu-vintage-brass25-1133x628-auckland-live.jpg"
     },
     {
-      "venue": "corban",
-      "title": "Dawn Wishes to Hiwa-i-te-Rangi — Matariki dawn ceremony",
-      "zh": "马塔里基黎明仪式",
-      "date": "2026-07-21",
-      "kind": "talk",
-      "price": "free",
-      "time": "6:30AM-8:30AM",
-      "desc": "Dawn ceremony closing the Matariki Festival at CEAC, led by Penny Howard.",
-      "descZh": "由 Penny Howard 主持的马塔里基节闭幕黎明仪式。",
-      "url": "https://ceac.org.nz/events/matariki/dawn-wishes-to-hiwa-i-te-rangi-3"
-    },
-    {
-      "venue": "foenander",
-      "title": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and i",
-      "date": "2026-07-21",
-      "kind": "opening",
-      "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
-      "desc": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and imagination: cats and fish, creatures that have long occupied a rich pl",
-      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2706/usr/images/exhibitions/main_image_override/106/gavin-chai-kate-fish-tom-kate-ceramic-tiles.jpg"
-    },
-    {
       "venue": "foenander",
       "title": "Catfish",
       "zh": "《Catfish》群展",
@@ -927,6 +668,15 @@ window.EVENTS = {
       "descZh": "以猫与鱼在艺术史中的意象为线索的群展，7月21日至8月4日。"
     },
     {
+      "venue": "foenander",
+      "title": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and i",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://foenandergalleries.co.nz/exhibitions/106-catfish/",
+      "desc": "Catfish 21 Jul - 4 Aug 2026 Cat Fish swims between worlds. It begins with two familiar companions of art and imagination: cats and fish, creatures that have long occupied a rich pl",
+      "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2706/usr/images/exhibitions/main_image_override/106/gavin-chai-kate-fish-tom-kate-ceramic-tiles.jpg"
+    },
+    {
       "venue": "intlart",
       "title": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
       "date": "2026-07-21",
@@ -934,15 +684,6 @@ window.EVENTS = {
       "url": "https://www.internationalartcentre.co.nz/auctions/4-koi5or",
       "desc": "Upcoming Important & Rare Art Live Auction • 21 July - 04 August 2026",
       "img": "https://assets.internationalartcentre.co.nz/images/og-image.jpg"
-    },
-    {
-      "venue": "objectspace",
-      "title": "21 Jul–9 Aug 2026",
-      "date": "2026-07-21",
-      "kind": "opening",
-      "url": "https://www.objectspace.org.nz/exhibitions/",
-      "desc": "21 Jul–9 Aug 2026",
-      "img": "https://www.objectspace.org.nz/static/img/sharing-image.2515c14c.jpg"
     },
     {
       "venue": "objectspace",
@@ -954,6 +695,15 @@ window.EVENTS = {
       "end": "2026-08-09",
       "price": "free",
       "url": "https://www.objectspace.org.nz/exhibitions/we-used-to-be-a-mighty-mauka/"
+    },
+    {
+      "venue": "objectspace",
+      "title": "21 Jul–9 Aug 2026",
+      "date": "2026-07-21",
+      "kind": "opening",
+      "url": "https://www.objectspace.org.nz/exhibitions/",
+      "desc": "21 Jul–9 Aug 2026",
+      "img": "https://www.objectspace.org.nz/static/img/sharing-image.2515c14c.jpg"
     },
     {
       "venue": "poetrylive",
@@ -969,22 +719,6 @@ window.EVENTS = {
     },
     {
       "venue": "michaellett",
-      "title": "Imogen Taylor Deep Impact 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Imogen Taylor Deep Impact 22 July — 22 August 2026"
-    },
-    {
-      "venue": "michaellett",
-      "title": "Upcoming Exhibition Imogen Taylor Deep Impact 22 July — 22 August 2026",
-      "date": "2026-07-22",
-      "kind": "opening",
-      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
-      "desc": "Upcoming Exhibition Imogen Taylor Deep Impact 22 July — 22 August 2026"
-    },
-    {
-      "venue": "michaellett",
       "title": "Imogen Taylor: Deep Impact",
       "zh": "Imogen Taylor：深度撞击",
       "descZh": "Lett Thomas（原 Michael Lett）K 路空间，Imogen Taylor 个展。",
@@ -993,6 +727,14 @@ window.EVENTS = {
       "end": "2026-08-22",
       "price": "free",
       "url": "https://ocula.com/art-galleries/lett-thomas/exhibitions/imogen-taylor/"
+    },
+    {
+      "venue": "michaellett",
+      "title": "Upcoming Exhibition Imogen Taylor Deep Impact 22 July — 22 August 2026",
+      "date": "2026-07-22",
+      "kind": "opening",
+      "url": "https://lett-thomas.com/exhibition/imogen-taylor-7/",
+      "desc": "Upcoming Exhibition Imogen Taylor Deep Impact 22 July — 22 August 2026"
     },
     {
       "venue": "tepou",
@@ -1010,18 +752,6 @@ window.EVENTS = {
       "kind": "workshop",
       "url": "https://webbsbn.acemlna.com/lt.php?x=41xtmrUFUqPUT55qA3P3VeRu~3QjvNDyke0vYHXIUFWbE58t__xFUBVzAH7TvN_fx2YxYXXMMnOh65KKy.xMV.R02u3U-N_f0DYx",
       "desc": "Current & Upcoming Fine Wines & Whiskies Online Auction | 17—22 July —Bidding Open View Catalogue & Bid Art Online Online Auction | 17—22 July —Bidding Open View Catalogue & Bid Zo"
-    },
-    {
-      "venue": "aotea",
-      "title": "Royal New Zealand Ballet: Winter Season",
-      "zh": "新西兰皇家芭蕾舞团冬季演出季",
-      "kind": "gig",
-      "date": "2026-07-23",
-      "end": "2026-07-25",
-      "price": "paid",
-      "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
-      "desc": "Three works celebrating the heritage of the RNZB, 23–25 Jul, Aotea Centre.",
-      "descZh": "三部经典作品致敬皇家芭蕾传统，7月23—25日 Aotea 中心"
     },
     {
       "venue": "parnellgallery",
@@ -1125,17 +855,6 @@ window.EVENTS = {
       "img": "https://www.tepoutheatre.nz/wp-content/uploads/2026/05/1080-x-1080-95.jpg"
     },
     {
-      "venue": "teuru",
-      "title": "Herehere: a Panel Discussion",
-      "zh": "Herehere 座谈会",
-      "date": "2026-07-25",
-      "kind": "talk",
-      "time": "11am",
-      "price": "free",
-      "descZh": "配合展览 Herehere 的座谈。",
-      "url": "https://teuru.org.nz/products/herehere-a-panel-discussion"
-    },
-    {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
@@ -1162,15 +881,6 @@ window.EVENTS = {
     },
     {
       "venue": "asbwaterfront",
-      "title": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul –",
-      "date": "2026-07-28",
-      "kind": "opening",
-      "url": "https://www.atc.co.nz/whats-on/2026-season/macbeth",
-      "desc": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul – 22 Aug 2026",
-      "img": "https://cms.atc.co.nz/media/45edv5kx/macbeth_press_hero_square.jpg?cc=0,0.17208333333333334,0,0.30291666666666667&amp;width=1200&amp;height=630&amp;quality=90"
-    },
-    {
-      "venue": "asbwaterfront",
       "title": "Macbeth — Auckland Theatre Company",
       "zh": "《麦克白》· 奥克兰戏剧公司",
       "kind": "gig",
@@ -1180,6 +890,15 @@ window.EVENTS = {
       "url": "https://www.atc.co.nz/whats-on/2026-season/macbeth",
       "desc": "by William Shakespeare. 28 Jul – 22 Aug, ASB Waterfront Theatre.",
       "descZh": "莎士比亚经典，ATC 2026 剧季大戏，7月28日—8月22日在 ASB 海滨剧院上演"
+    },
+    {
+      "venue": "asbwaterfront",
+      "title": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul –",
+      "date": "2026-07-28",
+      "kind": "opening",
+      "url": "https://www.atc.co.nz/whats-on/2026-season/macbeth",
+      "desc": "Macbeth Shakespeare’s chilling tale of betrayal, ambition and the corrosive cost of unchecked desire. 28 Jul – 22 Aug 2026",
+      "img": "https://cms.atc.co.nz/media/45edv5kx/macbeth_press_hero_square.jpg?cc=0,0.17208333333333334,0,0.30291666666666667&amp;width=1200&amp;height=630&amp;quality=90"
     },
     {
       "venue": "poetrylive",
@@ -1344,14 +1063,6 @@ window.EVENTS = {
       "img": "https://static-assets.artlogic.net/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-gowlangsford/usr/images/exhibitions/main_image_override/526/apul557-25-image_crop.jpg"
     },
     {
-      "venue": "lacigale",
-      "title": "La Cigale French Market (Sat)",
-      "zh": "La Cigale 法式集市（周六）",
-      "date": "2026-08-01",
-      "kind": "market",
-      "url": "#"
-    },
-    {
       "venue": "ostend",
       "title": "Ostend Market (Waiheke)",
       "zh": "Ostend 集市（激流岛，周六）",
@@ -1460,6 +1171,19 @@ window.EVENTS = {
       "descZh": "新西兰持续最久的现场诗歌之夜（46 年），每周二 19:00，Thirty Nine（Ponsonby 路 39 号）。"
     },
     {
+      "venue": "rmgallery",
+      "title": "Cosmic Punchline — Cowan, Hadley, Hatchard-McGill, Kerr, Müller, Orlov, Pointon",
+      "zh": "《宇宙笑点》七人联展",
+      "kind": "exhibition",
+      "date": "2026-08-05",
+      "end": "2026-09-05",
+      "price": "free",
+      "time": "开幕 8/5 18:00",
+      "desc": "Artists from Finland, Germany and Aotearoa on comic timing in visual art. Opening 5 August 6pm.",
+      "descZh": "芬兰、德国与新西兰艺术家联展，从喜剧的“停顿”谈视觉艺术的时机感。8 月 5 日 18:00 开幕。",
+      "url": "https://rm.org.nz/"
+    },
+    {
       "venue": "unity",
       "title": "6 Aug - Wellington The Drama of the Day Job: Asher Emanuel & Carl Shuker on Writing the Workplace 12:30pm, Thu",
       "date": "2026-08-06",
@@ -1476,11 +1200,47 @@ window.EVENTS = {
       "desc": "6 Aug - Wellington Book Launch: Dr Paul Wood - Better Never Stops In-store book launch, Thursday 6th August, 6pm. Unity Books Wellington, 57 Willis Street. All welcome, chairs avai"
     },
     {
+      "venue": "starkwhite",
+      "title": "Clinton Watkins: nothing_everything",
+      "zh": "Clinton Watkins《nothing_everything》",
+      "kind": "exhibition",
+      "date": "2026-08-07",
+      "end": "2026-09-19",
+      "price": "free",
+      "desc": "Solo show at Starkwhite Auckland (Karangahape Rd).",
+      "descZh": "Starkwhite 奥克兰空间个展（K 路），免费。",
+      "url": "https://starkwhite.co.nz/"
+    },
+    {
       "venue": "whammy",
       "title": "Menzies Album Release w/ The EE Machine _ Salt Water Criminals, Holding My Cold Hand.. -",
       "date": "2026-08-07",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aag",
+      "title": "et al. | the fundamental practice",
+      "zh": "et al.《根本实践》",
+      "kind": "exhibition",
+      "date": "2026-08-08",
+      "end": "2026-11-15",
+      "price": "free",
+      "desc": "Survey of the long-running Aotearoa collective et al.",
+      "descZh": "新西兰匿名艺术团体 et al. 的大型个展，免费。",
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions/et-al-the-fundamental-practice"
+    },
+    {
+      "venue": "aag",
+      "title": "Student exhibition | Pat Hanly Creativity Awards 2026",
+      "zh": "Pat Hanly 创意奖学生展 2026",
+      "kind": "exhibition",
+      "date": "2026-08-08",
+      "end": "2026-09-13",
+      "price": "free",
+      "desc": "Annual secondary-school student exhibition.",
+      "descZh": "年度中学生创作奖展览，免费入场。",
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions/student-exhibition-pat-hanly-creativity-awards-2026"
     },
     {
       "venue": "basement",
@@ -1651,6 +1411,30 @@ window.EVENTS = {
       "img": "http://melanierogergallery.com/media/cache/5c/47/5c479760f906eab0775db3ed068331e2.jpg"
     },
     {
+      "venue": "tetuhi",
+      "title": "Pallavi Paul: To Be in Someone Else's Prayer",
+      "zh": "Pallavi Paul《在他人的祈祷里》",
+      "kind": "exhibition",
+      "date": "2026-08-09",
+      "end": "2026-10-04",
+      "price": "free",
+      "desc": "New Delhi artist Pallavi Paul at Te Tuhi.",
+      "descZh": "新德里艺术家 Pallavi Paul 个展，免费。",
+      "url": "https://tetuhi.art/current-exhibitions/"
+    },
+    {
+      "venue": "tetuhi",
+      "title": "Kāhu Kaan: Whao",
+      "zh": "Kāhu Kaan《Whao》",
+      "kind": "exhibition",
+      "date": "2026-08-09",
+      "end": "2026-10-04",
+      "price": "free",
+      "desc": "Te Tuhi solo project.",
+      "descZh": "Te Tuhi 个人项目展，免费。",
+      "url": "https://tetuhi.art/current-exhibitions/"
+    },
+    {
       "venue": "brucemason",
       "title": "The Madeleines",
       "date": "2026-08-10",
@@ -1789,15 +1573,6 @@ window.EVENTS = {
     },
     {
       "venue": "upstairs",
-      "title": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm ",
-      "date": "2026-08-14",
-      "kind": "opening",
-      "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters",
-      "desc": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are warmly invi",
-      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a4c958f57cad2413c2ebdc5/1783403939361/Chloe+Marsters++%26+Sylvia+Marsters.jpg?format=1500w"
-    },
-    {
-      "venue": "upstairs",
       "title": "'Galaxie Petunia' — Chloe & Sylvia Marsters",
       "zh": "Chloe 与 Sylvia Marsters 双人展《Galaxie Petunia》",
       "date": "2026-08-14",
@@ -1807,6 +1582,15 @@ window.EVENTS = {
       "desc": "Opening Saturday 15 August 5–6:30pm; on show 14–30 August 2026.",
       "descZh": "双人展，8 月 15 日（周六）17:00–18:30 开幕，展期 8 月 14 日至 30 日。",
       "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm ",
+      "date": "2026-08-14",
+      "kind": "opening",
+      "url": "https://www.upstairs.org.nz/events/2026/8/14/galaxie-petunia-chloe-sylvia-marsters",
+      "desc": "Aug 14 to 30 Aug 'Galaxie Petunia' Chloe & Sylvia Marsters Fri, 14 Aug 2026 10:00 am Sun, 30 Aug 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS You are warmly invi",
+      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a4c958f57cad2413c2ebdc5/1783403939361/Chloe+Marsters++%26+Sylvia+Marsters.jpg?format=1500w"
     },
     {
       "venue": "whammy",
@@ -1878,14 +1662,6 @@ window.EVENTS = {
     },
     {
       "venue": "maritime",
-      "title": "events Our Ocean of Islands Opening weekend 14–15 Aug",
-      "date": "2026-08-15",
-      "kind": "opening",
-      "url": "https://www.maritimemuseum.co.nz/events/our-ocean-of-islands-opening-weekend",
-      "desc": "events Our Ocean of Islands Opening weekend 14–15 Aug"
-    },
-    {
-      "venue": "maritime",
       "title": "Our Ocean of Islands",
       "zh": "《我们的岛屿之海》",
       "kind": "exhibition",
@@ -1896,6 +1672,26 @@ window.EVENTS = {
       "desc": "Landmark exhibition bringing together the Indigenous knowledge systems and cultural practices of 24 Moana Oceania island nations, incl. Tangata Whenua and all 17 island nations with diaspora in Aotearoa. Edmiston Gallery, Level 2.",
       "descZh": "重磅大展：汇集大洋洲 24 个岛屿民族的原住民知识体系与文化实践（含 Aotearoa 及 17 个有侨民社群的太平洋岛国），Edmiston 展厅（2 楼），随门票免费。",
       "url": "https://www.maritimemuseum.co.nz/exhibitions/our-ocean-of-islands"
+    },
+    {
+      "venue": "maritime",
+      "title": "events Our Ocean of Islands Opening weekend 14–15 Aug",
+      "date": "2026-08-15",
+      "kind": "opening",
+      "url": "https://www.maritimemuseum.co.nz/events/our-ocean-of-islands-opening-weekend",
+      "desc": "events Our Ocean of Islands Opening weekend 14–15 Aug"
+    },
+    {
+      "venue": "northart",
+      "title": "Mary MacGregor-Reid | Celestial Bodies",
+      "zh": "Mary MacGregor-Reid《天体》",
+      "kind": "exhibition",
+      "date": "2026-08-15",
+      "end": "2026-09-19",
+      "price": "free",
+      "desc": "Northart Gallery, Norman King Square, Northcote.",
+      "descZh": "北岸 Northart 画廊个展，免费。",
+      "url": "https://www.northartgallery.net/current-exhibitions"
     },
     {
       "venue": "ostend",
@@ -1948,6 +1744,18 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "mairangi",
+      "title": "Sharon Bourne: Moments within Time",
+      "zh": "Sharon Bourne《时间里的片刻》",
+      "kind": "exhibition",
+      "date": "2026-08-16",
+      "end": "2026-08-31",
+      "price": "free",
+      "desc": "Solo exhibition in MAC Artspace.",
+      "descZh": "MAC Artspace 个展，免费。",
+      "url": "https://mairangiarts.co.nz/exhibitions/"
+    },
+    {
       "venue": "melanieroger",
       "title": "Erica van Zon Various Aquaria 30th Jul – 22nd Aug 2026",
       "date": "2026-08-16",
@@ -1984,6 +1792,30 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/rockshop-bandquest",
       "desc": "Experience Rockshop Bandquest at the Bruce Mason Centre. Visit aucklandlive.co.nz for tickets, dates, and more information",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/rockshop-bandquest-1133x628.jpg"
+    },
+    {
+      "venue": "museum",
+      "title": "Wildlife Photographer of the Year 2026",
+      "zh": "年度野生动物摄影师 2026",
+      "kind": "exhibition",
+      "date": "2026-08-17",
+      "end": "2026-08-30",
+      "price": "free",
+      "desc": "On loan from the Natural History Museum, London. Free exhibition, on now until Sun 30 Aug 2026.",
+      "descZh": "伦敦自然史博物馆巡展第 61 届，免费，8 月 30 日（周日）闭展。",
+      "url": "https://www.aucklandmuseum.com/visit/exhibitions"
+    },
+    {
+      "venue": "tetoiuku",
+      "title": "John Parker & the Ambrico Kiln",
+      "zh": "John Parker 与 Ambrico 窑",
+      "kind": "exhibition",
+      "date": "2026-08-17",
+      "end": "2026-10-03",
+      "price": "free",
+      "desc": "Solo exhibition by ceramic artist John Parker inside the restored 100-year-old Ambrico Kiln (end date per artsdiary.co.nz listing).",
+      "descZh": "陶艺家 John Parker 个展，展场是修复后的百年 Ambrico 砖窑；闭展日期据 artsdiary 列表。",
+      "url": "https://www.tetoiuku.org.nz/whats-on/john-parker-the-ambrico-kiln/"
     },
     {
       "venue": "unity",
@@ -2052,15 +1884,6 @@ window.EVENTS = {
     },
     {
       "venue": "aotea",
-      "title": "Autaia",
-      "date": "2026-08-20",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/autaia",
-      "desc": "Experience Autaia at the Kiri Te Kanawa Theatre. Visit aucklandlive.co.nz for tickets, dates, and more information",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/autaia-al-hero-image-1133-x-628px.jpg"
-    },
-    {
-      "venue": "aotea",
       "title": "Autaia — Haka Theatre Showcase",
       "zh": "Autaia 哈卡剧场展演",
       "kind": "gig",
@@ -2070,6 +1893,15 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/autaia-2026",
       "desc": "Haka theatre showcase back for its sixth season, Thu 20 – Fri 21 Aug.",
       "descZh": "第六季哈卡剧场展演，8月20—21日 Aotea 中心（日期为周四/周五，官网横幅未标月份，据 2026 年历推定为 8 月）"
+    },
+    {
+      "venue": "aotea",
+      "title": "Autaia",
+      "date": "2026-08-20",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/autaia",
+      "desc": "Experience Autaia at the Kiri Te Kanawa Theatre. Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/autaia-al-hero-image-1133-x-628px.jpg"
     },
     {
       "venue": "parnellgallery",
@@ -2150,6 +1982,18 @@ window.EVENTS = {
       "date": "2026-08-22",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "mairangi",
+      "title": "Photo Friends Exhibition",
+      "zh": "Photo Friends 摄影联展",
+      "kind": "exhibition",
+      "date": "2026-08-22",
+      "end": "2026-08-31",
+      "price": "free",
+      "desc": "Jong Keun Kim, Hyoung Gon Lee, Hye Kyung Joo, Sarah Jung — Main Gallery.",
+      "descZh": "四位摄影师联展（主展厅），免费。",
+      "url": "https://mairangiarts.co.nz/exhibitions/"
     },
     {
       "venue": "motat",
@@ -2979,14 +2823,6 @@ window.EVENTS = {
     },
     {
       "venue": "coastalsigns",
-      "title": "Shannon Te Ao sisters 10 September - 10 October 2026 Opening Wednesday 9 September 5.30-7pm",
-      "date": "2026-09-10",
-      "kind": "opening",
-      "url": "https://coastal-signs.net/",
-      "desc": "Shannon Te Ao sisters 10 September - 10 October 2026 Opening Wednesday 9 September 5.30-7pm"
-    },
-    {
-      "venue": "coastalsigns",
       "title": "Shannon Te Ao",
       "zh": "Shannon Te Ao 个展",
       "kind": "exhibition",
@@ -2996,6 +2832,14 @@ window.EVENTS = {
       "url": "https://coastal-signs.net/",
       "desc": "Shannon Te Ao solo exhibition, 10 September – 10 October 2026.",
       "descZh": "Shannon Te Ao 个展，9月10日至10月10日。"
+    },
+    {
+      "venue": "coastalsigns",
+      "title": "Shannon Te Ao sisters 10 September - 10 October 2026 Opening Wednesday 9 September 5.30-7pm",
+      "date": "2026-09-10",
+      "kind": "opening",
+      "url": "https://coastal-signs.net/",
+      "desc": "Shannon Te Ao sisters 10 September - 10 October 2026 Opening Wednesday 9 September 5.30-7pm"
     },
     {
       "venue": "parnellgallery",
@@ -3261,6 +3105,18 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.tuningfork.co.nz/all-events/infinity-song-tickets-ae1505528",
       "desc": "Infinity Song 16 SEP 2026"
+    },
+    {
+      "venue": "museum",
+      "title": "March of the Triceratops",
+      "zh": "三角龙来了",
+      "kind": "exhibition",
+      "date": "2026-09-17",
+      "end": "2027-04-17",
+      "price": "paid",
+      "desc": "Ticketed dinosaur exhibition opening 17 September 2026.",
+      "descZh": "9 月 17 日开展的恐龙特展（需购票），展至 2027 年 4 月。",
+      "url": "https://www.aucklandmuseum.com/visit/exhibitions"
     }
   ]
 };
