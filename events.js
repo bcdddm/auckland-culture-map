@@ -222,7 +222,8 @@ window.EVENTS = {
       "kind": "exhibition",
       "url": "https://www.maritimemuseum.co.nz/events/manahua-a-weavers-collective",
       "desc": "events Manahua – A Weavers’ Collective 23 May – 5 Dec",
-      "end": "2026-12-05"
+      "end": "2026-12-05",
+      "img": "https://cdn.aucklandunlimited.com/maritime/assets/media/weavers-collective-image-2.webp"
     },
     {
       "venue": "gusfisher",
@@ -465,7 +466,7 @@ window.EVENTS = {
       "zh": "年度野生动物摄影师 2026",
       "kind": "exhibition",
       "date": "2026-06-28",
-      "end": "2026-08-23",
+      "end": "2026-08-30",
       "price": "free",
       "desc": "On loan from the Natural History Museum, London. Free exhibition, on now until Sun 30 Aug 2026.",
       "descZh": "伦敦自然史博物馆巡展第 61 届，免费，8 月 30 日（周日）闭展。",
@@ -2390,15 +2391,6 @@ window.EVENTS = {
       "img": "http://melanierogergallery.com/media/cache/5c/47/5c479760f906eab0775db3ed068331e2.jpg"
     },
     {
-      "venue": "museum",
-      "title": "Wildlife Photographer of the Year ON NOW UNTIL SUN Now in its sixty-first year and on loan from the Natural Hi",
-      "date": "2026-08-24",
-      "kind": "exhibition",
-      "url": "https://www.aucklandmuseum.com/visit/exhibitions/Wildlife-Photographer-of-the-Year-2026",
-      "desc": "Wildlife Photographer of the Year ON NOW UNTIL SUN 30 AUG 2026 Now in its sixty-first year and on loan from the Natural History Museum in London, Wildlife Photographer of the Year ",
-      "end": "2026-08-30"
-    },
-    {
       "venue": "sparkarena",
       "title": "Alex Warren - Finding Family On the Road",
       "date": "2026-08-24",
@@ -2690,7 +2682,7 @@ window.EVENTS = {
     },
     {
       "venue": "museum",
-      "title": "Te Ripo o Te Moana: Taonga Through Time OPENS SAT Te Ripo o Te Moana: Taonga Through Time brings together taon",
+      "title": "Te Ripo o Te Moana: Taonga Through Time",
       "date": "2026-08-29",
       "kind": "opening",
       "url": "https://www.aucklandmuseum.com/visit/exhibitions/Te-Ripo-o-Te-Moana-Taonga-Through-Time",
