@@ -313,7 +313,11 @@ def parse_span(text):
 
 def strip_dates(text):
     """把日期/年份从标题里剔掉，避免标题变成一串日期、也便于与 manual_events 去重。"""
-    t = RANGE_RE.sub(" ", text)
+    # 2026-08-24：奥克兰博物馆等卡片把全大写状态横幅并进标题
+    #（"Wildlife Photographer of the Year ON NOW UNTIL SUN 30 AUG 2026"）。
+    # 只切全大写写法，"Open Studio" 这类正常标题不会被误伤。
+    t = re.sub(r"\s*\b(?:ON NOW|OPENS|CLOSES|NOW SHOWING|COMING SOON|LAST DAYS)\b.*$", "", text)
+    t = RANGE_RE.sub(" ", t)
     t = DATE_RE.sub(" ", t)
     t = re.sub(r"\b20[2-3]\d\b", " ", t)
     t = re.sub(r"^\s*(Featured|Current Exhibition|Upcoming Exhibition|Current exhibitions|Exhibition)\s+", "", t, flags=re.I)
