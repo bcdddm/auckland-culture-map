@@ -93,7 +93,7 @@ SOURCES = {
   "artis": [], "flagstaff": [], "artbysea": [], "vivian": [],
   # ---- 2026-07-11 批量配源：表演/音乐/博物馆/画廊优先（书店暂缓）----
   # 博物馆
-  "museum":      [{"type":"html", "url":"https://www.aucklandmuseum.com/visit/exhibitions", "selector":"div.object-inner-wrap, div.object__info"}],   # ✅ 2026-08-17 修复：/query/upcoming 已 404、/visit/whats-on 客户端渲染且卡片无日期 → 改 /visit/exhibitions（静态，写“ON NOW UNTIL SUN 30 AUG 2026”，由 parse_span 的 UNTIL 规则解析）   # ✅ 2026-08-10：/visit/whats-on 卡片文本不带日期→连周 0，先试带日期的 /query/upcoming
+  "museum":      [{"type":"html", "render":True, "url":"https://www.aucklandmuseum.com/visit/exhibitions", "selector":"div.object-inner-wrap, div.object__info, article, .card"}],   # ✅ 2026-08-24 修复：纯 requests 连周 403（WAF 拦 UA），改 render:True 走真实浏览器   # ✅ 2026-08-17 修复：/query/upcoming 已 404、/visit/whats-on 客户端渲染且卡片无日期 → 改 /visit/exhibitions（静态，写“ON NOW UNTIL SUN 30 AUG 2026”，由 parse_span 的 UNTIL 规则解析）   # ✅ 2026-08-10：/visit/whats-on 卡片文本不带日期→连周 0，先试带日期的 /query/upcoming
   "maritime":    [{"type":"html", "render":True, "url":"https://www.maritimemuseum.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
   "motat":       [{"type":"html", "render":True, "url":"https://www.motat.nz/whats-on/", "selector":"article, .card, a[href*='event']"}],
   # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
@@ -387,6 +387,13 @@ AKL_LIVE_ROUTES = {   # Auckland Live 共享节目页 → 按 location.name 分�
     "townhall":   ["town hall"],
     "brucemason": ["bruce mason"],
 }
+AKL_VENUE_SLUGS = {   # 详情页 <a href="/venue/…"> → 场馆 id（JSON-LD 撤掉后的路由依据）
+    "the-civic": "civic",
+    "aotea-centre": "aotea",
+    "auckland-town-hall": "townhall",
+    "bruce-mason-centre": "brucemason",
+}
+
 def _akl_parse_jsonld(soup, base):
     """从一个 soup 里提取 JSON-LD Event 并按 location.name 路由；供列表页与详情页共用。"""
     out = []
@@ -433,37 +440,93 @@ def _akl_parse_jsonld(soup, base):
             out.append(item)
     return out
 
+def _akl_parse_detail(soup, url):
+    """Auckland Live 详情页兜底解析（2026-08-24 新增）。
+
+    列表页与详情页的 JSON-LD 都已撤掉，但两处服务端渲染的信息还在：
+      · <title> = "Cirque Alice | 28 Aug - 6 Sep | Auckland Live"
+      · 正文里的 <a href="/venue/the-civic"> 指出场馆
+    普通请求即可拿到，不需要 Playwright。"""
+    t = (soup.title.string if soup.title else "") or ""
+    parts = [p.strip() for p in t.split("|") if p.strip()]
+    if len(parts) < 2:
+        return []
+    name = parts[0]
+    datetext = " ".join(parts[1:-1]) if len(parts) > 2 else parts[1]
+    start, end = parse_span(datetext)
+    if not start:
+        return []
+    end = end or start
+    if end < TODAY or start > HORIZON:      # 与 [今天, 今天+31] 无重叠 → 丢弃
+        return []
+    vid = None
+    for a in soup.select("a[href*='/venue/']"):
+        slug = (a.get("href") or "").split("?")[0].rstrip("/").split("/venue/")[-1]
+        if slug in AKL_VENUE_SLUGS:
+            vid = AKL_VENUE_SLUGS[slug]
+            break
+    if not vid:
+        return []
+    title = strip_dates(name)[:110] or name[:110]
+    item = {"venue": vid, "title": title, "date": str(start), "kind": classify(name), "url": url}
+    if item["kind"] == "opening":
+        item["kind"] = "gig"                # Auckland Live 全是演出
+    if end > start:
+        item["end"] = str(end)
+        if (end - start).days > 14:
+            # index.html 只对 kind=="exhibition" 走 date/end 展期逻辑；
+            # 长档期（如 The Civic Tours 3 月–10 月）若留成 gig，开演日早已过去就永远不显示。
+            item["kind"] = "exhibition"
+    d = soup.find("meta", attrs={"name": "description"})
+    if d and d.get("content"):
+        item["desc"] = re.sub(r"\s+", " ", d["content"]).strip()[:180]
+    og = soup.find("meta", attrs={"property": "og:image"})
+    if og and str(og.get("content", "")).startswith("http"):
+        item["img"] = og["content"]
+    return [item]
+
 def scrape_aucklandlive():
-    """渲染 aucklandlive.co.nz/whats-on 读 JSON-LD 路由到多个场馆。
-    2026-07-13 备援：What's On 列表是客户端渲染、JSON-LD 时有时无——若列表页拿到 0 条，
-    则从渲染后的列表页 + 官网首页收集 /show/、/event/ 详情链接，逐页（普通请求）读 JSON-LD。"""
-    src = {"render": True, "url": "https://www.aucklandlive.co.nz/whats-on"}
-    soup = BeautifulSoup(fetch_html(src), "html.parser")
-    out = _akl_parse_jsonld(soup, src["url"])
-    if not out:
-        links = set()
-        def collect(sp):
-            for a in sp.select("a[href*='/show/'], a[href*='/event/']"):
-                h = a.get("href") or ""
-                if h.startswith("/"): h = "https://www.aucklandlive.co.nz" + h
-                if h.startswith("https://www.aucklandlive.co.nz/"): links.add(h.split("?")[0].rstrip("/"))
-        collect(soup)
+    """Auckland Live 共享路由 → Civic / Aotea Centre / 市政厅 / Bruce Mason。
+
+    2026-08-24 重写：/whats-on 列表是客户端渲染且 JSON-LD 已撤掉，连周 0 条。
+    改为「收集详情链接 → 逐页解析」：首页轮播的 <a href="/show/…"> 是服务端渲染的，
+    普通请求就能拿到；详情页先试 JSON-LD，没有再用 _akl_parse_detail 读 <title> 里的展期。"""
+    links, raw = set(), []
+
+    def collect(sp):
+        for a in sp.select("a[href*='/show/'], a[href*='/event/']"):
+            h = (a.get("href") or "").split("?")[0].rstrip("/")
+            if h.startswith("/"):
+                h = "https://www.aucklandlive.co.nz" + h
+            if h.startswith("https://www.aucklandlive.co.nz/") and ("/show/" in h or "/event/" in h):
+                links.add(h)
+
+    for src in ({"url": "https://www.aucklandlive.co.nz/"},
+                {"render": True, "url": "https://www.aucklandlive.co.nz/whats-on"},
+                {"render": True, "url": "https://www.aucklandlive.co.nz/search/events"}):
         try:
-            collect(BeautifulSoup(fetch_html({"render": True, "url": "https://www.aucklandlive.co.nz/"}), "html.parser"))
+            sp = BeautifulSoup(fetch_html(src), "html.parser")
+        except Exception as e:
+            print(f"[warn] aucklandlive {src['url']}: {e}", file=sys.stderr)
+            continue
+        raw += _akl_parse_jsonld(sp, src["url"])
+        collect(sp)
+
+    for u in sorted(links)[:40]:
+        try:
+            sp = BeautifulSoup(fetch_html({"url": u}), "html.parser")   # 详情页服务端渲染，普通请求即可
         except Exception:
-            pass
-        seen = set()
-        for u in sorted(links)[:30]:
-            try:
-                sp = BeautifulSoup(fetch_html({"url": u}), "html.parser")   # 详情页 JSON-LD 服务端渲染，普通请求即可
-            except Exception:
-                continue
-            for it in _akl_parse_jsonld(sp, u):
-                key = (it["venue"], it["title"][:40], it["date"])
-                if key in seen: continue
-                seen.add(key)
-                out.append(it)
-    print(f"[ok]   aucklandlive-router: {len(out)} events")
+            continue
+        raw += _akl_parse_jsonld(sp, u) or _akl_parse_detail(sp, u)
+
+    out, seen = [], set()
+    for it in raw:
+        key = (it["venue"], it["title"][:40], it["date"])
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(it)
+    print(f"[ok]   aucklandlive-router: {len(out)} events (scanned {len(links)} detail pages)")
     return out
 
 def weekly_rule_events():

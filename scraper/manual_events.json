@@ -855,12 +855,12 @@
   "title": "Wildlife Photographer of the Year 2026",
   "zh": "年度野生动物摄影师 2026",
   "kind": "exhibition",
-  "date": "2026-08-17",
-  "end": "2026-08-30",
+  "date": "2026-06-28",
+  "end": "2026-08-23",
   "price": "free",
   "desc": "On loan from the Natural History Museum, London. Free exhibition, on now until Sun 30 Aug 2026.",
   "descZh": "伦敦自然史博物馆巡展第 61 届，免费，8 月 30 日（周日）闭展。",
-  "url": "https://www.aucklandmuseum.com/visit/exhibitions"
+  "url": "https://www.aucklandmuseum.com/visit/exhibitions/wildlife-photographer-of-the-year-2026"
  },
  {
   "venue": "tetoiuku",
@@ -957,5 +957,17 @@
   "desc": "Ticketed dinosaur exhibition opening 17 September 2026.",
   "descZh": "9 月 17 日开展的恐龙特展（需购票），展至 2027 年 4 月。",
   "url": "https://www.aucklandmuseum.com/visit/exhibitions"
+ },
+ {
+  "venue": "civic",
+  "title": "The Civic Tours",
+  "zh": "Civic 大剧院导览",
+  "kind": "exhibition",
+  "date": "2026-03-12",
+  "end": "2026-10-03",
+  "price": "$46.90–$49.96",
+  "desc": "60–75 min guided walking tour of the last remaining 'atmospheric' theatre in the southern hemisphere; select dates through the year, 18 people per tour.",
+  "descZh": "60–75 分钟的官方导览，走进南半球仅存的“气氛式”剧院（1929 年落成）：后台、包厢、星空穹顶与它 1990 年代险遭拆除的往事。每场限 18 人，需爬约 300 级台阶。",
+  "url": "https://www.aucklandlive.co.nz/show/the-civic-tours"
  }
 ]
