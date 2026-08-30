@@ -39,12 +39,14 @@ SOURCES = {
   "gusfisher":   [{"type":"html", "url":"https://gusfishergallery.auckland.ac.nz/exhibitions/", "selector":"article, .et_pb_text, h1, h3"}],  # ✅ 2026-07-07 校准：/exhibitions/ 是静态HTML（WordPress/Divi），日期在 h3
   "artspace":    [{"type":"html", "url":"https://artspace-aotearoa.nz/exhibitions", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准：列表页静态HTML，日期直接在链接文本里
   "michaellett": [{"type":"html", "url":"https://lett-thomas.com/", "selector":"a[href*='/exhibition/']"}],  # ✅ 2026-07-07 校准：已改名 Lett Thomas，静态HTML
-  "objectspace": [{"type":"html", "url":"https://www.objectspace.org.nz/exhibitions/", "selector":"a[href*='/exhibitions/'], h2, h3"}],  # ✅ 2026-07-07 校准：/whats-on/ 不存在，正确列表页静态可抓
-  "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/'], article"}],  # ✅ 2026-07-07 校准：静态HTML，事件在 /products/ 链接里
+  "objectspace": [{"type":"html", "url":"https://www.objectspace.org.nz/exhibitions/", "selector":"h3", "climb":4,
+                   "require":"Tāmaki Makaurau|Auckland",
+                   "cut":r"(?:Tāmaki Makaurau Auckland|Ōtautahi Christchurch|On Now|Upcoming)"}],  # ✅ 2026-08-31 修复：卡片把标题写在 h2、展期写在 h3，旧选择器拿到的节点要么没日期要么没标题 → 连周 0。现以 h3 为锚点 climb 到包含两者的卡片，并排掉基睦城分馆  # ✅ 2026-07-07 校准：/whats-on/ 不存在，正确列表页静态可抓
+  "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/']", "climb":4, "cap":150}],  # ✅ 2026-08-31 修复：同 Objectspace——展期（“23 AUG – 15 NOV 2026”）写在卡片里而不在 <a> 文本里，旧选择器连周 0。现以 /products/ 链接为锚点 climb 到含日期的卡片；商品链接无日期会自行落空   # ✅ 2026-07-07 校准：静态HTML
   "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
   "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
-  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card", "strip":".eventlist-cats"}],   # ✅ 2026-08-10：render 后拿到 3 场；strip 掉分类标签行，标题才与 manual_events 去重   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
+  "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card", "strip":".eventlist-cats"}],   # ℹ️ 2026-08-31 复查：源未坏。店方最后一场是 8/28 “Winter Poetry Series #3”，9 月排期尚未公布 → 本周 0 是真实情况，不要改源   # ✅ 2026-08-10：render 后拿到 3 场；strip 掉分类标签行，标题才与 manual_events 去重   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
   "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
   # UTR 每场馆 iCal：https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=<ID>（比 HTML 稳定）
@@ -84,8 +86,9 @@ SOURCES = {
   "franklin":    [{"type":"html", "render":True, "url":"https://www.aucklandcouncil.govt.nz/en/arts-culture-heritage/arts/art-centres-galleries-theatres/franklin-arts-centre.html", "selector":"article, .card, li"}],
   # ---- Dealer 画廊（官网结构各异，开幕信息统一走 ArtNow 兜底更省事）----
   "gowlangsford": [{"type":"html", "url":"https://gowlangsfordgallery.co.nz/exhibitions/", "selector":"a[href*='/exhibitions/']"}],  # ✅ 2026-07-07 校准
-  "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/'], li, p"}],  # ✅ 2026-07-07 校准：静态HTML   # ⚠️ 2026-08-17：首页日期写成 “07.08 - 19.09”（dd.mm），DATE_RE 不认；且奥/墨/悉三地混排 → 本周先由 manual_events 兜底，下周考虑加 dd.mm 解析 + “⚫ Auckland” 过滤
-  "tworooms":    [{"type":"html", "url":"https://tworooms.co.nz/exhibitions/", "selector":"article, .exhibition, li"}],
+  "starkwhite":  [{"type":"html", "url":"https://starkwhite.co.nz/", "selector":"a[href*='/exhibition/'], a[href*='/special_exhibition/']",
+                   "dotdate":True, "require":"⚫\\s*Auckland"}],  # ✅ 2026-08-31 修复：首页展讯写作 “Clinton Watkins｜nothing_everything 07.08 - 19.09 ⚫ Auckland”——dd.mm 欧式日期 DATE_RE 不认，且奥/墨/悉/艺博四地混排。现用 dotdate 预处理为 “7 Aug - 19 Sep”，require 只留 ⚫ Auckland 那一条   # ✅ 2026-07-07 校准：静态HTML
+  "tworooms":    [{"type":"html", "url":"https://tworooms.co.nz/", "selector":"a[href*='/exhibitions/']", "cap":400}],  # ✅ 2026-08-31 修复：/exhibitions/ 是归档页（当季展只在首页）。首页侧边栏把历年展讯全列出来，链接文本已含 “艺术家 展名 28 August - 3 October 2026”，旧展会被年份/窗口过滤掉；因链接总数 300+，用 cap 抬高扫描上限
   "sanderson":   [{"type":"html", "url":"https://www.sanderson.co.nz/exhibitions", "selector":"article, .exhibition, li"}],
   "foenander":   [], "coastalsigns": [], "bergman": [],
   "melanieroger": [{"type":"html", "render":True, "url":"https://melanierogergallery.com/exhibitions/", "selector":"article, .card, a[href*='/exhibitions/']"}],  # ✅ 2026-07-13 配源：拒脚本 UA → render
@@ -180,6 +183,13 @@ SOURCES = {
   # ---- 2026-08-10 本周新配：书店 ----
   "dorothybutler": [{"type":"html", "render":True, "url":"https://dorothybutler.co.nz/pages/3165-EVENTS", "selector":"article, .card, p, li, h3"}],   # ✅ 2026-08-17 修复：同 womensbookshop，datacenter IP 被 403 → render  # ✅ 2026-08-10 配源：与 womensbookshop 同款 Bookmanager 静态页（当前无排期）
   "poppieshowick": [{"type":"html", "url":"https://www.booksellers.co.nz/event-organizer/poppies-howick", "selector":".wpem-event-box-col, article, .card, li, h3"}],  # ✅ 2026-08-10 配源：官网无活动页，改用 Booksellers NZ 会员活动页（WP Event Manager 静态）
+  # ---- 2026-08-31 本周新配：书店 ----
+  "openbook":    [{"type":"html", "url":"https://theopenbook.co.nz/events", "selector":".eventlist-event, .eventlist-column-info", "strip":".eventlist-cats"}],  # ✅ 2026-08-31 配源：Squarespace 活动集合，服务端渲染（无需 render），日期写成 “Sunday, 12 April 2026”；定期清仓特卖 + 诗歌朗读/新书发布会
+  # 其余 15 家二手/社区书店（jasonbooks / dearreader / lamplight / anecdote / hardtofind / bluehills /
+  # booksonhigh / chapter / booklover / paradox / bookmarkdev / onehungabooks / matakanabooks / nook / abacus）
+  # 2026-08-31 逐家核实：均无带日期的活动页。anec-dote.co.nz/pages/events 只写 “Coming Soon”；
+  # dearreader / hardtofind 等是 Bookmanager 商城，活动只发 Instagram → 继续由 manual_events 兜底。
+  # "parallel"：2026-08 多个来源称 K Rd 实体店已关、转线上，但也有源仍写 “Home Base on K Rd” → 待下周确认后再决定是否下架
   # "bergman" 不配源：奥克兰空间 2022–2026 运营已于 2026 年结束（Cook Islands News 报道），主画廊回迁拉罗汤加；地图上保留灰色
 }
 # 提示：ArtNow.NZ (https://artnow.nz/exhibitions) 是全国画廊开幕的聚合源，
@@ -311,6 +321,38 @@ def parse_span(text):
         return TODAY, ds[0]     # “ON NOW UNTIL 30 AUG” 这类只写闭展日的 → 视为正在展出
     return ds[0], max(ds)
 
+MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+DOTDATE_RE = re.compile(r"\b(\d{1,2})\.(\d{1,2})(?:\.(\d{2,4}))?\b")
+
+def expand_dotdates(text):
+    """把欧式 dd.mm 日期改写成 DATE_RE 认得的写法：“07.08 - 19.09” → “7 Aug - 19 Sep”。
+    只在源显式声明 dotdate:True 时调用——别的站 “9.30” 是开放时间，会误伤。"""
+    def rep(m):
+        d, mo, y = int(m.group(1)), int(m.group(2)), m.group(3)
+        if not (1 <= d <= 31 and 1 <= mo <= 12):
+            return m.group(0)
+        out = f"{d} {MONTH_ABBR[mo - 1]}"
+        if y:
+            out += " " + ("20" + y if len(y) == 2 else y)
+        return out
+    return DOTDATE_RE.sub(rep, text)
+
+def climb_to_card(node, maxlev):
+    """从命中节点向上找“同时含日期和标题文字”的最小祖先。
+    专治「标题在 h2、展期在 h3」这种拆开写的卡片（Objectspace 等）。
+    不需要知道对方的 class 名，站方改版也不容易坏。"""
+    cur = node
+    for _ in range(maxlev):
+        cur = getattr(cur, "parent", None)
+        if cur is None or getattr(cur, "name", None) in (None, "body", "html", "[document]"):
+            break
+        text = " ".join(cur.get_text(" ", strip=True).split())
+        if len(text) > 400:        # 爬过头了，拿到的是整页文字
+            break
+        if DATE_RE.search(text) and len(strip_dates(text)) >= 6:
+            return cur
+    return node
+
 def strip_dates(text):
     """把日期/年份从标题里剔掉，避免标题变成一串日期、也便于与 manual_events 去重。"""
     # 2026-08-24：奥克兰博物馆等卡片把全大写状态横幅并进标题
@@ -320,6 +362,7 @@ def strip_dates(text):
     t = RANGE_RE.sub(" ", t)
     t = DATE_RE.sub(" ", t)
     t = re.sub(r"\b20[2-3]\d\b", " ", t)
+    t = re.sub(r"\s*⚫.*$", "", t)          # Starkwhite 用 “⚫ Auckland / ⚫ Sydney” 标地点，不属于标题
     t = re.sub(r"^\s*(Featured|Current Exhibition|Upcoming Exhibition|Current exhibitions|Exhibition)\s+", "", t, flags=re.I)
     t = re.sub(r"\s{2,}", " ", t)
     return t.strip(" ·|,.–—−-")
@@ -335,10 +378,18 @@ def scrape_html(venue, src):
     ld = extract_jsonld_events(venue, soup, src["url"])
     if ld:
         return ld
-    seen = set()
-    for node in soup.select(src["selector"])[:60]:
+    seen, seen_nodes = set(), set()
+    nodes = soup.select(src["selector"])[:int(src.get("cap", 60))]
+    if src.get("climb"):
+        nodes = [climb_to_card(n, int(src["climb"])) for n in nodes]
+    for node in nodes:
+        if id(node) in seen_nodes: continue      # climb 后多个锚点常指向同一张卡片
+        seen_nodes.add(id(node))
         text = " ".join(node.get_text(" ", strip=True).split())
         if len(text) < 12: continue
+        # require: 卡片文本必须命中（多城市混排的画廊靠它只留奥克兰那条）
+        if src.get("require") and not re.search(src["require"], text, re.I): continue
+        if src.get("dotdate"): text = expand_dotdates(text)
         d, dend = parse_span(text)
         if not d: continue
         if dend > d:
@@ -351,6 +402,7 @@ def scrape_html(venue, src):
         if yrs and max(yrs) < TODAY.year: continue
         # 2026-08-10：去掉卡片里的按钮文案，标题更干净（Powerstation/Squarespace 等）
         title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more|Find out more|View exhibition|Learn more|More info)\s*", " ", text)
+        if src.get("cut"): title = re.sub(src["cut"], " ", title)
         title = strip_dates(title)[:110]
         if len(title) < 6: continue   # 只剩日期没有标题的节点（如 Objectspace 的 h2）直接丢
         link = node.get("href") or (node.find("a")["href"] if node.find("a") and node.find("a").get("href") else src["url"])
