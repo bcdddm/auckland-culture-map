@@ -47,16 +47,6 @@
     "url": "https://www.aucklandartgallery.com/visit/exhibitions/forever-tomorrow-chinese-art-now"
   },
   {
-    "venue": "teuru",
-    "title": "Herehere — Faletau / Hawkins / Sagapolutele",
-    "zh": "Herehere 三人展",
-    "kind": "exhibition",
-    "date": "2026-05-16",
-    "end": "2026-07-26",
-    "price": "free",
-    "url": "https://teuru.org.nz/products/herehere-kauri-hawkins-sione-faletau-raymond-sagapolutele"
-  },
-  {
     "venue": "aag",
     "title": "In Trust for Tomorrow: The Greg J Moyle Foundation Bequest",
     "zh": "《为明天而藏》：Moyle 基金会捐赠展",
@@ -223,18 +213,6 @@
     "price": "free",
     "desc": "Rangatahi-led Matariki mā Puanga exhibition on intention, whānau and whakapapa; Gallery 4.",
     "descZh": "青年主导的马塔里基展览，关于意向、家族与谱系，4 号展厅。",
-    "url": "https://www.studioone.org.nz/exhibitions/"
-  },
-  {
-    "venue": "studioone",
-    "title": "Terms of Endearment — Olivia Asher",
-    "zh": "《爱称》Olivia Asher 陶土文字装置",
-    "date": "2026-06-25",
-    "end": "2026-07-23",
-    "kind": "exhibition",
-    "price": "free",
-    "desc": "Clay and text on intimacy, emotional residue and repetition; Sidewalk Gallery.",
-    "descZh": "以陶土与文字探讨亲密关系与情感残留，临街橱窗展厅。",
     "url": "https://www.studioone.org.nz/exhibitions/"
   },
   {
@@ -528,15 +506,6 @@
   },
   {
     "venue": "northart",
-    "title": "Drisana Tonga: Heliaki | In Between Worlds — opens",
-    "zh": "Drisana Tonga《Heliaki》开幕",
-    "date": "2026-07-18",
-    "kind": "opening",
-    "price": "free",
-    "url": "https://northart.co.nz/"
-  },
-  {
-    "venue": "northart",
     "title": "Arrested Practice",
     "zh": "Arrested Practice 群展",
     "kind": "exhibition",
@@ -544,17 +513,6 @@
     "end": "2026-08-03",
     "price": "free",
     "url": "https://northart.co.nz/"
-  },
-  {
-    "venue": "teuru",
-    "title": "Film Screening: From the Breach",
-    "zh": "放映：From the Breach",
-    "date": "2026-07-18",
-    "kind": "film",
-    "time": "7pm",
-    "desc": "Evening film screening at Te Uru.",
-    "descZh": "Te Uru 晚间放映，票务详见活动页。",
-    "url": "https://teuru.org.nz/products/film-screening-from-the-breach-1"
   },
   {
     "venue": "corban",
@@ -625,17 +583,6 @@
     "url": "https://www.aucklandlive.co.nz/show/rnzb26-winter-season",
     "desc": "Three works celebrating the heritage of the RNZB, 23–25 Jul, Aotea Centre.",
     "descZh": "三部经典作品致敬皇家芭蕾传统，7月23—25日 Aotea 中心"
-  },
-  {
-    "venue": "teuru",
-    "title": "Herehere: a Panel Discussion",
-    "zh": "Herehere 座谈会",
-    "date": "2026-07-25",
-    "kind": "talk",
-    "time": "11am",
-    "price": "free",
-    "descZh": "配合展览 Herehere 的座谈。",
-    "url": "https://teuru.org.nz/products/herehere-a-panel-discussion"
   },
   {
     "venue": "asbwaterfront",
@@ -1136,5 +1083,17 @@
     "desc": "Second film night expanding the group show The Crackling of the Sun.",
     "descZh": "《太阳的噼啪声》群展配套的第二场影像之夜。",
     "url": "https://teuru.org.nz/products/film-programme-night-carries-the-future"
+  },
+  {
+    "venue": "rmgallery",
+    "title": "Hoki Mai Rā — J Davies & Sandy Kerr",
+    "zh": "《Hoki Mai Rā（回到我身边）》J Davies × Sandy Kerr 双人展",
+    "kind": "exhibition",
+    "date": "2026-09-16",
+    "end": "2026-10-24",
+    "price": "free",
+    "desc": "Moving-image and installation work on memory and return, centred on a 25-minute Handycam stream-of-consciousness film.",
+    "descZh": "以记忆与“回归”为题的影像装置展，核心作品是一部 25 分钟、由家用摄像机素材剪成的意识流影片。",
+    "url": "https://rm.org.nz/"
   }
 ]

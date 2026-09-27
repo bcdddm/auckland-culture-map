@@ -45,7 +45,7 @@ SOURCES = {
   "teuru":       [{"type":"html", "url":"https://teuru.org.nz/pages/exhibitions-events", "selector":"a[href*='/products/']", "climb":4, "cap":150}],  # ✅ 2026-08-31 修复：同 Objectspace——展期（“23 AUG – 15 NOV 2026”）写在卡片里而不在 <a> 文本里，旧选择器连周 0。现以 /products/ 链接为锚点 climb 到含日期的卡片；商品链接无日期会自行落空   # ✅ 2026-07-07 校准：静态HTML
   "corban":      [{"type":"html", "url":"https://ceac.org.nz/activities", "selector":"article, .event, .card, a[href*='/exhibitions/'], a[href*='/events/']"}],  # ✅ 2026-07-07 校准：现域名 ceac.org.nz，静态HTML（corbanestate.org.nz 已失效）
   "library":     [{"type":"html", "render":True, "url":"https://www.aucklandlibraries.govt.nz/Pages/events.aspx", "selector":".event, article, li"}],
-  "unity":       [{"type":"html", "render":True, "url":"https://unitybooks.co.nz/", "selector":"a[href*='event'], article, .card"}],
+  "unity":       [{"type":"html", "url":"https://unitybooks.co.nz/news-and-events", "selector":"a[href*='/news-and-events/']", "exclude":r"\bWellington\b|Willis St"}],   # ⚠️ 2026-09-28 修复：首页活动卡片混排惠灵顿分店（“Wellington Book Launch… 57 Willis Street”），上周 9 条全是惠灵顿的被标到奥克兰店 → exclude
   "timeout":     [{"type":"html", "render":True, "url":"https://www.timeout.co.nz/upcoming-events", "selector":".eventlist-event, .eventlist-column-info, article, .card", "strip":".eventlist-cats"}],   # ℹ️ 2026-08-31 复查：源未坏。店方最后一场是 8/28 “Winter Poetry Series #3”，9 月排期尚未公布 → 本周 0 是真实情况，不要改源   # ✅ 2026-08-10：render 后拿到 3 场；strip 掉分类标签行，标题才与 manual_events 去重   # ⚠️ 2026-08-10：活动页确有 8/16、8/25、8/28 三场，纯 requests 抓到 0（疑似 Squarespace 客户端渲染）→ 加 render 再试；本周三场已手工写入 manual_events   # ✅ 2026-08-10 修复：首页无日期→连周 0；Squarespace 活动页静态且日期完整
   "poetrylive":  [],   # ✅ 2026-07-10 校准：每周二 19:00 @ Thirty Nine（39 Ponsonby Rd，thirtynine.co.nz/event-list）→ 规则生成；Facebook 源撞登录墙已弃
   "townhall":    [{"type":"html", "render":True, "url":"https://www.aucklandlive.co.nz/whats-on", "selector":"article, .card, .event-tile, a[href*='event']"}],  # Auckland Live 页面带 JSON-LD，渲染后优先读结构化数据
@@ -70,7 +70,7 @@ SOURCES = {
   "otaramarket": [],   # 固定周六 → 规则生成
   "ostend":      [],   # 固定周六 → 规则生成
   # ---- 北岸 & Hibiscus Coast ----
-  "northart":    [{"type":"html", "url":"https://www.northartgallery.net/current-exhibitions", "selector":"article, .card, .event, a[href*='exhibition']"}],  # ✅ 2026-07-07 校准：官网迁至 northartgallery.net（Squarespace）；旧域名证书失效
+  "northart":    [{"type":"html", "url":"https://www.northartgallery.net/current-exhibitions", "selector":"main h3", "follow":"p.sqsrte-large"}],   # ✅ 2026-09-28 修复：Squarespace 单展页，展名在 h3、展期在紧随的 p.sqsrte-large（“25 September–31 October”），共同祖先带长篇艺术家自述 → 用 follow 拼接  # ✅ 2026-07-07 校准：官网迁至 northartgallery.net（Squarespace）；旧域名证书失效
   # ✅ gowlangsford 用 Artlogic CMS，静态HTML，展览卡片是 a[href*='/exhibitions/']（下方已配置）
   # ✅ 2026-07-07 复查：gusfisher /exhibitions/ 实为静态HTML，可直接抓（上方已改 URL）
   "lakehouse":   [{"type":"html", "render":True, "url":"https://www.lakehousearts.org.nz/", "selector":"article, .card, .event, a[href*='event']"}],
@@ -102,19 +102,19 @@ SOURCES = {
   # 剧场（Auckland Live 系走 scrape_aucklandlive 路由，勿单配 civic/aotea/brucemason）
   "qtheatre":    [{"type":"html", "render":True, "url":"https://www.qtheatre.co.nz/whats-on", "selector":"a[href*='show'], article, .card"}],
   "basement":    [{"type":"html", "render":True, "url":"https://basementtheatre.co.nz/whats-on/", "selector":"a[href*='show'], article, .card"}],
-  "asbwaterfront": [{"type":"html", "render":True, "url":"https://www.atc.co.nz/asb-waterfront-theatre-events", "selector":"a[href*='/whats-on/'], article, .card"}],  # ✅ 2026-07-13 校准：旧域名拒连，节目页在 ATC 官网
-  "tepou":       [{"type":"html", "render":True, "url":"https://tepoutheatre.nz/whats-on/", "selector":"article, .card"}],
+  "asbwaterfront": [{"type":"html", "url":"https://www.atc.co.nz/asb-waterfront-theatre-events", "selector":"div.banner-detail", "title_sel":"h2", "kind":"gig"}],   # ✅ 2026-09-28 修复：节目卡是 div.banner-detail（静态），标题在 h2，展期 “22 Sep – 25 Oct”；旧选择器全落空连周 0  # ✅ 2026-07-13 校准：旧域名拒连，节目页在 ATC 官网
+  "tepou":       [{"type":"html", "url":"https://tepoutheatre.nz/whats-on/", "selector":"h5.elementor-heading-title", "climb":8, "kind":"gig"}],   # ✅ 2026-09-28 修复：Elementor 静态页，起止日各占一个 h5（“02 Oct”/“03 Oct”），剧名在上层 → climb 到含剧名的最小容器
   "titirangitheatre": [{"type":"html", "render":True, "url":"https://www.titirangitheatre.co.nz/", "selector":"article, .card, li"}],
   "artworkstheatre": [{"type":"html", "render":True, "url":"https://www.artworkstheatre.org.nz/", "selector":"article, .card, a[href*='event']"}],
   "howicklittle": [{"type":"html", "render":True, "url":"https://hlt.nz/", "selector":"article, .card, a[href*='show']"}],
-  "dolphin":     [{"type":"html", "render":True, "url":"https://dolphintheatre.org.nz/", "selector":"article, .card"}],
+  "dolphin":     [{"type":"html", "url":"https://www.dolphintheatre.org.nz/whats-on", "selector":"h1", "follow":"h3", "exclude":"AUDITION|^Whats? On", "kind":"gig"}],   # ✅ 2026-09-28 修复：Squarespace 静态，剧名在 h1、导演+档期在随后的 h3（“Directed by Anna Baird 2-17 October”）；同月区间由 expand_dayranges 展开
   "harlequin":   [{"type":"html", "render":True, "url":"https://harlequintheatre.co.nz/", "selector":"article, .card"}],
   "playhouse":   [{"type":"html", "render":True, "url":"https://www.playhouse.nz/", "selector":"article, .card, a[href*='show'], a[href*='event']"}],  # ✅ 2026-07-13 校准：新域名 playhouse.nz（旧域名 DNS 失效）
   "rosecentre":  [{"type":"html", "render":True, "url":"https://rosecentre.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "theatreworks": [{"type":"html", "render":True, "url":"https://theatreworks.nz/", "selector":"article, .card, a[href*='show']"}],  # ✅ 2026-07-13 校准：新域名 theatreworks.nz（.co.nz 是达尼丁另一家公司）
   "companytheatre": [{"type":"html", "render":True, "url":"https://www.companytheatre.co.nz/", "selector":"article, .card"}],
   "centrestage": [{"type":"html", "render":True, "url":"https://centrestagetheatre.co.nz/", "selector":"article, .card, a[href*='show']"}],
-  "hawkins":     [{"type":"html", "render":True, "url":"https://www.hawkinstheatre.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "hawkins":     [{"type":"html", "url":"https://www.hawkinstheatre.co.nz/", "selector":"div.theatre_event", "title_sel":"a", "kind":"gig"}],   # ✅ 2026-09-28 修复：首页 “COMING SOON” 列表是 div.theatre_event（静态），场次写作 “30 Sep, 01, 02, 07 & 08 Oct”
   "papakuratheatre": [],   # 只有 Facebook → 每周任务手动补
   # 影院：只抓特别放映/节展，日常排片噪音大 → 暂不配源，待做"特殊场次"过滤后再开
   "academy": [], "capitol": [], "vic": [], "bridgeway": [],
@@ -123,10 +123,10 @@ SOURCES = {
   "tuningfork":  [{"type":"html", "render":True, "url":"https://www.tuningfork.co.nz/", "selector":"article, .card, a[href*='event']"}],
   "galatos":     [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=1638"},
                   {"type":"html", "render":True, "url":"https://galatos.co.nz/", "selector":"article, .card, a[href*='event']"}],   # ✅ 2026-08-10：官网连周 0，改以 UTR vid=1638 (Galatos) iCal 为主源，官网留兜底
-  "neckofthewoods": [{"type":"html", "render":True, "url":"https://neckofthewoods.co.nz/", "selector":"article, .card, a[href*='event']"}],
+  "neckofthewoods": [{"type":"html", "url":"https://neckofthewoods.co.nz/", "selector":"div.summary-item", "strip":".summary-thumbnail-event-date, .summary-read-more-link", "kind":"gig"}],   # ✅ 2026-09-28 修复：Squarespace summary 区块（静态），卡片 div.summary-item，日期 “26 September 2026”
   "anthology":   [{"type":"ical", "url":"https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=4688"}],  # ✅ 2026-07-13 校准：anthology.co.nz 证书失效；UTR vid 4688 = Anthology Lounge（官网 anthologykroad.com 无排期页）
-  "mothership":  [{"type":"html", "render":True, "url":"https://www.themothership.co.nz/", "selector":"article, .card"}],
-  "bigfan":      [{"type":"html", "render":True, "url":"https://www.bigfan.co.nz/whats-on", "selector":"article, .card, a[href*='event']"}],
+  "mothership":  [{"type":"html", "url":"https://www.themothership.co.nz/", "selector":"div.wixui-repeater__item", "kind":"gig"}],   # ✅ 2026-09-28 修复：Wix 服务端已渲染，活动是 repeater 条目（“… OCT 02 BUY TICKETS”）；render 反而拿不到
+  "bigfan":      [{"type":"html", "url":"https://www.bigfan.co.nz/", "selector":"div.events-item", "kind":"gig"}],   # ✅ 2026-09-28 修复：/whats-on 已 404；首页 Webflow 活动列表 div.events-item（“2 Oct Indie Pop Night…”，链到 UTR）静态可抓
   "stmatthews":  [{"type":"html", "render":True, "url":"https://www.stmatthews.org.nz/whats-on/", "selector":"article, .card, li"}],
   "holytrinity": [{"type":"html", "render":True, "url":"https://www.holy-trinity.org.nz/events", "selector":"article, .card, li"}],
   # 画廊/大学空间/雕塑园
@@ -202,10 +202,18 @@ KIND_WORDS = [
   ("market",   r"market|集市|市集"),
   ("gig",      r"gig|concert|live|orchestra|band|dj|音乐会|演出"),
 ]
+# 2026-09-28：年份只认 4 位数字。旧写法 \d{0,4} 会把 “02 Oct 03 Oct” 里的 “03” 当成年份（→2003+1=2004），
+#   Time Out 的 “16 Aug 04:00” 也同理，历史里出现了 2004/2007 年的脏条目。
+#   日数后加 \b，避免 “September 2026” 被读成 “September 20”。
 DATE_RE = re.compile(
-  r"(\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s*\d{0,4}"
-  r"|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s*\d{0,4}"
+  r"(\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?(?:,?\s+\d{4}\b)?"
+  r"|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}(?:st|nd|rd|th)?\b(?:,?\s+\d{4}\b)?"
   r"|\d{4}-\d{2}-\d{2})", re.I)
+# “2-17 October” / “24–26 September 2026” 这类同月区间：先展开成 “2 October – 17 October 2026” 再解析
+DAYRANGE_RE = re.compile(r"\b(\d{1,2})\s*[-–—]\s*(\d{1,2})\s+((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*)", re.I)
+
+def expand_dayranges(text):
+    return DAYRANGE_RE.sub(lambda m: f"{m.group(1)} {m.group(3)} – {m.group(2)} {m.group(3)}", text)
 
 def fetch_html(src):
     """render:True 的源用 Playwright 无头浏览器渲染（JS 站）；否则普通请求。"""
@@ -291,7 +299,7 @@ def parse_date(text):
         d = dparse.parse(m.group(0), default=datetime.datetime(TODAY.year, TODAY.month, TODAY.day), dayfirst=True).date()
         if d < TODAY - datetime.timedelta(days=300):  # 没写年份被解析成过去 → 加一年
             d = d.replace(year=d.year + 1)
-        return d
+        return d if TODAY.year - 2 <= d.year <= TODAY.year + 2 else None
     except Exception:
         return None
 
@@ -305,6 +313,8 @@ def _norm(raw):
         return None
     if d < TODAY - datetime.timedelta(days=300):   # 没写年份被解析成过去 → 加一年
         d = d.replace(year=d.year + 1)
+    if not (TODAY.year - 2 <= d.year <= TODAY.year + 2):   # 2026-09-28：离谱年份（2004/1918）一律丢弃
+        return None
     return d
 
 UNTIL_RE = re.compile(r"(?:until|til|till|through|thru|closes?(?:\s+on)?|ends?(?:\s+on)?)\s+"
@@ -314,9 +324,22 @@ def parse_span(text):
     """返回 (start, end)。文本里出现两个及以上日期 → 视为展期区间（end 取最晚）。
     2026-08-17：正在展出的展览开幕日通常已过去，只看 start 会被 31 天窗口滤光——
     改成解析区间后，与 [今天, 今天+31] 有重叠即收录，画廊类场馆才不会连周 0。"""
-    ds = [d for d in (_norm(m) for m in DATE_RE.findall(text)) if d]
+    text = expand_dayranges(text)
+    raws = [m for m in DATE_RE.findall(text) if _norm(m)]
+    ds = [_norm(m) for m in raws]
     if not ds:
         return None, None
+    # 2026-09-28：“18 February - 6 March 2027” 只有止日写年份 → 起日沿用止日的年份（否则被当成今年 2 月，跨度一年多混进窗口）
+    if len(ds) >= 2 and not re.search(r"\d{4}", raws[0]):
+        yr = [re.search(r"\b(\d{4})\b", r) for r in raws[1:]]
+        yr = [int(y.group(1)) for y in yr if y]
+        if yr:
+            try:
+                s0 = ds[0].replace(year=yr[0])
+                if s0 > max(ds): s0 = s0.replace(year=yr[0] - 1)
+                ds[0] = s0
+            except ValueError:
+                pass
     if len(ds) == 1 and UNTIL_RE.search(text) and ds[0] >= TODAY:
         return TODAY, ds[0]     # “ON NOW UNTIL 30 AUG” 这类只写闭展日的 → 视为正在展出
     return ds[0], max(ds)
@@ -380,15 +403,24 @@ def scrape_html(venue, src):
         return ld
     seen, seen_nodes = set(), set()
     nodes = soup.select(src["selector"])[:int(src.get("cap", 60))]
+    follow_ids = {id(el) for el in soup.select(src["follow"])} if src.get("follow") else set()
     if src.get("climb"):
         nodes = [climb_to_card(n, int(src["climb"])) for n in nodes]
     for node in nodes:
         if id(node) in seen_nodes: continue      # climb 后多个锚点常指向同一张卡片
         seen_nodes.add(id(node))
         text = " ".join(node.get_text(" ", strip=True).split())
+        own = text
+        # follow: 标题节点与日期节点是兄弟块、共同祖先又太大（Squarespace 单展页 Northart 等）→ 把后面第一个匹配块的文字拼进来
+        if src.get("follow"):
+            nxt = next((el for el in node.find_all_next(True, limit=300) if id(el) in follow_ids), None)
+            if nxt is not None:
+                text = own + " " + " ".join(nxt.get_text(" ", strip=True).split())
         if len(text) < 12: continue
         # require: 卡片文本必须命中（多城市混排的画廊靠它只留奥克兰那条）
         if src.get("require") and not re.search(src["require"], text, re.I): continue
+        # exclude: 命中即丢（Unity Books 首页混排惠灵顿分店活动）
+        if src.get("exclude") and re.search(src["exclude"], text, re.I): continue
         if src.get("dotdate"): text = expand_dotdates(text)
         d, dend = parse_span(text)
         if not d: continue
@@ -401,7 +433,10 @@ def scrape_html(venue, src):
         yrs = [int(y) for y in re.findall(r"\b(20[0-3]\d)\b", text)]
         if yrs and max(yrs) < TODAY.year: continue
         # 2026-08-10：去掉卡片里的按钮文案，标题更干净（Powerstation/Squarespace 等）
-        title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more|Find out more|View exhibition|Learn more|More info)\s*", " ", text)
+        # title_sel: 卡片内有专门的标题节点（ATC 的 h2）→ 直接用；follow 模式下标题只取锚点自身文字
+        tnode = next((t for t in node.select(src["title_sel"]) if t.get_text(strip=True)), None) if src.get("title_sel") else None
+        base_title = " ".join(tnode.get_text(" ", strip=True).split()) if tnode else (own if src.get("follow") else text)
+        title = re.sub(r"\s*(Show & ticket info|View Event\s*→?|Buy tickets|Read more\s*→?|Find out more|View exhibition|Learn more|More info)\s*", " ", base_title, flags=re.I)
         if src.get("cut"): title = re.sub(src["cut"], " ", title)
         title = strip_dates(title)[:110]
         if len(title) < 6: continue   # 只剩日期没有标题的节点（如 Objectspace 的 h2）直接丢
@@ -414,7 +449,13 @@ def scrape_html(venue, src):
         price = "free" if re.search(r"free entry|free admission|entry is free|\bfree\b", text, re.I) \
                 else ("koha" if re.search(r"\bkoha\b", text, re.I) else None)
         kind = classify(text)
-        if dend > d and (dend - d).days >= 5 and kind == "opening":
+        if src.get("kind") and kind in ("opening", src["kind"]):
+            # 2026-09-28：剧场/音乐场馆声明默认 kind（gig），不再被标成“开幕”；
+            # 档期 >14 天的长演季同 Auckland Live 路由一样记为 exhibition，开演日过去后仍能在地图上显示
+            kind = src["kind"]
+            if dend > d and (dend - d).days > 14:
+                kind = "exhibition"
+        elif dend > d and (dend - d).days >= 5 and kind == "opening":
             kind = "exhibition"   # 跨多日的区间默认是展览，不是开幕酒会
         item = {"venue": venue, "title": title, "date": str(d), "kind": kind,
                 "url": link, "desc": text[:180]}
