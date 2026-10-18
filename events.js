@@ -1,6 +1,6 @@
 // 由 scraper/scrape.py 自动生成 — 请勿手改（手动条目放 scraper/manual_events.json）
 window.EVENTS = {
-  "generated": "2026-10-12",
+  "generated": "2026-10-19",
   "sample": false,
   "items": [
     {
@@ -955,22 +955,22 @@ window.EVENTS = {
     },
     {
       "venue": "aag",
-      "title": "Drop-in drawing | 11:30am Workshops Free",
+      "title": "Drop-in drawing | 11:15am Workshops Free",
       "date": "2026-07-31",
       "kind": "workshop",
-      "url": "https://www.aucklandartgallery.com/visit/events/drop-in-drawing-1130am",
-      "desc": "Drop-in drawing | 11:30am Workshops 31 Jul 2026 - 25 Jun 2027 Free Learn more Learn more",
+      "url": "https://www.aucklandartgallery.com/visit/events/drop-in-drawing-11-15am",
+      "desc": "Drop-in drawing | 11:15am Workshops 31 Jul 2026 - 25 Jun 2027 Free Learn more Learn more",
       "end": "2027-06-25",
       "price": "free",
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
       "venue": "aag",
-      "title": "Drop-in drawing | 12:20pm Workshops Free",
+      "title": "Drop-in drawing | 12:30pm Workshops Free",
       "date": "2026-07-31",
       "kind": "workshop",
-      "url": "https://www.aucklandartgallery.com/visit/events/drop-in-drawing-1220pm",
-      "desc": "Drop-in drawing | 12:20pm Workshops 31 Jul 2026 - 25 Jun 2027 Free Learn more Learn more",
+      "url": "https://www.aucklandartgallery.com/visit/events/drop-in-drawing-12-30pm",
+      "desc": "Drop-in drawing | 12:30pm Workshops 31 Jul 2026 - 25 Jun 2027 Free Learn more Learn more",
       "end": "2027-06-25",
       "price": "free",
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
@@ -996,15 +996,6 @@ window.EVENTS = {
       "time": "2pm",
       "price": "free",
       "url": "https://northart.co.nz/"
-    },
-    {
-      "venue": "upstairs",
-      "title": "Jul 31 AGM 2026 Friday, 31 July 2026 6:00 pm 7:30 pm The Upstairs Art Gallery (map) Google Calendar ICS NOTICE",
-      "date": "2026-07-31",
-      "kind": "opening",
-      "url": "https://www.upstairs.org.nz/events/2026/7/31/agm-2026",
-      "desc": "Jul 31 AGM 2026 Friday, 31 July 2026 6:00 pm 7:30 pm The Upstairs Art Gallery (map) Google Calendar ICS NOTICE OF ANNUAL GENERAL MEETING To be held in the Lopdell House Theatre , L",
-      "img": "http://static1.squarespace.com/static/59aa7b5fe3df28884d2a5a66/t/6a61a37157ca5644bb9c81a8/1784783737512/AGM+2026.jpg?format=1500w"
     },
     {
       "venue": "coastalsigns",
@@ -1051,15 +1042,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/nziff26-comedie-francaise",
       "desc": "Experience Comédie-Française as part of Whānau Mārama: New Zealand International Film Festival. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/comedie-francaise-1133x628-auckland-live.jpg"
-    },
-    {
-      "venue": "civic",
-      "title": "Father Mother Sister Brother",
-      "date": "2026-08-03",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/nziff26-father-mother-sister-brother",
-      "desc": "Experience Father Mother Sister Brother as part of Whānau Mārama: New Zealand International Film Festival. Visit aucklandlive.co.nz to find out about the best shows and events in A",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/father-mother-sister-brother-1133x628-auckland-live.jpg"
     },
     {
       "venue": "poetrylive",
@@ -1132,14 +1114,6 @@ window.EVENTS = {
       "desc": "Annual secondary-school student exhibition.",
       "descZh": "年度中学生创作奖展览，免费入场。",
       "url": "https://www.aucklandartgallery.com/visit/exhibitions/student-exhibition-pat-hanly-creativity-awards-2026"
-    },
-    {
-      "venue": "motat",
-      "title": "Event Family 40 Years of Pride 8 Aug 2026 | 10:00AM - 4:00PM View more",
-      "date": "2026-08-08",
-      "kind": "opening",
-      "url": "https://www.motat.nz/events/40-years-of-pride/",
-      "desc": "Event Family 40 Years of Pride 8 Aug 2026 | 10:00AM - 4:00PM View more"
     },
     {
       "venue": "teuru",
@@ -1483,15 +1457,6 @@ window.EVENTS = {
       "url": "https://www.timeout.co.nz/upcoming-events/pipadam2026"
     },
     {
-      "venue": "brucemason",
-      "title": "Dancing In The Shadows of Motown",
-      "date": "2026-08-28",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/dancing-in-the-shadows-of-motown",
-      "desc": "Experience Dancing In The Shadows of Motown at the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/ditsom-red-512px-x-363px-mobile.jpg"
-    },
-    {
       "venue": "civic",
       "title": "Cirque Alice",
       "zh": "《爱丽丝》马戏秀",
@@ -1639,31 +1604,12 @@ window.EVENTS = {
       "desc": "events Merchant Navy Day 2026 3 Sep"
     },
     {
-      "venue": "studioone",
-      "title": "Exhibitions THE ART OF PERFECTION — ISABELLA LEPOAMO — Isabella Lepoamo explores the emotional framework of co",
-      "date": "2026-09-03",
-      "kind": "exhibition",
-      "url": "https://www.studioone.org.nz/exhibitions/",
-      "desc": "Exhibitions THE ART OF PERFECTION — ISABELLA LEPOAMO — Isabella Lepoamo explores the emotional framework of competition, performance, and perfectionism, drawn from her history as a",
-      "end": "2026-12-10",
-      "img": "http://"
-    },
-    {
       "venue": "asbwaterfront",
       "title": "Macleans College Gala Concert A celebration of performing arts featuring the college’s premier music and dance",
       "date": "2026-09-04",
       "kind": "gig",
       "url": "https://www.atc.co.nz/asb-waterfront-theatre-events/2026/macleans-college-gala-concert-2026",
       "desc": "Macleans College Gala Concert 2026 A celebration of performing arts featuring the college’s premier music and dance groups. Fri 4 Sep"
-    },
-    {
-      "venue": "brucemason",
-      "title": "Queen Forever - Greatest Hits Tour",
-      "date": "2026-09-04",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/queen-forever-greatest-hits-tour-2026",
-      "desc": "Experience Queen Forever at the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/2026-09-04-bruce-mason-centre-auk-nz-512x363.jpg"
     },
     {
       "venue": "upstairs",
@@ -1730,15 +1676,6 @@ window.EVENTS = {
       "end": "2026-09-06"
     },
     {
-      "venue": "gowlangsford",
-      "title": "Sydney Contemporary Booth A03 3 - Offsite Our presentation at Sydney Contemporary brings together a group of i",
-      "date": "2026-09-06",
-      "kind": "opening",
-      "url": "https://gowlangsfordgallery.co.nz/exhibitions/545-sydney-contemporary-2026-booth-a03/",
-      "desc": "Sydney Contemporary 2026 Booth A03 3 - 6 Sep 2026 Offsite Our presentation at Sydney Contemporary 2026 brings together a group of internationally recognised artists whose practices",
-      "img": "https://gowlangsfordgallery.co.nz/custom_images/1200x630c/usr/images/news/main_image/405/aj-portrait_26.jpg"
-    },
-    {
       "venue": "brucemason",
       "title": "Base Auckland Brass",
       "date": "2026-09-07",
@@ -1765,15 +1702,6 @@ window.EVENTS = {
       "end": "2026-09-13"
     },
     {
-      "venue": "pumphouse",
-      "title": "The PumpHouse Theatre Presents Creative Talks: Michael Hurst ONZM Get tickets Details",
-      "date": "2026-09-07",
-      "kind": "opening",
-      "url": "https://pumphouse.co.nz/whats-on/show/creative-talks-michael-hurst/",
-      "desc": "The PumpHouse Theatre Presents Creative Talks: Michael Hurst ONZM 7 September 2026 Get tickets Details",
-      "img": "https://pumphouse.co.nz/wp-content/uploads/2026/01/PHT294191-PumpHouse-Creative-Talks-2025-Digital-Speaker-Photos-4-712x712.jpg"
-    },
-    {
       "venue": "aag",
       "title": "Relaxed hours | Mauri tau Wellbeing Free",
       "date": "2026-09-08",
@@ -1783,14 +1711,6 @@ window.EVENTS = {
       "end": "2026-12-22",
       "price": "free",
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
-    },
-    {
-      "venue": "poetrylive",
-      "title": "Poetry Live — open mic (every Tuesday)",
-      "zh": "Poetry Live 开放麦（每周二）",
-      "date": "2026-09-08",
-      "kind": "reading",
-      "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
       "venue": "coastalsigns",
@@ -1835,14 +1755,6 @@ window.EVENTS = {
       "end": "2026-09-30"
     },
     {
-      "venue": "britomart",
-      "title": "Britomart Saturday Markets",
-      "zh": "Britomart 周六集市",
-      "date": "2026-09-12",
-      "kind": "market",
-      "url": "#"
-    },
-    {
       "venue": "gowlangsford",
       "title": "The Studio and the City Group Exhibition Onehunga For more than a century, New York has been a city of artists",
       "date": "2026-09-12",
@@ -1859,22 +1771,6 @@ window.EVENTS = {
       "url": "https://hlt.nz/whats-on/events-calendar/the-cottage/",
       "desc": "HLT Presents The Cottage Directed by Laurie Mills 12 September - 3 October, 8pm Book Now Show Details",
       "end": "2026-10-03"
-    },
-    {
-      "venue": "ostend",
-      "title": "Ostend Market (Waiheke)",
-      "zh": "Ostend 集市（激流岛，周六）",
-      "date": "2026-09-12",
-      "kind": "market",
-      "url": "#"
-    },
-    {
-      "venue": "otaramarket",
-      "title": "Ōtara Flea Market",
-      "zh": "Ōtara 周六集市",
-      "date": "2026-09-12",
-      "kind": "market",
-      "url": "#"
     },
     {
       "venue": "powerstation",
@@ -1910,14 +1806,6 @@ window.EVENTS = {
       "url": "https://ngutukaka.nz/exhibitions/vale-julian-hooper-albert-l-refiti",
       "desc": "On Now 12 Sep — 22 Oct 2026 Vāle | Julian Hooper & Albert L. Refiti Read more",
       "end": "2026-10-22"
-    },
-    {
-      "venue": "avondale",
-      "title": "Avondale Sunday Markets",
-      "zh": "Avondale 周日集市",
-      "date": "2026-09-13",
-      "kind": "market",
-      "url": "#"
     },
     {
       "venue": "teuru",
@@ -2031,14 +1919,6 @@ window.EVENTS = {
       "url": "https://foenandergalleries.co.nz/exhibitions/110-lottie-consalvo-cigam/",
       "desc": "Lottie Consalvo: Cigam 17 Sep - 7 Oct 2026 We Were Never Just Weeds By Dina Jezdić There is a dandelion growing somewhere nearby. Perhaps it has pushed its way through a crack in t",
       "end": "2026-10-07"
-    },
-    {
-      "venue": "lakehouse",
-      "title": "Becroft , community Leave the Lights On – Stories of Home PERFORMANCE AND EXHIBITION Exhibition Sat 29th Aug -",
-      "date": "2026-09-17",
-      "kind": "opening",
-      "url": "https://lakehousearts.org.nz/tag/becroft/",
-      "desc": "Becroft , community Leave the Lights On – Stories of Home PERFORMANCE AND EXHIBITION Exhibition Sat 29th Aug - Thu 17 Sep, 2026 / Celebration Event Sun 30th Aug 4pm / Performances "
     },
     {
       "venue": "museum",
@@ -2288,24 +2168,6 @@ window.EVENTS = {
     },
     {
       "venue": "teuru",
-      "title": "MON , 10:30 AM Baby-Friendly Art Tours Join the experienced team at Te Uru for a guided tour of new exhibition",
-      "date": "2026-09-21",
-      "kind": "opening",
-      "url": "https://teuru.org.nz/products/baby-friendly-art-tours",
-      "desc": "MON 21 September, 10:30 AM Baby-Friendly Art Tours Join the experienced team at Te Uru for a guided tour of new exhibitions. Designed especially for ba Learn more",
-      "img": "http://teuru.org.nz/cdn/shop/files/DSC06818.jpg?v=1786503062"
-    },
-    {
-      "venue": "teuru",
-      "title": "MON , 10:30 AM Baby-Friendly Art Tours",
-      "date": "2026-09-21",
-      "kind": "opening",
-      "url": "https://teuru.org.nz/products/baby-friendly-art-tours",
-      "desc": "MON 21 September, 10:30 AM Baby-Friendly Art Tours",
-      "img": "http://teuru.org.nz/cdn/shop/files/DSC06818.jpg?v=1786503062"
-    },
-    {
-      "venue": "teuru",
       "title": "Baby-Friendly Art Tour",
       "zh": "亲子（婴儿友好）导览",
       "kind": "opening",
@@ -2332,26 +2194,6 @@ window.EVENTS = {
       "date": "2026-09-22",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
-    },
-    {
-      "venue": "townhall",
-      "title": "University of Auckland September Graduation",
-      "date": "2026-09-22",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/university-of-auckland-september-graduation",
-      "end": "2026-09-24",
-      "desc": "Celebrate with your family at the University of Auckland September Graduation in the Auckland Town Hall. Visit aucklandlive.co.nz to find out about the best shows and events in Auc",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/auckland-town-hall-auckland-live-512x363.jpg"
-    },
-    {
-      "venue": "aotea",
-      "title": "Bizet's – The Pearl Fishers",
-      "date": "2026-09-23",
-      "kind": "gig",
-      "url": "https://www.aucklandlive.co.nz/show/nzopera26-bizets-the-pearl-fishers",
-      "end": "2026-09-27",
-      "desc": "Experience Mozart's The Pearl Fishers live in the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/pearl-fishers-v2-512x363-auckland-live.jpg"
     },
     {
       "venue": "harlequin",
@@ -2389,24 +2231,6 @@ window.EVENTS = {
       "desc": "The More Things Change Julie Battisti 10 - 24 September"
     },
     {
-      "venue": "aotea",
-      "title": "Mario the Maker Magician",
-      "date": "2026-09-25",
-      "kind": "workshop",
-      "url": "https://www.aucklandlive.co.nz/show/wty26-mario-the-maker-magician",
-      "end": "2026-09-27",
-      "desc": "Experience Mario the Maker Magician live in the Aotea Centre, part of We The Young. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
-      "img": "https://cdn.aucklandunlimited.com/live/assets/media/mario-maker-512x363-auckand-live.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "Asian Comedy Takeover , 8.30PM",
-      "date": "2026-09-25",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/asian-comedy-takeover",
-      "desc": "Asian Comedy Takeover 25 SEP, 8.30PM"
-    },
-    {
       "venue": "museum",
       "title": "The Future of our Fruit OPENING FRI TĀ MAKI HERENGA WAKA GALLERY, GROUND FLOOR FREE WITH MUSEUM ENTRY Growing ",
       "date": "2026-09-25",
@@ -2422,18 +2246,7 @@ window.EVENTS = {
       "kind": "exhibition",
       "url": "https://www.northartgallery.net/current-exhibitions",
       "desc": "Richard Higham | Still Returning 25 September–31 October Opening 5:00-7:00pm, Friday 25 September",
-      "end": "2026-10-31",
-      "img": "http://static1.squarespace.com/static/61524684e7b35b7bcc55f15f/t/693281ca62cc4b7c3e2665d8/1764917706507/IMG_7446.jpg?format=1500w"
-    },
-    {
-      "venue": "upstairs",
-      "title": "Current & Upcoming Exhibitions & Events ‘Anew’ Carlos Vano & Friends Fri, 6:00 pm Sun, 7:00 pm The Upstairs Ar",
-      "date": "2026-09-25",
-      "kind": "exhibition",
-      "url": "https://www.upstairs.org.nz/events/2026/9/25/carlos-vano-friends",
-      "desc": "Current & Upcoming Exhibitions & Events Sept 25 to 18 Oct ‘Anew’ Carlos Vano & Friends Fri, 25 Sept 2026 6:00 pm Sun, 18 Oct 2026 7:00 pm The Upstairs Art Gallery (map) Google Cale",
-      "end": "2027-02-07",
-      "price": "free"
+      "end": "2026-10-31"
     },
     {
       "venue": "upstairs",
@@ -2454,14 +2267,6 @@ window.EVENTS = {
       "end": "2026-10-25",
       "price": "free",
       "img": "https://cdn.aucklandunlimited.com/aag/assets/media/kiritai-student-exhibition-auckland-art-gallery-thumbnail.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY Garithmetic 22- , 6:30PM",
-      "date": "2026-09-26",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/garithmetic",
-      "desc": "CHOOSE WHAT YOU PAY Garithmetic 22-26 SEPT, 6:30PM"
     },
     {
       "venue": "britomart",
@@ -2549,23 +2354,6 @@ window.EVENTS = {
       "desc": "Jon Stevens – The Noiseworks & INXS 26 Sep 2026 Show & ticket info"
     },
     {
-      "venue": "qtheatre",
-      "title": "Theatre Joseph and the Amazing Technicolor Dreamcoat LNR Productions is proud to stage Andrew Lloyd Webber and",
-      "date": "2026-09-26",
-      "kind": "workshop",
-      "url": "https://www.qtheatre.co.nz/shows/joseph-and-technicolour-dreamcoat",
-      "desc": "26 September - 10 October 2026 Theatre Joseph and the Amazing Technicolor Dreamcoat LNR Productions is proud to stage Andrew Lloyd Webber and Tim Rice's classic musical, Joseph and",
-      "end": "2026-10-10"
-    },
-    {
-      "venue": "qtheatre",
-      "title": "25 - Dance Big Low Dream Dreaming big in a time of unravelling, Big Low Dream is a new contemporary dance work",
-      "date": "2026-09-26",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/big-low-dream",
-      "desc": "25 - 26 September 2026 Dance Big Low Dream Dreaming big in a time of unravelling, Big Low Dream is a new contemporary dance work that brings our waking dreams to reality."
-    },
-    {
       "venue": "townhall",
       "title": "Kua Rewa Te Aihikirīmi",
       "date": "2026-09-26",
@@ -2585,14 +2373,6 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/suso26-finals-512x363-auckland-live.jpg"
     },
     {
-      "venue": "tuningfork",
-      "title": "New Found Sound Finals More Info",
-      "date": "2026-09-26",
-      "kind": "opening",
-      "url": "https://www.tuningfork.co.nz/all-events/new-found-sound-tickets-ae1509331",
-      "desc": "New Found Sound Finals 2026 26 SEP 2026 More Info"
-    },
-    {
       "venue": "aag",
       "title": "Ammon Ngakuru: Three Scenes Exhibition Free",
       "date": "2026-09-27",
@@ -2607,14 +2387,6 @@ window.EVENTS = {
       "venue": "avondale",
       "title": "Avondale Sunday Markets",
       "zh": "Avondale 周日集市",
-      "date": "2026-09-27",
-      "kind": "market",
-      "url": "#"
-    },
-    {
-      "venue": "lacigale",
-      "title": "La Cigale French Market (Sun)",
-      "zh": "La Cigale 法式集市（周日）",
       "date": "2026-09-27",
       "kind": "market",
       "url": "#"
@@ -2676,15 +2448,6 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/kitchen-chaos-512x363-auckland-live.jpg"
     },
     {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY Unconquerable , 8PM",
-      "date": "2026-09-29",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/unconquerable",
-      "desc": "CHOOSE WHAT YOU PAY Unconquerable 29 SEPT-3 OCT, 8PM",
-      "end": "2026-10-03"
-    },
-    {
       "venue": "poetrylive",
       "title": "Poetry Live — open mic (every Tuesday)",
       "zh": "Poetry Live 开放麦（每周二）",
@@ -2701,15 +2464,6 @@ window.EVENTS = {
       "end": "2026-10-04",
       "desc": "Experience Bundle Baby live in the Aotea Centre, part of We The Young. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/bundle-baby-512x363-auckland-live.jpg"
-    },
-    {
-      "venue": "basement",
-      "title": "CHOOSE WHAT YOU PAY A Becoming 1- , 6:30PM",
-      "date": "2026-10-01",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/a-becoming",
-      "desc": "CHOOSE WHAT YOU PAY A Becoming 1-3 OCT, 6:30PM",
-      "end": "2026-10-03"
     },
     {
       "venue": "neckofthewoods",
@@ -2736,22 +2490,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/aklphil26-haydn-and-shostakovich",
       "desc": "Experience Haydn & Shostakovich with the Auckland Philharmonia. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/haydn-v2-512x363-auckland-live.jpg"
-    },
-    {
-      "venue": "tuningfork",
-      "title": "Born Jovi",
-      "date": "2026-10-01",
-      "kind": "opening",
-      "url": "https://www.tuningfork.co.nz/all-events/born-jovi-tickets-ae1661489",
-      "desc": "Born Jovi 1 OCT 2026 More Info"
-    },
-    {
-      "venue": "bigfan",
-      "title": "Indie Pop Night Featuring Jaycee, Falling To And Sabreen",
-      "date": "2026-10-02",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/tour/35832/Indie-Pop-Night-Featuring-Jaycee-Falling-To-And-Sabreen.utr",
-      "desc": "2 Oct Indie Pop Night Featuring Jaycee, Falling To And Sabreen"
     },
     {
       "venue": "dolphin",
@@ -2788,24 +2526,6 @@ window.EVENTS = {
       "desc": "THE INFLUENCE (11PM) OCT 02 BUY TICKETS"
     },
     {
-      "venue": "qtheatre",
-      "title": "2- Dance Body Re: Body Body Re: Body puts Unitec graduating dancers in the spotlight with bold movement, fresh",
-      "date": "2026-10-02",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/body-re-body",
-      "desc": "2-4 October 2026 Dance Body Re: Body Body Re: Body puts Unitec graduating dancers in the spotlight with bold movement, fresh perspectives and original contemporary dance works. Exp",
-      "end": "2026-10-04"
-    },
-    {
-      "venue": "sparkarena",
-      "title": "Sonu Nigam",
-      "date": "2026-10-02",
-      "kind": "opening",
-      "url": "https://www.sparkarena.co.nz/all-events",
-      "desc": "Sonu Nigam | 2026-10-02T00:00:00Z | Spark Arena",
-      "img": "https://dynamicmedia.livenationinternational.com/i/r/h/afa393be-c5b0-4957-95bb-2a40f56e2d37.jpg"
-    },
-    {
       "venue": "tepou",
       "title": "Iti Kahuraki",
       "date": "2026-10-02",
@@ -2813,22 +2533,6 @@ window.EVENTS = {
       "url": "https://www.tepoutheatre.nz/iti-kahuraki/",
       "desc": "Iti Kahuraki 02 Oct 03 Oct",
       "end": "2026-10-03"
-    },
-    {
-      "venue": "tuningfork",
-      "title": "DIGI: Hyperpop, Digicore, Cloud Rap Club Night",
-      "date": "2026-10-02",
-      "kind": "opening",
-      "url": "https://www.tuningfork.co.nz/all-events/digi-hyperpop-digicore-cloud-rap-club-night-tickets-ae1693849",
-      "desc": "DIGI: Hyperpop, Digicore, Cloud Rap Club Night 2 OCT 2026 More Info"
-    },
-    {
-      "venue": "bigfan",
-      "title": "Emily Alice",
-      "date": "2026-10-03",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/tour/35503/Emily-Alice.utr",
-      "desc": "3 Oct Emily Alice"
     },
     {
       "venue": "britomart",
@@ -2854,14 +2558,6 @@ window.EVENTS = {
       "desc": "Disrupt V Naram Aotearoa Tour",
       "img": "https://galatos.co.nz/wp-content/uploads/2026/08/poster-modified.png",
       "price": "paid"
-    },
-    {
-      "venue": "lacigale",
-      "title": "La Cigale French Market (Sat)",
-      "zh": "La Cigale 法式集市（周六）",
-      "date": "2026-10-03",
-      "kind": "market",
-      "url": "#"
     },
     {
       "venue": "mothership",
@@ -2896,14 +2592,6 @@ window.EVENTS = {
       "desc": "Razorlight 3 Oct 2026 Show & ticket info"
     },
     {
-      "venue": "teoro",
-      "title": "A Confidence & Self Worth Workshop For Women Te Oro Music and Arts Centre , Glen Innes, Auckland Sat 10:00am M",
-      "date": "2026-10-03",
-      "kind": "workshop",
-      "url": "https://www.eventfinda.co.nz/2026/a-confidence-self-worth-workshop-for-women/auckland/glen-innes",
-      "desc": "A Confidence & Self Worth Workshop For Women Te Oro Music and Arts Centre , Glen Innes, Auckland Sat 3 Oct 10:00am Mind & Body Buy Tickets"
-    },
-    {
       "venue": "townhall",
       "title": "The Girl Whose Twin Was a Bird",
       "date": "2026-10-03",
@@ -2928,14 +2616,6 @@ window.EVENTS = {
       "date": "2026-10-04",
       "kind": "market",
       "url": "#"
-    },
-    {
-      "venue": "bigfan",
-      "title": "ROCK'EN'ROL",
-      "date": "2026-10-04",
-      "kind": "gig",
-      "url": "#",
-      "desc": "4 Oct ROCK'EN'ROL"
     },
     {
       "venue": "lacigale",
@@ -2980,61 +2660,6 @@ window.EVENTS = {
       "url": "https://www.thirtynine.co.nz/event-list"
     },
     {
-      "venue": "aag",
-      "title": "Talk | Why Go? Thoughts and Reflections from the Learning from Venice Workshop Talks Free",
-      "date": "2026-10-07",
-      "kind": "workshop",
-      "url": "https://www.aucklandartgallery.com/visit/events/talk-thoughts-and-reflections-from-venice-workshop",
-      "desc": "Talk | Why Go? Thoughts and Reflections from the Learning from Venice Workshop Talks 7 Oct 2026 Free Learn more Learn more",
-      "price": "free",
-      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
-    },
-    {
-      "venue": "basement",
-      "title": "FREE TEST FEST 7- , 6:30PM & 8.15pm",
-      "date": "2026-10-07",
-      "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/test-fest",
-      "desc": "FREE TEST FEST 7-10 OCT, 6:30PM & 8.15pm",
-      "end": "2026-10-10",
-      "price": "free"
-    },
-    {
-      "venue": "qtheatre",
-      "title": "7- Theatre Manawa Ora: Taurite Created by rangatahi alongside acclaimed Aotearoa artists, Manawa Ora: Taurite ",
-      "date": "2026-10-07",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/manawa-ora-taurite",
-      "desc": "7-9 October 2026 Theatre Manawa Ora: Taurite Created by rangatahi alongside acclaimed Aotearoa artists, Manawa Ora: Taurite is a bold new theatre experience exploring balance, iden",
-      "end": "2026-10-09"
-    },
-    {
-      "venue": "teoro",
-      "title": "Shrek The Musical presented by the Hawkins Youth Theatre Company Hawkins Theatre , Papakura, Auckland Wed 11:0",
-      "date": "2026-10-07",
-      "kind": "opening",
-      "url": "https://www.eventfinda.co.nz/2026/shrek-the-musical-presented-by-the-hawkins-youth-theatre-company/auckland/papakura",
-      "desc": "Shrek The Musical presented by the Hawkins Youth Theatre Company Hawkins Theatre , Papakura, Auckland Wed 7 Oct 11:00am – more dates"
-    },
-    {
-      "venue": "timeout",
-      "title": "Auckland Bookshop Tour Wed, 9:00 AM Sun, 9:00 PM Time Out Bookstore Ltd (map) Google Calendar ICS Author talk:",
-      "date": "2026-10-07",
-      "kind": "exhibition",
-      "url": "https://www.timeout.co.nz/upcoming-events/auckland-bookshop-tour-2026",
-      "desc": "Oct 7 to Oct 18 Auckland Bookshop Tour 2026 Wed, Oct 7, 2026 9:00 AM Sun, Oct 18, 2026 9:00 PM Time Out Bookstore Ltd (map) Google Calendar ICS View Event → Oct 20 Author talk: Llo",
-      "end": "2026-12-03",
-      "price": "free",
-      "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6aaa14c4d81bce1c9ab61bcc/1790046899690/tour1.png?format=1500w"
-    },
-    {
-      "venue": "whammy",
-      "title": "Papa M + Mick Turner | Auckland -",
-      "date": "2026-10-07",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
-    },
-    {
       "venue": "aotea",
       "title": "Motuhake",
       "date": "2026-10-08",
@@ -3043,15 +2668,6 @@ window.EVENTS = {
       "end": "2026-10-10",
       "desc": "Experience Motuhake live in the Aotea Centre, part of We The Young. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/motuhake-512x363-auckland-live.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "Workshop: Painted and Stitched: Flora & Fungi Thu",
-      "date": "2026-10-08",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/workshops/art-workshop/painted-and-stitched-flora-fungi",
-      "desc": "Workshop: Painted and Stitched: Flora & Fungi Thu 8 Oct 2026",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/Fzhoo.png.1200x630_q80_crop-smart.png"
     },
     {
       "venue": "powerstation",
@@ -3071,6 +2687,16 @@ window.EVENTS = {
       "end": "2026-10-18"
     },
     {
+      "venue": "studioone",
+      "title": "Exhibitions I Will Be A Feast For All That Hums — Witching Hour — Whai mai ki Te-Aitanga-a-Pepeke, te ao o Whi",
+      "date": "2026-10-08",
+      "kind": "exhibition",
+      "url": "https://www.studioone.org.nz/exhibitions/",
+      "desc": "Exhibitions I Will Be A Feast For All That Hums — Witching Hour — Whai mai ki Te-Aitanga-a-Pepeke, te ao o Whiro-te-tipua. I will be a feast for all that hums is presented by Witch",
+      "end": "2026-12-10",
+      "img": "http://"
+    },
+    {
       "venue": "timeout",
       "title": "Book Launch: Thyme to Cook by Emma Galloway Thursday, 6:00 PM 8:00 PM Mt Eden Village Centre (map) Google Cale",
       "date": "2026-10-08",
@@ -3078,13 +2704,6 @@ window.EVENTS = {
       "url": "https://www.timeout.co.nz/upcoming-events/book-launch-thyme-to-cook-by-emma-galloway",
       "desc": "Oct 8 Book Launch: Thyme to Cook by Emma Galloway Thursday, October 8, 2026 6:00 PM 8:00 PM Mt Eden Village Centre (map) Google Calendar ICS pre-order thyme to cook View Event →",
       "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6aab2c023023d80a75a9aa17/1789604588028/Thyme+to+Cook+-+Auckland+launch+event.png?format=1500w"
-    },
-    {
-      "venue": "whammy",
-      "title": "sloer -",
-      "date": "2026-10-08",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "bigfan",
@@ -3130,14 +2749,6 @@ window.EVENTS = {
       "img": "https://dynamicmedia.livenationinternational.com/v/p/b/9e9d2963-8c50-43fc-8cec-6df808f79ab0.png"
     },
     {
-      "venue": "teoro",
-      "title": "Rock En'Roll Wrestling Māngere Arts Centre - Ngā Tohu o Uenuku , Mangere, Auckland Fri 5:00pm",
-      "date": "2026-10-09",
-      "kind": "opening",
-      "url": "https://www.eventfinda.co.nz/2026/rock-enroll-wrestling/auckland/mangere",
-      "desc": "Rock En'Roll Wrestling Māngere Arts Centre - Ngā Tohu o Uenuku , Mangere, Auckland Fri 9 Oct 5:00pm"
-    },
-    {
       "venue": "tuningfork",
       "title": "Insecure Delusion Presents: A Tribute To Tool",
       "date": "2026-10-09",
@@ -3164,22 +2775,6 @@ window.EVENTS = {
       "end": "2026-11-21"
     },
     {
-      "venue": "webbs",
-      "title": "Current & Upcoming Art Online Online Auction | 9— —Bidding Open View Catalogue & Bid Fine Wines & Whiskies Onl",
-      "date": "2026-10-09",
-      "kind": "exhibition",
-      "url": "https://auctions.webbs.co.nz/auctions/catalog/id/992",
-      "desc": "Current & Upcoming Art Online Online Auction | 9—14 October —Bidding Open View Catalogue & Bid Fine Wines & Whiskies Online Auction | 9—14 October —Bidding Open View Catalogue & Bi",
-      "end": "2027-01-24"
-    },
-    {
-      "venue": "whammy",
-      "title": "Otium -",
-      "date": "2026-10-09",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
-    },
-    {
       "venue": "aag",
       "title": "Picasso: Designed by Paul Smith Picasso like you’ve never seen him before. Encounter the Blue and Rose periods",
       "date": "2026-10-10",
@@ -3198,16 +2793,6 @@ window.EVENTS = {
       "desc": "Picasso: Designed by Paul Smith Exhibition 10 Oct 2026 - 1 Feb 2027 Tickets required Learn more Learn more",
       "end": "2027-02-01",
       "img": "https://cdn.aucklandunlimited.com/aag/assets/media/aag-pps-web-image-tests5-smaller-bull.jpg"
-    },
-    {
-      "venue": "aag",
-      "title": "Talk | A curator’s introduction to Picasso: Designed by Paul Smith Talks Free",
-      "date": "2026-10-10",
-      "kind": "opening",
-      "url": "https://www.aucklandartgallery.com/visit/events/a-curators-introduction-to-picasso-designed-by-paul-smith",
-      "desc": "Talk | A curator’s introduction to Picasso: Designed by Paul Smith Talks 10 Oct 2026 Free Learn more Learn more",
-      "price": "free",
-      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
       "venue": "artbysea",
@@ -3281,15 +2866,6 @@ window.EVENTS = {
       "desc": "Natural Perspective With Mandy Patmore Daily, 10:00AM - 4:00PM From 10 - 11 Oct Adults: 18+ Postponed to 2027 Join environmental artist Mandy Patmore for an exciting print making w",
       "end": "2026-10-11",
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/2.png.1200x630_q80_crop-smart.jpg"
-    },
-    {
-      "venue": "corban",
-      "title": "Witipū Erena Baker-Arapere, Huhana Smith, Mari Ropata-Te Hei, Rongomaiaia Te Whaiti, Terri Te Tau, Karangawai ",
-      "date": "2026-10-10",
-      "kind": "reading",
-      "url": "https://ceac.org.nz/exhibitions/witipu",
-      "desc": "Witipū Erena Baker-Arapere, Huhana Smith, Mari Ropata-Te Hei, Rongomaiaia Te Whaiti, Terri Te Tau, Karangawai Marsh 15 August - 10 October 2026 Witipū reclaims a term often used to",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_07/Te_Rere_a_Mate_Karangawai_Marsh__photo_credit_Erena_Baker-Arapere.png.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "depot",
@@ -3378,14 +2954,6 @@ window.EVENTS = {
       "url": "#"
     },
     {
-      "venue": "qtheatre",
-      "title": "Music Paul Bosauder: Arco y Olvide Album Release Tour World-class flamenco musicians travelling directly from ",
-      "date": "2026-10-10",
-      "kind": "workshop",
-      "url": "https://www.qtheatre.co.nz/shows/paul-bosauder-arco-y-olvide-album-release-tour",
-      "desc": "10 October 2026 Music Paul Bosauder: Arco y Olvide Album Release Tour World-class flamenco musicians travelling directly from Spain for a night of flamenco energy, intimacy and har"
-    },
-    {
       "venue": "sparkarena",
       "title": "Noah Kahan: The Great Divide",
       "date": "2026-10-10",
@@ -3393,14 +2961,6 @@ window.EVENTS = {
       "url": "https://www.sparkarena.co.nz/all-events",
       "desc": "Noah Kahan: The Great Divide | 2026-10-10T00:00:00Z | Spark Arena",
       "img": "https://dynamicmedia.livenationinternational.com/v/p/b/9e9d2963-8c50-43fc-8cec-6df808f79ab0.png"
-    },
-    {
-      "venue": "teoro",
-      "title": "Rock of Ages Playhouse Theatre , Glen Eden, Auckland Sat 7:30pm – more dates",
-      "date": "2026-10-10",
-      "kind": "opening",
-      "url": "https://www.eventfinda.co.nz/2026/rock-of-ages/auckland/glen-eden",
-      "desc": "Rock of Ages Playhouse Theatre , Glen Eden, Auckland Sat 10 Oct 7:30pm – more dates"
     },
     {
       "venue": "tepou",
@@ -3452,16 +3012,6 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.aucklandartgallery.com/visit/events/members-tour-picasso-designed-by-paul-smith",
       "desc": "Members tour | Picasso: Designed by Paul Smith Tours 11 Oct 2026 Sold out Learn more Learn more",
-      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
-    },
-    {
-      "venue": "aag",
-      "title": "Music of the month | Ben Chavasse Performance Free",
-      "date": "2026-10-11",
-      "kind": "opening",
-      "url": "https://www.aucklandartgallery.com/visit/events/music-of-the-month-ben-chavasse",
-      "desc": "Music of the month | Ben Chavasse Performance 11 Oct 2026 Free Learn more Learn more",
-      "price": "free",
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
@@ -3555,6 +3105,15 @@ window.EVENTS = {
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
+      "venue": "artis",
+      "title": "Jordan Barnes Daydreamer 13",
+      "date": "2026-10-13",
+      "kind": "exhibition",
+      "url": "https://www.artisgallery.co.nz/exhibitions/134-jordan-barnes-daydreamer/",
+      "desc": "Jordan Barnes Daydreamer 13 - 26 October 2026 Read more",
+      "end": "2026-10-26"
+    },
+    {
       "venue": "basement",
       "title": "TEMPO DANCE FESTIVAL Tempo Dance Festival 13",
       "date": "2026-10-13",
@@ -3582,21 +3141,12 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/ryan-holiday-512x363-auckland-live.jpg"
     },
     {
-      "venue": "hawkins",
-      "title": "An Evening with Victor Hugo",
+      "venue": "intlart",
+      "title": "Live Now Collectable Online Auction • 13",
       "date": "2026-10-13",
       "kind": "gig",
-      "url": "https://www.hawkinstheatre.co.nz/films/evening-victor-hugo/",
-      "desc": "An Evening with Victor Hugo 13 Oct - 10:00am 16 Oct - 12:30pm 21 Oct - 7:30pm 90 mins",
-      "end": "2026-10-21"
-    },
-    {
-      "venue": "intlart",
-      "title": "Upcoming Collectable Online Auction • 13",
-      "date": "2026-10-13",
-      "kind": "exhibition",
       "url": "https://www.internationalartcentre.co.nz/auctions/4-mapmch",
-      "desc": "Upcoming Collectable Online Auction • 13 - 19 October 2026",
+      "desc": "Live Now Collectable Online Auction • 13 - 19 October 2026",
       "end": "2026-10-19"
     },
     {
@@ -3606,15 +3156,6 @@ window.EVENTS = {
       "date": "2026-10-13",
       "kind": "reading",
       "url": "https://www.thirtynine.co.nz/event-list"
-    },
-    {
-      "venue": "qtheatre",
-      "title": "13- Dance Natural Basic With the natural basic waltz as a point of departure, dancers converge through clouds ",
-      "date": "2026-10-13",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/natural-basic",
-      "desc": "13-14 October 2026 Dance Natural Basic With the natural basic waltz as a point of departure, dancers converge through clouds of thought and matter. Body as barometer. From the crea",
-      "end": "2026-10-14"
     },
     {
       "venue": "aag",
@@ -3628,21 +3169,21 @@ window.EVENTS = {
     },
     {
       "venue": "corban",
-      "title": "Workshop: Drawing for Older Kids Wed",
-      "date": "2026-10-14",
-      "kind": "workshop",
-      "url": "https://ceac.org.nz/workshops/art-workshop/drawing-for-older-kids",
-      "desc": "Workshop: Drawing for Older Kids Wed 14 Oct 2026",
-      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/JPEG_image-43FE-98FC-95-0.png.1200x630_q80_crop-smart.png"
-    },
-    {
-      "venue": "corban",
       "title": "Drawing for Older Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From Children: 9 - 15 This 4-week",
       "date": "2026-10-14",
       "kind": "workshop",
       "url": "https://ceac.org.nz/workshops/art-workshop/drawing-for-older-kids",
       "desc": "Drawing for Older Kids With Julie Moselen Weekly on Wednesday, 4:00 - 5:30PM From 14 Oct - 4 Nov Children: 9 - 15 This 4-week focused class is designed for older children who are r",
       "end": "2026-11-04",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/JPEG_image-43FE-98FC-95-0.png.1200x630_q80_crop-smart.png"
+    },
+    {
+      "venue": "corban",
+      "title": "Workshop: Drawing for Older Kids Wed",
+      "date": "2026-10-14",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/drawing-for-older-kids",
+      "desc": "Workshop: Drawing for Older Kids Wed 14 Oct 2026",
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/JPEG_image-43FE-98FC-95-0.png.1200x630_q80_crop-smart.png"
     },
     {
@@ -3673,29 +3214,21 @@ window.EVENTS = {
       "end": "2026-11-14"
     },
     {
-      "venue": "qtheatre",
-      "title": "13 & Dance YMCĀ Hot off the heels of the Venice Biennale Danza and The Butterfly Who Flew Into The Rave, Oli M",
-      "date": "2026-10-14",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/ymca",
-      "desc": "13 & 14 October Dance YMCĀ Hot off the heels of the Venice Biennale Danza and The Butterfly Who Flew Into The Rave, Oli Mathiesen takes us on a bold takatāpui rebirth of the Villag"
-    },
-    {
       "venue": "sanderson",
-      "title": "KARYN TAYLOR Experimental Physics Opening - Wednesday , 5.30-6.30pm Sanderson are delighted to present the exh",
+      "title": "KARYN TAYLOR Experimental Physics Sanderson are delighted to present the exhibition Experimental Physics by Kā",
       "date": "2026-10-14",
       "kind": "exhibition",
       "url": "https://www.sanderson.co.nz/exhibitions/485-karyn-taylor-experimental-physics/overview/",
-      "desc": "KARYN TAYLOR Experimental Physics 14 Oct - 8 Nov 2026 Opening - Wednesday October 14th, 5.30-6.30pm Sanderson are delighted to present the exhibition Experimental Physics by Kāryn ",
+      "desc": "KARYN TAYLOR Experimental Physics 14 Oct - 8 Nov 2026 Sanderson are delighted to present the exhibition Experimental Physics by Kāryn Taylor Experimental Physics By Dina Jezdić Our",
       "end": "2026-11-08"
     },
     {
       "venue": "sanderson",
-      "title": "SAM LOE Between Two Lungs Opening - Wednesday , 5.30-6.30pm Sanderson are pleased to announce the exhibition B",
+      "title": "SAM LOE Between Two Lungs Sanderson are pleased to present the exhibition Between Two Lungs by Sam Loe. Sam Lo",
       "date": "2026-10-14",
       "kind": "exhibition",
       "url": "https://www.sanderson.co.nz/exhibitions/486-sam-loe-between-two-lungs/overview/",
-      "desc": "SAM LOE Between Two Lungs 14 Oct - 8 Nov 2026 Opening - Wednesday October 14th, 5.30-6.30pm Sanderson are pleased to announce the exhibition Between Two Lungs by Sam Loe will open ",
+      "desc": "SAM LOE Between Two Lungs 14 Oct - 8 Nov 2026 Sanderson are pleased to present the exhibition Between Two Lungs by Sam Loe. Sam Loe's paintings begin via a return to physical prese",
       "end": "2026-11-08"
     },
     {
@@ -3716,15 +3249,6 @@ window.EVENTS = {
     },
     {
       "venue": "aag",
-      "title": "Members Late | Picasso designed by Paul Smith Festival Members $15",
-      "date": "2026-10-15",
-      "kind": "opening",
-      "url": "https://www.aucklandartgallery.com/visit/events/members-late-picasso-designed-by-paul-smith",
-      "desc": "Members Late | Picasso designed by Paul Smith Festival 15 Oct 2026 Members $15 Learn more Learn more",
-      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
-    },
-    {
-      "venue": "aag",
       "title": "Talk | Curator insights: the fundamental practice Talks Tours Free",
       "date": "2026-10-15",
       "kind": "exhibition",
@@ -3735,12 +3259,13 @@ window.EVENTS = {
       "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
-      "venue": "basement",
-      "title": "TEMPO DANCE FESTIVAL Kill The Lights , 7.30PM",
+      "venue": "aag",
+      "title": "Members Late | Picasso designed by Paul Smith Festival Members $15",
       "date": "2026-10-15",
       "kind": "opening",
-      "url": "https://basementtheatre.co.nz/blogs/whats-on/kill-the-lights",
-      "desc": "TEMPO DANCE FESTIVAL 2026 Kill The Lights 15 OCT, 7.30PM"
+      "url": "https://www.aucklandartgallery.com/visit/events/members-late-picasso-designed-by-paul-smith",
+      "desc": "Members Late | Picasso designed by Paul Smith Festival 15 Oct 2026 Members $15 Learn more Learn more",
+      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
       "venue": "basement",
@@ -3750,6 +3275,14 @@ window.EVENTS = {
       "url": "https://basementtheatre.co.nz/blogs/whats-on/operamoth",
       "desc": "TEMPO DANCE FESTIVAL 2026 Operamoth 15-17 OCT, 6.30PM",
       "end": "2026-10-17"
+    },
+    {
+      "venue": "basement",
+      "title": "TEMPO DANCE FESTIVAL Kill The Lights , 7.30PM",
+      "date": "2026-10-15",
+      "kind": "opening",
+      "url": "https://basementtheatre.co.nz/blogs/whats-on/kill-the-lights",
+      "desc": "TEMPO DANCE FESTIVAL 2026 Kill The Lights 15 OCT, 7.30PM"
     },
     {
       "venue": "bigfan",
@@ -3767,14 +3300,6 @@ window.EVENTS = {
       "url": "https://www.aucklandlive.co.nz/show/james-2026",
       "desc": "Experience James at The Civic. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/james-the-civic-mobile-512x363.jpg"
-    },
-    {
-      "venue": "qtheatre",
-      "title": "Dance Off Axis What happens when the cypher falls off axis? Drawing from Hip Hop culture and freestyle practic",
-      "date": "2026-10-15",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/axis",
-      "desc": "15 October 2026 Dance Off Axis What happens when the cypher falls off axis? Drawing from Hip Hop culture and freestyle practice, this work explores uncertainty, instinct and the se"
     },
     {
       "venue": "townhall",
@@ -3843,21 +3368,39 @@ window.EVENTS = {
       "desc": "16 October 2026 Dance WHITE NOISE + Oro An electrifying performance, WHITE NOISE has emerged from award-winning creator/performer Alisha McLennan Marler’s lived experience of disab"
     },
     {
+      "venue": "stpaulst",
+      "title": "On Now Shear Wool Power Date Location Gallery 2",
+      "date": "2026-10-16",
+      "kind": "exhibition",
+      "url": "https://stpaulst.aut.ac.nz/exhibitions/shear-wool-power-2026",
+      "desc": "On Now Shear Wool Power 2026 Date 16 Oct — 23 Oct 2026 Location Gallery 2",
+      "end": "2026-10-23"
+    },
+    {
+      "venue": "stpaulst",
+      "title": "On Now Shear Wool Power",
+      "date": "2026-10-16",
+      "kind": "exhibition",
+      "url": "https://stpaulst.aut.ac.nz/exhibitions/shear-wool-power-2026",
+      "desc": "On Now 16 Oct — 23 Oct 2026 Shear Wool Power 2026 Read more",
+      "end": "2026-10-23"
+    },
+    {
       "venue": "twng",
-      "title": "Upcoming Shear Wool Power",
+      "title": "On Now Shear Wool Power",
       "date": "2026-10-16",
       "kind": "exhibition",
       "url": "https://ngutukaka.nz/exhibitions/shear-wool-power-2026",
-      "desc": "Upcoming 16 Oct — 23 Oct 2026 Shear Wool Power 2026 Read more",
+      "desc": "On Now 16 Oct — 23 Oct 2026 Shear Wool Power 2026 Read more",
       "end": "2026-10-23"
     },
     {
       "venue": "waihekegallery",
-      "title": "Catherine Mitchell Centre Life Drawing Group Exhibition",
+      "title": "Catherine Mitchell Arts Centre Life Drawing Group Exhibition",
       "date": "2026-10-16",
       "kind": "exhibition",
       "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/catherine-mitchell-2026/",
-      "desc": "Catherine Mitchell Centre Life Drawing Group 2026 Exhibition 16 October - 11 November 2026",
+      "desc": "Catherine Mitchell Arts Centre Life Drawing Group 2026 Exhibition 16 October - 11 November 2026",
       "end": "2026-11-11"
     },
     {
@@ -3877,6 +3420,15 @@ window.EVENTS = {
       "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/ghost-cargo/",
       "desc": "Denis O'Connor - Ghost Cargo 16 October - 29 November 2026",
       "end": "2026-11-29"
+    },
+    {
+      "venue": "webbs",
+      "title": "Current & Upcoming The Estate: Design Edit Online Auction | 16— —Bidding Open + On View View Catalogue & Bid F",
+      "date": "2026-10-16",
+      "kind": "exhibition",
+      "url": "https://auctions.webbs.co.nz/auctions/catalog/id/984",
+      "desc": "Current & Upcoming The Estate: Design Edit Online Auction | 16—20 October —Bidding Open + On View View Catalogue & Bid Fine Jewels, Watches & Luxury Accessories Online Auction | 14",
+      "end": "2027-01-24"
     },
     {
       "venue": "aag",
@@ -3923,12 +3475,51 @@ window.EVENTS = {
       "url": "#"
     },
     {
+      "venue": "corban",
+      "title": "Home Fa'amele Etuale Sometimes we search our entire lives looking for somewhere to belong, to be a part of fam",
+      "date": "2026-10-17",
+      "kind": "gig",
+      "url": "https://ceac.org.nz/exhibitions/home",
+      "desc": "Home Fa'amele Etuale 17 October - 5 December 2026 Sometimes we search our entire lives looking for somewhere to belong, to be a part of family and to have relationships but in the ",
+      "end": "2026-12-05",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_09/Faamele_Etuale_1_Y42ly3h.png.1200x630_q80_crop-smart.jpg"
+    },
+    {
+      "venue": "corban",
+      "title": "Kitinga bashenyi Lema Shamamba Kitinga bashenyi is a metaphor from my dialect Hunde that means “When the sun a",
+      "date": "2026-10-17",
+      "kind": "exhibition",
+      "url": "https://ceac.org.nz/exhibitions/kitinga-bashenyi",
+      "desc": "Kitinga bashenyi Lema Shamamba 17 October - 5 December 2026 Kitinga bashenyi is a metaphor from my dialect Hunde that means “When the sun appeared in the evening in the middle of t",
+      "end": "2026-12-05",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_09/IMG_7402.png.1200x630_q80_crop-smart.png"
+    },
+    {
+      "venue": "corban",
+      "title": "He kokonga whare e kitea Ange Oliver He kokonga whare e kitea, he kokonga ngākau e kore e kitea. The corners o",
+      "date": "2026-10-17",
+      "kind": "gig",
+      "url": "https://ceac.org.nz/exhibitions/he-kokonga-whare-e-kitea",
+      "desc": "He kokonga whare e kitea Ange Oliver 17 October - 5 December 2026 He kokonga whare e kitea, he kokonga ngākau e kore e kitea. The corners of a house can be seen, but the corners of",
+      "end": "2026-12-05",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_09/Angerlia_Oliver.png.1200x630_q80_crop-smart.png"
+    },
+    {
       "venue": "lacigale",
       "title": "La Cigale French Market (Sat)",
       "zh": "La Cigale 法式集市（周六）",
       "date": "2026-10-17",
       "kind": "market",
       "url": "#"
+    },
+    {
+      "venue": "mairangi",
+      "title": "MAC Members Merit Awards On View: Saturday - Saturday Main & Hewson Galleries This vibrant showcase celebrates",
+      "date": "2026-10-17",
+      "kind": "exhibition",
+      "url": "https://mairangiarts.co.nz/events/mac-members-merit-awards/",
+      "desc": "MAC Members Merit Awards On View: Saturday 17 October - Saturday 7 November Main & Hewson Galleries This vibrant showcase celebrates the incredible creativity across our entire com",
+      "end": "2026-11-07"
     },
     {
       "venue": "neckofthewoods",
@@ -3966,20 +3557,20 @@ window.EVENTS = {
     },
     {
       "venue": "qtheatre",
-      "title": "Dance Tendrils of Tomorrow Two of our exceptionary tertiary dance institutions come together for one night onl",
-      "date": "2026-10-17",
-      "kind": "opening",
-      "url": "https://www.qtheatre.co.nz/shows/tendrils-tomorrow",
-      "desc": "17 October 2026 Dance Tendrils of Tomorrow Two of our exceptionary tertiary dance institutions come together for one night only with original works by Matte Roffe, Sarah Knox with "
-    },
-    {
-      "venue": "qtheatre",
       "title": "17- Dance The Room Would Split Open A body does not re-organise alone. Directed by Kelly Nash, The Room Would ",
       "date": "2026-10-17",
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/room-would-split-open",
       "desc": "17-18 October 2026 Dance The Room Would Split Open A body does not re-organise alone. Directed by Kelly Nash, The Room Would Split Open asks what care can do when it becomes physic",
       "end": "2026-10-18"
+    },
+    {
+      "venue": "qtheatre",
+      "title": "Dance Tendrils of Tomorrow Two of our exceptionary tertiary dance institutions come together for one night onl",
+      "date": "2026-10-17",
+      "kind": "opening",
+      "url": "https://www.qtheatre.co.nz/shows/tendrils-tomorrow",
+      "desc": "17 October 2026 Dance Tendrils of Tomorrow Two of our exceptionary tertiary dance institutions come together for one night only with original works by Matte Roffe, Sarah Knox with "
     },
     {
       "venue": "teoro",
@@ -4000,11 +3591,12 @@ window.EVENTS = {
     },
     {
       "venue": "teuru",
-      "title": "SAT , 11AM Ruth Ige Informal Encounter You are warmly invited to join us for a morning of art with the Ruth Ig",
+      "title": "SAT , 11AM Ruth Ige Informal Encounter 17- , 10AM - 4.30PM OPENING EVENT , 5PM LEARNING CENTRE Bev Rea A Life ",
       "date": "2026-10-17",
-      "kind": "opening",
+      "kind": "exhibition",
       "url": "https://teuru.org.nz/products/ruth-ige-informal-encounter",
-      "desc": "SAT 17 OCT, 11AM Ruth Ige Informal Encounter You are warmly invited to join us for a morning of art with the Ruth Ige. Learn more",
+      "desc": "SAT 17 OCT, 11AM Ruth Ige Informal Encounter 17-18 OCT 2026, 10AM - 4.30PM OPENING EVENT 16 OCT, 5PM LEARNING CENTRE Bev Rea A Life in Clay THU 22 OCT, 5-7PM Late Nights At Te Uru ",
+      "end": "2026-11-28",
       "img": "http://teuru.org.nz/cdn/shop/files/Ruth_Ige.png?v=1790908779"
     },
     {
@@ -4019,21 +3611,20 @@ window.EVENTS = {
     },
     {
       "venue": "teuru",
+      "title": "SAT , 11AM Ruth Ige Informal Encounter You are warmly invited to join us for a morning of art with the Ruth Ig",
+      "date": "2026-10-17",
+      "kind": "opening",
+      "url": "https://teuru.org.nz/products/ruth-ige-informal-encounter",
+      "desc": "SAT 17 OCT, 11AM Ruth Ige Informal Encounter You are warmly invited to join us for a morning of art with the Ruth Ige. Learn more",
+      "img": "http://teuru.org.nz/cdn/shop/files/Ruth_Ige.png?v=1790908779"
+    },
+    {
+      "venue": "teuru",
       "title": "SAT , 11AM Ruth Ige Informal Encounter",
       "date": "2026-10-17",
       "kind": "opening",
       "url": "https://teuru.org.nz/products/ruth-ige-informal-encounter",
       "desc": "SAT 17 OCT, 11AM Ruth Ige Informal Encounter",
-      "img": "http://teuru.org.nz/cdn/shop/files/Ruth_Ige.png?v=1790908779"
-    },
-    {
-      "venue": "teuru",
-      "title": "SAT , 11AM Ruth Ige Informal Encounter 17- , 10AM - 4.30PM OPENING EVENT , 5PM LEARNING CENTRE Bev Rea A Life ",
-      "date": "2026-10-17",
-      "kind": "exhibition",
-      "url": "https://teuru.org.nz/products/ruth-ige-informal-encounter",
-      "desc": "SAT 17 OCT, 11AM Ruth Ige Informal Encounter 17-18 OCT 2026, 10AM - 4.30PM OPENING EVENT 16 OCT, 5PM LEARNING CENTRE Bev Rea A Life in Clay THU 22 OCT, 5-7PM Late Nights At Te Uru ",
-      "end": "2026-11-28",
       "img": "http://teuru.org.nz/cdn/shop/files/Ruth_Ige.png?v=1790908779"
     },
     {
@@ -4050,6 +3641,16 @@ window.EVENTS = {
       "date": "2026-10-17",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Greg Davies - Full Fat Legend",
+      "date": "2026-10-18",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/greg-davies-full-fat-legend",
+      "end": "2026-10-19",
+      "desc": "British comedy giant Greg Davies brings his brand-new stand-up show Full Fat Legend to Auckland. Don’t miss the Taskmaster star live at the Aotea Centre in 2026.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/greg-davies-512x363-auckland-live.jpg"
     },
     {
       "venue": "avondale",
@@ -4117,6 +3718,17 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
+      "venue": "aag",
+      "title": "Archive display: Te Moana-nui-a-Kiwa: Our Sea of Islands Exhibition Free",
+      "date": "2026-10-19",
+      "kind": "exhibition",
+      "url": "https://www.aucklandartgallery.com/visit/exhibitions/archive-display-te-moana-nui-a-kiwa-our-sea-of-islands",
+      "desc": "Archive display: Te Moana-nui-a-Kiwa: Our Sea of Islands Exhibition 19 Oct 2026 - 8 Mar 2027 Free Learn more Learn more",
+      "end": "2027-03-08",
+      "price": "free",
+      "img": "https://cdn.aucklandunlimited.com/aag/assets/media/te-moana-nui-a-kiwa-1x1.jpg"
+    },
+    {
       "venue": "howicklittle",
       "title": "SEASON OF PLAYS ANNOUNCED HLT's exciting season of plays for has been announced. The plays are the hilarious A",
       "date": "2026-10-19",
@@ -4170,10 +3782,29 @@ window.EVENTS = {
       "venue": "timeout",
       "title": "Author talk: Lloyd Jones Tuesday, 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calendar ICS pre-order T",
       "date": "2026-10-20",
-      "kind": "reading",
+      "kind": "exhibition",
       "url": "https://www.timeout.co.nz/upcoming-events/lloyd-jones",
-      "desc": "Oct 20 Author talk: Lloyd Jones Tuesday, October 20, 2026 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calendar ICS pre-order The beaded Curtain RSVP HERE View Event →",
+      "desc": "Oct 20 Author talk: Lloyd Jones Tuesday, October 20, 2026 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calendar ICS pre-order The beaded Curtain RSVP HERE View Event → Oct 2",
+      "end": "2026-12-03",
+      "price": "free",
       "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6ab1f5edf2ef105993cb8a76/1790740890656/Lloyd+Jones+book+launch+invitation.jpg?format=1500w"
+    },
+    {
+      "venue": "aotea",
+      "title": "Morgan Jay",
+      "date": "2026-10-21",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/morgan-jay",
+      "desc": "Experience Morgan Jay live at the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/morgan-jay-512x363-auckland-live.jpg"
+    },
+    {
+      "venue": "basement",
+      "title": "CHOOSE WHAT YOU PAY Live Reel does I Know What You Did Last Summer , 8.30PM",
+      "date": "2026-10-21",
+      "kind": "gig",
+      "url": "https://basementtheatre.co.nz/blogs/whats-on/live-reel-does-i-know-what-you-did-last-summer",
+      "desc": "CHOOSE WHAT YOU PAY Live Reel does I Know What You Did Last Summer 21 OCT, 8.30PM"
     },
     {
       "venue": "brucemason",
@@ -4195,6 +3826,15 @@ window.EVENTS = {
       "img": "https://cdn.aucklandunlimited.com/live/assets/media/jesus-christ-superstar-v2-512x363-auckland-live.jpg"
     },
     {
+      "venue": "hawkins",
+      "title": "Big Girls Don't Cry",
+      "date": "2026-10-21",
+      "kind": "gig",
+      "url": "https://www.hawkinstheatre.co.nz/films/big-girls-dont-cry/",
+      "desc": "Big Girls Don't Cry 21 Oct - 12:30pm 28 Oct - 7:30pm 99 mins",
+      "end": "2026-10-28"
+    },
+    {
       "venue": "sparkarena",
       "title": "Lily Allen Performs West End Girl",
       "date": "2026-10-21",
@@ -4204,11 +3844,27 @@ window.EVENTS = {
       "img": "https://dynamicmedia.livenationinternational.com/j/x/g/db064b71-264b-414f-8b33-66c10b39600b.jpg"
     },
     {
+      "venue": "teoro",
+      "title": "Rock of Ages Playhouse Theatre , Glen Eden, Auckland Wed 7:30pm – more dates",
+      "date": "2026-10-21",
+      "kind": "opening",
+      "url": "https://www.eventfinda.co.nz/2026/rock-of-ages/auckland/glen-eden",
+      "desc": "Rock of Ages Playhouse Theatre , Glen Eden, Auckland Wed 21 Oct 7:30pm – more dates"
+    },
+    {
       "venue": "whammy",
       "title": "Abandoned Carparks Celica EP Tour w/ Clementine and Neither Do I -",
       "date": "2026-10-21",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "basement",
+      "title": "Night Mayors X Basement Theatre , 6PM",
+      "date": "2026-10-22",
+      "kind": "opening",
+      "url": "https://basementtheatre.co.nz/blogs/whats-on/night-mayors-x-basement-theatre",
+      "desc": "Night Mayors X Basement Theatre 22 OCT, 6PM"
     },
     {
       "venue": "coastalsigns",
@@ -4221,20 +3877,12 @@ window.EVENTS = {
     },
     {
       "venue": "hawkins",
-      "title": "Digger",
+      "title": "The Social Reckoning",
       "date": "2026-10-22",
       "kind": "gig",
-      "url": "https://www.hawkinstheatre.co.nz/films/digger/",
-      "desc": "Digger 13 & 22 Oct - 12:30pm 16 Oct - 7:30pm 28 Oct - 10:00am 129 mins",
+      "url": "https://www.hawkinstheatre.co.nz/films/social-reckoning/",
+      "desc": "The Social Reckoning 21 & 22 Oct - 10:00am 28 Oct - 12:30pm 112 mins",
       "end": "2026-10-28"
-    },
-    {
-      "venue": "hawkins",
-      "title": "The Weight",
-      "date": "2026-10-22",
-      "kind": "gig",
-      "url": "https://www.hawkinstheatre.co.nz/films/weight/",
-      "desc": "The Weight 13 & 22 Oct - 7:30pm 14 Oct - 12:30pm 16 Oct - 10:00am 115 mins"
     },
     {
       "venue": "qtheatre",
@@ -4281,6 +3929,14 @@ window.EVENTS = {
       "desc": "Hot New Jokes 23 OCT, 8.30PM"
     },
     {
+      "venue": "bigfan",
+      "title": "Coast Arcade - BACK2SCHOOL",
+      "date": "2026-10-23",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/tour/35919/Coast-Arcade---BACK2SCHOOL.utr",
+      "desc": "23 Oct Coast Arcade - BACK2SCHOOL"
+    },
+    {
       "venue": "brucemason",
       "title": "Get Rhythm",
       "date": "2026-10-23",
@@ -4323,12 +3979,31 @@ window.EVENTS = {
       "desc": "Tupumaiaga Trust Hiapo Printing Niue Language Week 2026 Te Oro Music and Arts Centre , Glen Innes, Auckland Fri 23 Oct 9:00am – more dates Arts and Crafts Buy Tickets"
     },
     {
+      "venue": "townhall",
+      "title": "Miss India South Pacific Grand Finale",
+      "date": "2026-10-23",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/miss-india-south-pacific-2026-grand-finale",
+      "desc": "Experience Miss India South Pacific 2026 Grand Finale, part of the BNZ Auckland Diwali Festival. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/miss-india26-v2-512x363-auckland-live.jpg"
+    },
+    {
       "venue": "upstairs",
-      "title": "Sammy Milne & Raewyn Booth Fri, 6:00 pm Sat, 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS Openin",
+      "title": "Current & Upcoming Exhibitions & Events Sammy Milne & Raewyn Booth Fri, 6:00 pm Sun, 4:00 pm The Upstairs Art ",
       "date": "2026-10-23",
       "kind": "exhibition",
       "url": "https://www.upstairs.org.nz/events/2026/10/23/sammy-milne-raewyn-booth",
-      "desc": "Oct 23 to 7 Nov Sammy Milne & Raewyn Booth Fri, 23 Oct 2026 6:00 pm Sat, 7 Nov 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS Opening night: Friday 23 October 6pm.",
+      "desc": "Current & Upcoming Exhibitions & Events Oct 23 to 8 Nov Sammy Milne & Raewyn Booth Fri, 23 Oct 2026 6:00 pm Sun, 8 Nov 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar I",
+      "end": "2027-02-07",
+      "price": "free"
+    },
+    {
+      "venue": "upstairs",
+      "title": "Sammy Milne & Raewyn Booth Fri, 6:00 pm Sun, 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS Openin",
+      "date": "2026-10-23",
+      "kind": "exhibition",
+      "url": "https://www.upstairs.org.nz/events/2026/10/23/sammy-milne-raewyn-booth",
+      "desc": "Oct 23 to 8 Nov Sammy Milne & Raewyn Booth Fri, 23 Oct 2026 6:00 pm Sun, 8 Nov 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS Opening night: Friday 23 October 6pm.",
       "end": "2026-11-08"
     },
     {
@@ -4337,6 +4012,23 @@ window.EVENTS = {
       "date": "2026-10-23",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Tokiofa Season 3 Showcase – New Horizons",
+      "date": "2026-10-24",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/tokiofa-season-3-showcase-new-horizons",
+      "desc": "Experience the Tokiofa Season 3 Showcase at the Kiri Te Kanawa Theatre Visit aucklandlive.co.nz for tickets, dates, and more information",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/tokiofa-mobile-512x-363px.jpg"
+    },
+    {
+      "venue": "bigfan",
+      "title": "Audience Aotearoa",
+      "date": "2026-10-24",
+      "kind": "gig",
+      "url": "#",
+      "desc": "24 Oct Audience Aotearoa"
     },
     {
       "venue": "britomart",
@@ -4376,11 +4068,11 @@ window.EVENTS = {
     },
     {
       "venue": "gowlangsford",
-      "title": "Spring Catalogue Onehunga This Oc tober , Gow Langsford brings its celebrated Spring Catalogue Exhibition to O",
+      "title": "Spring Catalogue Onehunga This October, Gow Langsford brings its celebrated Spring Catalogue Exhibition to One",
       "date": "2026-10-24",
       "kind": "exhibition",
       "url": "https://gowlangsfordgallery.co.nz/exhibitions/538-spring-catalogue-2026/",
-      "desc": "Spring Catalogue 2026 24 Oct - 21 Nov 2026 Onehunga This Oc tober , Gow Langsford brings its celebrated Spring Catalogue Exhibition to Onehunga for the first time, marking the retu",
+      "desc": "Spring Catalogue 2026 24 Oct - 21 Nov 2026 Onehunga This October, Gow Langsford brings its celebrated Spring Catalogue Exhibition to Onehunga for the first time, marking the return",
       "end": "2026-11-21"
     },
     {
@@ -4465,7 +4157,14 @@ window.EVENTS = {
       "date": "2026-10-24",
       "kind": "opening",
       "url": "https://www.tuningfork.co.nz/all-events/where-s-jai-tickets-ae1603030",
-      "desc": "Where’s Jai 24 OCT 2026"
+      "desc": "Where’s Jai 24 OCT 2026 More Info"
+    },
+    {
+      "venue": "whammy",
+      "title": "ACT:UP Vol.2 -",
+      "date": "2026-10-24",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
       "venue": "avondale",
@@ -4491,6 +4190,15 @@ window.EVENTS = {
       "url": "https://www.sparkarena.co.nz/all-events",
       "desc": "Zara Larsson: Midnight Sun Tour 2026 | 2026-10-25T00:00:00Z | Spark Arena",
       "img": "https://dynamicmedia.livenationinternational.com/u/n/f/b41f0dfe-06d2-4c6c-a37a-cf203ca7b86c.jpg"
+    },
+    {
+      "venue": "teoro",
+      "title": "Free Show - She'll Be Right! Standup Comedy - Every Sunday Cardboard Comedy Club , Kingsland, Auckland Sun 4:3",
+      "date": "2026-10-25",
+      "kind": "opening",
+      "url": "https://www.eventfinda.co.nz/2026/free-show-shell-be-right-sunday-standup-comedy2/auckland/kingsland",
+      "desc": "Free Show - She'll Be Right! Standup Comedy - Every Sunday Cardboard Comedy Club , Kingsland, Auckland Sun 25 Oct 4:30pm – more dates",
+      "price": "free"
     },
     {
       "venue": "teuru",
@@ -4526,12 +4234,12 @@ window.EVENTS = {
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
     },
     {
-      "venue": "bigfan",
-      "title": "Coast Arcade - BACK2SCHOOL",
+      "venue": "motat",
+      "title": "Event Family Ngā Mirumiru Bubbles Saturday 24 - Monday View more",
       "date": "2026-10-26",
-      "kind": "gig",
-      "url": "https://www.undertheradar.co.nz/tour/35919/Coast-Arcade---BACK2SCHOOL.utr",
-      "desc": "26 Oct Coast Arcade - BACK2SCHOOL"
+      "kind": "opening",
+      "url": "https://www.motat.nz/events/nga-mirumiru-bubbles-2026/",
+      "desc": "Event Family Ngā Mirumiru Bubbles Saturday 24 - Monday 26 October 2026 View more"
     },
     {
       "venue": "pumphouse",
@@ -4558,6 +4266,15 @@ window.EVENTS = {
       "url": "https://basementtheatre.co.nz/blogs/whats-on/the-horror-of-macbeth",
       "desc": "CHOOSE WHAT YOU PAY The Horror Of Macbeth 27-31 OCT, 6:30PM",
       "end": "2026-10-31"
+    },
+    {
+      "venue": "corban",
+      "title": "Class: The Art of Micro Macrame: Beginner Jewellery Making Tue",
+      "date": "2026-10-27",
+      "kind": "workshop",
+      "url": "https://ceac.org.nz/workshops/art-workshop/the-art-of-micro-macrame-beginner-jewellery-making",
+      "desc": "Class: The Art of Micro Macrame: Beginner Jewellery Making Tue 27 Oct 2026",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_08/DSC_4839.png.1200x630_q80_crop-smart.png"
     },
     {
       "venue": "corban",
@@ -4592,6 +4309,17 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.tuningfork.co.nz/all-events/buffalo-traffic-jam-tickets-ae1635296",
       "desc": "Buffalo Traffic Jam: Down Under Tour 27 OCT 2026"
+    },
+    {
+      "venue": "aag",
+      "title": "Diwali | Lunchtime music series Performance Free",
+      "date": "2026-10-28",
+      "kind": "opening",
+      "url": "https://www.aucklandartgallery.com/visit/events/diwali-lunchtime-music-series",
+      "desc": "Diwali | Lunchtime music series Performance 28 Oct 2026 - 30 Oct 2026 Free Learn more Learn more",
+      "end": "2026-10-30",
+      "price": "free",
+      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
       "venue": "melanieroger",
@@ -4645,6 +4373,14 @@ window.EVENTS = {
       "desc": "Choose What You Pay Femmes and Thems – October 29 OCT, 8.30PM"
     },
     {
+      "venue": "bigfan",
+      "title": "The Rhythm of the Wallflowers",
+      "date": "2026-10-29",
+      "kind": "gig",
+      "url": "https://www.moshtix.co.nz/v2/event/the-rhythm-of-the-wallflowers/201319",
+      "desc": "29 Oct The Rhythm of the Wallflowers"
+    },
+    {
       "venue": "pumphouse",
       "title": "Noteworthy Choir Presents Noteworthy: On Broadway Musical Theatre Magic... and the choir you cannot stop heari",
       "date": "2026-10-29",
@@ -4677,6 +4413,14 @@ window.EVENTS = {
       "url": "https://basementtheatre.co.nz/blogs/whats-on/ghoul-rush",
       "desc": "Ghoul Rush 30-31 OCT, 8PM",
       "end": "2026-10-31"
+    },
+    {
+      "venue": "bigfan",
+      "title": "HALLOW'S EVE w/ SKILAA",
+      "date": "2026-10-30",
+      "kind": "gig",
+      "url": "https://www.moshtix.co.nz/v2/event/hallows-eve/201361",
+      "desc": "30 Oct HALLOW'S EVE w/ SKILAA"
     },
     {
       "venue": "brucemason",
@@ -4739,10 +4483,26 @@ window.EVENTS = {
     },
     {
       "venue": "whammy",
+      "title": "Vampire Disko Halloween Party -",
+      "date": "2026-10-30",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "whammy",
       "title": "Break It Live Akl -",
       "date": "2026-10-30",
       "kind": "gig",
       "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aag",
+      "title": "Inspired by Picasso: Paint a Cubist figure Workshops Sold out",
+      "date": "2026-10-31",
+      "kind": "workshop",
+      "url": "https://www.aucklandartgallery.com/visit/events/inspired-by-picasso-paint-a-cubist-figure",
+      "desc": "Inspired by Picasso: Paint a Cubist figure Workshops 31 Oct 2026 Sold out Learn more Learn more",
+      "img": "https://www.aucklandartgallery.com/images/logos/aag-logo.svg"
     },
     {
       "venue": "artbysea",
@@ -4849,7 +4609,7 @@ window.EVENTS = {
       "date": "2026-10-31",
       "kind": "gig",
       "url": "https://www.qtheatre.co.nz/shows/the-mainline-tour",
-      "desc": "Oct 31 2026 Comedy Mainline Tour: Gary McCormick & Adam McGrath Gary McCormick and Adam McGrath, two of Aotearoa's most lively raconteurs, bring the big yarns, the big music and th"
+      "desc": "31 Oct 2026 Comedy Mainline Tour: Gary McCormick & Adam McGrath Gary McCormick and Adam McGrath, two of Aotearoa's most lively raconteurs, bring the big yarns, the big music and th"
     },
     {
       "venue": "teoro",
@@ -4899,6 +4659,14 @@ window.EVENTS = {
       "kind": "opening",
       "url": "https://www.qtheatre.co.nz/shows/khaled-khalafalla-let-me-take-you-there-tour",
       "desc": "1 November 2026 Comedy Khaled Khalafalla: The Let Me Take You There Tour Following a string of sold-out shows across Australia, Khaled Khalafalla returns to Aotearoa with a new sho"
+    },
+    {
+      "venue": "tepou",
+      "title": "Māori Data Sovereignty and AI Wānanga",
+      "date": "2026-11-01",
+      "kind": "gig",
+      "url": "https://www.tepoutheatre.nz/maori-data-sovereignty-and-ai-wananga/",
+      "desc": "Māori Data Sovereignty and AI Wānanga 01 Nov 01 Nov"
     },
     {
       "venue": "teuru",
@@ -4987,6 +4755,15 @@ window.EVENTS = {
       "desc": "Singing Lessons Te Oro Music and Arts Centre , Glen Innes, Auckland Thu 5 Nov 3:30pm – more dates Arts and Crafts Buy Tickets"
     },
     {
+      "venue": "timeout",
+      "title": "Book Launch: Consciousness: A Book of Thinking by Roger Horrocks Thursday, 6:00 PM 7:30 PM Time Out Bookstore ",
+      "date": "2026-11-05",
+      "kind": "opening",
+      "url": "https://www.timeout.co.nz/upcoming-events/book-launch-consciousness-a-book-of-thinking-by-roger-horrocks",
+      "desc": "Nov 5 Book Launch: Consciousness: A Book of Thinking by Roger Horrocks Thursday, November 5, 2026 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calendar ICS preorder book Vie",
+      "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6ad03380a65c233bb31427b5/1792030660153/Book+Launch+Roger+Horrocks.jpg?format=1500w"
+    },
+    {
       "venue": "townhall",
       "title": "Pictures At An Exhibition",
       "date": "2026-11-05",
@@ -5060,6 +4837,15 @@ window.EVENTS = {
       "url": "https://ceac.org.nz/events/community-event/open-arts-day-2026",
       "desc": "Open Arts Day 2026 Sat 7 Nov 2026 10:00AM - 4:00PM Experience Open Arts Day 2026 at Corban Estate Arts Centre on Saturday 7 November! It's the perfect opportunity to see behind the",
       "img": "https://ceac.org.nz/media/thumbs/uploads/2026_09/OAD_2026_Web.png.1200x630_q80_crop-smart.png"
+    },
+    {
+      "venue": "corban",
+      "title": "In Conversation With Fa’amele Etuale and Lema Shamamba Sat 2:00PM - 3:00PM This gallery kōrero brings together",
+      "date": "2026-11-07",
+      "kind": "opening",
+      "url": "https://ceac.org.nz/events/talk/in-conversation",
+      "desc": "In Conversation With Fa’amele Etuale and Lema Shamamba Sat 7 Nov 2026 2:00PM - 3:00PM This gallery kōrero brings together Fa’amele Etuale and Lema Shamamba who will share deeper in",
+      "img": "https://ceac.org.nz/media/thumbs/uploads/2026_09/_43A9231web.jpeg.1900x1280_q80_crop-smart_upscale_copy.jpg.1200x630_q80_crop-smart.jpg"
     },
     {
       "venue": "lacigale",
@@ -5138,12 +4924,12 @@ window.EVENTS = {
     },
     {
       "venue": "timeout",
-      "title": "Book Launch: The Hummingbirds by Kata Kiss Saturday, 3:00 PM 4:00 PM Time Out Bookstore Ltd (map) Google Calen",
+      "title": "Book Launch: The Hummingbirds by Kata Kiss Saturday, 5:30 PM 7:00 PM Time Out Bookstore Ltd (map) Google Calen",
       "date": "2026-11-07",
       "kind": "opening",
       "url": "https://www.timeout.co.nz/upcoming-events/book-launch-the-hummingbirds-by-kata-kiss",
-      "desc": "Nov 7 Book Launch: The Hummingbirds by Kata Kiss Saturday, November 7, 2026 3:00 PM 4:00 PM Time Out Bookstore Ltd (map) Google Calendar ICS Author's website View Event →",
-      "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6aab41b518d4eb51b1e6d477/1789608662085/Hummingbirds_SocialPostfinal.jpg?format=1500w"
+      "desc": "Nov 7 Book Launch: The Hummingbirds by Kata Kiss Saturday, November 7, 2026 5:30 PM 7:00 PM Time Out Bookstore Ltd (map) Google Calendar ICS Author's website View Event →",
+      "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6aab41b518d4eb51b1e6d477/1792112249891/final+NZ+poster+2.jpg?format=1500w"
     },
     {
       "venue": "avondale",
@@ -5262,6 +5048,14 @@ window.EVENTS = {
       "desc": "12 Nov Eigenface"
     },
     {
+      "venue": "maritime",
+      "title": "events Pacific Voices: Trouble in Paradise",
+      "date": "2026-11-12",
+      "kind": "opening",
+      "url": "https://www.maritimemuseum.co.nz/events/pacific-voices-trouble-in-paradise",
+      "desc": "events Pacific Voices: Trouble in Paradise 12 Nov"
+    },
+    {
       "venue": "powerstation",
       "title": "Goodnight Nurse - The Always and Never From",
       "date": "2026-11-12",
@@ -5277,6 +5071,374 @@ window.EVENTS = {
       "url": "https://www.qtheatre.co.nz/shows/marathon",
       "desc": "12 November - 6 December 2026 Comedy Marathon The unbelievable true story of one of the strangest sporting events of all time – the 1904 Olympic Marathon.",
       "end": "2026-12-06"
+    },
+    {
+      "venue": "tepou",
+      "title": "Unitec Dance Showcase",
+      "date": "2026-11-12",
+      "kind": "gig",
+      "url": "https://www.tepoutheatre.nz/unitec-dance-showcase-2026/",
+      "desc": "Unitec Dance Showcase 2026 12 Nov 15 Nov",
+      "end": "2026-11-15"
+    },
+    {
+      "venue": "basement",
+      "title": "PILI – Spring Time & Space Residency Showing , 12PM",
+      "date": "2026-11-13",
+      "kind": "opening",
+      "url": "https://basementtheatre.co.nz/blogs/whats-on/pili-spring-2026-time-space-residency-showing",
+      "desc": "PILI – Spring 2026 Time & Space Residency Showing 13 NOV, 12PM"
+    },
+    {
+      "venue": "bigfan",
+      "title": "Katie-Lee - 'Destined For Loneliness' EP Release",
+      "date": "2026-11-13",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/tour/36004/Katie-Lee---Destined-For-Loneliness-EP-Release.utr",
+      "desc": "13 Nov Katie-Lee - 'Destined For Loneliness' EP Release"
+    },
+    {
+      "venue": "howicklittle",
+      "title": "HLT Presents Native Gardens Directed by Ben Egan Show Details",
+      "date": "2026-11-13",
+      "kind": "exhibition",
+      "url": "https://hlt.nz/whats-on/events-calendar/native-gardens/",
+      "desc": "HLT Presents Native Gardens Directed by Ben Egan 13 November to 4 December Show Details",
+      "end": "2026-12-04"
+    },
+    {
+      "venue": "sparkarena",
+      "title": "BNZ Breakers v Brisbane Bullets",
+      "date": "2026-11-13",
+      "kind": "opening",
+      "url": "https://www.sparkarena.co.nz/all-events",
+      "desc": "BNZ Breakers v Brisbane Bullets | 2026-11-13T00:00:00Z | Spark Arena",
+      "img": "https://dynamicmedia.livenationinternational.com/i/k/s/4c2cc0d8-38e3-45cd-87c2-322d9ecb3bcc.png"
+    },
+    {
+      "venue": "upstairs",
+      "title": "'Extraordinary' Maxine Parkin-Jones Fri, 6:00 pm Sun, 4:00 pm The Upstairs Art Gallery (map) Google Calendar I",
+      "date": "2026-11-13",
+      "kind": "exhibition",
+      "url": "https://www.upstairs.org.nz/events/2026/11/13/extraordinary-maxine-parkin-jones",
+      "desc": "Nov 13 to 6 Dec 'Extraordinary' Maxine Parkin-Jones Fri, 13 Nov 2026 6:00 pm Sun, 6 Dec 2026 4:00 pm The Upstairs Art Gallery (map) Google Calendar ICS Step into a vibrant world of",
+      "end": "2026-12-06"
+    },
+    {
+      "venue": "waihekegallery",
+      "title": "Works from the Diploma of Ceramics 13",
+      "date": "2026-11-13",
+      "kind": "exhibition",
+      "url": "https://www.waihekeartgallery.org.nz/exhibitions/exhibitions/works-from-the-diploma-of-ceramics-2026/",
+      "desc": "Works from the Diploma of Ceramics 2026 13 - 29 November 2026",
+      "end": "2026-11-29"
+    },
+    {
+      "venue": "whammy",
+      "title": "Ha The Unclear - Astigmatic! EP Release Tour -",
+      "date": "2026-11-13",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "aotea",
+      "title": "Back to the 80s",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/aklphil26-back-to-the-80s",
+      "desc": "Experience Back To The 80s with the Auckland Philharmonia in the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/aklphil-80s-512x363-auckland-live.jpg"
+    },
+    {
+      "venue": "bigfan",
+      "title": "BIG FAN 4TH B'DAY - Record Fair, Gear Repair, Workshops + Open Day",
+      "date": "2026-11-14",
+      "kind": "workshop",
+      "url": "#",
+      "desc": "14 Nov BIG FAN 4TH B'DAY - Record Fair, Gear Repair, Workshops + Open Day"
+    },
+    {
+      "venue": "bigfan",
+      "title": "BIG FAN 4TH B'DAY ft Sam Cullen, Sarvi, Star, Johnny Naisbitt",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://moshtix.co.nz/v2/event/big-fan-4th-birthday/200482",
+      "desc": "14 Nov BIG FAN 4TH B'DAY ft Sam Cullen, Sarvi, Star, Johnny Naisbitt"
+    },
+    {
+      "venue": "britomart",
+      "title": "Britomart Saturday Markets",
+      "zh": "Britomart 周六集市",
+      "date": "2026-11-14",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "brucemason",
+      "title": "Best Comedy Show on Earth",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/best-comedy-show-on-earth",
+      "desc": "Experience the Best Comedy Show on Earth live at the Bruce Mason Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/best-comedy-show-on-earth-512x363-auckland-live.jpg"
+    },
+    {
+      "venue": "galatos",
+      "title": "Otaal &#038; Sandy Nagra &#8211; 1 of 1 Tour",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://galatos.co.nz/live/otall-sandy-nagra-1-on-1-tour/",
+      "desc": "Otaal &#038; Sandy Nagra &#8211; 1 of 1 Tour",
+      "img": "https://galatos.co.nz/wp-content/uploads/2026/10/revised-poster-scaled.jpg",
+      "price": "paid"
+    },
+    {
+      "venue": "howicklittle",
+      "title": "The season View entire season HLT Presents Fireflies Directed by Tracey Holdsworth , 8pm Book Now Show Details",
+      "date": "2026-11-14",
+      "kind": "exhibition",
+      "url": "https://hlt.nz/whats-on/",
+      "desc": "The 2026 season View entire season HLT Presents Fireflies Directed by Tracey Holdsworth 14 November - 5 December, 8pm Book Now Show Details Pev Next The 2027 season View entire sea",
+      "end": "2026-12-05"
+    },
+    {
+      "venue": "howicklittle",
+      "title": "HLT Presents Fireflies Directed by Tracey Holdsworth , 8pm Book Now Show Details",
+      "date": "2026-11-14",
+      "kind": "exhibition",
+      "url": "https://hlt.nz/whats-on/events-calendar/fireflies/",
+      "desc": "HLT Presents Fireflies Directed by Tracey Holdsworth 14 November - 5 December, 8pm Book Now Show Details",
+      "end": "2026-12-05"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sat)",
+      "zh": "La Cigale 法式集市（周六）",
+      "date": "2026-11-14",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "mairangi",
+      "title": "Korea Calligraphy Exhibition Main & Hewson Galleries On View: Saturday – Thursday Enjoy three styles of K-call",
+      "date": "2026-11-14",
+      "kind": "exhibition",
+      "url": "https://mairangiarts.co.nz/events/calligraphy/",
+      "desc": "2026 Korea Calligraphy Exhibition Main & Hewson Galleries On View: Saturday 14 November – Thursday 19 November Enjoy three styles of K-calligraphy, fire up the creavity in your min",
+      "end": "2026-11-19"
+    },
+    {
+      "venue": "mothership",
+      "title": "MOTOWN | DAY PARTY | 3PM-8PM | [SOLD OUT]",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://www.themothership.co.nz/events/motown-day-party-1/auckland/the-mothership",
+      "desc": "MOTOWN | DAY PARTY | 3PM-8PM | [SOLD OUT] NOV 14 BUY TICKETS"
+    },
+    {
+      "venue": "ostend",
+      "title": "Ostend Market (Waiheke)",
+      "zh": "Ostend 集市（激流岛，周六）",
+      "date": "2026-11-14",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "otaramarket",
+      "title": "Ōtara Flea Market",
+      "zh": "Ōtara 周六集市",
+      "date": "2026-11-14",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "powerstation",
+      "title": "Greentea Peng",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://www.powerstation.net.nz/shows/greentea-peng-nov-2026",
+      "desc": "Greentea Peng 14 Nov 2026 Show & ticket info"
+    },
+    {
+      "venue": "teoro",
+      "title": "Lurv : The Twisted State of Mind Te Oro Music and Arts Centre , Glen Innes, Auckland Sat 7:00pm Fashion",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://www.eventfinda.co.nz/2026/lurv-2026-the-twisted-state-of-mind/auckland/glen-innes",
+      "desc": "Lurv 2026: The Twisted State of Mind Te Oro Music and Arts Centre , Glen Innes, Auckland Sat 14 Nov 7:00pm Fashion Buy Tickets"
+    },
+    {
+      "venue": "teuru",
+      "title": "Fiona Pardington To See a Face To See a Face brings together a significant selection of photographs by Fiona P",
+      "date": "2026-11-14",
+      "kind": "exhibition",
+      "url": "https://teuru.org.nz/products/fiona-pardington-to-see-a-face",
+      "desc": "14 NOV 2026 – 14 FEB 2027 Fiona Pardington To See a Face To See a Face brings together a significant selection of photographs by Fiona Pardington. Learn more",
+      "end": "2027-02-14",
+      "img": "http://teuru.org.nz/cdn/shop/files/Screenshot2026-08-07at12.50.49PM.png?v=1786063874"
+    },
+    {
+      "venue": "teuru",
+      "title": "4PM Opening Event Fiona Pardington Please Join us to celebrate the opening of Fiona Pardington To See a Face",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://teuru.org.nz/products/opening-event-fiona-pardington",
+      "desc": "14 NOV 2026, 4PM Opening Event Fiona Pardington Please Join us to celebrate the opening of Fiona Pardington To See a Face. Learn more",
+      "img": "http://teuru.org.nz/cdn/shop/files/Fiona_Pardington.jpg?v=1790308481"
+    },
+    {
+      "venue": "teuru",
+      "title": "4PM Opening Event Fiona Pardington",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://teuru.org.nz/products/opening-event-fiona-pardington",
+      "desc": "14 NOV 2026, 4PM Opening Event Fiona Pardington",
+      "img": "http://teuru.org.nz/cdn/shop/files/Fiona_Pardington.jpg?v=1790308481"
+    },
+    {
+      "venue": "townhall",
+      "title": "Enigma",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/nzso26-enigma",
+      "desc": "Experience Enigma with the New Zealand Symphony Orchestra. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/nzso26-enigma-512x363-auckland-live.jpg"
+    },
+    {
+      "venue": "tuningfork",
+      "title": "Kofi Stone",
+      "date": "2026-11-14",
+      "kind": "opening",
+      "url": "https://www.tuningfork.co.nz/all-events/kofi-stone-tickets-ae1033411",
+      "desc": "Kofi Stone 14 NOV 2026"
+    },
+    {
+      "venue": "whammy",
+      "title": "Negative Approach 2026 AUS _ NZ Tour -",
+      "date": "2026-11-14",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=316"
+    },
+    {
+      "venue": "avondale",
+      "title": "Avondale Sunday Markets",
+      "zh": "Avondale 周日集市",
+      "date": "2026-11-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "lacigale",
+      "title": "La Cigale French Market (Sun)",
+      "zh": "La Cigale 法式集市（周日）",
+      "date": "2026-11-15",
+      "kind": "market",
+      "url": "#"
+    },
+    {
+      "venue": "teuru",
+      "title": "SUN , 7 PM & SAT , 1:30 PM ETENA FEST at TE URU Te Uru is thrilled to host two performances within the Etena F",
+      "date": "2026-11-15",
+      "kind": "exhibition",
+      "url": "https://teuru.org.nz/products/etena-fest-at-te-uru",
+      "desc": "SUN 15 NOV, 7 PM & SAT 28 NOV, 1:30 PM ETENA FEST at TE URU Te Uru is thrilled to host two performances within the 2026 Etena Fest programme. Learn more",
+      "end": "2026-11-28",
+      "img": "http://teuru.org.nz/cdn/shop/files/Rachelimage.jpg?v=1790199171"
+    },
+    {
+      "venue": "aotea",
+      "title": "ASHANTI",
+      "date": "2026-11-16",
+      "kind": "gig",
+      "url": "https://www.aucklandlive.co.nz/show/ashanti",
+      "desc": "Experience ASHANTI live in the Aotea Centre. Visit aucklandlive.co.nz to find out about the best shows and events in Auckland.",
+      "img": "https://cdn.aucklandunlimited.com/live/assets/media/ashanti-v2-512x363-auckland-live.jpg"
+    },
+    {
+      "venue": "poetrylive",
+      "title": "Poetry Live — open mic (every Tuesday)",
+      "zh": "Poetry Live 开放麦（每周二）",
+      "date": "2026-11-17",
+      "kind": "reading",
+      "url": "https://www.thirtynine.co.nz/event-list"
+    },
+    {
+      "venue": "qtheatre",
+      "title": "17 - Theatre A Kind Of Fury The Furies. The forgotten Greek mythological trio in charge of judgement and venga",
+      "date": "2026-11-17",
+      "kind": "opening",
+      "url": "https://www.qtheatre.co.nz/shows/a-kind-of-fury",
+      "desc": "17 - 21 November, 2026 Theatre A Kind Of Fury The Furies. The forgotten Greek mythological trio in charge of judgement and vengance. But what if they were still around? And not jus",
+      "end": "2026-11-21"
+    },
+    {
+      "venue": "qtheatre",
+      "title": "18 - Theatre All You Had Was Fun Four friends hang out. Someone brings pizza. Someone brings wine. Someone isn",
+      "date": "2026-11-18",
+      "kind": "exhibition",
+      "url": "https://www.qtheatre.co.nz/shows/all-you-had-was-fun",
+      "desc": "18 - 29 Nov 2026 Theatre All You Had Was Fun Four friends hang out. Someone brings pizza. Someone brings wine. Someone isn’t there. Written and directed by Sam Brooks, All You Had ",
+      "end": "2026-11-29"
+    },
+    {
+      "venue": "sparkarena",
+      "title": "BNZ Breakers v South East Melbourne Phoenix",
+      "date": "2026-11-18",
+      "kind": "opening",
+      "url": "https://www.sparkarena.co.nz/all-events",
+      "desc": "BNZ Breakers v South East Melbourne Phoenix | 2026-11-18T00:00:00Z | Spark Arena",
+      "img": "https://dynamicmedia.livenationinternational.com/i/k/s/4c2cc0d8-38e3-45cd-87c2-322d9ecb3bcc.png"
+    },
+    {
+      "venue": "teoro",
+      "title": "Pollywood Pasifika Film 242026 Te Oro Music and Arts Centre , Glen Innes, Auckland Wed 7:00pm Film Register",
+      "date": "2026-11-18",
+      "kind": "opening",
+      "url": "https://www.eventfinda.co.nz/2026/pollywood-pasifika-film-242026/auckland/glen-innes",
+      "desc": "Pollywood Pasifika Film 242026 Te Oro Music and Arts Centre , Glen Innes, Auckland Wed 18 Nov 7:00pm Film Register"
+    },
+    {
+      "venue": "timeout",
+      "title": "Book Club: On the Calculation of Volume Wednesday, 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calenda",
+      "date": "2026-11-18",
+      "kind": "workshop",
+      "url": "https://www.timeout.co.nz/upcoming-events/bookcalculation2026",
+      "desc": "Nov 18 Book Club: On the Calculation of Volume Wednesday, November 18, 2026 6:00 PM 7:30 PM Time Out Bookstore Ltd (map) Google Calendar ICS Join us on the 18th of November for a b",
+      "img": "http://static1.squarespace.com/static/6a6833bfaa215337aa7ea56a/6a68342caa215337aa7eb95c/6ad172a2c4aa90562d9d96d7/1792112157804/OntheCalculationof_BookClub_Social.png?format=1500w"
+    },
+    {
+      "venue": "basement",
+      "title": "Choose What You Pay Femmes and Thems – NOV, 8.30PM",
+      "date": "2026-11-19",
+      "kind": "opening",
+      "url": "https://basementtheatre.co.nz/blogs/whats-on/femmes-and-thems-november",
+      "desc": "Choose What You Pay Femmes and Thems – November 19 NOV, 8.30PM"
+    },
+    {
+      "venue": "galatos",
+      "title": "Sammy Obeid - Live In NZ -",
+      "date": "2026-11-19",
+      "kind": "gig",
+      "url": "https://www.undertheradar.co.nz/feeds/showsIcalVenues.php?vid=1638"
+    },
+    {
+      "venue": "galatos",
+      "title": "Sammy Obeid &#8211; Live in NZ",
+      "date": "2026-11-19",
+      "kind": "gig",
+      "url": "https://galatos.co.nz/live/sammy-obeid-live-in-nz/",
+      "desc": "Sammy Obeid &#8211; Live in NZ",
+      "img": "https://galatos.co.nz/wp-content/uploads/2026/08/Poster.jpeg",
+      "price": "paid"
+    },
+    {
+      "venue": "sparkarena",
+      "title": "JOJI: Solaris",
+      "date": "2026-11-19",
+      "kind": "opening",
+      "url": "https://www.sparkarena.co.nz/all-events",
+      "desc": "JOJI: Solaris | 2026-11-19T00:00:00Z | Spark Arena",
+      "img": "https://dynamicmedia.livenationinternational.com/x/f/j/55f3d57f-3af7-4a83-a007-0b4e61d9864a.png"
     }
   ]
 };
